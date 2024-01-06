@@ -95,13 +95,22 @@
                     
                 
                     
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/reconnaissance/">
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
                                 <i class="material-icons me-2">info</i>
-                                
                                 Reconnaissance
-                            </a>
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/">Passive Reconnaissance</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
                         </li>
                     
                 
@@ -539,6 +548,13 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -602,6 +618,15 @@
     index.add(
             {
                 id:  6 ,
+                href: "\/docs\/reconnaissance\/passive_reconaissance\/",
+                title: "Passive Reconnaissance",
+                description: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf you have an account created, you can see alot more information about the email addresses of the target.\nPhonebook.cz link ",
+                content: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf you have an account created, you can see alot more information about the email addresses of the target.\nPhonebook.cz link "
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
                 href: "\/docs\/enumeration\/portscan\/",
                 title: "Portscan",
                 description: "Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.",
@@ -610,7 +635,7 @@
         );
     index.add(
             {
-                id:  7 ,
+                id:  8 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

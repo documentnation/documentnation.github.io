@@ -8,5 +8,12 @@
     <language>en</language>
     <lastBuildDate>Wed, 29 Nov 2023 09:57:49 +0530</lastBuildDate>
     <atom:link href="https://documentnation.github.io/docs/reconnaissance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Passive Reconnaissance</title>
+      <link>https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/</link>
+      <pubDate>Sat, 06 Jan 2024 19:38:29 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/</guid>
+      <description> Identifing Our Target linkNeed to identify What&amp;rsquo;s within the SCOPE and What&amp;rsquo;s not.&#xA;Example: https://bugcrowd.com/tesla&#xA;Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.&#xA;In this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com&#xA;If you have an account created, you can see alot more information about the email addresses of the target.&#xA;Phonebook.cz link </description>
+    </item>
   </channel>
 </rss>

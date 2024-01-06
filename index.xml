@@ -13,14 +13,7 @@
       <link>https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/</link>
       <pubDate>Sat, 06 Jan 2024 19:38:29 +0530</pubDate>
       <guid>https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/</guid>
-      <description> Identifing Our Target linkNeed to identify What&amp;rsquo;s within the SCOPE and What&amp;rsquo;s not.&#xA;Example: https://bugcrowd.com/tesla&#xA;Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.&#xA;In this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com&#xA;If you have an account created, you can see alot more information about the email addresses of the target.&#xA;Phonebook.cz link </description>
-    </item>
-    <item>
-      <title>Portscan</title>
-      <link>https://documentnation.github.io/docs/enumeration/portscan/</link>
-      <pubDate>Wed, 29 Nov 2023 09:58:38 +0530</pubDate>
-      <guid>https://documentnation.github.io/docs/enumeration/portscan/</guid>
-      <description>Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.</description>
+      <description>Identifing Our Target linkNeed to identify What&amp;rsquo;s within the SCOPE and What&amp;rsquo;s not.&#xA;Example: https://bugcrowd.com/tesla&#xA;Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.&#xA;In this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com&#xA;If I had an account created, I can see alot more information about the email addresses of the target.&#xA;Phonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.</description>
     </item>
   </channel>
 </rss>

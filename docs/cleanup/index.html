@@ -115,22 +115,13 @@
                     
                 
                     
-                    
-                        <li class="sidebar-dropdown  ">
-                            <button class="btn">
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://documentnation.github.io/docs/enumeration/">
                                 <i class="material-icons me-2">screen_search_desktop</i>
+                                
                                 Scanning &amp; Enumeration
-                            </button>
-                            <div class="sidebar-submenu ">
-                                <ul>
-                                    
-                                        
-                                        
-                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/enumeration/portscan/">Portscan</a></li>
-                                        
-                                    
-                                </ul>
-                            </div>
+                            </a>
                         </li>
                     
                 
@@ -548,13 +539,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
 
 
     
@@ -620,22 +604,13 @@
                 id:  6 ,
                 href: "\/docs\/reconnaissance\/passive_reconaissance\/",
                 title: "Passive Reconnaissance",
-                description: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf you have an account created, you can see alot more information about the email addresses of the target.\nPhonebook.cz link ",
-                content: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf you have an account created, you can see alot more information about the email addresses of the target.\nPhonebook.cz link "
+                description: "Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.",
+                content: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.\nEmailHippo linkWith this tool, I can verify if the email addresses are valid or not.\nEmail Checker linkLike EmailHippo, this is also can be used to velidate email addresses of my target.\n"
             }
         );
     index.add(
             {
                 id:  7 ,
-                href: "\/docs\/enumeration\/portscan\/",
-                title: "Portscan",
-                description: "Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.",
-                content: " Port Specification Options link Switch/Flag Example Description -p nmap -p 21 127.0.0.1 Scanning Specific Port -p nmap -p 21-100 127.0.0.1 Scanning Specific Port Range -sU sudo nmap -sU 110 127.0.0.1 UDP Port Scanning -p- nmap -p- 127.0.0.1 All Port Scanning -F nmap -F 127.0.0.1 Fast mode - Scan fewer ports than the default scan Port Scanning Types link Switch/Flag Example Description -sS nmap -sS 127.0.0.1 TCP SYN Scan -sT nmap -sT 127.0.0.1 TCP Connect Scan -sA sudo nmap -sA 127.0.0.1 TCP ACK Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan -sX sudo nmap -sX 127.0.0.1 TCP Xmas Scan -sn nmap -sn 127.0.0.1 Ping Scan -sU sudo nmap -sU 127.0.0.1 UDP Port Scan Update Nmap Script Engine Scripts [NSE Scripts] link sudo nmap --script-updatedb Automated Bash Script linkThis script utilizes rustscan for faster scanning.\n#!/bin/bash if [ \"$#\" -ne 1 ]; then echo \"Usage: ports HOST\" exit 2 fi nmap -p- --min-rate 1000 $1 -oN all_ports -vvv -Pn ports=$(grep -iv not all_ports | grep -i 'open\\|filtered' | awk -F'/' '{ print $1 }' ORS=',') rustscan --ulimit 5000 -a $1 -p $ports -- -Pn -A --script vuln -oN nmap rm ./all_ports Rustscan link rustscan -a 127.0.0.1 "
-            }
-        );
-    index.add(
-            {
-                id:  8 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

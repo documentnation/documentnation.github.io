@@ -106,7 +106,17 @@
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/">Passive Reconnaissance</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/identifying/">Identifying My Target</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/email_discovery/">Discovering Email Addresses</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://documentnation.github.io/docs/reconnaissance/credentials_hunting/">Hunting Credentials</a></li>
                                         
                                     
                                 </ul>
@@ -319,7 +329,24 @@
     <div class="row flex-xl-wrap">
         
         <div id="list-item" class="col-md-4 col-12 mt-4 pt-2">
-            <a class="text-decoration-none text-reset" href="https://documentnation.github.io/docs/reconnaissance/passive_reconaissance/">
+            <a class="text-decoration-none text-reset" href="https://documentnation.github.io/docs/reconnaissance/identifying/">
+                <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                    <span class="icon-color d-flex my-3">
+                        <i class="material-icons align-middle">Info</i>
+                        
+                        
+                    </span>
+                    <div class="card-body p-0 content">
+                        <p class="fs-5 fw-semibold card-title mb-1">Identifying My Target</p>
+                        <p class="para card-text mb-0"></p>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div id="list-item" class="col-md-4 col-12 mt-4 pt-2">
+            <a class="text-decoration-none text-reset" href="https://documentnation.github.io/docs/reconnaissance/email_discovery/">
                 <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
                     <span class="icon-color d-flex my-3">
                         <i class="material-icons align-middle">info</i>
@@ -327,7 +354,24 @@
                         
                     </span>
                     <div class="card-body p-0 content">
-                        <p class="fs-5 fw-semibold card-title mb-1">Passive Reconnaissance</p>
+                        <p class="fs-5 fw-semibold card-title mb-1">Discovering Email Addresses</p>
+                        <p class="para card-text mb-0"></p>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <div id="list-item" class="col-md-4 col-12 mt-4 pt-2">
+            <a class="text-decoration-none text-reset" href="https://documentnation.github.io/docs/reconnaissance/credentials_hunting/">
+                <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                    <span class="icon-color d-flex my-3">
+                        <i class="material-icons align-middle">info</i>
+                        
+                        
+                    </span>
+                    <div class="card-body p-0 content">
+                        <p class="fs-5 fw-semibold card-title mb-1">Hunting Credentials</p>
                         <p class="para card-text mb-0"></p>
                     </div>
                     
@@ -556,6 +600,20 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -565,6 +623,15 @@
     index.add(
             {
                 id:  0 ,
+                href: "\/docs\/reconnaissance\/identifying\/",
+                title: "Identifying My Target",
+                description: "Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla",
+                content: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\n"
+            }
+        );
+    index.add(
+            {
+                id:  1 ,
                 href: "\/docs\/htb\/",
                 title: "HTB",
                 description: "",
@@ -573,7 +640,16 @@
         );
     index.add(
             {
-                id:  1 ,
+                id:  2 ,
+                href: "\/docs\/reconnaissance\/email_discovery\/",
+                title: "Discovering Email Addresses",
+                description: "Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.",
+                content: " Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.\nEmailHippo linkWith this tool, I can verify if the email addresses are valid or not.\nEmail Checker linkLike EmailHippo, this is also can be used to velidate email addresses of my target.\nGoogle (Forget Password) linkThere is a way to link email addresses with Google Forget Password option.\nStep 1:\nStep 2: Enter the email address.\nStep 3: [Will be added soon]\n"
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
                 href: "\/docs\/reconnaissance\/",
                 title: "Reconnaissance",
                 description: "",
@@ -582,7 +658,16 @@
         );
     index.add(
             {
-                id:  2 ,
+                id:  4 ,
+                href: "\/docs\/reconnaissance\/credentials_hunting\/",
+                title: "Hunting Credentials",
+                description: "Dehashed linkThis is a website wich costs money but definitely worth it.\nWith this I can browse through all the breached databases and find potential credentials in many ways.",
+                content: " Dehashed linkThis is a website wich costs money but definitely worth it.\nWith this I can browse through all the breached databases and find potential credentials in many ways.\n"
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
                 href: "\/docs\/enumeration\/",
                 title: "Scanning \u0026 Enumeration",
                 description: "",
@@ -591,7 +676,7 @@
         );
     index.add(
             {
-                id:  3 ,
+                id:  6 ,
                 href: "\/docs\/exploitation\/",
                 title: "Exploitation",
                 description: "",
@@ -600,7 +685,7 @@
         );
     index.add(
             {
-                id:  4 ,
+                id:  7 ,
                 href: "\/docs\/persistence\/",
                 title: "Persistence",
                 description: "",
@@ -609,7 +694,7 @@
         );
     index.add(
             {
-                id:  5 ,
+                id:  8 ,
                 href: "\/docs\/cleanup\/",
                 title: "Covering Tracks",
                 description: "",
@@ -618,16 +703,7 @@
         );
     index.add(
             {
-                id:  6 ,
-                href: "\/docs\/reconnaissance\/passive_reconaissance\/",
-                title: "Passive Reconnaissance",
-                description: "Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.",
-                content: " Identifing Our Target linkNeed to identify What’s within the SCOPE and What’s not.\nExample: https://bugcrowd.com/tesla\nDiscovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.\nIn this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com\nIf I had an account created, I can see alot more information about the email addresses of the target.\nPhonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.\nEmailHippo linkWith this tool, I can verify if the email addresses are valid or not.\nEmail Checker linkLike EmailHippo, this is also can be used to velidate email addresses of my target.\n"
-            }
-        );
-    index.add(
-            {
-                id:  7 ,
+                id:  9 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

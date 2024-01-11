@@ -2,38 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://documentnation.github.io/docs/reconnaissance/identifying/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/identifying/</loc>
     <lastmod>2024-01-07T09:30:19+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/htb/</loc>
     <lastmod>2023-11-29T14:09:38+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/reconnaissance/email_discovery/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/</loc>
+    <lastmod>2024-01-11T09:30:41+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/email_discovery/</loc>
     <lastmod>2024-01-06T19:38:29+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/reconnaissance/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/</loc>
     <lastmod>2023-11-29T09:57:49+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/reconnaissance/credentials_hunting/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/credentials_hunting/</loc>
     <lastmod>2024-01-07T09:35:30+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/enumeration/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/enumeration/</loc>
     <lastmod>2023-11-29T10:05:19+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/exploitation/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/subdomain_hunting/</loc>
+    <lastmod>2024-01-11T08:54:47+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/tcm-peh/exploitation/</loc>
     <lastmod>2024-01-04T08:30:15+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/persistence/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/web_technologies/</loc>
+    <lastmod>2024-01-11T09:34:51+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/tcm-peh/persistence/</loc>
     <lastmod>2024-01-04T08:31:33+05:30</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/cleanup/</loc>
+    <loc>https://documentnation.github.io/docs/tcm-peh/cleanup/</loc>
     <lastmod>2024-01-04T08:39:54+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/</loc>
-    <lastmod>2024-01-07T09:35:30+05:30</lastmod>
+    <lastmod>2024-01-11T09:34:51+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/</loc>
-    <lastmod>2024-01-07T09:35:30+05:30</lastmod>
+    <lastmod>2024-01-11T09:34:51+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/categories/</loc>
   </url><url>

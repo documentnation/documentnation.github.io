@@ -6,8 +6,15 @@
     <description>Recent content on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jan 2024 09:34:51 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jan 2024 13:38:46 +0530</lastBuildDate>
     <atom:link href="https://documentnation.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kioptrix</title>
+      <link>https://documentnation.github.io/docs/tcm-peh/enumeration/kioptrix/</link>
+      <pubDate>Thu, 11 Jan 2024 13:38:46 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/tcm-peh/enumeration/kioptrix/</guid>
+      <description>Find the Target IP linkarp-scan link arp-scan -l In this case, my target IP address is 192.168.215.112.&#xA;ping linkLogin to the target machine with john:TwoCows2 credentials. (cheat)&#xA;ssh -oKexAlgorithms=&amp;#43;diffie-hellman-group1-sha1 -oHostKeyAlgorithms=&amp;#43;ssh-dss -c aes128-cbc john@192.168.215.112 Then ping some random IP to find the source IP which is the target IP.&#xA;ping 8.8.8.8 netdiscover link sudo netdiscover -r 192.168.215.0/24 Enumeration linkKioptrix walkthrough will not be added here as it is an very easy box and I can find so many detailed walkthroughs from the internet if want.</description>
+    </item>
     <item>
       <title>Identifying My Target</title>
       <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/identifying/</link>
@@ -16,32 +23,39 @@
       <description>Identifing Our Target linkNeed to identify What&amp;rsquo;s within the SCOPE and What&amp;rsquo;s not.&#xA;Example: https://bugcrowd.com/tesla</description>
     </item>
     <item>
-      <title>Discovering Email Addresses</title>
+      <title>Email Hunting</title>
       <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/email_discovery/</link>
       <pubDate>Sat, 06 Jan 2024 19:38:29 +0530</pubDate>
       <guid>https://documentnation.github.io/docs/tcm-peh/reconnaissance/email_discovery/</guid>
       <description>Discovering Email Addresses linkHunter.io linkhunter.io also can identify the pattern of the email address.&#xA;In this case it is {f}{last}@tesla.com which means {fist name initial}{last name}@tesla.com&#xA;If I had an account created, I can see alot more information about the email addresses of the target.&#xA;Phonebook.cz link Clearbit linkThis is also a fantastic Chrome Extension that allows me to discover email addresses with some other cool details that other tools did not find.</description>
     </item>
     <item>
-      <title>Hunting Credentials</title>
+      <title>Credential Hunting</title>
       <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/credentials_hunting/</link>
       <pubDate>Sun, 07 Jan 2024 09:35:30 +0530</pubDate>
       <guid>https://documentnation.github.io/docs/tcm-peh/reconnaissance/credentials_hunting/</guid>
-      <description>Dehashed linkThis is a website which costs money but definitely worth it.&#xA;With this I can browse through all the breached databases and find potential credentials in many ways.</description>
+      <description> Dehashed linkThis is a website which costs money but definitely worth it.&#xA;With this I can browse through all the breached databases and find potential credentials in many ways.&#xA;Reference:&#xA;https://dehashed.com/ </description>
     </item>
     <item>
-      <title>Subdomain Discovery</title>
+      <title>Subdomain Hunting</title>
       <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/subdomain_hunting/</link>
       <pubDate>Thu, 11 Jan 2024 08:54:47 +0530</pubDate>
       <guid>https://documentnation.github.io/docs/tcm-peh/reconnaissance/subdomain_hunting/</guid>
-      <description> Sublist3r link sublist3r.py -d tesla.com -o sub.tesla.com.log crt.sh linkWith this website, I can find subdomains of a domain by Certificate Fingerprinting.&#xA;httprobe linkI can check if all the subdomains that I found ealier are up or not with this tool.&#xA;cat /opt/Sublist3r/sub.tesla.com.log | httprobe </description>
+      <description> Sublist3r link sublist3r.py -d tesla.com -o sub.tesla.com.log crt.sh linkWith this website, I can find subdomains of a domain by Certificate Fingerprinting.&#xA;httprobe linkI can check if all the subdomains that I found ealier are up or not with this tool.&#xA;cat /opt/Sublist3r/sub.tesla.com.log | httprobe Reference:&#xA;https://github.com/aboul3la/Sublist3r https://crt.sh/ https://github.com/tomnomnom/httprobe </description>
     </item>
     <item>
       <title>Web Technologies</title>
       <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/web_technologies/</link>
       <pubDate>Thu, 11 Jan 2024 09:34:51 +0530</pubDate>
       <guid>https://documentnation.github.io/docs/tcm-peh/reconnaissance/web_technologies/</guid>
-      <description>BuiltWith linkWith this website, I can find what technologies does the target websited utilizes.&#xA;Wappalyzer linkSimilar to BuiltWith.com, with this website I can find what technologies does the target websited utilizes.&#xA;Wappalyzer also has browser extensions that comes in handy when it comes to time management.</description>
+      <description>BuiltWith linkWith this website, I can find what technologies does the target websited utilizes.&#xA;Wappalyzer linkSimilar to BuiltWith.com, with this website I can find what technologies does the target websited utilizes.&#xA;Wappalyzer also has browser extensions that comes in handy when it comes to time management.&#xA;Wappalyzer also considers as active scanning tool according to how the tool gather information from the website&#xA;Whatweb link whatweb https://book.hacktricks.xyz Reference:&#xA;https://builtwith.com/ https://www.</description>
+    </item>
+    <item>
+      <title>Google Fu</title>
+      <link>https://documentnation.github.io/docs/tcm-peh/reconnaissance/google_fu/</link>
+      <pubDate>Thu, 11 Jan 2024 11:15:42 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/tcm-peh/reconnaissance/google_fu/</guid>
+      <description> Filter Domain link site:tesla.com Exclude Keywords link site:tesla.com -shop Filter Filetypes link site:tesla.com filetype:pdf Filter Keywords Within the URL link site:tesla.com inurl:php?id= This way I can find potential SQL injectable websites as well.&#xA;Reference:&#xA;https://ahrefs.com/blog/google-advanced-search-operators/ </description>
     </item>
   </channel>
 </rss>

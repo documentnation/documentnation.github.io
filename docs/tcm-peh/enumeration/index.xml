@@ -8,5 +8,12 @@
     <language>en</language>
     <lastBuildDate>Wed, 29 Nov 2023 10:05:19 +0530</lastBuildDate>
     <atom:link href="https://documentnation.github.io/docs/tcm-peh/enumeration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kioptrix</title>
+      <link>https://documentnation.github.io/docs/tcm-peh/enumeration/kioptrix/</link>
+      <pubDate>Thu, 11 Jan 2024 13:38:46 +0530</pubDate>
+      <guid>https://documentnation.github.io/docs/tcm-peh/enumeration/kioptrix/</guid>
+      <description>Find the Target IP linkarp-scan link arp-scan -l In this case, my target IP address is 192.168.215.112.&#xA;ping linkLogin to the target machine with john:TwoCows2 credentials. (cheat)&#xA;ssh -oKexAlgorithms=&amp;#43;diffie-hellman-group1-sha1 -oHostKeyAlgorithms=&amp;#43;ssh-dss -c aes128-cbc john@192.168.215.112 Then ping some random IP to find the source IP which is the target IP.&#xA;ping 8.8.8.8 netdiscover link sudo netdiscover -r 192.168.215.0/24 Enumeration linkKioptrix walkthrough will not be added here as it is an very easy box and I can find so many detailed walkthroughs from the internet if want.</description>
+    </item>
   </channel>
 </rss>

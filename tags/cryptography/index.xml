@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptography on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/cryptography/</link>
+    <description>Recent content in Cryptography on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH (Secure Shell) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</guid>
+      <description>Enumeration link nmap --script ssh-brute -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-auth-methods --script-args=&amp;#34;ssh.user=username&amp;#34; -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-* -p 22 &amp;lt;target-ip&amp;gt; # User enumeration msfconsole msf&amp;gt; use auxiliary/scanner/ssh/ssh_enumusers Brute Force Credentials link # -t: tasks hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; ssh -t 4 # Specific ports hydra -l username -P passwords.txt -s 2222 &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -l username -P passwords.</description>
+    </item>
+    <item>
+      <title>Exponentiation</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/exponential/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/exponential/</guid>
+      <description>Basic linkWe can calculate the exponentiation using &amp;rsquo;**&amp;rsquo; operator in Python.&#xA;2 ** 4 # 16 6 ** 8 # 1679616 Using Pow Method in Python linkThe pow method can be used for the exponentiation.&#xA;pow(2, 4) # 2 ** 4 = 16 Modular Exponentiation linkIn addition, we can find the remainder of dividing a rased value by a specific number.&#xA;This may be sometimes used to find the secret key in key derivation functions, etc.</description>
+    </item>
+    <item>
+      <title>XOR Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</guid>
+      <description>Basic linkFor XORing, we can use ^ operator.&#xA;Here is Python script example to XOR.&#xA;Also use the XOR key for xoring a target value.&#xA;target = 21 xor_key = 2 print(target ^ xor_key) # 23 The above operation does the following calculation internally.&#xA;Convert the decimal 21 of the target to the binary (10101). Convert the decimal 2 of the key to the binary (00010). XOR the bits at each position as below.</description>
+    </item>
+    <item>
+      <title>Convert Bytes to Matrix in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-matrix-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-matrix-in-python/</guid>
+      <description>Conversion link text = b&amp;#34;helloworld!!&amp;#34; column = 4 print([list(text[i:i&amp;#43;column]) for i in range(0, len(text), oolumn)]) # Output [[104, 101, 108, 108], [111, 119, 111, 114], [108, 100, 33, 33]] </description>
+    </item>
+    <item>
+      <title>Convert Hex to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-bytes-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-bytes-in-python/</guid>
+      <description>Conversion linkUsing bytes.fromhex method, we can convert hex string to bytes string.&#xA;hex_str = &amp;#34;48656c6c6f20576f726c64&amp;#34; bytes.fromhex(hex_str) # b&amp;#39;Hello World&amp;#39; </description>
+    </item>
+    <item>
+      <title>Convert Matrix to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-matrix-to-bytes-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-matrix-to-bytes-in-python/</guid>
+      <description>Conversion link matrix = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16] ] print(bytes(sum(matrix, []))) </description>
+    </item>
+    <item>
+      <title>Chinese Remainder Theorem</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/chinese-remainder-theorem/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/chinese-remainder-theorem/</guid>
+      <description>Basic linkIf moduli (n1, n2, etc.) are co-primes, the following rules hold:&#xA;x ≡ a1 mod n1 # means `x % n1 = a1` x ≡ a2 mod n2 # means `x % n2 = a2` ... x ≡ ak mod nk # means `x % nk = ak` In addition, if the values of a1, a2, … ak and n1, n2, … nk are defined, we can calculate x by the following approach.</description>
+    </item>
+    <item>
+      <title>Modular Congruence</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</guid>
+      <description>Basic linkIn modular congruence, the following rules apply:&#xA;If `a ≡ b mod c`, then `b ≡ a mod c` So if we have the following problem,&#xA;39 ≡ x mod 8 To find x value, we can calculate it as below using Python.&#xA;x = 39 % 8 print(x) </description>
+    </item>
+    <item>
+      <title>Quadratic Residue</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</guid>
+      <description>Basic linkAn integer x is called a quadratic residue modulo p.&#xA;a**2 = x mod p Brute Force linkTo calculate a quadratic residue, the following Python script is an example for that.&#xA;p = 71 for a in range(p): qr = (pow(a, 2, p)) print(f&amp;#34;a={a} : qr={qr}&amp;#34;) Legendre Symbol linkAccording to Legendre Symbol, the following rules hold:&#xA;# `a` is a quadratic residue and `a != 0 mod p` a**(p-1)/2 mod p == 1 # `a` is a quadratic non-residue mod p a**(p-1)/2 mod p == -1 # `a ≡ 0 mod p` a**(p-1)/2 mod p == 0 We can check if an integer is a quadratic residue or not referring to the above.</description>
+    </item>
+    <item>
+      <title>AND Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/and-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/and-bitwise-operations/</guid>
+      <description>Basic linkWe can do the AND operations using &amp;amp; operator.&#xA;24 &amp;amp; 72 0x18 &amp;amp; 0x48 # 8 # Binary representation bin(24 &amp;amp; 72) # &amp;#39;0b1000&amp;#39; </description>
+    </item>
+    <item>
+      <title>Convert Binary to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-binary-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-binary-to-int-in-python/</guid>
+      <description>Conversion linkWe can convert binary to int by specifying 2 the second argument of int method in Python.&#xA;int(&amp;#34;1101&amp;#34;, 2) # 13 int(&amp;#34;11111111&amp;#34;, 2) # 255 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to Hex in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-hex-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-hex-in-python/</guid>
+      <description>Conversion linkUsing hex method in Python, we can easily convert bytes to hex.&#xA;b&amp;#39;Hello World&amp;#39;.hex() # 48656c6c6f20576f726c64 b&amp;#39;abcdef&amp;#39;.hex() # 616263646566 b&amp;#39;\xe3\x81\xad\xe3\x81\x93&amp;#39;.hex() # e381ade38193 By the way, for converting from string to bytes before converting bytes to hex, use encode method as below.&#xA;&amp;#39;Hello World&amp;#39;.encode().hex() # 48656c6c6f20576f726c64 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-int-in-python/</guid>
+      <description>Conversion linkBig Endian linkFor using big endian, we can specify &amp;ldquo;big&amp;rdquo; to the byteorder argument (the second argument) of int.from_bytes method in Python.&#xA;int.from_bytes(b&amp;#39;hello&amp;#39;, byteorder=&amp;#39;big&amp;#39;) # 448378203247 int.from_bytes(b&amp;#39;\x00\x01&amp;#39;, byteorder=&amp;#39;big&amp;#39;) # 1 Little Endian linkFor using little endian, we can specify &amp;ldquo;little&amp;rdquo; to the byteorder argument (the second argument) of int.from_bytes method in Python.&#xA;int.from_bytes(b&amp;#39;hello&amp;#39;, byteorder=&amp;#39;little&amp;#39;) # 478560413032 int.from_bytes(b&amp;#39;\x00\x01&amp;#39;, byteorder=&amp;#39;little&amp;#39;) # 256 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to String in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-string-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-string-in-python/</guid>
+      <description>Conversion linkUsing decode method in Python, we can easily convert bytes to string.&#xA;There are three types of decode methods as below.&#xA;All of the results say &amp;ldquo;Hello&amp;rdquo;.&#xA;b&amp;#39;Hello&amp;#39;.decode(&amp;#39;utf-8&amp;#39;) bytes.decode(b&amp;#39;Hello&amp;#39;, &amp;#39;utf-8&amp;#39;) codecs.decode(b&amp;#39;Hello&amp;#39;, &amp;#39;utf-8&amp;#39;) </description>
+    </item>
+    <item>
+      <title>Convert Character to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-binary-in-python/</guid>
+      <description>Conversion linkCharacter -&amp;gt; N-bit linkUsing format method, the given character is converted to bits.&#xA;char = &amp;#39;a&amp;#39; format(ord(char), &amp;#39;b&amp;#39;) # 1100001 Character -&amp;gt; 8-bit linkWe can specify 8-bit representation by prepending {0:08b} before the format method.&#xA;char = &amp;#39;a&amp;#39; &amp;#39;{0:08b}&amp;#39;.format(ord(char), &amp;#39;b&amp;#39;) # 01100001 Character -&amp;gt; 16-bit linkWe can specify 16-bit representation by prepending {0:016b} before the format method.&#xA;char = &amp;#39;a&amp;#39; &amp;#39;{0:016b}&amp;#39;.format(ord(char), &amp;#39;b&amp;#39;) # 0000000001100001 </description>
+    </item>
+    <item>
+      <title>Convert Character to Unicode in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-unicode-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-unicode-in-python/</guid>
+      <description>Conversion linkWe can use ord method in Python to convert a character to Unicode.&#xA;ord(&amp;#39;a&amp;#39;) # 97 By the way, use chr method to convert Unicode to a character.&#xA;chr(97) # a </description>
+    </item>
+    <item>
+      <title>Convert Hex to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-int-in-python/</guid>
+      <description>Conversion linkWe can convert hex to int by specifygin 16 in the second argument of the int method in Python.&#xA;int(&amp;#34;7b&amp;#34;, 16) int(&amp;#34;0x7b&amp;#34;, 16) # 123 int(&amp;#34;68656c6c6f&amp;#34;, 16) int(&amp;#34;0x68656c6c6f&amp;#34;, 16) # 448378203247 int(&amp;#34;-80&amp;#34;, 16) int(&amp;#34;-0x80&amp;#34;, 16) # -128 </description>
+    </item>
+    <item>
+      <title>Convert Int to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-binary-in-python/</guid>
+      <description>Conversion linkInt -&amp;gt; N-bit linkSpecify &amp;lsquo;b&amp;rsquo; in the format method in Python.&#xA;format(123, &amp;#39;b&amp;#39;) # 1111011 Int -&amp;gt; 8-bit linkWe can specify 8-bit by prepending {0:08b} before the format method.&#xA;Alternatively, zfill method can be used for this purpose.&#xA;&amp;#39;{0:08b}&amp;#39;.format(123, &amp;#39;b&amp;#39;) format(123, &amp;#39;b&amp;#39;).zfill(8) # 01111011 Int -&amp;gt; 16-bit linkThis is also the same as above, we can specify 16-bit by prepending {0:016b}, or zfill method can be used.&#xA;&amp;#39;{0:016b}&amp;#39;.format(123, &amp;#39;b&amp;#39;) format(123, &amp;#39;b&amp;#39;).</description>
+    </item>
+    <item>
+      <title>Convert Int to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-bytes-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-bytes-in-python/</guid>
+      <description>Conversion linkUsing the to_bytes built-in method in Python, we can conavert int to bytes.&#xA;In addition, we can specify the length to the first argument in to_bytes method.&#xA;Big Endian linkBy specifying &amp;lsquo;big&amp;rsquo; to the byteorder argument, the result is the big endian bytes order.&#xA;num = 1234 num.to_bytes(2, byteorder=&amp;#39;big&amp;#39;) # b&amp;#39;\x04\xd2&amp;#39; num.to_bytes(3, byteforder=&amp;#39;big&amp;#39;) # b&amp;#39;\x00\x04\xd2&amp;#39; num.to_bytes(4, byteorder=&amp;#39;big&amp;#39;) # b&amp;#39;\x00\x00\x04\xd2&amp;#39; Little Endian linkBy specifying &amp;lsquo;big&amp;rsquo; to the byteorder argument, the result is the little endian bytes order.</description>
+    </item>
+    <item>
+      <title>Convert Int to Hex in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-hex-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-hex-in-python/</guid>
+      <description>Conversion linkWe can convert int to hex using hex method in Python.&#xA;hex(123) # 0x7b hex(448378203247) # 0x68656c6c6f To remove the prefix 0x, exlude the characters from the string with [2:].&#xA;hex(123)[2:] # 7b hex(448378203247)[2:] # 68656c6c6f </description>
+    </item>
+    <item>
+      <title>Convert Int to String in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-string-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-string-in-python/</guid>
+      <description>Conversion linkWe can easily convert int to string using str built-in method in Python.&#xA;str(123) # &amp;#34;123&amp;#34; str(-123) # &amp;#34;-123&amp;#34; </description>
+    </item>
+    <item>
+      <title>Convert String to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-binary-in-python/</guid>
+      <description>Conversion linkFor converting strings to binary, we need to convert each character to binary by first converting the character to Unicode.&#xA;Then concatenate these binaries.&#xA;text = &amp;#34;Hello&amp;#34; bin_str = &amp;#34;&amp;#34; for c in text: c_bin = bin(ord(c))[2:] # remove &amp;#34;0b&amp;#34; prefix bin_str &amp;#43;= c_bin.zfill(8) # padding to 8-bit for adjustment print(bin_str) # 0100100001100101011011000110110001101111 </description>
+    </item>
+    <item>
+      <title>Convert String to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-bytes-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-bytes-in-python/</guid>
+      <description>Conversion linkWe can use several ways to encode string to bytes in Python.&#xA;string class has encode method to encode strings to bytes. bytes method converts string to bytes. Also we can specify the format e.g. utf-8, shift_jis as argument.&#xA;# Using encode() method &amp;#34;Hello&amp;#34;.encode(&amp;#39;utf-8&amp;#39;) &amp;#34;Hello&amp;#34;.encode(&amp;#39;shift_jis&amp;#39;) # Using bytes() method bytes(&amp;#34;Hello&amp;#34;, &amp;#39;utf-8&amp;#39;) bytes(&amp;#34;Hello&amp;#34;, &amp;#39;shift_jis&amp;#39;) # Result: b&amp;#39;Hello&amp;#39; Decode Bytes to String linkBy the way, we can decode bytes to string with decode method.</description>
+    </item>
+    <item>
+      <title>Convert String to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-int-in-python/</guid>
+      <description>Conversion linkString (Number) -&amp;gt; Int linkFor strings representing numbers, we can just use int method in Python.&#xA;int(&amp;#34;123&amp;#34;) # 123 String (Text) -&amp;gt; Int linkFor strings representing characters, we need to convert each character to Unicode at first.&#xA;Then concatenate these unicoded string.&#xA;text = &amp;#34;Hello&amp;#34; numbers_str = &amp;#34;&amp;#34; for t in text: numbers_str &amp;#43;= str(ord(t)) print(int(decimal_str)) # 72101108108111 </description>
+    </item>
+    <item>
+      <title>Convert Unicode to Character in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-unicode-to-character-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-unicode-to-character-in-python/</guid>
+      <description>Conversion linkUsing chr method in Python, we can convert Unicode to a character as below.&#xA;chr(97) # a chr(98) # b By the way, use ord method to convert character to a Unicode.&#xA;ord(&amp;#39;a&amp;#39;) # 97 </description>
+    </item>
+    <item>
+      <title>GCD (Greatest Common Divisor)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/greatest-common-divisor/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/greatest-common-divisor/</guid>
+      <description>Basic linkThe following examples calculate the greatest common divisor of two given integers. Using gcd method of math in Python, we can easily compute GCD.&#xA;import math math.gcd(2, 8) # result: 2 math.gcd(5, 15) # result: 5 math.gcd(28, 72) # result: 4 The following snippet shows how the GCD works with the last example above (gcd(28, 72)).&#xA;# Calculate a remainder of 72/28 72 % 28 = 16 # Calculate a remainder using the previous number 16 28 % 16 = 12 # Repeat.</description>
+    </item>
+    <item>
+      <title>OR Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/or-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/or-bitwise-operations/</guid>
+      <description>Basic linkAssume we want to OR operation 0100 and 1001.&#xA;0100 # OR 1001 # Result: 1101 We can do that using | operator in Python.&#xA;0b0100 | 0b1001 # 13 (&amp;#39;1101&amp;#39; in binary) 4 | 9 # 13 (&amp;#39;1101&amp;#39; in binary) # Binary representation bin(0b0100 | 0b1001) # 0b1101 </description>
+    </item>
+    <item>
+      <title>Shift Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/shift-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/shift-bitwise-operations/</guid>
+      <description>Basic linkLeft Bit Shift linkAssume we want to left bit shift the binary 0100 as below.&#xA;0100 -&amp;gt; 1000 We can achieve this using the &amp;lt;&amp;lt; operator in Python.&#xA;0b100 &amp;lt;&amp;lt; 1 # 8 (&amp;#39;1000&amp;#39; in binary) 4 &amp;lt;&amp;lt; 1 # 8 (&amp;#39;1000&amp;#39; in binary) # Output as the binary representation bin(8 &amp;lt;&amp;lt; 1) # 0b1000 Right Bit Shift linkAssume we want to right bit shift the binary 0100 as below.</description>
+    </item>
+    <item>
+      <title>Zero Padding in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/zero-padding-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/zero-padding-in-python/</guid>
+      <description>Zero-padding to 8-bit linkFor zero-padding to 8-bit, specify 8 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(8) # 00001101 &amp;#39;101011&amp;#39;.zfill(8) # 00101011 Zero-padding to 16-bit linkFor zero-padding to 16-bit, specify 16 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(16) # 0000000000001101 &amp;#39;11100110&amp;#39;.zfill(16) # 0000000011100110 Zero-padding to 32-bit linkFor zero-padding to 32-bit, specify 32 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(32) # 00000000000000000000000000001101 &amp;#39;11100110&amp;#39;.zfill(32) # 00000000000000000000000011100110 Zero-padding to 64-bit linkFor zero-padding to 64-bit, specify 64 as the argument in the zfill method.</description>
+    </item>
+    <item>
+      <title>Bcrypt</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/bcrypt/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/bcrypt/</guid>
+      <description>Using Bcrypt in Python linkReference: https://pycryptodome.readthedocs.io/en/latest/src/protocol/kdf.html#bcrypt&#xA;To create a bcrypt hash,&#xA;from base64 import b64encode from Crypto.Hash import SHA256 from Crypto.Protocol.KDF import bcrypt password = b&amp;#34;secret&amp;#34; b64pwd = b64encode(SHA256.new(password).digest()) bcrypt_hash = bcrypt(b64pwd, 12) print(f&amp;#34;hash: {bcrypt_hash}&amp;#34;) To check them,&#xA;from base64 import b64encode from Crypto.Hash import SHA256 from Crypto.Protocol.KDF import bcrypt, bcrypt_check, _bcrypt_hash password = b&amp;#34;secret&amp;#34; # Specify the hash generated bcrypt_hash = b&amp;#34;$2a$12$F86jMkaNbEm8lPm6q6zbCuiIGOAsz4azBZkAeSalFYXjctIjiQG1C&amp;#34; try: b64pwd = b64encode(SHA256.new(password).digest()) bcrypt_check(b64pwd, bcrypt_hash) print(&amp;#34;Password is correct&amp;#34;) except ValueError: print(&amp;#34;Incorrect password&amp;#34;) </description>
+    </item>
+    <item>
+      <title>PBKDF2</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/pbkdf2/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/pbkdf2/</guid>
+      <description>PBKDF2-HMAC-SHA256 linkPBKDF2 is part of PKCS#5 v2.0. The format is as follows:&#xA;sha256:&amp;lt;iteration&amp;gt;:&amp;lt;base64-salt&amp;gt;:&amp;lt;base64-password-hash&amp;gt; # ex. sha256:10000:ayZoqdmIewDpUB:Ud6aAhvpw9RqZPt/0Rd0U9uPDKLOWKnYHAS&amp;#43;Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc= To create the hash based on this, run the following commands.&#xA;echo &amp;#39;sha256:10000:&amp;#39;$(echo &amp;#39;&amp;lt;salt-string&amp;gt;&amp;#39; | base64 | cut -c 1-14)&amp;#39;:&amp;#39;$(echo &amp;#39;password-string&amp;#39; | base64) &amp;gt; hash.txt Now crack the hash using Hashcat.&#xA;hashcat -m 10900 wordlist.txt hash.txt Using PBKDF2 in Python linkReference: Pycryptodome Official Docs&#xA;We can use PBKDF2 easily thanks of Pycryptodome.&#xA;We need to install it first.</description>
+    </item>
+    <item>
+      <title>Scrypt</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/scrypt/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/scrypt/</guid>
+      <description>Using Scrypt in Python linkWe can use scrypt easily thanks of Pycryptodome.&#xA;We need to install it first.&#xA;pip install pycryptodome Below is a Python script to derive a key from a password with scrypt.&#xA;from Crypto.Protocol.KDF import scrypt from Crypto.Random import get_random_bytes password = b&amp;#39;secret&amp;#39; salt = get_random_bytes(16) key = scrypt(password, salt, 16, N=2**14, r=8, p=1) print(f&amp;#34;key: {key.hex()}&amp;#34;) </description>
+    </item>
+    <item>
+      <title>Cryptography</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/</guid>
+      <description>CyberChef Magic linkCyberChef is a swiss army knife for cryptography.&#xA;Especially, &amp;ldquo;Magic&amp;rdquo; tool can process the given hashes automatically.&#xA;So it&amp;rsquo;s recommended to use the &amp;ldquo;Magic&amp;rdquo; at first. It can be found on the left pane.&#xA;quipqiup linkquipqiup is an online cryptogram solver. It can solve substitution ciphers often found in newspapers, including puzzles like cryptoquips and patristocrats.&#xA;OSINT linkBefore cracking, hashes might be revealed online so worth searching them with search engines.</description>
+    </item>
+    <item>
+      <title>John the Ripper</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/tool/john-the-ripper/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/tool/john-the-ripper/</guid>
+      <description>Basics link john --format=raw-md5 --wordlist=wordlist.txt hash.txt To search the type of hash, we can add &amp;quot;&amp;ndash;list=format&amp;quot; option.&#xA;john --list=formats john --list=formats | grep -i sha john --list=formats | grep -i md5 Filter the Word Length of Wordlists link # Up to 5 characters (-max-len:5) john --wordlist=/usr/share/wordlists/rockyou.txt -max-len:5 hash.txt # 4 characters only (-min-len:4 -max-len:4) john --wordlist=/usr/share/wordlists/rockyou.txt -min-len:4 -max-len:4 hash.txt Generate Custom Wordlist from Original One linkCommand Options link # Min length: 12 # Max length: 14 john --wordlist=.</description>
+    </item>
+  </channel>
+</rss>

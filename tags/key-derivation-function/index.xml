@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Key Derivation Function on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/key-derivation-function/</link>
+    <description>Recent content in Key Derivation Function on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/key-derivation-function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bcrypt</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/bcrypt/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/bcrypt/</guid>
+      <description>Using Bcrypt in Python linkReference: https://pycryptodome.readthedocs.io/en/latest/src/protocol/kdf.html#bcrypt&#xA;To create a bcrypt hash,&#xA;from base64 import b64encode from Crypto.Hash import SHA256 from Crypto.Protocol.KDF import bcrypt password = b&amp;#34;secret&amp;#34; b64pwd = b64encode(SHA256.new(password).digest()) bcrypt_hash = bcrypt(b64pwd, 12) print(f&amp;#34;hash: {bcrypt_hash}&amp;#34;) To check them,&#xA;from base64 import b64encode from Crypto.Hash import SHA256 from Crypto.Protocol.KDF import bcrypt, bcrypt_check, _bcrypt_hash password = b&amp;#34;secret&amp;#34; # Specify the hash generated bcrypt_hash = b&amp;#34;$2a$12$F86jMkaNbEm8lPm6q6zbCuiIGOAsz4azBZkAeSalFYXjctIjiQG1C&amp;#34; try: b64pwd = b64encode(SHA256.new(password).digest()) bcrypt_check(b64pwd, bcrypt_hash) print(&amp;#34;Password is correct&amp;#34;) except ValueError: print(&amp;#34;Incorrect password&amp;#34;) </description>
+    </item>
+    <item>
+      <title>PBKDF2</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/pbkdf2/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/pbkdf2/</guid>
+      <description>PBKDF2-HMAC-SHA256 linkPBKDF2 is part of PKCS#5 v2.0. The format is as follows:&#xA;sha256:&amp;lt;iteration&amp;gt;:&amp;lt;base64-salt&amp;gt;:&amp;lt;base64-password-hash&amp;gt; # ex. sha256:10000:ayZoqdmIewDpUB:Ud6aAhvpw9RqZPt/0Rd0U9uPDKLOWKnYHAS&amp;#43;Lm07oqDWwDLw/U74P0jXQ0nsGW9O/jc= To create the hash based on this, run the following commands.&#xA;echo &amp;#39;sha256:10000:&amp;#39;$(echo &amp;#39;&amp;lt;salt-string&amp;gt;&amp;#39; | base64 | cut -c 1-14)&amp;#39;:&amp;#39;$(echo &amp;#39;password-string&amp;#39; | base64) &amp;gt; hash.txt Now crack the hash using Hashcat.&#xA;hashcat -m 10900 wordlist.txt hash.txt Using PBKDF2 in Python linkReference: Pycryptodome Official Docs&#xA;We can use PBKDF2 easily thanks of Pycryptodome.&#xA;We need to install it first.</description>
+    </item>
+    <item>
+      <title>Scrypt</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/scrypt/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/scrypt/</guid>
+      <description>Using Scrypt in Python linkWe can use scrypt easily thanks of Pycryptodome.&#xA;We need to install it first.&#xA;pip install pycryptodome Below is a Python script to derive a key from a password with scrypt.&#xA;from Crypto.Protocol.KDF import scrypt from Crypto.Random import get_random_bytes password = b&amp;#39;secret&amp;#39; salt = get_random_bytes(16) key = scrypt(password, salt, 16, N=2**14, r=8, p=1) print(f&amp;#34;key: {key.hex()}&amp;#34;) </description>
+    </item>
+  </channel>
+</rss>

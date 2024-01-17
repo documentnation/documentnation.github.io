@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNS on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/dns/</link>
+    <description>Recent content in DNS on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subdomain Discovery</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/subdomain-discovery/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/subdomain-discovery/</guid>
+      <description>Automation link # https://github.com/projectdiscovery/subfinder subfinder -d example.com subfinder -d example.com -o domains.txt # https://github.com/blechschmidt/massdns ./scripts/subbrute.py lists/names.txt example.com | ./bin/massdns -r lists/resolvers.txt -t A -o S &amp;gt; results.txt # https://github.com/guelfoweb/knock knockpy vulnerable.com # Using wordlist knockpy -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt vulnerable.com # https://github.com/lc/gau printf example.com | gau cat domains.txt | gau --threads 5 # https://github.com/aboul3la/Sublist3r python3 sublist3r.py -d example.com # This sends requests a target web server directly so be careful # -mc: Match status code ffuf -u https://FUZZ.</description>
+    </item>
+    <item>
+      <title>mDNS (Multicast DNS) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/dns/multicast-dns-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/dns/multicast-dns-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script dns-service-discovery -p 5353 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+  </channel>
+</rss>

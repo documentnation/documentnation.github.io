@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archive on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/archive/</link>
+    <description>Recent content in Archive on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:35:17 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/archive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crack 7z Password</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/crack-7z-password/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/crack-7z-password/</guid>
+      <description>Crack link 7z2john example.7z &amp;gt; hash.txt # or /usr/share/john/7z2john.pl example.7z &amp;gt; hash.txt john --wordlist=wordlist.txt hash.txt If we got the error “Can&#39;t locate Compress/Raw/Lzma.pm in @INC&amp;hellip;”, we need to install libcompress-raw-lzma-perl package so try:&#xA;sudo apt install libcompress-raw-lzma-perl </description>
+    </item>
+    <item>
+      <title>Zip &amp; Unzip</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/zip-unzip/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/zip-unzip/</guid>
+      <description>Compress link zip &amp;lt;output&amp;gt; &amp;lt;target1&amp;gt; &amp;lt;target2&amp;gt; ... zip example.zip example1.txt example2.txt # -r: recursive (zip folder) zip -r example.zip ./example Symbolic Links linkWe can store symbolic links in a zip file.&#xA;ln -s /etc/passwd test.txt zip --symlink test.zip test.txt Decompress link unzip example.zip # Specify the directory to decompress unzip example.zip -d ./example List Files without Decompressings linkTo list files in a zip file without extracting, use -l flag.&#xA;unzip -l example.</description>
+    </item>
+    <item>
+      <title>Crack Zip Password</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/crack-zip-password/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/crack-zip-password/</guid>
+      <description>John The Ripper linkFormat the archived file to make the John to recognize it, then crack the hash using John.&#xA;zip2john example.zip &amp;gt; hash.txt john --wordlist=wordlist.txt hash.txt Fcrackzip link # -u: unzip # -D: dictionary # -p: strgin as initial password/file fcrackzip -u -D -p passwords.txt sample.zip Bkcrack linkbkcrack is useful for cracking legacy zip encryption with a known plaintext attack.&#xA;Download the Tool link wget https://github.com/kimci86/bkcrack/releases/download/v1.5.0/bkcrack-1.5.0-Linux.tar.gz tar -xf bkcrack-1.5.0-Linux.tar.gz cd bkcrack-1.</description>
+    </item>
+    <item>
+      <title>7z</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/7z/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/7z/</guid>
+      <description>Compress link # a: Add files to archive 7z a example.zip example.txt # With password 7z a example.zip example.txt -p password Decompress link # e: Extract files from archive 7z e example.zip # With password 7z e example.zip -p password </description>
+    </item>
+    <item>
+      <title>Bzip2 &amp; Bunzip2</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/bzip-bunzip/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/bzip-bunzip/</guid>
+      <description>Compress link bzip2 example.txt Decompress link bzip2 -d example.txt.bz2 bunzip2 example.txt.bz2 </description>
+    </item>
+    <item>
+      <title>Gzip &amp; Gunzip</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/gzip-gunzip/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/gzip-gunzip/</guid>
+      <description>Compress link gzip example.txt Decompress link gzip -d example.txt.gz gunzip example.txt.gz </description>
+    </item>
+    <item>
+      <title>Tar</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/archive/tar/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/archive/tar/</guid>
+      <description>Archive Files link # -c: Create a new archive # -f: Use archive file tar -cf archive.tar example.txt tar -cf archive.tar example1.txt example2.txt # -z: filter the archive through gzip tar -zcf example.tar.gz example/ Extract Files link # -x: Extract files from an archive # -f: Use archive file tar -xf archive.tar tar -xf archive.tar.gz # output given directory tar -xf archive.tar --directory archived Display Contents without Extracting link tar -tf archive.</description>
+    </item>
+  </channel>
+</rss>

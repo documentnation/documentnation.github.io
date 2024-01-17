@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSINT on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/osint/</link>
+    <description>Recent content in OSINT on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/osint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OSINT (Open Source Intelligence)</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/osint/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/osint/</guid>
+      <description>Automation linkOSINT is a powerful method for investigating target organizations, websites, etc. However, it&amp;rsquo;s the tedious task to surfin the internet for finding desired information one by one. For that reason, it&amp;rsquo;s also recommended to use automation tools.&#xA;*It might overlap a bit with recon automation tools&#xA;BBOT&#xA;A powerful subdomain scanner and port mapper.&#xA;Blackbird&#xA;Searches accounts by username in social networks.&#xA;Maltego&#xA;A comprehensive tool for information gathering.</description>
+    </item>
+    <item>
+      <title>Google Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/google-dorks/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/google-dorks/</guid>
+      <description>Cache/Archive linkSearch the latest cached results.&#xA;cache:examle.com Country &amp;amp; Language linkIf we want to get search results with specific country and language, set parameters gl and hl.&#xA;# gl=us: United States # hl=en: English https://www.google.com/search?q=apple&amp;amp;gl=us&amp;amp;hl=en Directory Listing linkSearch websites which allow directory listings. We can retrieve all files if it&amp;rsquo;s enabled in websites.&#xA;intext: &amp;#34;Index of /admin&amp;#34; intext: &amp;#34;Index of /wp-admin&amp;#34; site:example.com intext: &amp;#34;Index of /admin&amp;#34; File Types linkSpecify the filetype e.</description>
+    </item>
+    <item>
+      <title>Person Investigation</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/person-investigation/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/person-investigation/</guid>
+      <description>Accounts in Social Media &amp;amp; Other Platforms linkThe target person may use some social media. So first check if the account exists in each platform.&#xA;Facebook GitHub Instagram Reddit Threads TikTok X (formerly Twitter) YoutTube Google Dorking linkAssume the target person named John Smith.&#xA;&amp;lt;social_media&amp;gt; john smith &amp;lt;social_media&amp;gt; jsmith &amp;lt;social_media&amp;gt; j.smith # add the year of birth &amp;lt;social_media&amp;gt; john1999 For example,&#xA;facebook jsmith reddit jsmith twitter jsmith IOSINT (Image OSINT) for Account Pictures linkIf the person sets the picture as user profile or posts, we can investigate the information about the image using IOSINT.</description>
+    </item>
+    <item>
+      <title>GitHub Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/github-dorks/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/github-dorks/</guid>
+      <description>Common Credentials link path:.env path:.env passwd path:.env password path:.env secret path:*.env api path:*.env passwd path:*.env password path:*.env secret path:config.* auth path:config.* password path:config.* passwd path:config.* token path:config.json password &amp;#34;example.com&amp;#34; password &amp;#34;example.com&amp;#34; passwd &amp;#34;example.com&amp;#34; credential &amp;#34;example.com&amp;#34; creds Web Conf link path:.htpasswd WordPress link path:wp-config.php Databases link path:.pgpass path:my.cnf path:redis.conf path:mongod.conf Git link path:.git-credentials Bash link path:.bash_history path:.bash_profile path:.bashrc path:.profile path:.bashrc password path:.bash_history root path:etc/passwd path:etc/shadow path:password.* SSH link path:id_rsa path:private_key path:.ssh/id_rsa Docker link path:docker.</description>
+    </item>
+    <item>
+      <title>Shodan Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/shodan-dorks/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/shodan-dorks/</guid>
+      <description> product:elastic port:9200 country:us product:postgresql port:5432 country:jp # Search &amp;#39;users&amp;#39; column proudct:elastic port:9200 users </description>
+    </item>
+    <item>
+      <title>IMINT (Image Intelligence) and GEOINT (Geospatial Intelligence)</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/imint-and-geoint/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/imint-and-geoint/</guid>
+      <description>Basic Investigation link open example.jpg Google Dorks linkSearch the keyword which is found in the image.&#xA;Name Location (country, city, etc.) When does it open Reverse Image Search linkUpload the image in each search engine.&#xA;Bing Images&#xA;Google Images&#xA;Click the “Search by image” icon and upload the image.&#xA;Yandex Images&#xA;Video (mp4) Geolocation linkFFmpeg extracts every single frame from a video.&#xA;# -i: input file # %06d: followed by six digits e.</description>
+    </item>
+    <item>
+      <title>Social Engineering</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/social-engineering/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/social-engineering/</guid>
+      <description>Investigate Emails/Phone Numbers link Have I Been Pwned&#xA;It checks if the email address or the phone number has been exposed.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Vision on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/computer-vision/</link>
+    <description>Recent content in Computer Vision on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 30 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Analysis for Machine Learning</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-analysis-for-machine-learning/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-analysis-for-machine-learning/</guid>
+      <description>In advance, load an image using Pillow (PIL).&#xA;import numpy as np from PIL import Image img = Image.open(&amp;#34;example.png&amp;#34;) Basic Information link # Filename img.filename # Image information img.info # Image format (PNG, JPG, etc.) img.format # Color mode (RPG, CMYK, etc.) img.mode # Image size img.size # Bytes img.tobytes() # Pixels np.array(img.getdata()) Plot Images link import matplotlib.pyplot as plt plt.imshow(img) plt.axis(&amp;#39;off&amp;#39;) # Turn off axis and labels plt.show() Hidden Information linkFind hidden data in the image by slightly changing.</description>
+    </item>
+    <item>
+      <title>Image Manipulation for Machine Learning</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-manipulation-for-machine-learning/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-manipulation-for-machine-learning/</guid>
+      <description>Swapping Pixels linkReference: https://www.kaggle.com/code/jonbown/ai-ctf-submissions?scriptVersionId=105606691&amp;amp;cellId=102&#xA;This example updates pixel values at specified positions.&#xA;import numpy as np from PIL import Image img = Image.open(&amp;#34;example.png&amp;#34;) # Reshape image data to desired size for easy processing pixels = np.array(img.getdata()) pixels = np.reshape(pixels, (28, 28)) # Update each pixel with desired value for changing image for i in range(img.size[0]): for j in range(img.size[1]): # change pixel value at position (8, 19) if i == 8 and j == 19: pixels[i, j] = 255 # change pixel value at position 25th row, 20th column onwards if i &amp;gt; 25 and j &amp;gt; 20: pixels[i, j] = np.</description>
+    </item>
+    <item>
+      <title>Image Recognition Bypass for Machine Learning</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-recognition-bypass-for-machine-learning/</link>
+      <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-recognition-bypass-for-machine-learning/</guid>
+      <description>The following techniques include those that are ineffective currently or in the future..&#xA;Blurring link from PIL import Image from PIL import ImageFilter img = Image.open(&amp;#34;example.png&amp;#34;) # Box blur img1 = img.filter(ImageFilter.BoxBlur(5)) # Gaussian blur img2 = img.filter(ImageFilter.GaussianBlur(5)) # Median filter img3 = img.filter(ImageFilter.MedianFilter(size=5)) # Rank filter img4 = img.filter(ImageFilter.RankFilter(size=13, rank=5)) Cropping/Rotating link from PIL import Image from PIL import ImageFilter img = Image.open(&amp;#34;example.png&amp;#34;) img = img.resize((512, 512)) img1 = img.</description>
+    </item>
+  </channel>
+</rss>

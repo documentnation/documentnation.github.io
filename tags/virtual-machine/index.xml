@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual Machine on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/virtual-machine/</link>
+    <description>Recent content in Virtual Machine on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/virtual-machine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VirtualBox Settings for NAT Network &amp; Port Forwarding</title>
+      <link>https://documentnation.github.io/docs/hdks/tool/virtual-machine/virtualbox-settings-for-nat-network-and-port-forwarding/</link>
+      <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/tool/virtual-machine/virtualbox-settings-for-nat-network-and-port-forwarding/</guid>
+      <description>1. Creat a New Network link Open network settings in Tools menu.&#xA;In General Options tab, fill each field as below. Regarding IPv4 Prefix field, we can see the IP address of local network by ip config command in Windows, or ip addr command inLinux. Here is the example.&#xA;Name: MyNetwork IPv4 Prefix: 10.x.x.x/24 or 192.168.x..x/24 Then uncheck Enable DHCP to set static ip address.&#xA;In Port Forwarding tab, set ip/port for each guest OS.</description>
+    </item>
+  </channel>
+</rss>

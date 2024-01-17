@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modular Arithmetic on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/modular-arithmetic/</link>
+    <description>Recent content in Modular Arithmetic on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/modular-arithmetic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modular Congruence</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</guid>
+      <description>Basic linkIn modular congruence, the following rules apply:&#xA;If `a ≡ b mod c`, then `b ≡ a mod c` So if we have the following problem,&#xA;39 ≡ x mod 8 To find x value, we can calculate it as below using Python.&#xA;x = 39 % 8 print(x) </description>
+    </item>
+    <item>
+      <title>Quadratic Residue</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</guid>
+      <description>Basic linkAn integer x is called a quadratic residue modulo p.&#xA;a**2 = x mod p Brute Force linkTo calculate a quadratic residue, the following Python script is an example for that.&#xA;p = 71 for a in range(p): qr = (pow(a, 2, p)) print(f&amp;#34;a={a} : qr={qr}&amp;#34;) Legendre Symbol linkAccording to Legendre Symbol, the following rules hold:&#xA;# `a` is a quadratic residue and `a != 0 mod p` a**(p-1)/2 mod p == 1 # `a` is a quadratic non-residue mod p a**(p-1)/2 mod p == -1 # `a ≡ 0 mod p` a**(p-1)/2 mod p == 0 We can check if an integer is a quadratic residue or not referring to the above.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/backup/</link>
+    <description>Recent content in Backup on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BorgBackup Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/backup/borgbackup-pentesting/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/backup/borgbackup-pentesting/</guid>
+      <description>Extract Archives link borg extract /path/to/archive::&amp;lt;archive_name&amp;gt; Enter passphrase: </description>
+    </item>
+  </channel>
+</rss>

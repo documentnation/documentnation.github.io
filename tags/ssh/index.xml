@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/ssh/</link>
+    <description>Recent content in SSH on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PPTP Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/pptp-pentesting/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/pptp-pentesting/</guid>
+      <description>Enumeration link nmap --script pptp-version -p 1723 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>Restricted Shell (rbash, rzsh) Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/restricted-shell-bypass/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/restricted-shell-bypass/</guid>
+      <description>After logged in a shell, sometimes we faced the error such as below when executing commands.&#xA;-rbash: cd: restricted -rbash: /usr/lib/command-not-found: restricted: cannot specify `/&amp;#39; in command names The target system uses a restricted shell so we may not be able to execute commonly used commands e.g. ls, cd, etc.&#xA;We need to bypass the restriction First.&#xA;Command Enumeration linkFirst check what commands can we execute.&#xA;Try running varied commands.</description>
+    </item>
+  </channel>
+</rss>

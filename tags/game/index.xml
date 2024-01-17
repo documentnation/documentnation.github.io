@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/game/</link>
+    <description>Recent content in Game on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minecraft Server Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/game/minecraft-server-pentesting/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/game/minecraft-server-pentesting/</guid>
+      <description>Run a Server link # Create the screen session screen -C &amp;lt;session_name&amp;gt; # Reattach to the session screen -r &amp;lt;session_name&amp;gt; Commands in the Server link # Print usage help </description>
+    </item>
+    <item>
+      <title>WebAssembly Games Hacking</title>
+      <link>https://documentnation.github.io/docs/hdks/game/webassembly-games-hacking/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/game/webassembly-games-hacking/</guid>
+      <description>Tools link Cetus&#xA;A browser extension for hacking WebAssembly games. To use it, open developer tool in Chrome or Firefox, and select Cetus tab.&#xA;Guess the Random Number link First off, try manually input the guessing number. Maybe you will fault then copy the result. Open developer tool and Cetus, in Search panel, paste the number in the Value form. Select “EQ (equal)”, and Value Type, Only Aligned Address?(&amp;ldquo;yes&amp;rdquo;). Click “Search” button.</description>
+    </item>
+  </channel>
+</rss>

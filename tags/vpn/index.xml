@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPN on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/vpn/</link>
+    <description>Recent content in VPN on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IPsec VPN Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/vpn/ipsec-vpn-pentesting/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/vpn/ipsec-vpn-pentesting/</guid>
+      <description>Enumeration link nmap --script http-cisco-anyconnect -p 443 &amp;lt;target-ip&amp;gt; nmap --script ike-version -p 500 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+  </channel>
+</rss>

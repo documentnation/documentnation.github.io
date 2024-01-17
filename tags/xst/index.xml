@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XST on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/xst/</link>
+    <description>Recent content in XST on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/xst/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XST (Cross-Site Tracing)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xst/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xst/</guid>
+      <description>Add Cookie Header link TRACE / HTTP/1.1 ... Cookie: name=value ... </description>
+    </item>
+  </channel>
+</rss>

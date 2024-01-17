@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reconnaissance on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/reconnaissance/</link>
+    <description>Recent content in Reconnaissance on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/reconnaissance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OSINT (Open Source Intelligence)</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/osint/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/osint/</guid>
+      <description>Automation linkOSINT is a powerful method for investigating target organizations, websites, etc. However, it&amp;rsquo;s the tedious task to surfin the internet for finding desired information one by one. For that reason, it&amp;rsquo;s also recommended to use automation tools.&#xA;*It might overlap a bit with recon automation tools&#xA;BBOT&#xA;A powerful subdomain scanner and port mapper.&#xA;Blackbird&#xA;Searches accounts by username in social networks.&#xA;Maltego&#xA;A comprehensive tool for information gathering.</description>
+    </item>
+    <item>
+      <title>Google Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/google-dorks/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/google-dorks/</guid>
+      <description>Cache/Archive linkSearch the latest cached results.&#xA;cache:examle.com Country &amp;amp; Language linkIf we want to get search results with specific country and language, set parameters gl and hl.&#xA;# gl=us: United States # hl=en: English https://www.google.com/search?q=apple&amp;amp;gl=us&amp;amp;hl=en Directory Listing linkSearch websites which allow directory listings. We can retrieve all files if it&amp;rsquo;s enabled in websites.&#xA;intext: &amp;#34;Index of /admin&amp;#34; intext: &amp;#34;Index of /wp-admin&amp;#34; site:example.com intext: &amp;#34;Index of /admin&amp;#34; File Types linkSpecify the filetype e.</description>
+    </item>
+    <item>
+      <title>Person Investigation</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/person-investigation/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/person-investigation/</guid>
+      <description>Accounts in Social Media &amp;amp; Other Platforms linkThe target person may use some social media. So first check if the account exists in each platform.&#xA;Facebook GitHub Instagram Reddit Threads TikTok X (formerly Twitter) YoutTube Google Dorking linkAssume the target person named John Smith.&#xA;&amp;lt;social_media&amp;gt; john smith &amp;lt;social_media&amp;gt; jsmith &amp;lt;social_media&amp;gt; j.smith # add the year of birth &amp;lt;social_media&amp;gt; john1999 For example,&#xA;facebook jsmith reddit jsmith twitter jsmith IOSINT (Image OSINT) for Account Pictures linkIf the person sets the picture as user profile or posts, we can investigate the information about the image using IOSINT.</description>
+    </item>
+    <item>
+      <title>Port Scan</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/port-scan/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/port-scan/</guid>
+      <description>Nmap linkNmap is still the most commonly used tool when scanning ports of the target system.&#xA;But in recent years, some other tools, such as masscan or rustscan, are also becoming popular because the tools scan faster than nmap.&#xA;Basic Scan linkIt&amp;rsquo;s recommened to do as stealth scan (SYN scan) by adding the option -sS.&#xA;Also it&amp;rsquo;s prefered to add -T2 flag for being polite.&#xA;sudo nmap -sS &amp;lt;target-ip&amp;gt; sudo nmap -sS &amp;lt;target-ip&amp;gt; -T2 # -V: OS version detection # -C: Default NSE sudo nmap -sSVC &amp;lt;target-ip&amp;gt; # -A: All detection sudo nmap -sS -A &amp;lt;target-ip&amp;gt; Skipping the host discovery</description>
+    </item>
+    <item>
+      <title>DNS (Domain Name Systems) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/dns/dns-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/dns/dns-pentesting/</guid>
+      <description>Enumeration linkYou can use Nmap to enumerate automatically.&#xA;nmap --script dns-nsec-enum --script-args dns-nsec-enum.domains vulnerable.com -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-random-srcport -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-recursion -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-service-discovery -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-* -p 53 &amp;lt;target-ip&amp;gt; nmap -n --script &amp;#34;(default and *dns*) or fcrdns or dns-srv-enum or dns-random-txid or dns-random-srcport&amp;#34; &amp;lt;target-ip&amp;gt; Investigation linkDNSdumpster is an online tool for reconnaissance DNS records.&#xA;IP Address from the Domain link host example.</description>
+    </item>
+    <item>
+      <title>Email Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/email-analysis/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/email-analysis/</guid>
+      <description>OSINT link InQuest Labs&#xA;Message Header Analyzer&#xA;Analyses message header of email. It helps to check the phishing emails.&#xA;PhishTool&#xA;Combines threat intelligence, OSINT, email metadata and battle tested auto-analysis pathways into one powerful phishing response platform.&#xA;Simple Email Reputation&#xA;Paste the sender’s email address to check if the address is suspicious.&#xA;VirusTotal&#xA;Email Source Analysis linkWe can see the email source in each provider or execute the following commands.</description>
+    </item>
+    <item>
+      <title>Subdomain Discovery</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/subdomain-discovery/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/subdomain-discovery/</guid>
+      <description>Automation link # https://github.com/projectdiscovery/subfinder subfinder -d example.com subfinder -d example.com -o domains.txt # https://github.com/blechschmidt/massdns ./scripts/subbrute.py lists/names.txt example.com | ./bin/massdns -r lists/resolvers.txt -t A -o S &amp;gt; results.txt # https://github.com/guelfoweb/knock knockpy vulnerable.com # Using wordlist knockpy -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt vulnerable.com # https://github.com/lc/gau printf example.com | gau cat domains.txt | gau --threads 5 # https://github.com/aboul3la/Sublist3r python3 sublist3r.py -d example.com # This sends requests a target web server directly so be careful # -mc: Match status code ffuf -u https://FUZZ.</description>
+    </item>
+    <item>
+      <title>GitHub Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/github-dorks/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/github-dorks/</guid>
+      <description>Common Credentials link path:.env path:.env passwd path:.env password path:.env secret path:*.env api path:*.env passwd path:*.env password path:*.env secret path:config.* auth path:config.* password path:config.* passwd path:config.* token path:config.json password &amp;#34;example.com&amp;#34; password &amp;#34;example.com&amp;#34; passwd &amp;#34;example.com&amp;#34; credential &amp;#34;example.com&amp;#34; creds Web Conf link path:.htpasswd WordPress link path:wp-config.php Databases link path:.pgpass path:my.cnf path:redis.conf path:mongod.conf Git link path:.git-credentials Bash link path:.bash_history path:.bash_profile path:.bashrc path:.profile path:.bashrc password path:.bash_history root path:etc/passwd path:etc/shadow path:password.* SSH link path:id_rsa path:private_key path:.ssh/id_rsa Docker link path:docker.</description>
+    </item>
+    <item>
+      <title>Find Leaked API Keys</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/find-leaked-api-keys/</link>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/find-leaked-api-keys/</guid>
+      <description>Awesome Resources link Keyhacks&#xA;This repository lists quick ways to find API keys of various providers.&#xA;Google Dorks linkGoogle Dorks is useful to search leaked API keys/tokens.&#xA;*Here is the simple example so might be unuseful. Please see Awesome Resources section if you are seriously looking for that.&#xA;Common APIs linkTry changing the site domain and the extensions e.g. js, py, go.&#xA;# GitHub repositories site:github.com ext:php &amp;#34;api-key&amp;#34; site:github.com ext:php &amp;#34;api_key&amp;#34; site:github.</description>
+    </item>
+    <item>
+      <title>Shodan Dorks</title>
+      <link>https://documentnation.github.io/docs/hdks/reconnaissance/shodan-dorks/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reconnaissance/shodan-dorks/</guid>
+      <description> product:elastic port:9200 country:us product:postgresql port:5432 country:jp # Search &amp;#39;users&amp;#39; column proudct:elastic port:9200 users </description>
+    </item>
+    <item>
+      <title>Subdomain Takeover</title>
+      <link>https://documentnation.github.io/docs/hdks/dns/subdomain-takeover/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/dns/subdomain-takeover/</guid>
+      <description>Automation link dnsReaper&#xA;git clone https://github.com/punk-security/dnsReaper.git cd dnsReaper python3 -m venv venv source venv/bin/activate pip3 install -r requirements.txt # Fetching from AWS python3 main.py aws --aws-access-key-id AWS_ACCESS_KEY_ID --domain example.com # Fetching from Azure python3 main.py azure --az-subscription-id AZ_SUBSCRIPTION_ID --domain example.com # Reading BIND zone file python3 main.py bind --bind-zone-file /path/to/zone/file --domain example.com # Fetching from Cloudflare python3 main.py cloudflare --cloudflare-token CLOUDFLARE_TOKEN --domain example.com # Fetching from DigitalOcean python3 main.py digitalocean --do-api-key DO_API_KEY --domain example.</description>
+    </item>
+    <item>
+      <title>Git GitHub Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/git-github-pentesting/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/git-github-pentesting/</guid>
+      <description>Git Commands for the Repository Investigation linkCheck Information link # Basic information git show git show &amp;lt;branch-name&amp;gt; git show &amp;lt;commit-id&amp;gt; git show &amp;lt;tag-name&amp;gt; git --git-dir /path/to/.git show # Configuration git config --list # Commit history git log git log --stat git --git-dir /path/to/.git log --stat # Compare the two commits git diff git diff --staged git diff --cached # Working tree status git status Back to the Previous Commits link # You can get the &amp;#34;commit-id&amp;#34; by &amp;#39;git log&amp;#39; git checkout &amp;lt;commit-id&amp;gt; git --git-dir /path/to/.</description>
+    </item>
+  </channel>
+</rss>

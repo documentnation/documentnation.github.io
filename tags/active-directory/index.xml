@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Active Directory on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/active-directory/</link>
+    <description>Recent content in Active Directory on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</guid>
+      <description>Automation linkWe might be able to find vulnerabilities on target Windows machine with automation tools as below:&#xA;WinPEAS wesng (Windows Exploit Suggester Next Generation) PrivescCheck LOLBAS (Living Off the Land Binaries, Scripts and Libraries) linkLOLBAS provides misuses tools and executables already in the Windows system. So check the website.&#xA;OS Information link hostname systeminfo systeminfo | findstr &amp;#34;OS&amp;#34; ver [System.Environment]::OSVersion.Version # Datetime Get-Date Interesting Information link # Current user whoami whoami /user whoami /groups whoami /priv whoami /all echo %username% # List users net user net users net user USERNAME Get-LocalUser # List groups net group net localgroup # List users in specific group net localgroup &amp;#34;Remote Management Users&amp;#34; # List user home directories Get-ChildItem C:\Users -Force # Network ipconfig ipconfig /all route print arp -A Get-NetAdapter # Firewall netsh firewall show state netsh firewall show config netsh advfirewall show allprofiles # PowerShell info Get-Host $Host $PSVersionTable # Display only the PowerShell version.</description>
+    </item>
+    <item>
+      <title>Active Directory Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/</guid>
+      <description>Enumeration link # Domain Controllers (DNS) discovery dig @&amp;lt;target-ip&amp;gt; &amp;lt;domain-name&amp;gt; any ffuf -u https://FUZZ.example.com -w subdomains.txt -mc 200,301,302,403 gobuster dns -d example.local -w subdomains.txt -t 25 Using BloodHound linkReference: BloodHound&#xA;# https://github.com/dirkjanm/BloodHound.py bloodhound-python -d example.local -dc example.local -ns &amp;lt;nameserver-ip&amp;gt; -u &amp;#39;username@example.local&amp;#39; -p &amp;#39;password&amp;#39; # https://github.com/NH-RED-TEAM/RustHound.git rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip # --ldaps: Force LDAPS rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip --ldaps Automation link Seatbelt Investigation link # List all users net user /domain net user &amp;lt;username&amp;gt; /domain Get-ADUser -Filter * Get-ADUser -Identity &amp;lt;username&amp;gt; -Server dc.</description>
+    </item>
+  </channel>
+</rss>

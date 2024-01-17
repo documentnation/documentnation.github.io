@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clustering on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/clustering/</link>
+    <description>Recent content in Clustering on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/clustering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cluster Analysis for Machine Learning</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/data-processing/cluster-analysis-for-machine-learning/</link>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/data-processing/cluster-analysis-for-machine-learning/</guid>
+      <description>Find Optimal Number of Clusters linkK-means &amp;amp; Elbow Curve linkReference: https://www.kaggle.com/code/jonbown/ai-ctf-submissions?scriptVersionId=105606691&amp;amp;cellId=39&#xA;We may find the optimal number of clusters by using K-means algorithm and observing the Elbow graph.&#xA;import numpy as np from sklearn.cluster import KMeans import matplotlib.pyplot as plt clusters = np.load(&amp;#34;example.npy&amp;#34;) # specify the range of the number of clusters K = range(1, 10) distortions = [] for i in K: kmeans = KMeans(n_clusters=i) kmeans.fit(clusters) distortions.append(kmeans.inertia_) plt.plot(K, distortions) plt.</description>
+    </item>
+  </channel>
+</rss>

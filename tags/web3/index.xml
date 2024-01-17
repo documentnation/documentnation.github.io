@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web3 on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/web3/</link>
+    <description>Recent content in Web3 on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/blockchain-pentesting/</link>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/blockchain-pentesting/</guid>
+      <description>Explore Transactions link blockchain.com&#xA;The most popular and trusted block explorer and crypto transaction search engine.&#xA;Block Explorer&#xA;The Handshake Block Explorer.&#xA;etherchain.org&#xA;The Ethereum blockchain explorer.&#xA;OXT&#xA;Explore Wallets link Wallet Explorer </description>
+    </item>
+    <item>
+      <title>Web3.js Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/web3-js-cheat-sheet/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/web3-js-cheat-sheet/</guid>
+      <description>Blocks link // Get block web3.eth.getBlock(&amp;#39;latest&amp;#39;) Converting link // Wei to Ether web3.utils.fromWei(&amp;#39;1000000000000000000&amp;#39;, &amp;#39;ether&amp;#39;) // &amp;#34;1&amp;#34; // Ether to Wei web3.utils.toWei(&amp;#39;0.001&amp;#39;) // &amp;#34;1000000000000000&amp;#34; Contract link // Initialize a contract const tokenAbi = [...]; // JSON interface const tokenAddress = &amp;#39;0x1234...&amp;#39;; const contract = new web3.eth.Contract(tokenAbi, tokenAddress); Send Ether to Contract link // Send ether to the contract with interacting ABI contract.example({value: web3.utils.toWei(&amp;#39;0.001&amp;#39;)}) // Send ether to the contract from outside contract.</description>
+    </item>
+    <item>
+      <title>Interact with Ethereum using Foundry</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/interact-with-ethereum-using-foundry/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/interact-with-ethereum-using-foundry/</guid>
+      <description>Setup Foundry linkPlease refer to the Foundry&amp;rsquo;s repository for details.&#xA;To install foundryup, run the following command to install foundry toolchain.&#xA;curl -L https://foundry.paradigm.xyz | bash foundryup We can set the environment variable for Ethereum RPC URL to interact the Ethereum blockchain so that we don’t need to set the RPC url flag when running each command.&#xA;export ETH_RPC_URL=&amp;#34;http://10.0.0.1:12345/path/to/rpc&amp;#34; Investigating a Chain linkcast command of Foundry performs Ethereum RPC calls.</description>
+    </item>
+    <item>
+      <title>Compile, Deploy, Run Smart Contract</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/compile-deploy-run-smart-contract/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/compile-deploy-run-smart-contract/</guid>
+      <description>Ethereum Remix Extension in VS Code linkEthereum Remix extension is the VS Code plugin that can perform a variety of tasks such as verifying contracts.&#xA;1. Connect linkIn the left pane, click Explorer tab and open the &amp;ldquo;REMIX&amp;rdquo; field at the bottom. Then choose &amp;ldquo;Run &amp;amp; Deploy&amp;rdquo; and select &amp;ldquo;Activate&amp;rdquo;. The &amp;ldquo;Run &amp;amp; Deploy&amp;rdquo; window opens.&#xA;In Connection field, enter the address and click Connect.&#xA;2. Compile linkNext, select the file you want to compile, and click Compile.</description>
+    </item>
+    <item>
+      <title>Interact with Ethereum using Python</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/interact-with-ethereum-using-python/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/interact-with-ethereum-using-python/</guid>
+      <description>Preparation linkTo use “py-solc”, the Ethereum and Solidity are required in our system. So if you don’t have them yet, install them.&#xA;sudo add-apt-repository ppa:ethereum/ethereum sudo apt-get update sudo apt-get install solc Install Python Packages link pip3 install py-solc pip3 install web3 Compile Contract link import solc with open(&amp;#39;MyContract.sol&amp;#39;, &amp;#39;r&amp;#39;) as f: contract_source_code = f.read() compiled_sol = solc.compile_source(contract_source_code) contract_bytecode = compiled_sol[&amp;#39;&amp;lt;stdin&amp;gt;:MyContract&amp;#39;][&amp;#39;bin&amp;#39;] contract_abi = compiled_sol[&amp;#39;&amp;lt;stdin&amp;gt;:MyContract&amp;#39;][&amp;#39;abi&amp;#39;] Interact with Ethereum Chain linkCreate the Python script using web3 to interact with blockchain.</description>
+    </item>
+  </channel>
+</rss>

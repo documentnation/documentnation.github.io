@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/iot/</link>
+    <description>Recent content in IoT on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firmware Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/hardware/firmware-analysis/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/hardware/firmware-analysis/</guid>
+      <description>Static Analysis linkThe following tools are useful for static analysis.&#xA;Firmwalker firmware-mod-kit file ./firmware binwalk ./firmware # -M: Matryosika (recursively) scan extracted files # -r: Delete carved files after extracting # -e: Extract known file types binwalk -Mre ./firmware # -E: Calculate file entropy # -N: Do not generate an entropy plot graph binwalk -EN ./firmware # firmware-mod-kit ./extract-firmware.sh ./firmware Dynamic Analysis link gdb ./firmware rizin ./firmware Using FIRMADYNE linkFIRMADYNE is a platform for emulation and dynamic analysis of Linux-based firmware.</description>
+    </item>
+    <item>
+      <title>MQTT Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/hardware/mqtt-pentesting/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/hardware/mqtt-pentesting/</guid>
+      <description>Enumeration link nmap --script mqtt-subscribe -p 1883 &amp;lt;target-ip&amp;gt; Interaction linkmosquitto is a MQTT utilities that include a broker and publish/subscribe clients.&#xA;We use the mosquitto to interact with MQTT.&#xA;If you don’t have mosquitto in Linux, install packages.&#xA;sudo apt install -y mosquitto mosquitto-clients Subscribe to a Topic link # -h: Host # -t: Topic (&amp;#39;#&amp;#39; means &amp;#34;all topics&amp;#34;) # -d: Debug mode mosquitto_sub -h example.com -t &amp;#39;#&amp;#39; -d mosquitto_sub -h example.</description>
+    </item>
+    <item>
+      <title>NETGEAR Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/hardware/netgear-pentesting/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/hardware/netgear-pentesting/</guid>
+      <description>Enumeration link nmap --script modbus-discover --script-args modbus-discover.aggressive=true -p 502 &amp;lt;target-ip&amp;gt; Default Credentials link admin:password </description>
+    </item>
+  </channel>
+</rss>

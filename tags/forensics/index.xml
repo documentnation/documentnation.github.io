@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forensics on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/forensics/</link>
+    <description>Recent content in Forensics on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Forensics</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/</guid>
+      <description>System Information linkIP Address &amp;amp; MAC Address linkBelow are the location of the file which contains the information of IP address and MAC address.&#xA;# Look@LAN is a network monitoring tool. So if the system uses the tool, we can retrieve the information of the network. # LANIP -&amp;gt; IP address # LANNIC -&amp;gt; MAC address c:\Program Files (x86)\Look@LAN\irunin.ini Network Cards linkThe name of the network card is such like “Intel(R) PRO/1000 MT Desktop Adapter”.</description>
+    </item>
+    <item>
+      <title>Memory Forensics</title>
+      <link>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</guid>
+      <description>Volatility linkVolatility is an useful tool for memory forensics.&#xA;If you use a Debian based operating system, you can install using apt.&#xA;sudo apt install volatility3 # Confirm if download successfully vol -h However, it’s recommended to download it from the GitHub repository if you want the latest stable version.&#xA;Target: Windows link # Determine the operating system python3 vol.py -f example.vmem windows.info # Dump password hashes python3 vol.py -f example.</description>
+    </item>
+  </channel>
+</rss>

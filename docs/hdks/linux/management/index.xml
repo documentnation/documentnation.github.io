@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Management on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/management/</link>
+    <description>Recent content in Management on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:37:45 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>File Transfer in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-transfer-in-linux/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-transfer-in-linux/</guid>
+      <description>Using Wget linkIn machine A, Start a web server.&#xA;python -m http.server # We can specify which directory to host by `--directory` option. python -m http.server --directory /usr/bin In machine B, download a file from the web server of machine A.&#xA;wget http://&amp;lt;ip-for-machine-A&amp;gt;:8000/example.txt # Download recursively # -r: recursive # -np: no parent # Don&amp;#39;t forget &amp;#34;/&amp;#34; after the directory name wget -r -np http://&amp;lt;ip-for-machine-A&amp;gt;/somedir/ Using Netcat linkTransfer a File linkIn machine A, start a listener for receiving a file.</description>
+    </item>
+    <item>
+      <title>Shell Scripting</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/shell-scripting/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/shell-scripting/</guid>
+      <description>For Loop link #!/bin/bash for i in {1..5} do echo &amp;#34;Hello $i&amp;#34; done 4 Digits Loop link #!/bin/bash for i in {0000..9999} do echo $i done Read Text Line by Line linkread-text.sh&#xA;#!/bin/bash while read line do echo $line done &amp;lt; example.txt Retrieve Arguments linkGetopts is useful.&#xA;Create &amp;ldquo;my_opt.sh&amp;rdquo;.&#xA;#!/bin/bash getopts c cmd echo $cmd Run. This output is the current username.&#xA;./my_opt.sh -cwhoami While Loop and Retrieving Arguments&#xA;Create “my_while_opt.</description>
+    </item>
+    <item>
+      <title>Add &amp; Delete Groups in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-groups-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-groups-in-linux/</guid>
+      <description>Add/Delete Groups link # Add a group groupadd &amp;lt;group&amp;gt; # Delete a group groupdel &amp;lt;group&amp;gt; Add User to Group link # -a: Append the user to the specific group # -G: Group usermod -a -G &amp;lt;group&amp;gt; &amp;lt;user&amp;gt; # Change user&amp;#39;s primary group # -g: GID usermod -g &amp;lt;group&amp;gt; &amp;lt;user&amp;gt; Sudo Group linkUssers who belong to sudo group can execute commands with sudo. To add a user to the sudo group, run the following command.</description>
+    </item>
+    <item>
+      <title>Add &amp; Delete Users in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-user-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/add-and-delete-user-in-linux/</guid>
+      <description>Add Users linkWe can use useradd or adduser command to add users in Linux.&#xA;useradd &amp;lt;user&amp;gt; adduser &amp;lt;user&amp;gt; # -p: Specify password useradd &amp;lt;user&amp;gt; -p &amp;lt;password&amp;gt; # -u: Specify UID # -g: Specify GID useradd -u 1000 -g 1000 &amp;lt;user&amp;gt; Set Password for User link # Set passwords. It&amp;#39;s stored in &amp;#34;/etc/shadow&amp;#34; passwd &amp;lt;user&amp;gt; Delete Users linkWe can use userdel or deluser command to delete users in Linux.&#xA;userdel &amp;lt;user&amp;gt; deluser &amp;lt;user&amp;gt; # -r: Remove home directory and mail spool userdel -r &amp;lt;user&amp;gt; List Users in Linux linkTo list users exist in Linux, run the following commands.</description>
+    </item>
+    <item>
+      <title>File &amp; Directory Ownership in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-ownership-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-ownership-in-linux/</guid>
+      <description>Change Ownership to Specific User link chown &amp;lt;user&amp;gt; &amp;lt;file&amp;gt; chown &amp;lt;user&amp;gt; &amp;lt;dir&amp;gt; # -R: Recursive chown -R &amp;lt;user&amp;gt; &amp;lt;dir&amp;gt; Examples link chown tester example.txt chown tester ./example chown -R tester ./example Change Ownership to Specific Group link chown :&amp;lt;group&amp;gt; &amp;lt;file&amp;gt; chown :&amp;lt;group&amp;gt; &amp;lt;dir&amp;gt; # -R: Recursive chown -R :&amp;lt;group&amp;gt; &amp;lt;dir&amp;gt; Examples link chown :testers example.txt chown :testers ./example chown -R :testers ./example Change Ownership to Specific User&amp;amp;Group linkWe can give ownership of file/directory to specific both use and group at the same time.</description>
+    </item>
+    <item>
+      <title>File &amp; Directory Permission in Linux</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-permission-in-linux/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/management/file-and-directory-permission-in-linux/</guid>
+      <description>Basic link Permission Number Character Read 4 r Write 2 w Execute 1 x We can use these value combination for changing permission.&#xA;For example,&#xA;Permission Number Character Read + Write + Execute 4+2+1=7 rwx Read + Write 4+2=6 rw Read 4 r Cheat Sheet linkRead/Write/Execute link Target Command User chmod 700 sample.txt chmod u+rwx sample.txt Group chmod 070 sample.txt chmod g+rwx sample.txt Others chmod 007 sample.txt chmod o+rwx sample.txt All chmod 777 sample.</description>
+    </item>
+  </channel>
+</rss>

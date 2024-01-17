@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Email on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/email/</link>
+    <description>Recent content in Email on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/email/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>POP (Post Office Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/email/pop-pentesting/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/email/pop-pentesting/</guid>
+      <description>Enumeration link nmap --script &amp;#34;pop3-capabilities or pop3-ntlm-info&amp;#34; -p 110 &amp;lt;target-ip&amp;gt; Connect link nc &amp;lt;target-ip&amp;gt; 110 # or telnet &amp;lt;target-ip&amp;gt; 110 Commands link # Login USER &amp;lt;username&amp;gt; PASS &amp;lt;password&amp;gt; # Number and total size of all messages STAT # List messages and size LIST # Retrieve the message of given number RETR &amp;lt;number&amp;gt; # Delete the message of given number DELE &amp;lt;number&amp;gt; # Reset the mailbox RSET # Exit the mail server QUIT </description>
+    </item>
+    <item>
+      <title>Receive Email as Another Address</title>
+      <link>https://documentnation.github.io/docs/hdks/email/receive-email-as-another-address/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/email/receive-email-as-another-address/</guid>
+      <description>Exploit DNS Zone Misconfiguration &amp;amp; BIND Config linkIf target host has the domain for email e.g. “mail.example.com” and we can get BIND secret key, we can update&#xA;1. Get BIND Secret Key linkWe need to get the BIND key in the config file.&#xA;# /etc/bind/named.conf key &amp;#34;rndc-key&amp;#34; { algorithm hmac-sha256; secret &amp;#34;zBatC828gunRa...bA=&amp;#34;; }; 2. Update DNS Zone linkAfter retrieving the BIND secret, update DNS zone to add the new record for receiving email, with subdomain and our ip address.</description>
+    </item>
+    <item>
+      <title>SMTP (Simple Mail Transfer Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/email/smtp-pentesting/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/email/smtp-pentesting/</guid>
+      <description>Enumeration link nmap --script smtp-brute -p 25,465,587 &amp;lt;target-ip&amp;gt; nmap --script smtp-commands -p 25,465,587 &amp;lt;target-ip&amp;gt; nmap --script smtp-enum-users -p 25,465,587 &amp;lt;target-ip&amp;gt; nmap --script smtp-ntlm-info --script-args smtp-ntlm-info.domain=example.com -p 25,465,587 &amp;lt;target-ip&amp;gt; nmap --script smtp-vuln-cve2011-1764 -p 25,465,587 &amp;lt;target-ip&amp;gt; nmap --script smtp-* -p 25,465,587 &amp;lt;target-ip&amp;gt; MX Domains link dig mx example.com Users link # VRFY - check if the user exists in the SMTP server smtp-user-enum -M VRFY -u &amp;lt;username&amp;gt; -t &amp;lt;target-ip&amp;gt; smtp-user-enum -M VRFY -U usernames.</description>
+    </item>
+    <item>
+      <title>IMAP (Internet Message Access Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/email/imap-pentesting/</link>
+      <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/email/imap-pentesting/</guid>
+      <description>Enumeration link nmap --script imap-capabilities -p 143 &amp;lt;target-ip&amp;gt; Banner Grabbing link nc -nv &amp;lt;target-ip&amp;gt; 143 openssl s_client -connect &amp;lt;IP&amp;gt;:993 -quiet Connect link telnet 10.0.0.1 143 Commands link # Login a1 login &amp;#34;&amp;lt;username&amp;gt;&amp;#34; &amp;#34;&amp;lt;password&amp;gt;&amp;#34; # Logout a1 logout # Close mailbox a1 close </description>
+    </item>
+  </channel>
+</rss>

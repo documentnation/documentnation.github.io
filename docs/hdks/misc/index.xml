@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/misc/</link>
+    <description>Recent content in Misc on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:53:58 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programming Language Detection</title>
+      <link>https://documentnation.github.io/docs/hdks/misc/programming-language-detection/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/misc/programming-language-detection/</guid>
+      <description>Brainfuck link &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;[ -&amp;gt;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;lt;]&amp;gt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;.&amp;lt; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; [-&amp;gt;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;lt;] &amp;gt;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;.&amp;lt;&amp;#43;&amp;#43; &amp;#43;[-&amp;gt;- --&amp;lt;]&amp;gt; ----- .&amp;lt;&amp;#43;&amp;#43;&amp;#43; [-&amp;gt;&amp;#43;&amp;#43; &amp;#43;&amp;lt;]&amp;gt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;.&amp;lt; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;[-&amp;gt; ----- --&amp;lt;]&amp;gt; ----- --.&amp;lt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;[ -&amp;gt;--- --&amp;lt;]&amp;gt; -.&amp;lt;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;[-&amp;gt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;lt;]&amp;gt; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; .&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;.- --.&amp;lt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;[- &amp;gt;---- ----- &amp;lt;]&amp;gt;-- ----- ----. ---.&amp;lt; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;[- &amp;gt;&amp;#43;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;&amp;lt; ]&amp;gt;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;.&amp;lt; &amp;#43;&amp;#43;&amp;#43;&amp;#43;[ -&amp;gt;&amp;#43;&amp;#43;&amp;#43; &amp;#43;&amp;lt;]&amp;gt;&amp;#43; .&amp;lt;&amp;#43;&amp;#43;&amp;#43; &amp;#43;[-&amp;gt;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;lt;] &amp;gt;&amp;#43;&amp;#43;.. &amp;#43;&amp;#43;&amp;#43;&amp;#43;. ----- ---.&amp;#43; &amp;#43;&amp;#43;.&amp;lt;&amp;#43; &amp;#43;&amp;#43;[-&amp;gt; ---&amp;lt;] &amp;gt;---- -.&amp;lt;&amp;#43;&amp;#43; &amp;#43;&amp;#43;&amp;#43;&amp;#43;[ -&amp;gt;--- ---&amp;lt;] &amp;gt;---- --.</description>
+    </item>
+    <item>
+      <title>Regular Expressions (Regex/RegExp)</title>
+      <link>https://documentnation.github.io/docs/hdks/misc/regular-expressions/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/misc/regular-expressions/</guid>
+      <description>Online Tools link RegExp Playground&#xA;You’re able to try various patterns in this site easily.&#xA;RegExr&#xA;Learn, build, and test regex.&#xA;Commands linkGrep Pattern Matching link grep -E &amp;#39;^0\d{9,10}$&amp;#39; example.txt egrep &amp;#39;[a-zA-Z0-9]&amp;#43;\@\w\.com&amp;#39; example.txt Example Patterns linkBelow is the basic examples.&#xA;[a-z] # a, b, c, ..., y, z [a-z]&amp;#43; # abc, aaabbbcc, ghslkdja, ... [a-zA-Z] # a, A, b, B, ..., z, Z [a-z]zz # azz, bzz, czz, ... [a-zA-Z]&amp;#43;zz # azz, AaBbCdefzz, hkIkWEzz, .</description>
+    </item>
+  </channel>
+</rss>

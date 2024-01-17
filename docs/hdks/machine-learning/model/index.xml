@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/machine-learning/model/</link>
+    <description>Recent content in Model on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:33:02 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/machine-learning/model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model Inversion Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/model/model-inversion-attack/</link>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/model/model-inversion-attack/</guid>
+      <description>Model Inversion Attack linkReference: OpenMined Tutorial&#xA;1. Import Modules link import numpy as np from collections import namedtuple import torch import torch.nn as nn from torch.utils.data import DataLoader import torchvision.transforms as transforms from torchvision.datasets import EMNIST, MNIST from tqdm.notebook import tqdm, trange import matplotlib.pyplot as plt 2. Set Hyperparameters of Each Model linkNext, we prepare the hyperparemeters for each model. These values will be used for training, splitting dataset, etc.</description>
+    </item>
+    <item>
+      <title>Adversarial Attack with FGSM (Fast Gradient Signed Method)</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/model/adversarial-attack-with-fgsm/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/model/adversarial-attack-with-fgsm/</guid>
+      <description>Create Adversarial Examples against ResNet linkReference: PyTorch Docs&#xA;It&amp;rsquo;s recommended to use an environment which is optimized to implement a machine learning model such as Google Colaboratory, Jupyter Notebook.&#xA;1. Import Modules link import torch import torch.nn as nn import torch.nn.functional as F from torchvision import datasets, models, transforms import numpy as np from PIL import Image 2. Load ResNet Model linkWe load the ResNet50 pretrained on ImageNet. It&amp;rsquo;s no problem whether ResNet18, ResNet34, etc.</description>
+    </item>
+    <item>
+      <title>ML Model Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/model/ml-model-analysis/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/model/ml-model-analysis/</guid>
+      <description>Model Investigation linkUsing Keras link from tensorflow import keras from keras.models import load_model model = load_model(&amp;#34;example.h5&amp;#34;) # Summarization print(model.summary()) # Configuration print(model.get_config()) # List inputs print(model.inputs) # List outputs print(model.outputs) Using PyTorch linkIf we don’t have torchinfo, we need to install it at first.&#xA;pip install torchinfo Here is the code for investigation.&#xA;import torch from torchinfo import summary model = torch.load(&amp;#34;example.pt&amp;#34;) model.eval() # it&amp;#39;s not required for investigation only but required when inferening batch_size = 16 print(summary(model=model, input_size=(batch_size, 3, 16, 16))) # Also simply show model&amp;#39;s state dict print(model.</description>
+    </item>
+  </channel>
+</rss>

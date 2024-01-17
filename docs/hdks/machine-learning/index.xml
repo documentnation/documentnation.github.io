@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/machine-learning/</link>
+    <description>Recent content in Machine Learning on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:31:26 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jupyter Notebook Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/jupyter-notebook-pentesting/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/jupyter-notebook-pentesting/</guid>
+      <description>Run Notebook Server Locally link # For Jupyterlab (more advanced than notebook) pip install jupyterlab jupyter-lab # Specify the token jupyter-lab --NotebookApp.token=abcdef... # For Notebook (classic) pip install notebook jupyter notebook # Specify the token jupyter notebook --NotebookApp.token=abcdef... After that, we can access to http://127.0.0.1:8888/ in browser.&#xA;Authorization with Token linkReference: https://jupyter-notebook.readthedocs.io/en/stable/security.html&#xA;If we have the token for Jupyter notebook server, we can authorize it by adding the token in the “Authorization” HTTP header.</description>
+    </item>
+    <item>
+      <title>Read HDF5 (H5) File</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/read-hdf5-file/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/read-hdf5-file/</guid>
+      <description>TensorFlow link import tensorflow as tf model = tf.keras.models.load_model(&amp;#34;example.h5&amp;#34;) model.summary() h5py linkh5py is the Python library to read and write HDF5 files.&#xA;Installation link pip3 install h5py Read HDF5 (H5) linkThen run the following script.&#xA;import h5py with h5py.File(&amp;#39;example.hdf5&amp;#39;, &amp;#39;r&amp;#39;) as f: # Get all keys print(&amp;#34;All keys: %s&amp;#34; % f.keys()) # Get an object print(&amp;#34;Object: &amp;#34; % f[&amp;#34;key_name&amp;#34;]) print(&amp;#34;Object keys: &amp;#34; % f[&amp;#34;key_name&amp;#34;].keys()) print(&amp;#34;Sub object: &amp;#34; % f[&amp;#34;key_name&amp;#34;][&amp;#34;sub_key_name&amp;#34;]) Write HDF5 (H5) link import h5py import numpy as np data_matrix = np.</description>
+    </item>
+    <item>
+      <title>Read PT File</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/read-pt/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/read-pt/</guid>
+      <description>Load Model from PT link import torch import torch.nn as nn class ExampleModel(nn.Module): def __init__(self): super().__init__() self.flatten = nn.Flatten() self.linear_relu_stack = nn.Sequential( nn.Linear(28*28, 512), nn.ReLU(), nn.Linear(512, 10)) def forward(self, x): x = self.flatten(x) logits = self.linear_relu_stack(x) return logits model = ExampleModel() model.load_state_dict(torch.load(&amp;#39;example.pt&amp;#39;)) print(model) </description>
+    </item>
+    <item>
+      <title>Read QASM</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/read-qasm/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/read-qasm/</guid>
+      <description>Install Qiskit link pip install oqi qiskit Read QASM link from qiskit import QuantumCircuit, transpile from qiskit.providers.aer import QasmSimulator from qiskit.visualization import plot_histogram simulator = QasmSimulator() circuit = QuantumCircuit.from_qasm_file(&amp;#39;example.qasm&amp;#39;) compiled_circuit = transpile(circuit, simulator) job = simulator.run(compiled_circuit, shots=1000) result = job.result() counts = result.get_counts(compiled_circuit) print(counts) </description>
+    </item>
+    <item>
+      <title>Orange Data Mining</title>
+      <link>https://documentnation.github.io/docs/hdks/machine-learning/orange-data-mining/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/machine-learning/orange-data-mining/</guid>
+      <description>Installation &amp;amp; Start linkTo install Orange, we can install it with pip in Linux.&#xA;pip install PyQt5 PyQtWebEngine pip install orange3 Basic Usage link1. Start Orange Software link python -m Orange.canvas 2. Open .OWS File linkWhen the Orange starts, open the “.ows” file.&#xA;3. Import Data File linkAdd the File widget in the left pane, and import data file such as “.csv”.&#xA;4. Workflows linkConnect the File widget with the Scatter Plot widget and open the Scatter Plot.</description>
+    </item>
+  </channel>
+</rss>

@@ -289,13 +289,6 @@
       <description>Remote Code Execution (CVE-2022-26134) linkDownload the exploit from the repo.&#xA;python3 exploit.py -u http://&amp;lt;target-ip&amp;gt; -c whoami </description>
     </item>
     <item>
-      <title>AWS (Amazon Web Services) Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/web/cloud/aws-pentesting/</link>
-      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/web/cloud/aws-pentesting/</guid>
-      <description>Amazon Resource Names (ARNs) link # Format arn:aws:&amp;lt;service&amp;gt;:&amp;lt;region&amp;gt;:&amp;lt;account_id&amp;gt;:&amp;lt;resource_type&amp;gt;/&amp;lt;resource_name&amp;gt; Identify and Access Management (IAM) link # Add credentials # This will add entries to .aws/config or .aws/credentials in user&amp;#39;s home directory. # &amp;lt;profile-name&amp;gt; is arbitrary. aws configure --profile &amp;lt;profile-name&amp;gt; # List credentials aws configure list --profile &amp;lt;profile-name&amp;gt; # Find the account id belonging to an access key (access key starts with &amp;#34;AKIA&amp;#34;) aws sts get-access-key-info --access-key-id AKIAQ31B... # Determin the username the access key you&amp;#39;re using belogns to aws sts get-caller-identity --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account aws ec2 describe-instances --output text --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account in a dirrerent region aws ec2 describe-instances --output text --region us-east-1 --profile &amp;lt;profile-name&amp;gt; Amazon S3 linkA public cloud storage resource available in Amazon Web Services (AWS) Simple Storage Service (S3), an object storage offering.</description>
-    </item>
-    <item>
       <title>Code Deobfuscation</title>
       <link>https://documentnation.github.io/docs/hdks/web/code-deobfuscation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -6,14 +6,63 @@
     <description>Recent content in Cryptography on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kerberos TGT Cracking</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/kerberos-tgt-cracking/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/kerberos-tgt-cracking/</guid>
+      <description>Crack TGT linkFirst convert the TGT to the hash which can be cracked by John The Ripper.&#xA;kirbi2john tgt.kirbi &amp;gt; hash.txt # or python2 /usr/share/john/kirbi2john.py tgt.kirbi &amp;gt; hash.txt Then crack.&#xA;john --wordlist=wordlist.txt hash.txt </description>
+    </item>
+    <item>
+      <title>NTLM, NTLMv2</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ntlm-ntlmv2/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ntlm-ntlmv2/</guid>
+      <description>Hash Formats linkThe NTLM hash format is a bit comfused, but it looks like the following.&#xA;When cracking, we can copy them as they are and paste it.&#xA;# NTLM b4b9b02e6f09a9bd760f388b67351e2b # NTLMv2 (NetNTLMv2) admin::EXAMPLE:aaaaaaaaaaaaaaaa:05e616169cf91bd88952bc3ef021dbaf:010100000000000080fc3d82a538d90182f1dba634ba98dd000000000100100053006b005400410052006e00520064000300100053006b005400410052006e0052006400020010006700480068007500670042006200470004001000670048006800750067004200620047000700080080fc3d82a538d901060004000200000008003000300000000000000000000000003000007c8dad06f879f804f9ee43a11aeaf5bf40609db4020697af76cd06f80d81241b0a0010000000000000000000000000000000000009001a0063006900660073002f00310030002e0032002e0034002e0033000000000000000000 Decrypt linkThere are online cracking tools sucy as CrackStation available.&#xA;Using John TheRipper, it might work without specyfing the hash format by detecting automatically, so try the following command.&#xA;john --wordlist=wordlist.txt hash.txt NTLM link john --format=nt --wordlist=wordlist.</description>
+    </item>
+    <item>
+      <title>DES (Data Encryption Standard)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/des/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/des/</guid>
+      <description>Basic Encryption/Decription with OpenSSL link1. Prepare Plain Text File linkAt first, we create a text file which contains a simple word &amp;ldquo;hello&amp;rdquo;.&#xA;echo hello &amp;gt; hello.txt 2. Encrypt the Plain Text File linkUsing openssl, we can encrypt the file using DES algorithm. We&amp;rsquo;re asked the password so enter the new one.&#xA;openssl des -e -in hello.txt -out encrypted.enc After encryption, we can send the encrypted file to someone else. And someone can decrypt it with the DES algorithm.</description>
+    </item>
+    <item>
+      <title>Diffie-Hellman Key Exchange</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/diffie-hellman-key-exchange/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/diffie-hellman-key-exchange/</guid>
+      <description>Overview linkDH calculates shared secrets with public keys and secret keys. Below is a Python script to calculate shared secrets for A and B. These (ss_A and ss_B) should be the same value with each other.&#xA;# Calculate public keys (A, B) # p: public key (a prime number) # g: public key (a primitive root modulo `p`) # a, b: secret key A = pow(g, a, p) B = pow(g, b, p) # Calculate shared secret ss_A = pow(A, b, p) ss_B = pow(B, a, p) # Shared secrets should be the same value each other print(ss_A == ss_B) # True print(pow(pow(g, a, p), b, p) == pow(pow(g, b, p), a, p)) # True Key Exchange Flow using OpenSSL linkReference: https://tryhackme.</description>
+    </item>
     <item>
       <title>SSH (Secure Shell) Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</link>
       <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</guid>
       <description>Enumeration link nmap --script ssh-brute -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-auth-methods --script-args=&amp;#34;ssh.user=username&amp;#34; -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-* -p 22 &amp;lt;target-ip&amp;gt; # User enumeration msfconsole msf&amp;gt; use auxiliary/scanner/ssh/ssh_enumusers Brute Force Credentials link # -t: tasks hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; ssh -t 4 # Specific ports hydra -l username -P passwords.txt -s 2222 &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -l username -P passwords.</description>
+    </item>
+    <item>
+      <title>ECC (Elliptic Curve Cryptography)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ecc/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ecc/</guid>
+      <description>*This article has few content yet.&#xA;Formula link Y**2 = X**3 &amp;#43; a*X &amp;#43; b </description>
+    </item>
+    <item>
+      <title>ECDSA (Elliptic Curve Digital Signature Algorithm)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ecdsa/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ecdsa/</guid>
+      <description>ECDSA in Python linkpython-ecdsa can be used for ECDSA.&#xA;pip install ecdsa Verifying link from ecdsa import SigningKey, NIST384p sk = SigningKey.generate(curve=NIST384p) vk = sk.verifying_key signature = sk.sign(b&amp;#34;message&amp;#34;) print(vk.verify(signature, b&amp;#34;message&amp;#34;)) Generating SigningKey link from ecdsa import SigningKey, NIST384p sk = SigningKey.generate(curve=NIST384p) sk_string = sk.to_string() print(sk_string.hex()) sk2 = SigningKey.from_string(sk_string, curve=NIST384p) print(sk2.to_string().hex()) </description>
+    </item>
+    <item>
+      <title>AES-CBC Bit Flipping Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-cbc-bit-flipping-attack/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-cbc-bit-flipping-attack/</guid>
+      <description>How It Works linkHere is an CTF example.&#xA;Assume that a plaintext and ciphertext pair as follow.&#xA;# plaintext logged_username=admin&amp;amp;parsword=aNth3m2023&amp;amp;password=g0ld3n_b0y # ciphertext generated from the plaintext f9d300b808e4c5ab535bc2c71600b58c328d2dc808ffa98740253a9f1fd905a05ddc53999f7f515427212aad1ea8831d2833732d29529899a0ec964c2f23fb58 Usually, CBC (Cipher Block Chaining) mode encrypts a plaintext every 16 bytes after XORing with the previous ciphertext. By the way, the first block of the plaintext is XORed with IV (initialization vector, generated random 16 bytes). Below depicts the process.&#xA;Encryption Process link # Block 1 ENCRYPT(logged_username= ^ IV) # ciphertext 1 f9d300b808e4c5ab535bc2c71600b58c # Block 2 ENCRYPT(admin&amp;amp;parsword=a ^ f9d300b808e4c5ab535bc2c71600b58c) # ciphertext 2 328d2dc808ffa98740253a9f1fd905a0 # Block 3 ENCRYPT(Nth3m2023&amp;amp;passwo ^ 328d2dc808ffa98740253a9f1fd905a0) # ciphertext 3 5ddc53999f7f515427212aad1ea8831d # Block 4 ENCRYPT(rd=g0ld3n_b0yxxx ^ 5ddc53999f7f515427212aad1ea8831d) # ciphertext 4 2833732d29529899a0ec964c2f23fb58 Decryption Process linkWe can reverse the above process as below.</description>
     </item>
     <item>
       <title>Exponentiation</title>
@@ -23,11 +72,25 @@
       <description>Basic linkWe can calculate the exponentiation using &amp;rsquo;**&amp;rsquo; operator in Python.&#xA;2 ** 4 # 16 6 ** 8 # 1679616 Using Pow Method in Python linkThe pow method can be used for the exponentiation.&#xA;pow(2, 4) # 2 ** 4 = 16 Modular Exponentiation linkIn addition, we can find the remainder of dividing a rased value by a specific number.&#xA;This may be sometimes used to find the secret key in key derivation functions, etc.</description>
     </item>
     <item>
+      <title>RSA (Rivest Shamir Adleman)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rsa/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rsa/</guid>
+      <description>RSA Algorithm in Python linkReference: https://medium.com/@gowtham180502/implementing-rsa-algorithm-using-python-836f7da2a8e0&#xA;from Crypto.Util.number import getPrime, long_to_bytes from math import gcd # for greatest common divisor class RSA: def __init__(self): # p, q (large prime numbers) self.p = getPrime(512) self.q = getPrime(512) # calculate n (n is used for both the public key (n, e) and the private key (n, d)) self.n = p * q # calculate t (totient, or called as &amp;#39;phi&amp;#39;) self.t = (p - 1) * (q - 1) # calculate e (e is one of the puclic key (n, e)) for i in range(2, self.</description>
+    </item>
+    <item>
       <title>XOR Bitwise Operations</title>
       <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</guid>
       <description>Basic linkFor XORing, we can use ^ operator.&#xA;Here is Python script example to XOR.&#xA;Also use the XOR key for xoring a target value.&#xA;target = 21 xor_key = 2 print(target ^ xor_key) # 23 The above operation does the following calculation internally.&#xA;Convert the decimal 21 of the target to the binary (10101). Convert the decimal 2 of the key to the binary (00010). XOR the bits at each position as below.</description>
+    </item>
+    <item>
+      <title>AES-ECB Padding Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-ecb-padding-attack/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-ecb-padding-attack/</guid>
+      <description>How It Works linkIn ECB mode, plaintext is separated into each block with fixed size (e.g. 16, 32, etc.) and encrypt individually, then each block will be concatenated at the end. Below is the flow.&#xA;# 1. Input plaintext (&amp;#39;1&amp;#39;*32) to encrypt 11111111111111111111111111111111 # 2. Separate into each block with 16-bytes size 1111111111111111 1111111111111111 # 3. Encrypt each block ENC(1111111111111111) ENC(1111111111111111) # 4. Concatenate each encrypted block ENC(1111111111111111)&amp;#43;ENC(1111111111111111) # 5. Convert to hex at the end for the output HEX(ENC(1111111111111111)&amp;#43;ENC(1111111111111111)) If we input a plaintext which cannot be separated the same size e.</description>
     </item>
     <item>
       <title>Convert Bytes to Matrix in Python</title>
@@ -70,6 +133,13 @@
       <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</guid>
       <description>Basic linkAn integer x is called a quadratic residue modulo p.&#xA;a**2 = x mod p Brute Force linkTo calculate a quadratic residue, the following Python script is an example for that.&#xA;p = 71 for a in range(p): qr = (pow(a, 2, p)) print(f&amp;#34;a={a} : qr={qr}&amp;#34;) Legendre Symbol linkAccording to Legendre Symbol, the following rules hold:&#xA;# `a` is a quadratic residue and `a != 0 mod p` a**(p-1)/2 mod p == 1 # `a` is a quadratic non-residue mod p a**(p-1)/2 mod p == -1 # `a ≡ 0 mod p` a**(p-1)/2 mod p == 0 We can check if an integer is a quadratic residue or not referring to the above.</description>
+    </item>
+    <item>
+      <title>KDBX Files</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/kdbx-files/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/kdbx-files/</guid>
+      <description>Open KDBX File linkIf KeePass software does not exist in our system, run the following command.&#xA;sudo apt install keepassx # or sudo apt install keepass2 To open *KeePass, run the following command.&#xA;keepassx # or keepass2 Copy Password linkRight-click on the password value then click Copy Password.&#xA;Crack KDBX Password linkWhen opening KDBX file in KeePass if you’re asked the Master Key, you need to crack the password of the KDBX file.</description>
     </item>
     <item>
       <title>AND Bitwise Operations</title>
@@ -212,6 +282,13 @@
       <description>Zero-padding to 8-bit linkFor zero-padding to 8-bit, specify 8 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(8) # 00001101 &amp;#39;101011&amp;#39;.zfill(8) # 00101011 Zero-padding to 16-bit linkFor zero-padding to 16-bit, specify 16 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(16) # 0000000000001101 &amp;#39;11100110&amp;#39;.zfill(16) # 0000000011100110 Zero-padding to 32-bit linkFor zero-padding to 32-bit, specify 32 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(32) # 00000000000000000000000000001101 &amp;#39;11100110&amp;#39;.zfill(32) # 00000000000000000000000011100110 Zero-padding to 64-bit linkFor zero-padding to 64-bit, specify 64 as the argument in the zfill method.</description>
     </item>
     <item>
+      <title>Ansible Vault Secret</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ansible-vault-secret/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ansible-vault-secret/</guid>
+      <description>Decryption linkFirst check the file encrypted with Ansible Vault.&#xA;cat example.yml # -- output -- $ANSIBLE_VAULT;1.1;AES256 62313365396662343061393464336163383764373764613633653634306231386433626436623361 6134333665353966363534333632666535333761666131620a663537646436643839616531643561 63396265333966386166373632626539326166353965363262633030333630313338646335303630 3438626666666137650a353638643435666633633964366338633066623234616432373231333331 6564 We can use ansible2john to generate the hash to make it crackable.&#xA;ansible2john example.yml &amp;gt; hash.txt Then crack this hash using John The Ripper or Hashcat.&#xA;john --wordlist=wordlist.txt hash.txt # or hashcat -a 0 -m 16900 hash.txt wordlist.txt After cracking and retrieving the passwrod, we can use it to decrypt the file as below.</description>
+    </item>
+    <item>
       <title>Bcrypt</title>
       <link>https://documentnation.github.io/docs/hdks/cryptography/key-derivation-function/bcrypt/</link>
       <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
@@ -233,11 +310,109 @@
       <description>Using Scrypt in Python linkWe can use scrypt easily thanks of Pycryptodome.&#xA;We need to install it first.&#xA;pip install pycryptodome Below is a Python script to derive a key from a password with scrypt.&#xA;from Crypto.Protocol.KDF import scrypt from Crypto.Random import get_random_bytes password = b&amp;#39;secret&amp;#39; salt = get_random_bytes(16) key = scrypt(password, salt, 16, N=2**14, r=8, p=1) print(f&amp;#34;key: {key.hex()}&amp;#34;) </description>
     </item>
     <item>
-      <title>Cryptography</title>
-      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/</link>
+      <title>RPNG (Pseudo Random Number Generator) Guessing</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rpng-guessing/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rpng-guessing/</guid>
+      <description>Investigation linkSuppose that the following RPNG program in Python. The seed, which is used for the random number generator, is generated from the time when the program runs.&#xA;import random import time seed = int(time.time()) random.seed(seed) num = random.randint(1, 100) print(&amp;#34;Generated number: &amp;#34;, num) If we can get the seed, we can generate the same number as this program.&#xA;Exploitation linkThere are several ways to guess the number. Here are some of the examples.</description>
+    </item>
+    <item>
+      <title>AES (Advanced Encryption Standard)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes/</guid>
+      <description>Decrypt linkGPG link gpg --decrypt example.gpg OpenSSL link # AES-256-CBC openssl aes-256-cbc -d -in encrypted_text -out decrypted.txt # AES-256-CBC (PBKDF2) openssl aes-256-cbc -pbkdf2 -iter 10000 -d -in encrypted_text -out decrypted.txt Encrypt linkGPG link gpg --symmetric --cipher-algo CIPHER message.txt OpenSSL link # AES-256-CBC openssl aes-256-cbc -e -in message.txt -out encrypted_message # AES-256-CBC (PBKDF2) openssl aes-256-cbc -pbkdf2 -iter 10000 -e -in message.txt -out encrypted_message PowerShell linkReference: https://learn.microsoft.com/ja-jp/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.3&#xA;# Generate a secure string (input a plain text in prompt) $secure = Read-Host -AsSecureString # Store a key $key = (1.</description>
+    </item>
+    <item>
+      <title>Length Extension Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/length-extension-attack/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/length-extension-attack/</guid>
+      <description>Exploitation linkWe can exploit the vulnerability with hash_extender.</description>
+    </item>
+    <item>
+      <title>GPG (GNU Privacy Guard)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/gpg/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/gpg/</guid>
+      <description>Decrypt link1. Crack Passphrase from Private Key link gpg2john&#xA;First of all, you need to format the private key to make the John to recognize it.&#xA;gpg2john private.key &amp;gt; key.txt gpg2john private_key.asc &amp;gt; key.txt gpg2john private_key.sig &amp;gt; key.txt Crack the passphrase using the formatted text.&#xA;john --wordlist=wordlist.txt key.txt custom script&#xA;If you cannot crack the passphrase using gpg2john for some reasons (error, etc), you can use the script as alternative.</description>
+    </item>
+    <item>
+      <title>Base32, Base64</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/base32-base64/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/base32-base64/</guid>
+      <description>Decode linkBase16 link base16 -d encoded.txt echo -n &amp;#39;68656c6c6f0a&amp;#39; | base16 -d Base32 link base32 -d encoded.txt echo -n &amp;#39;NBSWY3DP&amp;#39; | base32 -d Base64 link base64 -d encoded.txt echo -n &amp;#39;aGVsbG8=&amp;#39; | base64 -d PowerShell Encoded Command&#xA;If we found the PowerShell command contained -encodedcommand when malware analysis, we can decode it with CyberChef.&#xA;Paste the PowerShell command. Add the &amp;ldquo;From Base64&amp;rdquo; operation to Recipe. Add the &amp;ldquo;Decode Text&amp;rdquo; operation to Recipe and choose the &amp;ldquo;UTF-16LE&amp;rdquo; Encoding.</description>
+    </item>
+    <item>
+      <title>Vigenere Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/vigenere-cipher/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/vigenere-cipher/</guid>
+      <description>Online Tools link CyberChef Vigenere Cipher Encoder/Decoder Vigenere Solver </description>
+    </item>
+    <item>
+      <title>Fernet</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/fernet/</link>
       <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/</guid>
-      <description>CyberChef Magic linkCyberChef is a swiss army knife for cryptography.&#xA;Especially, &amp;ldquo;Magic&amp;rdquo; tool can process the given hashes automatically.&#xA;So it&amp;rsquo;s recommended to use the &amp;ldquo;Magic&amp;rdquo; at first. It can be found on the left pane.&#xA;quipqiup linkquipqiup is an online cryptogram solver. It can solve substitution ciphers often found in newspapers, including puzzles like cryptoquips and patristocrats.&#xA;OSINT linkBefore cracking, hashes might be revealed online so worth searching them with search engines.</description>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/fernet/</guid>
+      <description>Decrypt linkThere are many online tools such as…&#xA;https://asecuritysite.com/tokens/ferdecode https://8gwifi.org/fernet.jsp </description>
+    </item>
+    <item>
+      <title>RIPEMD</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ripemd/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ripemd/</guid>
+      <description>Decrypt linkThere are many online tools for decryption RIPEMD. For example,&#xA;https://gchq.github.io/CyberChef/#recipe=RIPEMD(&amp;lsquo;320&amp;rsquo;) https://md5hashing.net/hash/ripemd160 </description>
+    </item>
+    <item>
+      <title>Camellia Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/camellia-cipher/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/camellia-cipher/</guid>
+      <description>Decrypt link gpg --decrypt encrypted.gpg </description>
+    </item>
+    <item>
+      <title>Multi-Tap Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/multi-tap-cipher/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/multi-tap-cipher/</guid>
+      <description>Online Tools link Multitap Decoder </description>
+    </item>
+    <item>
+      <title>Transposition Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/transposition-cipher/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/transposition-cipher/</guid>
+      <description>Decode link Online Decoder </description>
+    </item>
+    <item>
+      <title>Atbash Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/atbash-cipher/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/atbash-cipher/</guid>
+      <description>Online Tools link Atbach Cipher Tool </description>
+    </item>
+    <item>
+      <title>Caesar Cipher</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/caesar-cipher/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/caesar-cipher/</guid>
+      <description>Online Tools link Caesar Cipher Encoder/Decoder </description>
+    </item>
+    <item>
+      <title>HMAC</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/hmac/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/hmac/</guid>
+      <description>Install HMAC Commands linkIf you don’t have hmac256 command, you need to install the package.&#xA;# In debian sudo apt install libgcrypt20-dev Decrypt link # HMAC hmac256 &amp;lt;secret_key&amp;gt; example.txt # HMAC-SHA256 sha256hmac example.txt --key &amp;lt;secret_key&amp;gt; # HMAC-SHA384 sha384hmac example.txt --key &amp;lt;secret_key&amp;gt; # HMAC-SHA512 sha512hmac example.txt --key &amp;lt;secret_key&amp;gt; </description>
+    </item>
+    <item>
+      <title>SHA1 Hash Collision Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/sha1-hash-collision-attack/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/sha1-hash-collision-attack/</guid>
+      <description>Sample Attacks link1. Download two Files linkThere are several ways to download files. So we can select our desired files as purposes.&#xA;Download the original two PDF files in SHAttered. Download two custom Files (e.g. messageA and messageB) in Chosen-Prefix Collision Example. Check if the SHA1 hash is the same as each other.&#xA;sha1sum shattered-1.pdf sha1sum shattered-2.pdf sha1sum messageA sha1sum messageB 2. Host the PDF Files Locally linkIn the directory where the two PDF files located, start local server for using in a Python script.</description>
     </item>
     <item>
       <title>John the Ripper</title>
@@ -245,6 +420,62 @@
       <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/cryptography/tool/john-the-ripper/</guid>
       <description>Basics link john --format=raw-md5 --wordlist=wordlist.txt hash.txt To search the type of hash, we can add &amp;quot;&amp;ndash;list=format&amp;quot; option.&#xA;john --list=formats john --list=formats | grep -i sha john --list=formats | grep -i md5 Filter the Word Length of Wordlists link # Up to 5 characters (-max-len:5) john --wordlist=/usr/share/wordlists/rockyou.txt -max-len:5 hash.txt # 4 characters only (-min-len:4 -max-len:4) john --wordlist=/usr/share/wordlists/rockyou.txt -min-len:4 -max-len:4 hash.txt Generate Custom Wordlist from Original One linkCommand Options link # Min length: 12 # Max length: 14 john --wordlist=.</description>
+    </item>
+    <item>
+      <title>MD4, MD5</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/md4-md5/</link>
+      <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/md4-md5/</guid>
+      <description>Online Tools link MD5 Center CrackStation Hashes.com Decrypt linkMD4 linkPut the md4 hash into the file.&#xA;echo -n &amp;#39;&amp;lt;md4-hash&amp;gt;&amp;#39; &amp;gt; hash.txt Then crack it.&#xA;john --format=raw-md4 --wordlist=wordlist.txt hash.txt # or hashcat -m 900 -a 0 hash.txt wordlist.txt MD5 linkPut the md5 hash into the file.&#xA;echo -n &amp;#39;&amp;lt;md5-hash&amp;gt;&amp;#39; &amp;gt; hash.txt Then crack it.&#xA;john --format=raw-md5 --wordlist=wordlist.txt hash.txt # or hashcat -m 0 -a 0 hash.txt wordlist.txt Encrypt linkMD4 linkNo contents yet</description>
+    </item>
+    <item>
+      <title>RAR (Roshal Archive)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rar/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rar/</guid>
+      <description>Decrypt linkFirst of all, you need to format the RAR file to make the John to recognize it.&#xA;rar2john example.rar &amp;gt; hash.txt Crack the password using the formatted text.&#xA;john --wordlist=wordlist.txt hash.txt </description>
+    </item>
+    <item>
+      <title>ROT13, ROT47</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rot13-rot47/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/rot13-rot47/</guid>
+      <description>Decode linkCyberChef is useful online tools to decode ROT13, ROT47.&#xA;Encode linkROT13 link echo hello | tr &amp;#39;A-Za-z&amp;#39; &amp;#39;N-ZA-Mn-za-m&amp;#39; </description>
+    </item>
+    <item>
+      <title>SHA1, SHA256, SHA512</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/sha1-sha256-sha512/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/sha1-sha256-sha512/</guid>
+      <description>Decrypt linkSHA1 link john --format=raw-sha1 --wordlist=wordlist.txt hash.txt hashcat -m 100 -a 0 hash.txt wordlist.txt # using mask e.g. 5 characters # ?a: all type of character hashcat -m 100 -a 3 ?a?a?a?a?a # ?d: decimal hashcat -m 100 -a 3 ?d?d?d?d?d # ?l: alphabet (lowercase) hashcat -m 100 -a 3 ?l?l?l?l?l # ?u: alphabet (uppercase) hashcat -m 100 -a 3 ?u?u?u?u?u SHA256 link john --format=raw-sha256 --wordlist=wordlist.txt hash.txt hashcat -m 1400 -a 0 hash.</description>
+    </item>
+    <item>
+      <title>PGP (Pretty Good Privacy)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pgp/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pgp/</guid>
+      <description>Decrypt linkFirst off, you need to format the private key to make the John to recognize it.&#xA;gpg2john private.key &amp;gt; hash.txt Crack the passphrase using John the Ripper.&#xA;john --wordlist=wordlist.txt hash.txt Decode Public Key linkThere are some online tools.&#xA;PGPDump </description>
+    </item>
+    <item>
+      <title>AES-CBC Padding Oracle Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-cbc-padding-oracle-attack/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/aes-cbc-padding-oracle-attack/</guid>
+      <description>PadBuster linkPadBuster is automated script for performing Padding Oracle attacks. It’s useful to decrypt AES.&#xA;padbuster &amp;lt;url&amp;gt; &amp;lt;encrypted sample&amp;gt; &amp;lt;block size&amp;gt; [options] Belows are some examples.&#xA;# Encrypted Sample -&amp;gt; 2hN2bBPw== # 16 -&amp;gt; Block site # -encoding: 0-&amp;gt;Base64, 1-&amp;gt;Lower Hex, 2-&amp;gt;Upper Hex, 3-&amp;gt;NET UrlToken, 4-&amp;gt;WebSafe Base64 padbuster https://vulnerable.com/?data=2hN2bBPw== 2hN2bBPw== 16 -encoding 0 # -cookies: specify cookie value padbuster https://vulnerable.com/ 2hN2bBPw== 8 -encoding 0 -cookies &amp;#34;secret=2hN2bBPw==&amp;#34; # -plaintext: specify plain text padbuster https://vulnerable.</description>
+    </item>
+    <item>
+      <title>PEM (Privacy Enhanced Mail)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pem/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pem/</guid>
+      <description>Decrypt linkFirst of all, you need to format the PEM file to make the John to recognize it.&#xA;pem2john example.pem &amp;gt; hash.txt Crack the hash.&#xA;john --wordlist=wordlist.txt hash.txt </description>
+    </item>
+    <item>
+      <title>PKCS (Public-Key Cryptography Standards)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pkcs/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/pkcs/</guid>
+      <description>Decrypt linkPKCS#12 linkFirst of all, you need to format the PKCS file to make the John to recognize it.&#xA;pfx2john example.pfx &amp;gt; hash.txt Crack the password using the formatted text.&#xA;john --wordlist=wordlist.txt hash.txt </description>
     </item>
   </channel>
 </rss>

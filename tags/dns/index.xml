@@ -15,5 +15,12 @@
       <guid>https://documentnation.github.io/docs/hdks/reconnaissance/subdomain-discovery/</guid>
       <description>Automation link # https://github.com/projectdiscovery/subfinder subfinder -d example.com subfinder -d example.com -o domains.txt # https://github.com/blechschmidt/massdns ./scripts/subbrute.py lists/names.txt example.com | ./bin/massdns -r lists/resolvers.txt -t A -o S &amp;gt; results.txt # https://github.com/guelfoweb/knock knockpy vulnerable.com # Using wordlist knockpy -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt vulnerable.com # https://github.com/lc/gau printf example.com | gau cat domains.txt | gau --threads 5 # https://github.com/aboul3la/Sublist3r python3 sublist3r.py -d example.com # This sends requests a target web server directly so be careful # -mc: Match status code ffuf -u https://FUZZ.</description>
     </item>
+    <item>
+      <title>mDNS (Multicast DNS) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/dns/multicast-dns-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/dns/multicast-dns-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script dns-service-discovery -p 5353 &amp;lt;target-ip&amp;gt; </description>
+    </item>
   </channel>
 </rss>

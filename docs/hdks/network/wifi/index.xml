@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wifi on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/wifi/</link>
+    <description>Recent content in Wifi on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:18:05 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/wifi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WiFi Hacking</title>
+      <link>https://documentnation.github.io/docs/hdks/network/wifi/wifi-hacking/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/wifi/wifi-hacking/</guid>
+      <description>Investigation linkOnline Tools link WiGLE&#xA;Wireless Network Mapping. If you have the BSSID, you can get the location.&#xA;You need to create an account to use the advanced search.&#xA;Check Status link Retrieve the Device IP Address&#xA;# IP address ip addr # IP address - Show the specific interface only ip addr show eth0 ip addr show eth1 ip addr show tun0 # IPv4 only ip -4 addr # IPv6 only ip -6 addr # Static route ip route Delete Network Interfaces From Your Devices</description>
+    </item>
+    <item>
+      <title>Evil Twin Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/wifi/evil-twin-attack/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/wifi/evil-twin-attack/</guid>
+      <description>Exploitation link1. Build a Fake WiFi Hotspot linkFirst off, attackers need to connect public WiFi e.g. Free WiFi on cafes. Then set up the mobile hot spot on their PC. On Windows, attackers can easily setup the Mobil Hot Spot. See the official docs for details.&#xA;To impersonate as public Free WiFi, attackers need to set the same SSID and password as the legitimate WiFi. Otherwise, set the similar SSID or easy to connect name (e.</description>
+    </item>
+    <item>
+      <title>WiFi Password Recovery</title>
+      <link>https://documentnation.github.io/docs/hdks/network/wifi/wifi-password-recovery/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/wifi/wifi-password-recovery/</guid>
+      <description>Windows linkOpen Command Prompt as root privilege like Administrator.&#xA;# Show all network names you&amp;#39;ve accessed and saved netsh wlan show profile # Show the details of the specific network including password netsh wlan show profile name=&amp;#34;network-name&amp;#34; key=clear Linux link ls -al /etc/NetworkManager/system-connections/ cat /etc/NetworkManager/system-connections/example.nmconnection </description>
+    </item>
+    <item>
+      <title>MITM (Man in the Middle) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/wifi/mitm-attack/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/wifi/mitm-attack/</guid>
+      <description>Establish MITM linkUsing ARP Spoofing linkIn the target machine,&#xA;# -T: text only GUI # -M: man-in-the-middle attack # -w: write .pcap file ettercap -T -i eth1 -M arp -w /tmp/ettercap.pcap ettercap -T -i eth1 -M arp -w /tmp/ettercap.pcap In your local machine, transfer the ettercap&amp;rsquo;s output file.&#xA;scp victim@&amp;lt;target-ip&amp;gt;:/tmp/ettercap.pcap . # Investigate the file wireshark ettercap.pcap Gain Access to a Shell linkReverse Shell Via ARP Spoofing linkIn the target machine, create &amp;ldquo;whoami.</description>
+    </item>
+  </channel>
+</rss>

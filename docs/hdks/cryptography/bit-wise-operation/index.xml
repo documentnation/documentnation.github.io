@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bit Wise Operation on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/</link>
+    <description>Recent content in Bit Wise Operation on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:26:32 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XOR Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/xor-bitwise-operations/</guid>
+      <description>Basic linkFor XORing, we can use ^ operator.&#xA;Here is Python script example to XOR.&#xA;Also use the XOR key for xoring a target value.&#xA;target = 21 xor_key = 2 print(target ^ xor_key) # 23 The above operation does the following calculation internally.&#xA;Convert the decimal 21 of the target to the binary (10101). Convert the decimal 2 of the key to the binary (00010). XOR the bits at each position as below.</description>
+    </item>
+    <item>
+      <title>AND Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/and-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/and-bitwise-operations/</guid>
+      <description>Basic linkWe can do the AND operations using &amp;amp; operator.&#xA;24 &amp;amp; 72 0x18 &amp;amp; 0x48 # 8 # Binary representation bin(24 &amp;amp; 72) # &amp;#39;0b1000&amp;#39; </description>
+    </item>
+    <item>
+      <title>OR Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/or-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/or-bitwise-operations/</guid>
+      <description>Basic linkAssume we want to OR operation 0100 and 1001.&#xA;0100 # OR 1001 # Result: 1101 We can do that using | operator in Python.&#xA;0b0100 | 0b1001 # 13 (&amp;#39;1101&amp;#39; in binary) 4 | 9 # 13 (&amp;#39;1101&amp;#39; in binary) # Binary representation bin(0b0100 | 0b1001) # 0b1101 </description>
+    </item>
+    <item>
+      <title>Shift Bitwise Operations</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/shift-bitwise-operations/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/shift-bitwise-operations/</guid>
+      <description>Basic linkLeft Bit Shift linkAssume we want to left bit shift the binary 0100 as below.&#xA;0100 -&amp;gt; 1000 We can achieve this using the &amp;lt;&amp;lt; operator in Python.&#xA;0b100 &amp;lt;&amp;lt; 1 # 8 (&amp;#39;1000&amp;#39; in binary) 4 &amp;lt;&amp;lt; 1 # 8 (&amp;#39;1000&amp;#39; in binary) # Output as the binary representation bin(8 &amp;lt;&amp;lt; 1) # 0b1000 Right Bit Shift linkAssume we want to right bit shift the binary 0100 as below.</description>
+    </item>
+  </channel>
+</rss>

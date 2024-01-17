@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/protocol/</link>
+    <description>Recent content in Protocol on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:17:47 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/protocol/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FTP (File Transfer Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ftp-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ftp-pentesting/</guid>
+      <description>Enumeration link nmap --script ftp-anon -p 21 &amp;lt;target-ip&amp;gt; nmap --script ftp-vuln* -p 21 &amp;lt;target-ip&amp;gt; nmap --script ftp-* -p 21 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ftp hydra -L username.txt -p password &amp;lt;target-ip&amp;gt; ftp hydra -l username -P passwords.txt ftp://&amp;lt;target-ip&amp;gt; hydra -L usernames.txt -p password ftp://&amp;lt;target-ip&amp;gt; Investigation linkBanner Grabbing link nc &amp;lt;target-ip&amp;gt; 21 Using OpenSSL linkFirst off, open listener.&#xA;nc -vn &amp;lt;target-ip&amp;gt; 21 Then run the command below.</description>
+    </item>
+    <item>
+      <title>SNMP (Simple Network Management Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/snmp-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/snmp-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script snmp-info -p 161 &amp;lt;target-ip&amp;gt; nmap -sU --script snmp-interfaces -p 161 &amp;lt;target-ip&amp;gt; nmap -sU --script snmp-processes -p 161 &amp;lt;target-ip&amp;gt; nmap -sU --script snmp-sysdescr -p 161 &amp;lt;target-ip&amp;gt; nmap -sU --script snmp* -p 161 &amp;lt;target-ip&amp;gt; Snmp-Check linkSnmp-Check is SNMP enumerator.&#xA;# -c: community # -p: port snmp-check &amp;lt;target-ip&amp;gt; -p 161 -c public If we found the community name, brute force it.&#xA;Brute Force the Community Names link hydra -P /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.</description>
+    </item>
+    <item>
+      <title>SSH (Secure Shell) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ssh-pentesting/</guid>
+      <description>Enumeration link nmap --script ssh-brute -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-auth-methods --script-args=&amp;#34;ssh.user=username&amp;#34; -p 22 &amp;lt;target-ip&amp;gt; nmap --script ssh-* -p 22 &amp;lt;target-ip&amp;gt; # User enumeration msfconsole msf&amp;gt; use auxiliary/scanner/ssh/ssh_enumusers Brute Force Credentials link # -t: tasks hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; ssh -t 4 # Specific ports hydra -l username -P passwords.txt -s 2222 &amp;lt;target-ip&amp;gt; ssh -t 4 hydra -l username -P passwords.</description>
+    </item>
+    <item>
+      <title>Telnet Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/telnet-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/telnet-pentesting/</guid>
+      <description>Enumeration link nmap --script telnet-encryption -p 23 &amp;lt;target-ip&amp;gt; nmap --script telnet-ntlm-info -p 23 &amp;lt;target-ip&amp;gt; nmap --script telnet-brute --script-args userdb=users.txt,passdb=passwords.txt,telnet-brute.timeout=8s -p 23 &amp;lt;target-ip&amp;gt; Configuration Files link cat /etc/inetd.conf # or cat /etc/xinetd.d/telnet Connect link telnet &amp;lt;target-ip&amp;gt; &amp;lt;target-port&amp;gt; telnet &amp;lt;target-ip&amp;gt; 23 </description>
+    </item>
+    <item>
+      <title>TFTP (Trivial File Transfer Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/tftp-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/tftp-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script tftp-enum -p 69 &amp;lt;target-ip&amp;gt; Configuration Files link cat /etc/inetd.conf # or cat /etc/xinetd.d/tftp </description>
+    </item>
+    <item>
+      <title>NFS (Network File System) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/nfs-pentesting/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/nfs-pentesting/</guid>
+      <description>Enumeration link nmap --script=nfs-ls,nfs-statfs,nfs-showmount -p 111,2049 &amp;lt;target-ip&amp;gt; Mounting Folders link1. Check if there are folders avaiable to mount in remote machine. link showmount -e &amp;lt;target-ip&amp;gt; By the way, If you get error &amp;ldquo;showmount: command not found&amp;rdquo;, install nfs-common.&#xA;apt-cache search showmount sudo apt install nfs-common 2. Mount to local folder linkIf we find a folder available, we can mount it to local folder.&#xA;Create a new folder under /mnt.&#xA;sudo mkdir /mnt/test Now mount a folder.</description>
+    </item>
+    <item>
+      <title>PPTP Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/pptp-pentesting/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/pptp-pentesting/</guid>
+      <description>Enumeration link nmap --script pptp-version -p 1723 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>RTSP (Real Time Streaming Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/rtsp-pentesting/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/rtsp-pentesting/</guid>
+      <description>Enumeration link nmap --script rtsp-* -p 554,8554 &amp;lt;target-ip&amp;gt; Default Credential link admin:admin admin:12345 Watch RTSP Stream using VLC Media Player linkReference: https://www.youtube.com/watch?v=ksUylvdJQDQ&#xA;We might be able to watch RTSP stream using a media player such as VLC. Here is the example for VLC.&#xA;First off, if we don’t have the VLC Media Player, we need to install it by the following command.&#xA;sudp apt install vlc Then open VLC, follow these steps:</description>
+    </item>
+    <item>
+      <title>Restricted Shell (rbash, rzsh) Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/restricted-shell-bypass/</link>
+      <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/restricted-shell-bypass/</guid>
+      <description>After logged in a shell, sometimes we faced the error such as below when executing commands.&#xA;-rbash: cd: restricted -rbash: /usr/lib/command-not-found: restricted: cannot specify `/&amp;#39; in command names The target system uses a restricted shell so we may not be able to execute commonly used commands e.g. ls, cd, etc.&#xA;We need to bypass the restriction First.&#xA;Command Enumeration linkFirst check what commands can we execute.&#xA;Try running varied commands.</description>
+    </item>
+    <item>
+      <title>IRC (Internet Relay Chat) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/irc-pentesting/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/irc-pentesting/</guid>
+      <description>Enumeration link nmap --script irc-botnet-channels,irc-info,irc-unrealircd-backdoor -p 194 &amp;lt;ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>UPnP (Universal Plug and Play) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/upnp-pentesting/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/upnp-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script upnp-info -p 1900 &amp;lt;ip&amp;gt; nmap --script upnp-info -p 5000 &amp;lt;ip&amp;gt; nmap --script broadcast-upnp-info -p 1900 &amp;lt;ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>Memcache Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/memcache-pentesting/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/memcache-pentesting/</guid>
+      <description>Communication linkWe can communicate with memcache server using Netcat.&#xA;nc -vn &amp;lt;ip&amp;gt; 11211 Connection to &amp;lt;ip&amp;gt; 11211 port [tcp/*] succeeded! # Commands in nc version stats stats slabs stats items stats cachedump &amp;lt;number&amp;gt; 0 stats cachedump 1 0 get &amp;lt;item_name&amp;gt; </description>
+    </item>
+    <item>
+      <title>VNC (Virtual Network Computing) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/vnc-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/vnc-pentesting/</guid>
+      <description>Enumeration link nmap --script vnc-info -p 5900 &amp;lt;target-ip&amp;gt; # RealVNC authentication bypass (CVE-2006-2369) nmap --script realvnc-auth-bypass -p 5900 &amp;lt;target-ip&amp;gt; msf&amp;gt; use auxiliary/scanner/vnc/vnc_none_auth Brute Force Credentials linkVNC server does not use the username, but only the password.&#xA;hydra -P passwords.txt vnc://&amp;lt;target-ip&amp;gt; hydra -P passwords.txt &amp;lt;target-ip&amp;gt; vnc Connect link remmina remmina -c vnc://&amp;lt;target-ip&amp;gt; remmina -c vnc://username@vulnerable.com remmina -c vnc:vulnerable.com?VncUsername=username remmina -c vnc://username:password@vulnerable.com remmina -c vnc://vulnerable.com?VncUsername=username\&amp;amp;VncPassword=password </description>
+    </item>
+    <item>
+      <title>Modbus Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/modbus-pentesting/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/modbus-pentesting/</guid>
+      <description>Enumeration link nmap --script modbus-discover --script-args modbus-discover.aggressive=true -p 502 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>Dynamic Host Configuration Protocol (DHCP) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/dhcp-pentesting/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/dhcp-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script broadcast-dhcp-discover -p 67,68 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>NTP (Network Time Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/ntp-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/ntp-pentesting/</guid>
+      <description>Enumeration link nmap -sU --script ntp-info -p 123 &amp;lt;target-ip&amp;gt; nmap -sU --script ntp-monlist -p 123 &amp;lt;target-ip&amp;gt; nmap -sU --script ntp* -p 123 &amp;lt;target-ip&amp;gt; nmap -sU --script &amp;#34;ntp* and (discovery or vuln) and not (dos or brute)&amp;#34; -p 123 &amp;lt;target-ip&amp;gt; Ntpq link ntpq -c readlist &amp;lt;target-ip&amp;gt; ntpq -c readvar &amp;lt;target-ip&amp;gt; ntpq -c peers &amp;lt;target-ip&amp;gt; ntpq -c associations &amp;lt;target-ip&amp;gt; ntpdc -c monlist &amp;lt;target-ip&amp;gt; ntpdc -c listpeers &amp;lt;target-ip&amp;gt; ntpdc -c sysinfo &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>WASTE Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/protocol/waste-pentesting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/protocol/waste-pentesting/</guid>
+      <description>Connect link connect &amp;lt;target-ip&amp;gt; 1337 # or nc &amp;lt;target-ip&amp;gt; 1337 </description>
+    </item>
+  </channel>
+</rss>

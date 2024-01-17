@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conversion on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/</link>
+    <description>Recent content in Conversion on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 16:14:04 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/cryptography/conversion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convert Bytes to Matrix in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-matrix-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-matrix-in-python/</guid>
+      <description>Conversion link text = b&amp;#34;helloworld!!&amp;#34; column = 4 print([list(text[i:i&amp;#43;column]) for i in range(0, len(text), oolumn)]) # Output [[104, 101, 108, 108], [111, 119, 111, 114], [108, 100, 33, 33]] </description>
+    </item>
+    <item>
+      <title>Convert Hex to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-bytes-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-bytes-in-python/</guid>
+      <description>Conversion linkUsing bytes.fromhex method, we can convert hex string to bytes string.&#xA;hex_str = &amp;#34;48656c6c6f20576f726c64&amp;#34; bytes.fromhex(hex_str) # b&amp;#39;Hello World&amp;#39; </description>
+    </item>
+    <item>
+      <title>Convert Matrix to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-matrix-to-bytes-in-python/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-matrix-to-bytes-in-python/</guid>
+      <description>Conversion link matrix = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16] ] print(bytes(sum(matrix, []))) </description>
+    </item>
+    <item>
+      <title>Convert Binary to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-binary-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-binary-to-int-in-python/</guid>
+      <description>Conversion linkWe can convert binary to int by specifying 2 the second argument of int method in Python.&#xA;int(&amp;#34;1101&amp;#34;, 2) # 13 int(&amp;#34;11111111&amp;#34;, 2) # 255 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to Hex in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-hex-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-hex-in-python/</guid>
+      <description>Conversion linkUsing hex method in Python, we can easily convert bytes to hex.&#xA;b&amp;#39;Hello World&amp;#39;.hex() # 48656c6c6f20576f726c64 b&amp;#39;abcdef&amp;#39;.hex() # 616263646566 b&amp;#39;\xe3\x81\xad\xe3\x81\x93&amp;#39;.hex() # e381ade38193 By the way, for converting from string to bytes before converting bytes to hex, use encode method as below.&#xA;&amp;#39;Hello World&amp;#39;.encode().hex() # 48656c6c6f20576f726c64 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-int-in-python/</guid>
+      <description>Conversion linkBig Endian linkFor using big endian, we can specify &amp;ldquo;big&amp;rdquo; to the byteorder argument (the second argument) of int.from_bytes method in Python.&#xA;int.from_bytes(b&amp;#39;hello&amp;#39;, byteorder=&amp;#39;big&amp;#39;) # 448378203247 int.from_bytes(b&amp;#39;\x00\x01&amp;#39;, byteorder=&amp;#39;big&amp;#39;) # 1 Little Endian linkFor using little endian, we can specify &amp;ldquo;little&amp;rdquo; to the byteorder argument (the second argument) of int.from_bytes method in Python.&#xA;int.from_bytes(b&amp;#39;hello&amp;#39;, byteorder=&amp;#39;little&amp;#39;) # 478560413032 int.from_bytes(b&amp;#39;\x00\x01&amp;#39;, byteorder=&amp;#39;little&amp;#39;) # 256 </description>
+    </item>
+    <item>
+      <title>Convert Bytes to String in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-string-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-bytes-to-string-in-python/</guid>
+      <description>Conversion linkUsing decode method in Python, we can easily convert bytes to string.&#xA;There are three types of decode methods as below.&#xA;All of the results say &amp;ldquo;Hello&amp;rdquo;.&#xA;b&amp;#39;Hello&amp;#39;.decode(&amp;#39;utf-8&amp;#39;) bytes.decode(b&amp;#39;Hello&amp;#39;, &amp;#39;utf-8&amp;#39;) codecs.decode(b&amp;#39;Hello&amp;#39;, &amp;#39;utf-8&amp;#39;) </description>
+    </item>
+    <item>
+      <title>Convert Character to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-binary-in-python/</guid>
+      <description>Conversion linkCharacter -&amp;gt; N-bit linkUsing format method, the given character is converted to bits.&#xA;char = &amp;#39;a&amp;#39; format(ord(char), &amp;#39;b&amp;#39;) # 1100001 Character -&amp;gt; 8-bit linkWe can specify 8-bit representation by prepending {0:08b} before the format method.&#xA;char = &amp;#39;a&amp;#39; &amp;#39;{0:08b}&amp;#39;.format(ord(char), &amp;#39;b&amp;#39;) # 01100001 Character -&amp;gt; 16-bit linkWe can specify 16-bit representation by prepending {0:016b} before the format method.&#xA;char = &amp;#39;a&amp;#39; &amp;#39;{0:016b}&amp;#39;.format(ord(char), &amp;#39;b&amp;#39;) # 0000000001100001 </description>
+    </item>
+    <item>
+      <title>Convert Character to Unicode in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-unicode-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-character-to-unicode-in-python/</guid>
+      <description>Conversion linkWe can use ord method in Python to convert a character to Unicode.&#xA;ord(&amp;#39;a&amp;#39;) # 97 By the way, use chr method to convert Unicode to a character.&#xA;chr(97) # a </description>
+    </item>
+    <item>
+      <title>Convert Hex to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-hex-to-int-in-python/</guid>
+      <description>Conversion linkWe can convert hex to int by specifygin 16 in the second argument of the int method in Python.&#xA;int(&amp;#34;7b&amp;#34;, 16) int(&amp;#34;0x7b&amp;#34;, 16) # 123 int(&amp;#34;68656c6c6f&amp;#34;, 16) int(&amp;#34;0x68656c6c6f&amp;#34;, 16) # 448378203247 int(&amp;#34;-80&amp;#34;, 16) int(&amp;#34;-0x80&amp;#34;, 16) # -128 </description>
+    </item>
+    <item>
+      <title>Convert Int to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-binary-in-python/</guid>
+      <description>Conversion linkInt -&amp;gt; N-bit linkSpecify &amp;lsquo;b&amp;rsquo; in the format method in Python.&#xA;format(123, &amp;#39;b&amp;#39;) # 1111011 Int -&amp;gt; 8-bit linkWe can specify 8-bit by prepending {0:08b} before the format method.&#xA;Alternatively, zfill method can be used for this purpose.&#xA;&amp;#39;{0:08b}&amp;#39;.format(123, &amp;#39;b&amp;#39;) format(123, &amp;#39;b&amp;#39;).zfill(8) # 01111011 Int -&amp;gt; 16-bit linkThis is also the same as above, we can specify 16-bit by prepending {0:016b}, or zfill method can be used.&#xA;&amp;#39;{0:016b}&amp;#39;.format(123, &amp;#39;b&amp;#39;) format(123, &amp;#39;b&amp;#39;).</description>
+    </item>
+    <item>
+      <title>Convert Int to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-bytes-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-bytes-in-python/</guid>
+      <description>Conversion linkUsing the to_bytes built-in method in Python, we can conavert int to bytes.&#xA;In addition, we can specify the length to the first argument in to_bytes method.&#xA;Big Endian linkBy specifying &amp;lsquo;big&amp;rsquo; to the byteorder argument, the result is the big endian bytes order.&#xA;num = 1234 num.to_bytes(2, byteorder=&amp;#39;big&amp;#39;) # b&amp;#39;\x04\xd2&amp;#39; num.to_bytes(3, byteforder=&amp;#39;big&amp;#39;) # b&amp;#39;\x00\x04\xd2&amp;#39; num.to_bytes(4, byteorder=&amp;#39;big&amp;#39;) # b&amp;#39;\x00\x00\x04\xd2&amp;#39; Little Endian linkBy specifying &amp;lsquo;big&amp;rsquo; to the byteorder argument, the result is the little endian bytes order.</description>
+    </item>
+    <item>
+      <title>Convert Int to Hex in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-hex-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-hex-in-python/</guid>
+      <description>Conversion linkWe can convert int to hex using hex method in Python.&#xA;hex(123) # 0x7b hex(448378203247) # 0x68656c6c6f To remove the prefix 0x, exlude the characters from the string with [2:].&#xA;hex(123)[2:] # 7b hex(448378203247)[2:] # 68656c6c6f </description>
+    </item>
+    <item>
+      <title>Convert Int to String in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-string-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-int-to-string-in-python/</guid>
+      <description>Conversion linkWe can easily convert int to string using str built-in method in Python.&#xA;str(123) # &amp;#34;123&amp;#34; str(-123) # &amp;#34;-123&amp;#34; </description>
+    </item>
+    <item>
+      <title>Convert String to Binary in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-binary-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-binary-in-python/</guid>
+      <description>Conversion linkFor converting strings to binary, we need to convert each character to binary by first converting the character to Unicode.&#xA;Then concatenate these binaries.&#xA;text = &amp;#34;Hello&amp;#34; bin_str = &amp;#34;&amp;#34; for c in text: c_bin = bin(ord(c))[2:] # remove &amp;#34;0b&amp;#34; prefix bin_str &amp;#43;= c_bin.zfill(8) # padding to 8-bit for adjustment print(bin_str) # 0100100001100101011011000110110001101111 </description>
+    </item>
+    <item>
+      <title>Convert String to Bytes in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-bytes-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-bytes-in-python/</guid>
+      <description>Conversion linkWe can use several ways to encode string to bytes in Python.&#xA;string class has encode method to encode strings to bytes. bytes method converts string to bytes. Also we can specify the format e.g. utf-8, shift_jis as argument.&#xA;# Using encode() method &amp;#34;Hello&amp;#34;.encode(&amp;#39;utf-8&amp;#39;) &amp;#34;Hello&amp;#34;.encode(&amp;#39;shift_jis&amp;#39;) # Using bytes() method bytes(&amp;#34;Hello&amp;#34;, &amp;#39;utf-8&amp;#39;) bytes(&amp;#34;Hello&amp;#34;, &amp;#39;shift_jis&amp;#39;) # Result: b&amp;#39;Hello&amp;#39; Decode Bytes to String linkBy the way, we can decode bytes to string with decode method.</description>
+    </item>
+    <item>
+      <title>Convert String to Int in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-int-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-string-to-int-in-python/</guid>
+      <description>Conversion linkString (Number) -&amp;gt; Int linkFor strings representing numbers, we can just use int method in Python.&#xA;int(&amp;#34;123&amp;#34;) # 123 String (Text) -&amp;gt; Int linkFor strings representing characters, we need to convert each character to Unicode at first.&#xA;Then concatenate these unicoded string.&#xA;text = &amp;#34;Hello&amp;#34; numbers_str = &amp;#34;&amp;#34; for t in text: numbers_str &amp;#43;= str(ord(t)) print(int(decimal_str)) # 72101108108111 </description>
+    </item>
+    <item>
+      <title>Convert Unicode to Character in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-unicode-to-character-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/convert-unicode-to-character-in-python/</guid>
+      <description>Conversion linkUsing chr method in Python, we can convert Unicode to a character as below.&#xA;chr(97) # a chr(98) # b By the way, use ord method to convert character to a Unicode.&#xA;ord(&amp;#39;a&amp;#39;) # 97 </description>
+    </item>
+    <item>
+      <title>Zero Padding in Python</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/conversion/zero-padding-in-python/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/conversion/zero-padding-in-python/</guid>
+      <description>Zero-padding to 8-bit linkFor zero-padding to 8-bit, specify 8 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(8) # 00001101 &amp;#39;101011&amp;#39;.zfill(8) # 00101011 Zero-padding to 16-bit linkFor zero-padding to 16-bit, specify 16 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(16) # 0000000000001101 &amp;#39;11100110&amp;#39;.zfill(16) # 0000000011100110 Zero-padding to 32-bit linkFor zero-padding to 32-bit, specify 32 as the argument in the zfill method.&#xA;&amp;#39;1101&amp;#39;.zfill(32) # 00000000000000000000000000001101 &amp;#39;11100110&amp;#39;.zfill(32) # 00000000000000000000000011100110 Zero-padding to 64-bit linkFor zero-padding to 64-bit, specify 64 as the argument in the zfill method.</description>
+    </item>
+  </channel>
+</rss>

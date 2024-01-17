@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/network/tool/</link>
+    <description>Recent content in Tool on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:17:53 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/network/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tshark Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/network/tool/tshark-cheat-sheet/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/tool/tshark-cheat-sheet/</guid>
+      <description>Basic Capture link tshark # -i: interface (default: eth0) tshark -i tun0 # --list-interface: List interfaces available tshark --list-interfaces # -r: Use a captured file tshark -r example.pcapng # Number of packets tshark -r example.pcapng | wc -l Filtering linkWe can filter packets using -Y option.&#xA;Protocols link # HTTP tshark -Y &amp;#39;http&amp;#39; # ICMP tshark -Y &amp;#39;icmp&amp;#39; # TCP/UDP tshark -Y &amp;#39;tcp&amp;#39; tshark -Y &amp;#39;udp&amp;#39; IP Address link tshark -Y &amp;#39;ip.</description>
+    </item>
+    <item>
+      <title>Convert PuTTY Key to OpenSSH Key</title>
+      <link>https://documentnation.github.io/docs/hdks/network/tool/convert-putty-key-to-openssh-key/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/tool/convert-putty-key-to-openssh-key/</guid>
+      <description>Install PuTTYgen linkIf you don’t have putty-tools on Linux, install it at first.&#xA;# Install in Linux sudo apt install putty-tools If you use puttygen on Windows, install the PuTTYgen in the official page.&#xA;Generate Key Pair link # -t: key type # -b: number of bits # -C: key comment # -o: output file puttygen -t rsa -b 2084 -C &amp;#34;user@example.com&amp;#34; -o keyfile.ppk PuTTY to SSH Key linkIf you use puttygen on Linux, run the following command to convert PuTTY key to OpenSSH keys (private/public).</description>
+    </item>
+    <item>
+      <title>Wireshark Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/network/tool/wireshark-cheat-sheet/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/network/tool/wireshark-cheat-sheet/</guid>
+      <description>Settings linkDatetime Format When Packets Sent linkSelect “View → Time Display Format → Date and Time of Day”.&#xA;Filters linkEnter the following text in a filtering form.&#xA;Datetime link frame.time &amp;gt;= &amp;#34;Jan 2, 2023 08:00:00&amp;#34; &amp;amp;&amp;amp; frame.time &amp;lt;= &amp;#34;Jan 5, 2023 08:00:00&amp;#34; DNS link dns udp.port == 53 # Record type dns.qry.type == 1 # A record dns.qry.type == 2 # NS record dns.qry.type == 5 # CNAME record dns.qry.type == 6 # SOA record dns.</description>
+    </item>
+  </channel>
+</rss>

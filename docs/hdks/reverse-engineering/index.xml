@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse Engineering on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/reverse-engineering/</link>
+    <description>Recent content in Reverse Engineering on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:20:22 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WinDBG Command Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/windbg-command-cheat-sheet/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/windbg-command-cheat-sheet/</guid>
+      <description>Common link # Get PEB (Process Environment Block) !peb # Display stack backtrace kv dt (Display Type) linkDisplay fields and values.&#xA;# TEB (Thread Environment Block) dt _teb # PEB (Process Environment Block) dt _peb # @$peb: Refer to the PEB of the current process. dt _peb @$peb # LDR dt _PEB_LDR_DATA # poi: Dereference dt _PEB_LDR_DATA poi(@$peb&amp;#43;0x123) dt _LDR_DATA_TABLE_ENTRY dt _LDR_DATA_TABLE_ENTRY 0x123 ? (Evaluate Expression) link ? poi(@$peb&amp;#43;0x123) </description>
+    </item>
+    <item>
+      <title>Reverse Engineering with GDB</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-gdb/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-gdb/</guid>
+      <description>Using Enhanced GDB linkIt&amp;rsquo;s recommended to use enhanced version of GDB such as GEF. These have some extended features.&#xA;Start Debugger link chmod &amp;#43;x ./example gdb ./example Commands in GDB linkDebug link # Start the program run r # Continue until the next breakpoint or the end continue c # Execute the next line of code but do not enter any function calls on that line. next n # Execute the next line of code step s # Jump to specific address j *0x01234 Disassemble link # Disassemble the main function disass main Breakpoints link # Set a breakpoint at a specified line number, function, or address.</description>
+    </item>
+    <item>
+      <title>PE (Portable Executable) Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</guid>
+      <description>Investigation link file example.exe strings example.exe PE Headers linkThere are many tools to analyze PE headers, such as wxHexEditor, pe-tree.&#xA;pe-tree is a tool that views PE files in a tree-view. It will take about a few minutes to open.&#xA;pe-tree ./executable Structure Description IMAGE_DOS_HEADER It consists of the first 64 bytes of the PE file. The first two bytes (”4D 5A”) means the “MZ” characters which are an identity of the Portable Executable format.</description>
+    </item>
+    <item>
+      <title>JAR File Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/jar-file-analysis/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/jar-file-analysis/</guid>
+      <description>Analyze Jar File linkWe can use jdgui GUI tool.&#xA;jd-gui </description>
+    </item>
+    <item>
+      <title>x86 Assembly</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/x86-assembly/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/x86-assembly/</guid>
+      <description>Registers linkConsists of 8 bytes.&#xA;Also, it can be broken down into small segments.&#xA;For example, RAX (64 bits) → EAX (32 bits) → AX (16 bits) → AH (high 8 bits), AL (low 8 bits).&#xA;General Purpose Registers linkThey are used for temporarily storing data.&#xA;EAX/RAX (Accumulator Register)&#xA;It is used to store values (especially, a return value). It&amp;rsquo;s like a variable in high-level programming languages.&#xA;It’s usually used to pass the system call(e.</description>
+    </item>
+    <item>
+      <title>Reverse Engineering with Rizin</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-rizin/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-rizin/</guid>
+      <description>Using Cutter linkCutter is a GUI tool for reverse engineering powered by Rizin.&#xA;It can also have a decompiler, so it’s recommended to use it first.&#xA;cutter &amp;lt;file&amp;gt; To use the Ghidra decompiler, install the package.&#xA;sudo apt install rizin-plugin-ghidra # or sudo apt install rz-ghidra Start Debugging link rizin ./example # Debug mode rizin -d ./example # Write mode rizin -w ./example Analyze linkAnalyze the program after starting the debugger.</description>
+    </item>
+    <item>
+      <title>Reverse Engineering with Angr</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-angr/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/reverse-engineering-with-angr/</guid>
+      <description>Installation linkIt’s recommended to create a Python virtual environment.&#xA;python3 -m venv myenv source myenv/bin/activate pip3 install angr pip3 install monkeyhex Basic Usage link import angr, monkeyhex proj = angr.Project(&amp;#39;/bin/id&amp;#39;) proj = angr.Project(&amp;#39;/bin/id&amp;#39;, load_options={&amp;#39;auto_load_libs&amp;#39;: False}) # Basic information proj.arch proj.entry proj.filename # The loader proj.loader proj.loader.all_objects proj.loader.shared_objects proj.loader.min_addr proj.loader.max_addr # Objects obj = proj.loader.main_object obj.entry obj.min_addr, obj.max_addr addr = obj.plt[&amp;#39;strcmp&amp;#39;] obj.reserve_plt[addr] # Blocks block = proj.factory.block(proj.entry) block.pp() # pretty-print a disassembly to stdout block.</description>
+    </item>
+    <item>
+      <title>PYC (Python Compiled File) Reverse Engineering</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/pyc-reverse-engineering/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/pyc-reverse-engineering/</guid>
+      <description>Decompile linkuncompyle6 is a PYC decompiler.&#xA;We can install easily using pip.&#xA;pip install uncompyle6 Then decompile the pyc file.&#xA;uncompyle6 example.pyc </description>
+    </item>
+    <item>
+      <title>32-bit ARM Assembly</title>
+      <link>https://documentnation.github.io/docs/hdks/reverse-engineering/32-bit-arm-assembly/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/32-bit-arm-assembly/</guid>
+      <description>Registers link R0 GPR (General Purpose Register)&#xA;R1 GPR (General Purpose Register)&#xA;R2 GPR (General Purpose Register)&#xA;&amp;hellip;&#xA;R11 GPR (General Purpose Register)&#xA;R12 GPR (General Purpose Register)&#xA;R13 Stack Pointer&#xA;R14 Link Register&#xA;R15 Program Counter - Is responsible for directing the CPU to what instruction will be executed next.&#xA;# Control the PC directly (not recommended in User mode.) mov r15, 0x00000000 CPSR (Current Program Status Register) - Stores information about the program and the results of a particular operation.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Certificate on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/tags/certificate/</link>
+    <description>Recent content in Certificate on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://documentnation.github.io/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificates</title>
+      <link>https://documentnation.github.io/docs/hdks/cryptography/algorithm/certificates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/cryptography/algorithm/certificates/</guid>
+      <description>Connect to Remote Server with SSL/TLS linkYou need to have two files - certificate and private key.&#xA;nc --ssl-cert cert.pem --ssl-key private-key.pem &amp;lt;target-ip&amp;gt; &amp;lt;target-port&amp;gt; # or ncat --ssl-cert cert.pem --ssl-key private-key.pem &amp;lt;target-ip&amp;gt; &amp;lt;target-port&amp;gt; RSA Attack link Retrieve Private Key&#xA;RsaCtfTool&#xA;RSA attack tool (mainly for ctf) - retreive private key from weak public key and/or uncipher data.&#xA;PFX (PKCS#12) -&amp;gt; PEM -&amp;gt; RSA link Crack Password of PFX&#xA;crackpkcs12 is useful to crack password.</description>
+    </item>
+  </channel>
+</rss>

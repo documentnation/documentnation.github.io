@@ -22,5 +22,12 @@
       <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</guid>
       <description>Read EVTX in Linux linkWe can parse .evtx file in Linux using evtx_dump.&#xA;wget https://github.com/omerbenamram/evtx/releases/download/v0.8.1/evtx_dump-v0.8.1-x86_64-unknown-linux-gnu -O evtx_dump chmod &amp;#43;x evtx_dump ./evtx_dump example.evtx &amp;gt; parsed.txt Now we can find sensitive information from the parsed text.&#xA;grep -i TargetUserName parsed.txt grep -i TargetDomainName parsed.txt Search Suspicious Activity in EVTX linkChainsaw is a command-line tool to rapidly search and hunt through Windows Forensics Artifacts.&#xA;git clone https://github.com/WithSecureLabs/chainsaw.git cd chainsaw cargo build --release ./chainsaw hunt evtx_files/ -s sigma/rules --mapping mapping/sigma-event-logs-all.</description>
     </item>
+    <item>
+      <title>Memory Forensics</title>
+      <link>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</guid>
+      <description>Volatility linkVolatility is an useful tool for memory forensics.&#xA;If you use a Debian based operating system, you can install using apt.&#xA;sudo apt install volatility3 # Confirm if download successfully vol -h However, it’s recommended to download it from the GitHub repository if you want the latest stable version.&#xA;Target: Windows link # Determine the operating system python3 vol.py -f example.vmem windows.info # Dump password hashes python3 vol.py -f example.</description>
+    </item>
   </channel>
 </rss>

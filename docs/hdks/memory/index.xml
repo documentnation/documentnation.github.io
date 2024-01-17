@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memory on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/memory/</link>
+    <description>Recent content in Memory on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:53:40 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/memory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Forensics</title>
+      <link>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/memory/memory-forensics/</guid>
+      <description>Volatility linkVolatility is an useful tool for memory forensics.&#xA;If you use a Debian based operating system, you can install using apt.&#xA;sudo apt install volatility3 # Confirm if download successfully vol -h However, it’s recommended to download it from the GitHub repository if you want the latest stable version.&#xA;Target: Windows link # Determine the operating system python3 vol.py -f example.vmem windows.info # Dump password hashes python3 vol.py -f example.</description>
+    </item>
+  </channel>
+</rss>

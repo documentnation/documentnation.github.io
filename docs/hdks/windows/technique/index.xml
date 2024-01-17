@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technique on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/technique/</link>
+    <description>Recent content in Technique on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:52:09 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/technique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Download Files in Windows</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/technique/download-files-in-windows/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/technique/download-files-in-windows/</guid>
+      <description>Using Invoke-WebRequest linkWe can use Invoke-WebRequest command&#xA;# In PowerShell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt # In CMD, we need to call `powershell` or `powershell.exe` command. powershell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt powershlel IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt </description>
+    </item>
+  </channel>
+</rss>

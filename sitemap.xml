@@ -32,6 +32,9 @@
     <loc>https://documentnation.github.io/docs/tcm-peh/enumeration/</loc>
     <lastmod>2023-11-29T10:05:19+05:30</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/</loc>
+    <lastmod>2024-01-17T11:51:00+05:30</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/</loc>
     <lastmod>2024-01-17T11:13:31+05:30</lastmod>
   </url><url>
@@ -40,6 +43,9 @@
   </url><url>
     <loc>https://documentnation.github.io/docs/tcm-peh/exploitation/</loc>
     <lastmod>2024-01-04T08:30:15+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/</loc>
+    <lastmod>2024-01-17T11:54:17+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/subdomain_hunting/</loc>
     <lastmod>2024-01-11T08:54:47+05:30</lastmod>
@@ -58,6 +64,63 @@
   </url><url>
     <loc>https://documentnation.github.io/docs/tcm-peh/reconnaissance/google_fu/</loc>
     <lastmod>2024-01-11T11:15:42+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/tool/</loc>
+    <lastmod>2024-01-17T11:58:47+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/template-engine/</loc>
+    <lastmod>2024-01-17T11:58:24+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/security-risk/</loc>
+    <lastmod>2024-01-17T11:58:00+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/microsoft/</loc>
+    <lastmod>2024-01-17T11:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/method/</loc>
+    <lastmod>2024-01-17T11:57:24+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/framework/</loc>
+    <lastmod>2024-01-17T11:57:03+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/elasticsearch/</loc>
+    <lastmod>2024-01-17T11:56:37+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cookie/</loc>
+    <lastmod>2024-01-17T11:56:00+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/</loc>
+    <lastmod>2024-01-17T11:55:13+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/api/</loc>
+    <lastmod>2024-01-17T11:54:59+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/wsl/</loc>
+    <lastmod>2024-01-17T11:52:21+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/technique/</loc>
+    <lastmod>2024-01-17T11:52:09+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/service/</loc>
+    <lastmod>2024-01-17T11:49:25+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/protocol/</loc>
+    <lastmod>2024-01-17T11:49:11+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</loc>
+    <lastmod>2024-01-17T11:48:56+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/powershell/</loc>
+    <lastmod>2024-01-17T11:48:45+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/post-exploitation/</loc>
+    <lastmod>2024-01-17T11:48:23+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/</loc>
+    <lastmod>2024-01-17T11:48:08+05:30</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/</loc>
+    <lastmod>2024-01-17T11:47:56+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/linux/protocol/</loc>
     <lastmod>2024-01-17T11:38:33+05:30</lastmod>
@@ -81,18 +144,18 @@
     <lastmod>2024-01-17T11:35:17+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/</loc>
-    <lastmod>2024-01-17T11:38:33+05:30</lastmod>
+    <lastmod>2024-01-17T11:58:47+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/</loc>
-    <lastmod>2024-01-17T11:38:33+05:30</lastmod>
-  </url><url>
-    <loc>https://documentnation.github.io/tags/active-directory/</loc>
-    <lastmod>2023-12-23T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-17T11:58:47+05:30</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/attack/anonymize-traffic-with-tor/</loc>
     <lastmod>2023-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/elasticsearch/elasticsearch-pentesting/</loc>
+    <lastmod>2023-12-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/joomla-cms-pentesting/</loc>
     <lastmod>2023-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/tags/network/</loc>
@@ -119,10 +182,19 @@
     <loc>https://documentnation.github.io/tags/windows/</loc>
     <lastmod>2023-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</loc>
-    <lastmod>2023-12-23T00:00:00+00:00</lastmod>
+    <loc>https://documentnation.github.io/tags/active-directory/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/tags/database/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberoasting-attack/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</loc>
     <lastmod>2023-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/database/mssql-pentesting/</loc>
@@ -131,11 +203,20 @@
     <loc>https://documentnation.github.io/docs/hdks/shell/reverse-shell-cheat-sheet/</loc>
     <lastmod>2023-12-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/smb-pentesting/</loc>
+    <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/tags/sql-injection/</loc>
     <lastmod>2023-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-cheat-sheet/</loc>
     <lastmod>2023-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/tags/cms/</loc>
+    <lastmod>2023-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/machine-learning/data-processing/data-manipulation-for-machine-learning/</loc>
     <lastmod>2023-12-06T00:00:00+00:00</lastmod>
@@ -155,10 +236,22 @@
     <loc>https://documentnation.github.io/tags/reverse-engineering/</loc>
     <lastmod>2023-12-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/uac-windows-privilege-escalation/</loc>
+    <lastmod>2023-12-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</loc>
     <lastmod>2023-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/reverse-engineering/windbg-command-cheat-sheet/</loc>
+    <lastmod>2023-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-registry-keys/</loc>
+    <lastmod>2023-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/</loc>
+    <lastmod>2023-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/wordpress-pentesting/</loc>
     <lastmod>2023-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/tags/archive/</loc>
@@ -181,9 +274,6 @@
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/shell/web-reverse-shell/</loc>
     <lastmod>2023-11-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/</loc>
-    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/linux/post-exploitation/cover-your-tracks-in-linux/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
@@ -212,6 +302,9 @@
     <loc>https://documentnation.github.io/tags/linux/</loc>
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/os-command-injection/</loc>
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -228,6 +321,12 @@
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/method/web-registration-attack/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-remotepotato/</loc>
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/mobile/android/connect-to-android-device-from-pc/</loc>
@@ -275,6 +374,9 @@
     <loc>https://documentnation.github.io/docs/hdks/reconnaissance/google-dorks/</loc>
     <lastmod>2023-10-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</loc>
+    <lastmod>2023-10-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/protocol/snmp-pentesting/</loc>
     <lastmod>2023-10-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -308,7 +410,25 @@
     <loc>https://documentnation.github.io/docs/hdks/network/tool/tshark-cheat-sheet/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-localpotato/</loc>
+    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</loc>
+    <lastmod>2023-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/bloodhound-sharphound/</loc>
+    <lastmod>2023-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/dacl-attack/</loc>
+    <lastmod>2023-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/dns/dns-pentesting/</loc>
+    <lastmod>2023-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/pbcd-attack/</loc>
+    <lastmod>2023-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-kerberos/</loc>
     <lastmod>2023-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</loc>
@@ -343,9 +463,6 @@
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/method/web-server-security-misconfiguration/</loc>
     <lastmod>2023-10-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://documentnation.github.io/docs/hdks/web/api/</loc>
-    <lastmod>2023-10-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/tags/blockchain/</loc>
     <lastmod>2023-10-11T00:00:00+00:00</lastmod>
@@ -443,6 +560,9 @@
     <loc>https://documentnation.github.io/docs/hdks/web/framework/python/flask-jinja2-pentesting/</loc>
     <lastmod>2023-09-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</loc>
+    <lastmod>2023-09-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/sql-injection-with-sqlmap/</loc>
     <lastmod>2023-09-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -513,6 +633,12 @@
     <lastmod>2023-09-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/tool/convert-putty-key-to-openssh-key/</loc>
+    <lastmod>2023-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/tags/forensics/</loc>
+    <lastmod>2023-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</loc>
     <lastmod>2023-09-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/cryptography/bit-wise-operation/and-bitwise-operations/</loc>
@@ -615,6 +741,9 @@
     <lastmod>2023-08-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/machine-learning/computer-vision/image-recognition-bypass-for-machine-learning/</loc>
+    <lastmod>2023-08-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/reading-onedrive-logs/</loc>
     <lastmod>2023-08-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/tool/add-custom-http-headers-in-burp-suite/</loc>
@@ -836,6 +965,9 @@
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/latex-injection/</loc>
     <lastmod>2023-06-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/api/graphql-pentesting/</loc>
+    <lastmod>2023-06-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/database/postgresql-pentesting/</loc>
     <lastmod>2023-06-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -914,6 +1046,9 @@
     <loc>https://documentnation.github.io/docs/hdks/linux/post-exploitation/linux-pivoting/</loc>
     <lastmod>2023-04-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/manageengine-adselfservice-plus/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/sssd-privilege-escalation/</loc>
     <lastmod>2023-04-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -950,13 +1085,7 @@
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/wkhtmltopdf-ssrf/</loc>
     <lastmod>2023-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/tags/forensics/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/malware/malware-analysis/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/apache-hadoop-pentesting/</loc>
@@ -1004,6 +1133,9 @@
     <loc>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/irb-privilege-escalation/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/outlook-reminder-privilege-escalation/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/linux/privilege-escalation/ruby-privilege-escalation/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -1041,6 +1173,9 @@
     <lastmod>2023-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/hardware/sal-logic-analysis/</loc>
+    <lastmod>2023-03-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</loc>
     <lastmod>2023-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/hardware/gerber-files/</loc>
@@ -1124,6 +1259,9 @@
     <loc>https://documentnation.github.io/docs/hdks/web/method/http-rate-limit-bypass/</loc>
     <lastmod>2023-03-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/mara-cms-pentesting/</loc>
+    <lastmod>2023-03-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/windows/powershell/powershell/</loc>
     <lastmod>2023-03-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -1148,7 +1286,10 @@
     <loc>https://documentnation.github.io/docs/hdks/network/protocol/memcache-pentesting/</loc>
     <lastmod>2023-02-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://documentnation.github.io/docs/hdks/web/cms/</loc>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/fuel-cms-pentesting/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/subrion-cms-pentesting/</loc>
     <lastmod>2023-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/web/clipbucket-pentesting/</loc>
@@ -1184,8 +1325,29 @@
     <loc>https://documentnation.github.io/docs/hdks/web/security-risk/cors-attack/</loc>
     <lastmod>2023-02-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/forensics/windows-disk-management/</loc>
+    <lastmod>2023-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/dumping-windows-password-hashes/</loc>
+    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/iperius-backup-service-privilege-escalation/</loc>
+    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/netlogon-elavasion-of-privilege/</loc>
+    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</loc>
+    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/rsync-pentesting/</loc>
     <lastmod>2023-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/cockpit-cms-pentesting/</loc>
+    <lastmod>2023-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/concrete-cms-pentesting/</loc>
+    <lastmod>2023-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/database/influxdb-pentesting/</loc>
     <lastmod>2023-02-05T00:00:00+00:00</lastmod>
@@ -1298,6 +1460,9 @@
     <loc>https://documentnation.github.io/docs/hdks/web/elasticsearch/kibana-pentesting/</loc>
     <lastmod>2022-12-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/laps-pentesting/</loc>
+    <lastmod>2022-12-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/misc/programming-language-detection/</loc>
     <lastmod>2022-12-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -1343,6 +1508,9 @@
     <loc>https://documentnation.github.io/docs/hdks/network/wifi/mitm-attack/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/active-directory/ntlm-pentesting/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/protocol/ntp-pentesting/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -1359,6 +1527,9 @@
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/tor/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/typo3-pentesting/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/game/webassembly-games-hacking/</loc>
@@ -1391,10 +1562,16 @@
     <loc>https://documentnation.github.io/docs/hdks/network/bluetooth/bluetooth-hacking/</loc>
     <lastmod>2022-11-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/web/cms/bolt-cms-pentesting/</loc>
+    <lastmod>2022-11-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://documentnation.github.io/docs/hdks/network/mac-flooding-attack/</loc>
     <lastmod>2022-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</loc>
+    <lastmod>2022-11-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/mimikatz/</loc>
     <lastmod>2022-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://documentnation.github.io/categories/</loc>

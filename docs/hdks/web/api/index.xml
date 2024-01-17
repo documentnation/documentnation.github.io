@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/api/</link>
+    <description>Recent content in Api on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:54:59 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GraphQL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/api/graphql-pentesting/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/api/graphql-pentesting/</guid>
+      <description>Common Directories link /graphql /graphiql /graphql.php /graphql/console Basic Operations - Queries linkWe can fetch field information by sending queries.&#xA;query { __typename } Fields linkTo fetch a field object, send a query like the following.&#xA;query { user { name friends { name } } } Arguments linkWe can get the specific information by padding arguments (e.g. id) to fields.&#xA;query { user (id: &amp;#34;1&amp;#34;) { name } } Aliases linkWe can set aliases each field to get multiple results in one request.</description>
+    </item>
+  </channel>
+</rss>

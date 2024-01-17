@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forensics on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/forensics/</link>
+    <description>Recent content in Forensics on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:48:08 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/forensics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Memory Dump Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</guid>
+      <description>Investigation link file example.dmp # Output example.dmp: Mini DuMP crash report, 18 streams, Sat Nov ... Static Analysis linkWe can also read contents of this file by usual static analysis such as below.&#xA;strings example.dmp strings example.dmp | grep -i password # Open pager strings example.dmp | less xxd example.dmp Using Debugger link IDA, ILSpy Visual Studio Using Online Viewer linkThis file can also be read with online DMP viewer.</description>
+    </item>
+    <item>
+      <title>Reading OneDrive Logs</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/reading-onedrive-logs/</link>
+      <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/reading-onedrive-logs/</guid>
+      <description>Deobfuscating Log Files linkTo read OneDrive logs, we need to deobfuscate log files (.odl, .odlsent, .odlgz).&#xA;These logs are located in the following on Windows:&#xA;C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Personal\ C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Business1\ This repository is useful to deobfuscate OneDrive logs.&#xA;python -m venv venv # on Windows .\venv\Scripts\activate pip install construct pycryptodome python odl.py -o .\output.csv c:\Users\\AppData\Local\Microsoft\OneDrive\logs\Personal\ After that, we can read the output file (output.csv) with tools such as VS Code and Excel.&#xA;This file contains sensitive information such as OneDrive account email, access token, etc.</description>
+    </item>
+    <item>
+      <title>Windows XML EventLog (EVTX)</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</guid>
+      <description>Read EVTX in Linux linkWe can parse .evtx file in Linux using evtx_dump.&#xA;wget https://github.com/omerbenamram/evtx/releases/download/v0.8.1/evtx_dump-v0.8.1-x86_64-unknown-linux-gnu -O evtx_dump chmod &amp;#43;x evtx_dump ./evtx_dump example.evtx &amp;gt; parsed.txt Now we can find sensitive information from the parsed text.&#xA;grep -i TargetUserName parsed.txt grep -i TargetDomainName parsed.txt Search Suspicious Activity in EVTX linkChainsaw is a command-line tool to rapidly search and hunt through Windows Forensics Artifacts.&#xA;git clone https://github.com/WithSecureLabs/chainsaw.git cd chainsaw cargo build --release ./chainsaw hunt evtx_files/ -s sigma/rules --mapping mapping/sigma-event-logs-all.</description>
+    </item>
+    <item>
+      <title>Windows Disk Management</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-disk-management/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-disk-management/</guid>
+      <description>Partitions linkCheck partitions with it.&#xA;Open the &amp;lsquo;Disk Management&amp;rsquo;&#xA;Right click the partition to view the properties&#xA;Check &amp;lsquo;Security&amp;rsquo; tab or &amp;lsquo;Shadow Copies&amp;rsquo; tab&#xA;Check Partition in Windows Explorer&#xA;Right click the partition and click &amp;lsquo;Change Drive Letter and Paths&amp;rsquo; Open dialog. Click &amp;lsquo;Add&amp;rsquo;. In the dropdown, choose a letter (ex. Z:) and click &amp;lsquo;OK&amp;rsquo;. At the top, in the Volume column, you should see that the partition has a letter (Z:) assigned to.</description>
+    </item>
+  </channel>
+</rss>

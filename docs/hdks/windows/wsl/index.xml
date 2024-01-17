@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wsl on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/windows/wsl/</link>
+    <description>Recent content in Wsl on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:52:21 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/windows/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</link>
+      <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/wsl/wsl-pentesting/</guid>
+      <description>Interesting Files link cat /etc/wsl.conf Escape WSL to Windows Host Machine linkIf we’are currently on WSL machine, we can access to the host Windows machine as below.&#xA;cd /mnt/c/ If /mnt/c/ is empty, we need to mount the folder by running the following command.&#xA;cd / # -t: Limit the set of filesystem types # drvfs: A plugin for WSL # C: : Specify the Windows root mount -t drvfs C: /mnt/c </description>
+    </item>
+  </channel>
+</rss>

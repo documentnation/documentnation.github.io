@@ -6,14 +6,21 @@
     <description>Recent content in Forensics on D0CUM3NTN4T10N</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://documentnation.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Windows Forensics</title>
-      <link>https://documentnation.github.io/docs/hdks/windows/forensics/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/</guid>
-      <description>System Information linkIP Address &amp;amp; MAC Address linkBelow are the location of the file which contains the information of IP address and MAC address.&#xA;# Look@LAN is a network monitoring tool. So if the system uses the tool, we can retrieve the information of the network. # LANIP -&amp;gt; IP address # LANNIC -&amp;gt; MAC address c:\Program Files (x86)\Look@LAN\irunin.ini Network Cards linkThe name of the network card is such like “Intel(R) PRO/1000 MT Desktop Adapter”.</description>
+      <title>Windows Memory Dump Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</guid>
+      <description>Investigation link file example.dmp # Output example.dmp: Mini DuMP crash report, 18 streams, Sat Nov ... Static Analysis linkWe can also read contents of this file by usual static analysis such as below.&#xA;strings example.dmp strings example.dmp | grep -i password # Open pager strings example.dmp | less xxd example.dmp Using Debugger link IDA, ILSpy Visual Studio Using Online Viewer linkThis file can also be read with online DMP viewer.</description>
+    </item>
+    <item>
+      <title>Windows XML EventLog (EVTX)</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</guid>
+      <description>Read EVTX in Linux linkWe can parse .evtx file in Linux using evtx_dump.&#xA;wget https://github.com/omerbenamram/evtx/releases/download/v0.8.1/evtx_dump-v0.8.1-x86_64-unknown-linux-gnu -O evtx_dump chmod &amp;#43;x evtx_dump ./evtx_dump example.evtx &amp;gt; parsed.txt Now we can find sensitive information from the parsed text.&#xA;grep -i TargetUserName parsed.txt grep -i TargetDomainName parsed.txt Search Suspicious Activity in EVTX linkChainsaw is a command-line tool to rapidly search and hunt through Windows Forensics Artifacts.&#xA;git clone https://github.com/WithSecureLabs/chainsaw.git cd chainsaw cargo build --release ./chainsaw hunt evtx_files/ -s sigma/rules --mapping mapping/sigma-event-logs-all.</description>
     </item>
     <item>
       <title>Memory Forensics</title>

